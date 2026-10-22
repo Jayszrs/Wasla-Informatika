@@ -4,21 +4,23 @@ import { Pool } from 'pg'
 import { test, expect, request as requestFactory } from '@playwright/test'
 import { mkdir } from 'node:fs/promises'
 
-test.beforeAll(async () => {
+async function resetTestRateLimit() {
   const pool = new Pool({ connectionString: process.env.DATABASE_URL })
   const key = createHmac('sha256', process.env.PAYLOAD_SECRET!).update('shared-direct').digest('hex')
   await pool.query('DELETE FROM contact_rate_limits WHERE key = $1', [key])
   await pool.end()
-})
+}
+test.beforeAll(resetTestRateLimit)
+test.afterAll(resetTestRateLimit)
 
 test('all public routes, metadata, portfolio filters, FAQ and service conversion', async ({ page }) => {
   const errors: string[] = []
   page.on('pageerror', e => errors.push(e.message))
   for (const [path, heading] of [
-    ['/', 'Software House'], ['/layanan', 'Satu kebutuhan.'], ['/layanan/website-development', 'Website Development'],
-    ['/portofolio', 'Ide yang menemukan'], ['/portofolio/ruang-commerce', 'Ruang — Commerce'],
-    ['/insights', 'Pikiran yang terus'], ['/insights/website-atau-aplikasi-web', 'Website atau aplikasi'],
-    ['/tentang-kami', 'Menghubungkan ide.'], ['/kontak', 'Percakapan baik.'], ['/privasi', 'Informasi Anda,'],
+    ['/', 'Software House'], ['/layanan', 'Layanan'], ['/layanan/website-development', 'Website Development'],
+    ['/portofolio', 'Karya Kami'], ['/portofolio/ruang-commerce', 'Ruang — Commerce'],
+    ['/insights', 'Insights'], ['/insights/website-atau-aplikasi-web', 'Website atau aplikasi'],
+    ['/tentang-kami', 'Tentang Wasla'], ['/kontak', 'Kontak'], ['/privasi', 'Informasi Anda,'],
   ]) {
     const response = await page.goto(path)
     expect(response?.status(), path).toBe(200)

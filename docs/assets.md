@@ -25,3 +25,5 @@ File WebP dikonversi dari hasil imagegen dengan Sharp, kualitas 90, maksimal leb
 `npm run seed:media` mengimpor keenam gambar dan mengisi field kosong pada konten contoh. Perintah dapat diulang tanpa menimpa gambar pilihan pengguna. Hero demo Alur versi sebelumnya dimigrasikan ke workstation baru; hero yang telah dipilih pemilik dipertahankan. File publik contoh tetap tersedia sebagai sumber seed, tetapi halaman mengambil pilihan gambar dari Media CMS.
 
 Identitas klien, testimoni, profil tim, alamat, email, dan nomor telepon hanya dipublikasikan berdasarkan informasi resmi pemilik.
+
+Halaman Layanan menggunakan field image per layanan untuk susunan gambar/teks bergantian. Buka Layanan, pilih layanan, ganti gambar utama, lalu publish. Seed hanya mengisi field kosong dengan visual contoh yang sudah terdaftar di Media; gambar pilihan pemilik dipertahankan. Gambar area keahlian juga digunakan pada pengantar Tentang Wasla.

@@ -1,3 +1,5 @@
+> Historical: this review describes the superseded editorial design. The current Vodjo direction and validation are in [vodjo-direction.md](vodjo-direction.md) and [vodjo-validation.md](vodjo-validation.md).
+
 # Validasi redesign — 22 Oktober 2026
 
 Alur yang diperiksa: pengunjung menemukan layanan dan contoh karya, meninjau detail, lalu mengirim konsultasi yang tersimpan privat. Editor mengunggah gambar dan mengganti hero/thumbnail melalui CMS; halaman publik mengambil pilihan tersebut dari database.

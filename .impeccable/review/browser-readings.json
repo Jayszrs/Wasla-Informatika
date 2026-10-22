@@ -9,62 +9,74 @@
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": "none",
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1440,
       "route": "/layanan",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1440,
       "route": "/layanan/website-development",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1440,
       "route": "/portofolio",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1440,
       "route": "/portofolio/ruang-commerce",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1440,
       "route": "/insights",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1440,
@@ -75,29 +87,35 @@
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(7, 26, 51)",
+      "headerBackground": "rgb(255, 255, 255)"
     },
     {
       "width": 1440,
       "route": "/tentang-kami",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1440,
       "route": "/kontak",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1024,
@@ -108,62 +126,74 @@
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": "none",
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1024,
       "route": "/layanan",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1024,
       "route": "/layanan/website-development",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1024,
       "route": "/portofolio",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1024,
       "route": "/portofolio/ruang-commerce",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1024,
       "route": "/insights",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1024,
@@ -174,29 +204,35 @@
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(7, 26, 51)",
+      "headerBackground": "rgb(255, 255, 255)"
     },
     {
       "width": 1024,
       "route": "/tentang-kami",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 1024,
       "route": "/kontak",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 768,
@@ -207,62 +243,74 @@
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": "none",
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 768,
       "route": "/layanan",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 768,
       "route": "/layanan/website-development",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 768,
       "route": "/portofolio",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 768,
       "route": "/portofolio/ruang-commerce",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 768,
       "route": "/insights",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 768,
@@ -273,29 +321,35 @@
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(7, 26, 51)",
+      "headerBackground": "rgb(255, 255, 255)"
     },
     {
       "width": 768,
       "route": "/tentang-kami",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 768,
       "route": "/kontak",
       "overflow": false,
       "h1": {
-        "size": "50px",
+        "size": "54px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 390,
@@ -306,62 +360,74 @@
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": "none",
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 390,
       "route": "/layanan",
       "overflow": false,
       "h1": {
-        "size": "38px",
+        "size": "42px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 390,
       "route": "/layanan/website-development",
       "overflow": false,
       "h1": {
-        "size": "38px",
+        "size": "42px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 390,
       "route": "/portofolio",
       "overflow": false,
       "h1": {
-        "size": "38px",
+        "size": "42px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 390,
       "route": "/portofolio/ruang-commerce",
       "overflow": false,
       "h1": {
-        "size": "38px",
+        "size": "42px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 390,
       "route": "/insights",
       "overflow": false,
       "h1": {
-        "size": "38px",
+        "size": "42px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 390,
@@ -372,36 +438,42 @@
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(7, 26, 51)",
+      "headerBackground": "rgb(255, 255, 255)"
     },
     {
       "width": 390,
       "route": "/tentang-kami",
       "overflow": false,
       "h1": {
-        "size": "38px",
+        "size": "42px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     },
     {
       "width": 390,
       "route": "/kontak",
       "overflow": false,
       "h1": {
-        "size": "38px",
+        "size": "42px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": null,
-      "brokenImages": []
+      "brokenImages": [],
+      "headerColor": "rgb(255, 255, 255)",
+      "headerBackground": "rgba(0, 0, 0, 0)"
     }
   ],
   "errors": [],
   "tokenContrast": {
     "navyOnWhite": 17.43,
-    "slateOnWhite": 6.23,
-    "lightOnNavy": 14.33,
+    "slateOnWhite": 5.67,
+    "lightOnNavy": 12.39,
     "whiteOnAction": 5.78
   }
 }

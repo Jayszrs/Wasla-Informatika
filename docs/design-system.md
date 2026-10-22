@@ -1,4 +1,4 @@
-﻿# Wasla design system: Vodjo-led revision
+# Wasla design system: Vodjo-led revision
 
 The latest user correction supersedes the mixed-reference editorial design. [vodjo-direction.md](vodjo-direction.md) pins close composition/proportion matching to Vodjo `.com`; [the fresh study](evidence/vodjo-exact-2026-10-22.md) distinguishes screenshot measurements from unverified computed styles. This code-first system uses fresh implementation and Wasla's navy/white, Indonesian copy, CMS and original assets. No Figma comp or final approval is claimed here.
 
@@ -18,13 +18,19 @@ Wrapper:1140px; at1199/991/767 maximums960/750/570px; at575 fluid. All use15px g
 
 Home work2×2,16:9,2px seams; stacks below767. Services3 columns/30px gap, one narrow. Device/expertise split1:1; device540px contained; narrow image then copy. Technology5 bordered120px tiles, narrow2 columns plus last full-width. Consultation1:1/30px gap, stacked narrow. Waves110px/70px narrow. Full source-specific section rhythm is documented in DESIGN.md rather than imposing the discarded editorial spacing scale.
 
-Buttons30px radius and44px minimum; service actions40px. Filters25px,fields2px,tags3px,service panels8px,images square. Header shadow0 2px 10px #071a3310; floating contact0 3px 14px #071a3326. Other content stays flat.
+Buttons30px radius and44px minimum; service actions40px. Article filters25px; portfolio filters have no border/radius. Fields2px,tags3px,service panels8px,images square. Header shadow0 2px 10px #071a3310; floating contact0 3px 14px #071a3326. Other content stays flat.
+
+## Internal page composition
+
+Shared PageIntro is full-width Deep Navy with a short centered White title: desktop 54px, subtitle 13px, content padding 145px/60px and a layered 140px wave into White. Following margin is 85px. At/below 767px, title is 42px, subtitle 13px, padding 112px/35px, subtitle top gap 8px, wave 40px and following margin 55px. A single-line title and two-line subtitle produce a compact masthead of approximately 286px. Initial navigation stays light over the dark masthead and changes to White on scroll. This replaces the former White introduction.
+
+About uses `featureImage` in the left half and introductory copy in the right half, with a 30px gap; narrow stacks image first. Services uses a 1440px catalog of alternating equal image/text bands: 30px gap, 65px lower spacing, 2:1 CMS `service.image`, 555px maximum text and 36px titles. Missing media uses authored geometric ServiceArt. Capsule links lead to detail pages. Below 767px all bands stack image first, gap 25px, lower spacing 45px, title 28px and text gutters 15px. Contact keeps its channel/form split but form fields are single-column on desktop as well as narrow.
 
 ## Behavior and content
 
-Navigation is flat uppercase, transparent initially and White after scroll/internal routes. Native details opens a full-screen menu at991px and below; main/footer inert, Tab wraps, Escape/links/desktop resize close, background scroll locks. Essential work title remains accessible: desktop overlay responds to hover/focus, narrow title is always visible over a gradient. Concept disclosure never depends on hover. FAQ is on Services; Insights/team stay dedicated destinations.
+Navigation is flat uppercase, transparent initially over the homepage and shared Navy internal mastheads, then White after scroll; other internal routes retain the White surface. Native details opens a full-screen menu at991px and below; main/footer inert, Tab wraps, Escape/links/desktop resize close, background scroll locks. Work titles remain accessible: desktop image overlays respond to hover/focus. At/below 767px homepage overlays remain visible and external captions hidden; catalog overlays are disabled so each title appears once in its external caption. Concept disclosure never depends on hover. Portfolio category buttons are centered bold text,20px desktop/18px narrow, transparent and unboxed, with44px minimum height. Desktop gaps8px26px become4px20px narrow; bottom margin14px. Slate inactive text becomes Navy on hover/selection; selected state uses a1px underline offset6px. The role=status count is clipped1?1px without gallery spacing. Article filters retain pills; focus styling is unchanged. FAQ is on Services; Insights/team stay dedicated destinations.
 
-The contact form retains optional markers, validation/errors/pending/saved states, consent and private Payload/PostgreSQL POST persistence. Success follows saving. JavaScript is required for JSON submission and no-script copy states it. Floating chat goes to actual WhatsApp only when supplied, otherwise to consultation. No invented channel, client proof or team profile.
+The homepage consultation retains a two-column field grid on desktop; the dedicated Contact form is single-column at every width. Both retain optional markers, validation/errors/pending/saved states, consent and private Payload/PostgreSQL POST persistence. Success follows saving. JavaScript is required for JSON submission and no-script copy states it. Floating chat goes to actual WhatsApp only when supplied, otherwise to consultation. No invented channel, client proof or team profile.
 
 ## Media and motion
 

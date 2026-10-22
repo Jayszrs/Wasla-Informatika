@@ -29,8 +29,8 @@ for (const width of [1440, 1024, 768, 390]) {
       headerBackground: getComputedStyle(document.querySelector('.site-header')).backgroundColor,
     }))
     readings.push({ width, route, ...info })
+    await page.screenshot({ path: `.impeccable/review/${name}-${width}-viewport.png` })
     if (width === 1440 || width === 390) {
-      await page.screenshot({ path: `.impeccable/review/${name}-${width}-viewport.png` })
       if (name !== 'home') await page.screenshot({ path: `.impeccable/review/${name}-${width}.png`, fullPage: true })
     }
     if (name === 'home' && (width === 1440 || width === 390)) await page.screenshot({ path: `.impeccable/review/${width === 1440 ? 'desktop' : 'mobile'}.png`, fullPage: true })

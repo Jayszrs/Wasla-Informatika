@@ -2,7 +2,7 @@
 
 Latest user correction: Vodjo `.com` is now the dominant structural target. See the [literal REA measurement study](evidence/vodjo-exact-2026-10-22.md) and [current direction](vodjo-direction.md). Earlier mixed-reference synthesis remains research history rather than authority for the current layout.
 
-Revision: the new REA MCP capture pass and original implementation implications are documented in [refresh-2026-10-22.md](evidence/refresh-2026-10-22.md). The revised code-first direction is in [redesign-direction.md](redesign-direction.md). Exact typography identities and motion timings are not inferred from visual similarity.
+Earlier revision history: the preceding REA capture pass is documented in [refresh-2026-10-22.md](evidence/refresh-2026-10-22.md), with its now-superseded interpretation in [redesign-direction.md](redesign-direction.md). The current Vodjo study and direction linked above take precedence. Exact motion timings are not inferred from visual similarity; the latest Vodjo study identifies Poppins from the rendered font declaration.
 
 Research date: 22 October 2026, Asia/Jakarta. Phase 1 is research and synthesis; the user subsequently requested all three phases in this task. Design and implementation follow the documented synthesis, without claiming a separate owner approval.
 
@@ -10,7 +10,7 @@ Research date: 22 October 2026, Asia/Jakarta. Phase 1 is research and synthesis;
 
 REA MCP launched local Chrome and captured browser-visible DOM, accessibility trees and screenshots. Desktop: 1440×900. Narrow viewport: 390×844. REA performed declared waits, PageDown presses and menu clicks. This is browser emulation, not physical phone testing. No third-party forms were submitted. No private source, protected content, authentication or paywalls were accessed.
 
-Context7 and Figma tools are absent from the enabled tool inventory. Official documentation replaces Context7; repository specifications replace editable Figma delivery. CUA returned “No browser is available”; REA browser automation worked. We do not claim a Figma file, source-code reconstruction, exact animation duration, FPS, Core Web Vitals, numerical reference contrast, or pointer-hover verification.
+At the initial research pass, Context7 and Figma tools were absent from that tool inventory. Context7 remains unavailable on the final check; official documentation is the recorded fallback. Figma tools are now listed, but the user explicitly chose specification → code → browser review, so repository specifications remain the design handoff and no editable Figma file was created. CUA returned “No browser is available” during the initial pass; REA browser automation worked. We do not claim a Figma file, source-code reconstruction, exact animation duration, FPS, Core Web Vitals, numerical reference contrast, or pointer-hover verification.
 
 Evidence and original sampled screenshots: [detailed Ulysses/Until ledger](evidence/references-two.md), [REA session bundle](evidence/rea-references-session.json). Research images belong only in docs/evidence and must never ship as Wasla assets.
 

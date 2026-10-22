@@ -1,3 +1,5 @@
+> Historical: this review describes the superseded editorial design. The current Vodjo direction and validation are in [vodjo-direction.md](vodjo-direction.md) and [vodjo-validation.md](vodjo-validation.md).
+
 disposition: ship
 
 Final verdict scope: both material fixes below were scored resolved against the refreshed production captures on 22 October 2026. This ship disposition covers the scored fixes, not a new whole-surface review. The initial five-section review is retained below as the finding record.

@@ -34,6 +34,26 @@ async function exampleMedia(filename: string, alt: string, caption: string) {
 }
 const workspace = await exampleMedia('workspace-hero.webp', 'Ilustrasi workstation pengembangan software dengan laptop di sisi kanan dan suasana navy.', 'Visual ilustrasi orisinal dibuat dengan imagegen, bukan foto kantor Wasla. Dapat diganti melalui CMS.')
 const device = await exampleMedia('wasla-device.webp', 'Ilustrasi perangkat ponsel dengan wordmark Wasla Informatika pada layar putih.', 'Mockup perangkat orisinal; bukan aplikasi atau produk klien. Dapat diganti melalui CMS.')
+const serviceImages: Record<string, string> = {
+  'website-development': 'workspace-hero.webp',
+  'web-application': 'alur-concept.webp',
+  'ui-ux-design': 'sela-concept.webp',
+  'custom-software': 'alur-concept.webp',
+  'e-commerce': 'ruang-concept.webp',
+  'it-consultation': 'nusa-concept.webp',
+  'it-infrastructure': 'workspace-hero.webp',
+  'maintenance-support': 'workspace-hero.webp',
+  'systems-integration': 'alur-concept.webp',
+  'database-digital-solutions': 'alur-concept.webp',
+}
+for (const [slug, filename] of Object.entries(serviceImages)) {
+  const [services, media] = await Promise.all([
+    payload.find({ collection: 'services', where: { slug: { equals: slug } }, limit: 1, overrideAccess: true }),
+    payload.find({ collection: 'media', where: { filename: { equals: filename } }, limit: 1, overrideAccess: true }),
+  ])
+  const service = services.docs[0]
+  if (service && !service.image && media.docs[0]) await payload.update({ collection: 'services', id: service.id, overrideAccess: true, data: { image: media.docs[0].id, _status: service._status } })
+}
 heroID = workspace.id
 const settings = await payload.findGlobal({ slug: 'site-settings', overrideAccess: true })
 const oldDemoHero = typeof settings.heroImage === 'object' && settings.heroImage?.filename === 'alur-concept.webp'

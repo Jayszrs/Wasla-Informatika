@@ -3,7 +3,7 @@ import Image from 'next/image'
 import type { Media, Project, Post, Service, Team } from '@/payload-types'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { Arrow, Plus } from './icons'
-import { ConceptVisual } from './artwork'
+import { ConceptVisual, SectionWave, ServiceArt } from './artwork'
 import { mediaSource } from '@/lib/media'
 
 export function ButtonLink({
@@ -36,12 +36,15 @@ export function TextLink({ href, children }: { href: string; children: React.Rea
 
 export function PageIntro({ title, copy, children }: { title: string; copy: string; children?: React.ReactNode }) {
   return (
-    <section className="page-intro wrap">
+    <section className="page-intro">
+      <div className="wrap page-intro-content">
       <h1>{title}</h1>
       <div className="intro-bottom">
         <p>{copy}</p>
         {children}
       </div>
+      </div>
+      <SectionWave layered />
     </section>
   )
 }
@@ -130,17 +133,16 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
   )
 }
 
-export function ServiceRow({ service }: { service: Service; index: number }) {
+export function ServiceRow({ service, index }: { service: Service; index: number }) {
   return (
-    <Link className="service-row our-service-item" href={`/layanan/${service.slug}`}>
+    <article className="service-row our-service-item">
+      <div className="service-row-image">{service.image && typeof service.image === 'object' ? <MediaImage media={service.image} sizes="(max-width: 767px) 100vw, 50vw" /> : <ServiceArt variant={index} />}</div>
       <div className="our-service-content">
         <h3 className="our-service-title">{service.title}</h3>
         <p className="our-service-desc">{service.excerpt}</p>
+        <ButtonLink href={`/layanan/${service.slug}`} variant="button-outline">Pelajari layanan</ButtonLink>
       </div>
-      <span className="service-arrow">
-        <Arrow diagonal />
-      </span>
-    </Link>
+    </article>
   )
 }
 

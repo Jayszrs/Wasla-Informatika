@@ -11,3 +11,5 @@ Parallax is an explicit Wasla enhancement, not an unverified claim about Vodjo. 
 Fresh REA evidence and screenshots live under `docs/evidence/vodjo-exact*`. Do not reuse Vodjo's logo, client work, testimonials, contact data, photographs, wording or proprietary implementation. Empty real-proof sections remain omitted until populated through CMS.
 
 Review against the actual new Vodjo screenshots at 1440 and 390, with 1024/768 reflow checks. Compare hero proportions, section cadence, grid scale, typography and header/menu behavior explicitly; aesthetic improvement alone is insufficient for this request.
+
+Internal-page evidence extends this direction: solid navy mastheads with centered 54px titles (34px narrow), compact subtitles and layered wave boundaries; an image-left/copy-right About introduction; alternating media/copy service bands; portfolio filters followed by a two-column gallery; and a Contact split with single-column fields. Original images and truthful Wasla copy replace the reference's proprietary material. The shared article reading layout keeps a light header for readable editorial content.

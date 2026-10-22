@@ -38,11 +38,11 @@ Untuk **pengujian lokal saja**, `node scripts/setup-local-admin.mjs` menghasilka
 
 ## Konten dan alur CMS
 
-- **Layanan**: sepuluh layanan awal, rich text, kategori, ilustrasi, hasil kerja, SEO, urutan, draft/publish.
+- **Layanan**: sepuluh layanan awal, rich text, kategori, gambar untuk susunan bergantian, ilustrasi, hasil kerja, SEO, urutan, draft/publish.
 - **Portofolio**: tantangan/solusi, teknologi, galeri, thumbnail, konsep/real, unggulan, SEO, draft/publish.
 - **Insights**: artikel, kategori, tag, penulis opsional dari tim, gambar, tanggal, SEO, draft/publish.
 - **Tim, FAQ, Testimoni**: foto/informasi asli; testimoni tampil hanya jika disetujui dan dipublikasikan.
-- **Pengaturan Website**: judul/copy dan gambar hero, pernyataan merek, logo, favicon, kontak, sosial, footer dan deskripsi SEO.
+- **Pengaturan Website**: judul/copy dan gambar hero, gambar area keahlian (juga dipakai di Tentang), pernyataan merek, logo, favicon, kontak, sosial, footer dan deskripsi SEO.
 - **Navigasi**: label, tujuan, urutan dan status aktif.
 - **Pesan Konsultasi**: privat; status baru/dihubungi/selesai. API publik tidak dapat membaca atau membuat record langsung.
 - Preview draft pada layanan, proyek dan artikel memerlukan sesi admin/editor; URL tidak memberikan akses publik.
@@ -69,10 +69,12 @@ Playwright memakai Chrome lokal di Windows. Atur `CHROME_PATH` untuk executable 
 ## Dokumen tiga fase
 
 - [Riset referensi](docs/reference-analysis.md), [ledger REA](docs/evidence/references-two.md).
-- [Pemeriksaan REA terbaru](docs/evidence/refresh-2026-10-22.md), [arah redesign](docs/redesign-direction.md), [gambar dan panduan penggantian CMS](docs/assets.md).
+- [Arah Vodjo terbaru](docs/vodjo-direction.md), [pengukuran dan screenshot REA](docs/evidence/vodjo-exact-2026-10-22.md), [gambar dan panduan penggantian CMS](docs/assets.md).
 - [Sistem desain](docs/design-system.md), [spesifikasi UI/UX dan handoff](docs/ui-ux-specification.md).
 - [Keputusan library](docs/library-decisions.md), [deployment](docs/deployment.md), [validasi](docs/validation.md).
-- [Validasi redesign terbaru](docs/redesign-validation.md), [review visual terbaru](docs/visual-review-redesign.md).
+- [Validasi Vodjo terbaru](docs/vodjo-validation.md), [review visual Vodjo](docs/visual-review-vodjo.md).
+
+Desain terbaru memakai Poppins berlisensi OFL yang disimpan lokal, komposisi navy/putih, hero fotografis, batas bagian bergelombang, serta masthead navy pada halaman dalam. Parallax terbatas pada desktop; mobile dan preferensi pengurangan gerak memakai tampilan statis. Dokumen redesign sebelumnya disimpan sebagai riwayat dan tidak menjadi acuan tampilan terbaru.
 
 ## Input pemilik yang masih diperlukan
 
