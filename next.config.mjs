@@ -4,6 +4,7 @@ export default withPayload({
   output: 'standalone',
   outputFileTracingRoot: process.cwd(),
   turbopack: { root: process.cwd() },
+  experimental: { cpus: 2, webpackMemoryOptimizations: true },
   poweredByHeader: false,
   images: { remotePatterns: process.env.S3_PUBLIC_URL ? [{ protocol: 'https', hostname: new URL(process.env.S3_PUBLIC_URL).hostname }] : [] },
   async headers() {

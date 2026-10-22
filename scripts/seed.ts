@@ -38,7 +38,7 @@ for (const [i, [question, answer]] of faqSeeds.entries()) {
 const settings = await payload.findGlobal({ slug: 'site-settings', overrideAccess: true })
 if (!settings.heroTitle) await payload.updateGlobal({ slug: 'site-settings', overrideAccess: true, data: {
   name: 'Wasla Informatika', description: 'Studio pengembangan website, aplikasi, dan solusi IT untuk kebutuhan bisnis di Indonesia.',
-  heroTitle: 'Solusi teknologi.\nBisnis melaju.',
+  heroTitle: 'Software House\nuntuk Bisnis Anda.',
   heroCopy: 'Wasla Informatika menghadirkan website, aplikasi, dan solusi IT yang dirancang untuk membantu bisnis berkembang secara digital.',
   statement: 'Teknologi yang tepat dimulai dari pemahaman yang baik.',
   seoDescription: 'Website, aplikasi web, desain UI/UX, dan solusi IT dari Wasla Informatika. Diskusikan kebutuhan digital bisnis Anda.',
@@ -46,8 +46,8 @@ if (!settings.heroTitle) await payload.updateGlobal({ slug: 'site-settings', ove
 } })
 const navigation = await payload.findGlobal({ slug: 'navigation', overrideAccess: true })
 if (!navigation.links?.length) await payload.updateGlobal({ slug: 'navigation', overrideAccess: true, data: { links: [
-  { label: 'Layanan', href: '/layanan', enabled: true, order: 0 }, { label: 'Karya', href: '/portofolio', enabled: true, order: 1 },
-  { label: 'Tentang', href: '/tentang-kami', enabled: true, order: 2 }, { label: 'Insights', href: '/insights', enabled: true, order: 3 },
+  { label: 'Tentang', href: '/tentang-kami', enabled: true, order: 0 }, { label: 'Layanan', href: '/layanan', enabled: true, order: 1 },
+  { label: 'Karya', href: '/portofolio', enabled: true, order: 2 }, { label: 'Insights', href: '/insights', enabled: true, order: 3 },
 ] } })
 console.log('Seed complete. Existing content preserved. No client evidence or team members invented.')
 await payload.destroy()

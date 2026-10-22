@@ -1,3 +1,7 @@
+export function SectionWave({ variant = 'dark-light', layered = false }: { variant?: 'dark-light' | 'light-dark'; layered?: boolean }) {
+  return <div className={`section-wave wave-${variant}`} aria-hidden="true"><svg viewBox="0 0 1440 110" preserveAspectRatio="none" fill="none">{layered && <><path d="M0 10C250 10 260 100 580 64S1050 0 1440 45V110H0Z" fill="#29405a" opacity=".45"/><path d="M0 75C370-20 570 15 850 60s440 18 590-30v80H0Z" fill="#63758a" opacity=".24"/></>}<path d="M0 65C300 150 550 85 790 45s445-48 650 8v57H0Z" fill="currentColor"/></svg></div>
+}
+
 export function ConnectionArt({ className = '' }: { className?: string }) {
   return <svg className={`connection-art ${className}`} viewBox="0 0 640 560" fill="none" role="img" aria-label="Diagram orisinal: jalur ide yang saling terhubung menjadi satu solusi">
     <defs><linearGradient id="path-shade" x1="50" y1="20" x2="580" y2="550" gradientUnits="userSpaceOnUse"><stop stopColor="#fff" /><stop offset="1" stopColor="#7198c7" /></linearGradient></defs>

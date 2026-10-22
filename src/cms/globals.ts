@@ -7,6 +7,7 @@ export const SiteSettings: GlobalConfig = {
     { name: 'name', type: 'text', defaultValue: 'Wasla Informatika', required: true },
     upload('logoWhite'), upload('logoNavy'), upload('favicon'),
     { name: 'heroImage', type: 'upload', relationTo: 'media', label: 'Gambar utama beranda', admin: { description: 'Unggah mockup atau foto proyek. Gambar contoh dapat diganti di sini.' } },
+    { name: 'featureImage', type: 'upload', relationTo: 'media', label: 'Gambar area keahlian', admin: { description: 'Gambar perangkat atau produk di bagian keahlian dan proses.' } },
     { name: 'description', type: 'textarea', required: true },
     { name: 'heroTitle', type: 'text', required: true }, { name: 'heroCopy', type: 'textarea', required: true },
     { name: 'statement', type: 'textarea', required: true },

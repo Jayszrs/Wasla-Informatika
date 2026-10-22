@@ -20,6 +20,7 @@ test('CMS login, roles, drafts, publishing, media, settings and private submissi
   let editorId: number | undefined
   let projectId: number | undefined
   let mediaId: number | undefined
+  let heroMediaId: number | undefined
   let previousHero: number | null = null
   let heroChanged = false
   const publicClient = await requestFactory.newContext({ baseURL })
@@ -78,11 +79,15 @@ test('CMS login, roles, drafts, publishing, media, settings and private submissi
     expect(settingsResponse.ok()).toBe(true)
     const settings = await settingsResponse.json()
     previousHero = typeof settings.heroImage === 'object' ? settings.heroImage?.id || null : settings.heroImage || null
-    const replaceHero = await request.post('/api/globals/site-settings', { data: { heroImage: mediaId } })
+    const heroAlt = 'Gambar hero pengujian lokal'
+    const heroUpload = await request.post('/api/media', { multipart: { _payload: JSON.stringify({ alt: heroAlt }), file: { name: `qa-hero-${unique}.png`, mimeType: 'image/png', buffer: png } } })
+    expect(heroUpload.status()).toBe(201)
+    heroMediaId = (await heroUpload.json()).doc.id
+    const replaceHero = await request.post('/api/globals/site-settings', { data: { heroImage: heroMediaId } })
     expect(replaceHero.ok()).toBe(true)
     heroChanged = true
     await page.goto('/')
-    await expect(page.locator('.hero-stage-image')).toHaveAttribute('alt', 'Gambar pengujian lokal, bukan aset klien')
+    await expect(page.locator('.hero-stage-image')).toHaveAttribute('alt', heroAlt)
     await expect(page.locator('.hero-stage-image')).toBeVisible()
     await expect(page.locator('.hero-concept-label')).toHaveCount(0)
     const restoreHero = await request.post('/api/globals/site-settings', { data: { heroImage: previousHero } })
@@ -94,6 +99,7 @@ test('CMS login, roles, drafts, publishing, media, settings and private submissi
     if (heroChanged) await request.post('/api/globals/site-settings', { data: { heroImage: previousHero } })
     if (projectId) await request.delete(`/api/projects/${projectId}`)
     if (mediaId) await request.delete(`/api/media/${mediaId}`)
+    if (heroMediaId) await request.delete(`/api/media/${heroMediaId}`)
     if (editorId) await request.delete(`/api/users/${editorId}`)
     await editorClient.dispose(); await publicClient.dispose()
   }

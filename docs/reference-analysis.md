@@ -1,5 +1,7 @@
 # Wasla Informatika — Reference Research
 
+Latest user correction: Vodjo `.com` is now the dominant structural target. See the [literal REA measurement study](evidence/vodjo-exact-2026-10-22.md) and [current direction](vodjo-direction.md). Earlier mixed-reference synthesis remains research history rather than authority for the current layout.
+
 Revision: the new REA MCP capture pass and original implementation implications are documented in [refresh-2026-10-22.md](evidence/refresh-2026-10-22.md). The revised code-first direction is in [redesign-direction.md](redesign-direction.md). Exact typography identities and motion timings are not inferred from visual similarity.
 
 Research date: 22 October 2026, Asia/Jakarta. Phase 1 is research and synthesis; the user subsequently requested all three phases in this task. Design and implementation follow the documented synthesis, without claiming a separate owner approval.

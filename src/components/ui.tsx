@@ -54,7 +54,7 @@ export function Content({ data }: { data?: Service['content'] | null }) {
   ) : null
 }
 
-export function MediaImage({ media, className = '', priority = false }: { media?: number | Media | null; className?: string; priority?: boolean }) {
+export function MediaImage({ media, className = '', priority = false, sizes = '(max-width: 768px) 100vw, 65vw' }: { media?: number | Media | null; className?: string; priority?: boolean; sizes?: string }) {
   if (!media || typeof media !== 'object' || !media.url) return null
   return (
     <Image
@@ -64,7 +64,7 @@ export function MediaImage({ media, className = '', priority = false }: { media?
       height={media.height || 800}
       alt={media.alt}
       preload={priority}
-      sizes="(max-width: 768px) 100vw, 65vw"
+      sizes={sizes}
     />
   )
 }
@@ -88,6 +88,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <span className="circle-arrow">
           <Arrow diagonal />
         </span>
+        <div className="project-overlay" aria-hidden="true"><span>{project.category}</span><strong>{project.title}</strong><span className="project-view">Lihat studi kasus<Arrow diagonal/></span></div>
       </Link>
       <div className="project-caption">
         <h3>

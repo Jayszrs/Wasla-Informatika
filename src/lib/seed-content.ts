@@ -12,6 +12,10 @@ export const serviceSeeds = [
 ] as const
 
 export const projectSeeds = [
+  { title: 'Nusa — Company Profile', slug: 'nusa-profile', category: 'Website', visual: 'editorial' as const,
+    excerpt: 'Eksplorasi website perusahaan dengan citra arsitektur, hierarki layanan yang jelas, dan pengelolaan konten yang terarah.',
+    challenge: 'Konsep ini mengeksplorasi cara memperkenalkan perusahaan melalui narasi, layanan, dan proyek tanpa membuat informasi sulit ditemukan. Bukan pekerjaan untuk klien nyata.',
+    solution: 'Komposisi fotografi yang kuat, navigasi ringkas, halaman layanan yang terstruktur, dan pengelolaan konten melalui CMS.', technologies: ['Next.js', 'Payload CMS', 'TypeScript'] },
   { title: 'Ruang — Commerce', slug: 'ruang-commerce', category: 'E-Commerce', visual: 'commerce' as const,
     excerpt: 'Eksplorasi toko digital untuk benda sehari-hari. Fokus pada katalog yang lapang dan perjalanan belanja yang sederhana.',
     challenge: 'Bagaimana membantu pengunjung menemukan produk di katalog tanpa kehilangan karakter merek? Ini adalah pertanyaan desain pada demonstrasi, bukan tantangan dari klien nyata.',

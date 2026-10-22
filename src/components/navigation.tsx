@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import type { Navigation, SiteSetting } from '@/payload-types'
 import { validPublicLink } from '@/lib/validation'
 import { Arrow } from './icons'
@@ -12,16 +12,38 @@ import { mediaSource } from '@/lib/media'
 export function NavigationBar({ settings, navigation }: { settings: SiteSetting; navigation: Navigation }) {
   const pathname = usePathname()
   const menu = useRef<HTMLDetailsElement>(null)
+  const [scrolled, setScrolled] = useState(false)
+  const onHome = pathname === '/'
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 80)
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => window.removeEventListener('scroll', update)
+  }, [])
   const links = navigation.links?.filter(l => l.enabled && validPublicLink(l.href)).sort((a, b) => (a.order || 0) - (b.order || 0)) || []
-  const logo = typeof settings.logoWhite === 'object' ? settings.logoWhite : null
+  const lightHeader = !onHome || scrolled
+  const whiteLogo = typeof settings.logoWhite === 'object' ? settings.logoWhite : null
+  const navyLogo = typeof settings.logoNavy === 'object' ? settings.logoNavy : null
+  const logo = lightHeader ? navyLogo || whiteLogo : whiteLogo
   const close = () => { if (menu.current) menu.current.open = false }
+  useEffect(() => {
+    const reset = () => {
+      if (menu.current) menu.current.open = false
+      document.getElementById('main')?.removeAttribute('inert')
+      document.querySelector('.site-footer')?.removeAttribute('inert')
+    }
+    reset()
+    const resize = () => { if (window.innerWidth >= 992) reset() }
+    window.addEventListener('resize', resize, { passive: true })
+    return () => { window.removeEventListener('resize', resize); reset() }
+  }, [pathname])
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${onHome ? 'header-home' : 'header-inner-page'} ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="header-inner wrap">
-        <Link className="brand" href="/" aria-label="Wasla Informatika, beranda">
+        <Link className="brand" href="/" onClick={close} aria-label="Wasla Informatika, beranda">
           {logo?.url ? (
-            <Image src={mediaSource(logo.url)} width={140} height={48} alt={logo.alt} />
+            <Image className={lightHeader && !navyLogo ? 'logo-monochrome' : undefined} src={mediaSource(logo.url)} width={140} height={48} alt={logo.alt} />
           ) : (
             <span>wasla<span className="brand-sub">informatika</span><span className="brand-period">.</span></span>
           )}
@@ -33,26 +55,38 @@ export function NavigationBar({ settings, navigation }: { settings: SiteSetting;
               <LinkProgress />
             </Link>
           ))}
+          {!links.some(l => l.href === '/kontak') && <Link href="/kontak">Kontak</Link>}
         </nav>
-        <Link className="btn btn-white button button-white header-cta" href="/kontak">
-          <span>Mulai konsultasi</span>
-          <Arrow diagonal />
-        </Link>
+        <span className="header-language" aria-label="Bahasa Indonesia">ID</span>
         <details
           ref={menu}
           className="mobile-menu"
+          onToggle={() => {
+            const open = menu.current?.open || false
+            document.getElementById('main')?.toggleAttribute('inert', open)
+            document.querySelector('.site-footer')?.toggleAttribute('inert', open)
+          }}
           onKeyDown={e => {
             if (e.key === 'Escape') {
               close()
               menu.current?.querySelector('summary')?.focus()
+            }
+            if (e.key === 'Tab' && menu.current?.open) {
+              const stops = [...menu.current.querySelectorAll<HTMLElement>('summary, nav a[href]')]
+              const first = stops[0]
+              const last = stops[stops.length - 1]
+              if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus() }
+              if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus() }
             }
           }}
         >
           <summary aria-label="Buka menu navigasi">
             <span />
             <span />
+            <span />
           </summary>
           <nav aria-label="Navigasi mobile">
+            <span className="menu-wordmark" aria-hidden="true">wasla<span>informatika</span></span>
             {links.map(l => (
               <Link key={l.id || l.href} onClick={close} href={l.href} aria-current={pathname.startsWith(l.href) ? 'page' : undefined}>
                 {l.label}

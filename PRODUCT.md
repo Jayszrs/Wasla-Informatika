@@ -19,6 +19,8 @@ All public copy in Indonesian. Published content only for anonymous visitors. Co
 ## Brand Commitments
 Wasla Informatika; navy and white; premium editorial typography; precise, restrained motion. Preserve the supplied original logo geometry when the original asset becomes available.
 
+Latest user correction: closely follow Vodjo's `.com` visual structure and proportions, with Wasla branding and original truthful content. The conventional photographic hero, Poppins typography, dense portfolio grid, three service columns, wave transitions and scroll header take precedence over the previous mixed-reference editorial composition. Add deliberate parallax while retaining static mobile/reduced-motion behavior.
+
 ## Evidence on Hand
 Three public reference sites and the user's phase briefs. The project was empty. Original logo, real project screenshots, team details, contact number and client evidence were not provided. Use the brand name as text; never invent a replacement symbol. Business contact details remain unset until supplied.
 

@@ -1,72 +1,50 @@
-﻿# Wasla UI/UX specification and development handoff
+﻿# Wasla UI/UX specification: Vodjo-led revision
 
-This describes the implemented image-led revision. The user approved specification → code → browser review. There is no separate Figma file or approved image comp. [PRODUCT.md](../PRODUCT.md) carries factual commitments, [the direction contract](redesign-direction.md) page strategy and [DESIGN.md](../DESIGN.md) exact visual tokens.
+The user's latest close-reference direction in [vodjo-direction.md](vodjo-direction.md) supersedes the earlier editorial interpretation. [Fresh evidence](evidence/vodjo-exact-2026-10-22.md) supplies screenshot-derived proportions; [DESIGN.md](../DESIGN.md) records actual implementation. Workflow remains specification → code → browser review; no Figma comp is claimed.
 
-## Visitor journeys
+## Homepage journey
 
-Business need → service → scope/deliverables → consultation. Work discovery → filter → project detail → consultation. Insight → article → consultation. Staff → authenticated `/admin` → draft → authorised preview → publish. Public copy is Indonesian and public queries show eligible published content.
+Full100svh photographic hero → layered wave → centered portfolio introduction and four dense16:9 concept tiles → wave → dark three-column service illustrations/text/actions → wave → transparent device beside expertise/process rows → five technology text tiles → gray consultation form → eligible real testimonials → compact centered footer with wave boundary.
 
-## Routes
+The hero keeps Wasla's Indonesian proposition left, workspace subject weighted right, descriptor and outline consultation action, scroll cue and factual illustration disclosure when media is marked as concept. Hero MediaImage requests100vw. It is not the discarded oversized split editorial poster. Portfolio is balanced2×2 with2px seams, stacked narrow; title appears on desktop hover/focus and remains visible narrow, while accessible link names and concept labels are persistent.
 
-| Route | Composition and behavior |
+The technology strip contains actual stack names, not fabricated clients. Testimonials appear only with eligible published/approved records. The compact footer publishes only supplied contact/address/social details. Floating chat uses valid WhatsApp when configured or links to consultation. Reference artwork, client work, names, copy, contact information and proprietary code are not reused.
+
+## Routes and content
+
+| Route | Purpose |
 | --- | --- |
-| `/` | Navy type/image hero; selected work; services; agency approach; process; optional team/testimonials; insights; optional FAQ; consultation; footer |
-| `/tentang-kami` | editorial introduction, principles, process, populated team only, closing CTA |
-| `/layanan` | introduction and CMS service rows with real detail destinations |
-| `/layanan/[slug]` | title/intro, authored service visual, rich text, deliverables, process and CTA; missing/draft gives 404 |
-| `/portofolio` | introduction, concept disclosure, category buttons, count/empty feedback and image plates |
-| `/portofolio/[slug]` | image, summary, challenge, solution, optional real results, technology, gallery and CTA; concepts disclosed |
-| `/insights` | introduction, filters and reading previews with published date/category/excerpt |
-| `/insights/[slug]` | title, category/date, image, semantic rich text and CTA; no invented author |
-| `/kontak` | invitation, supplied factual channels and form; query-based service preselection; private persistence |
-| `/privasi` | contact-data purpose and owner-contact guidance without unsupported legal guarantees |
-| `/admin` | Payload staff editing; administrator-only user management and server role enforcement |
+| `/` | proposition, work, services, expertise/process, technology and direct private consultation |
+| `/tentang-kami` | company approach/principles, ordered process, actual team when populated, CTA |
+| `/layanan` | full service catalog and native FAQ disclosures |
+| `/layanan/[slug]` | published scope, deliverables, content, authored visual, process and contact |
+| `/portofolio` | concept disclosure, category filters, counts/empty feedback and Media work |
+| `/portofolio/[slug]` | project context, challenge/solution, optional real results, technologies/gallery, contact |
+| `/insights` and `/insights/[slug]` | dedicated published article discovery and semantic reading; no invented author |
+| `/kontak` | factual channels, service preselection and working form |
+| `/privasi` | clear contact-data purpose without invented legal guarantees |
+| `/admin` | authenticated Payload staff editing and administrator user management |
 
-## Homepage and opening
+Missing/draft details are unavailable anonymously. Public editorial queries enforce publishing access; testimonials require approval. Team and Insights do not fill homepage gaps. Contact submissions remain private. Original logo and official company evidence are owner inputs.
 
-The first screen exposes the name, Indonesian technology proposition and consultation action. Desktop uses a 1.9:1 headline/copy split above a large CMS-managed project photograph. Concept imagery has an explicit visible overlay, followed by caption/link and a Website / Aplikasi / Solusi IT rail. The optional reveal never hides the headline.
+## Layout and interaction
 
-Selected work follows immediately: one full-width featured plate and two secondary works on desktop. Services are unnumbered links, then agency approach/three principles and the four-stage ordered process. Team/testimonials appear only with eligible records. Insights, populated FAQ and consultation finish the page. Footer includes actual destinations, privacy, back-to-top and a large text wordmark; factual channels show only when supplied.
+Outer1140px/inner1110px desktop grid uses15px gutters. At1199/991/767 maximums wrapper960/750/570px; at575 fluid. Hero50px/62px,45px tablet,39px narrow,36px portrait; centered section H2 uppercase36px,30/29px narrow. Self-hosted Poppins300/400/500/600/700 throughout. Body14px, compact13px; reading15px/1.9 and72ch,14px narrow.
 
-## Responsive layouts
+Fixed header82px initial desktop/64px scrolled, transparent-to-White after80px; internal routes White. Mobile starts86px and opens a full-screen Deep Navy menu at/below991px with96px top band. Native details/summary remains operable without JavaScript. Enhanced menu makes main/footer inert, wraps Tab, closes on Escape with focus restoration, route choice and desktop resize. Background content hides/scroll locks; floating chat hides. ID is a static language label, not a nonfunctional switch.
 
-Wrapper maximum is 1600px including clamp(24px, 5vw, 80px) gutters. At 1440px, gutters are 72px and inner content 1296px; at 1024px gutters are 51.2px; at 768px 38.4px; at 390px the override is 22px.
+Below767px work/services/consultation stack, feature image precedes copy, technology becomes two columns plus final full-width tile. Native filters use aria-pressed and meaningful empty/count feedback. FAQ uses native disclosure. Global focus is3px Blue with5px offset; skip-to-main is available. Detail rich text retains semantic structure. These are implementation requirements, not a claim of comprehensive accessibility certification.
 
-| Condition | Composition |
-| --- | --- |
-| Above 1100px | 120px sections; 100px header; capsule navigation; split hero; two-column work; four-column process |
-| At/below 1100px | 90px sections; tighter desktop spacing and 70px hero before tablet override |
-| At/below 900px | 80px header; native mobile menu; stacked hero/services/FAQ/consultation; two-column process |
-| At/below 600px | 72px sections; 22px gutter; single-column work/articles/team/testimonials/form; two-column process; full-width hero imagery |
+## Contact and CMS
 
-Narrow hero is clamp(42px, 11.6vw, 64px)/1.1, general H2 37px, default body 14px. Compact contextual text follows DESIGN.md. Standard narrow buttons are at least 48px; filter/menu trigger 44px. Anchor offset is 110px. No fixed viewport-height text trap.
+Form asks name/email, optional phone/company, published service or undecided option,20–5000-character need and consent; honeypot included. White46px fields with2px corners sit directly on Ice, textarea128px. Inline errors, pending, connection failure and saved feedback are distinct; recoverable errors preserve values and first server error receives focus. JSON submit requires JavaScript with honest no-script guidance.
 
-## Interaction and state contract
+`POST /api/contact` validates origin/content type,size,input/service and database-backed rate limit, then saves privately through Payload/PostgreSQL. Success follows persistence. Configured SMTP is optional notification; saved records survive notification failure. No invented response deadline or channel.
 
-Desktop links expose current-page semantics. Native details/summary opens a nonmodal mobile link panel; Escape closes and restores summary focus, route selection closes. Essential content never requires hover. FAQ uses native disclosures. Image arrows belong to their enclosing links, avoiding nested controls. Filters use aria-pressed, counts and meaningful empty states.
+Site globals own heroImage and new featureImage (migration20261022_102006), titles/copy/logos/channels. Project thumbnail/gallery and post image remain Media relations. Six original generated WebP assets and exact prompts/provenance are documented in [assets.md](assets.md):four concepts, illustrative workstation and transparent device. Seed preserves owner choices and documents the legacy demo hero transition. Actual projects/people/evidence replace examples through CMS; isConcept labels remain truthful.
 
-Shared focus is a 3px Blue outline with 5px offset. A skip link reaches main content. Images use CMS alt text and Next image sizing. Rich text retains semantic headings, paragraphs, lists and links. Missing real-project media states that an image is unavailable; concept fallbacks remain visibly concepts. Loading/error/not-found routes exist. These choices are not a comprehensive assistive-technology certification.
+## Motion and review limits
 
-## Contact flow
+Visible SSR content; optional skippable first-session900ms backdrop clip. Hero desktop offset capped72px, feature±28px; below-fold groups may reveal once over650ms through IntersectionObserver. At/below900px or reduced motion all enhancements are static; no-JS content starts visible. These are explicit Wasla enhancements; reference capture did not establish Vodjo parallax or precise animation timings.
 
-Fields: name, email, optional company/phone, published service or undecided option, 20–5000-character message, consent and hidden honeypot. Pending, validation failure, connection failure and saved success are distinct. Recoverable errors retain values; server field errors focus the first affected field. Feedback uses alert/status semantics. The JSON form requires JavaScript; no-script text explains this and points to email when supplied.
-
-`POST /api/contact` verifies origin/content type, limits size, applies database-backed rate limiting, validates input/service availability, then creates a private Payload contact submission in PostgreSQL. Success follows creation. Configured SMTP may notify staff; notification failure does not erase a saved record. No invented response-time guarantee or hardcoded business channel.
-
-## Motion
-
-First eligible session: skippable 900ms image clip reveal, with SSR heading already readable. Above 900px in normal motion, passive rAF-gated scroll offsets imagery at most 22px. Narrow/reduced-motion imagery is static; reduced motion also removes image hover transforms and smooth scrolling. Buttons use 250ms state transitions, arrows 350ms and image hover 700ms. No mandatory splash, artificial delay or scroll hijacking. Screenshots establish static endpoints; live motion has separate test evidence.
-
-## Content and asset ownership
-
-Media, Services, Projects, Posts, Team, Testimonials and FAQs serve editorial content; private Contact Submissions and staff Users serve operations. Site Settings and Navigation are globals. Public queries enforce published visibility; testimonials additionally require approval. Preview is authenticated and drafts remain private.
-
-Settings own hero title/copy, statement, heroImage, supplied logos and factual channels. Projects own thumbnail/gallery and isConcept; posts own image. Hero falls back to a featured thumbnail. Original WebP mockups Ruang, Alur and Sela are replaceable concepts, with prompts/provenance and CMS instructions in [assets.md](assets.md). `seed:media` fills empty demo relationships without replacing owner choices. No reference image, fake client proof or generated staff portrait is published.
-
-## Review and remaining inputs
-
-[redesign-validation.md](redesign-validation.md) owns current technical/browser/content lifecycle evidence; [visual-review-redesign.md](visual-review-redesign.md) owns the visual disposition and scoped review of the final two fixes. Current code adds the hero concept overlay and omits empty About team content; custom nonconcept upload does not receive a false label. This documentation refresh is not an independent rerun of tests or visual review.
-
-The old detector's 130 advisories compare the replacement implementation to superseded DESIGN tokens: 112 type, 9 radius, 9 color. Tokens are refreshed here; the detector was not rerun. Old crop files depicting the discarded design are not authority. [The reference refresh](evidence/refresh-2026-10-22.md) is bounded research, not exact reference font/motion or accessibility certification.
-
-Original logo, real project outcomes, official people/testimonials, business channels, domain and production hosting remain owner inputs. Deployment, external storage and SMTP require configured services. This handoff describes the local implementation and its honest, replaceable examples.
+Source-derived documentation does not claim final build, browser review, deployment or owner approval. The main workflow owns final production evidence. Historical detector106 advisories comprise84 type,10 radius,12 color against old tokens; documentation is refreshed without a rerun. Fresh reference captures are research-only. Preserve the pinned close-reference structure while retaining legitimate differences needed for truthful content, accessible controls and real persistence.

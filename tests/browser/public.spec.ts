@@ -15,7 +15,7 @@ test('all public routes, metadata, portfolio filters, FAQ and service conversion
   const errors: string[] = []
   page.on('pageerror', e => errors.push(e.message))
   for (const [path, heading] of [
-    ['/', 'Solusi teknologi'], ['/layanan', 'Satu kebutuhan.'], ['/layanan/website-development', 'Website Development'],
+    ['/', 'Software House'], ['/layanan', 'Satu kebutuhan.'], ['/layanan/website-development', 'Website Development'],
     ['/portofolio', 'Ide yang menemukan'], ['/portofolio/ruang-commerce', 'Ruang — Commerce'],
     ['/insights', 'Pikiran yang terus'], ['/insights/website-atau-aplikasi-web', 'Website atau aplikasi'],
     ['/tentang-kami', 'Menghubungkan ide.'], ['/kontak', 'Percakapan baik.'], ['/privasi', 'Informasi Anda,'],
@@ -31,7 +31,7 @@ test('all public routes, metadata, portfolio filters, FAQ and service conversion
   await expect(page.locator('.project-card')).toHaveCount(1)
   await expect(page.getByRole('status')).toContainText('1 karya')
   await page.getByRole('button', { name: 'Semua', exact: true }).click()
-  await expect(page.locator('.project-card')).toHaveCount(3)
+  await expect(page.locator('.project-card')).toHaveCount(4)
   await page.goto('/insights')
   await page.getByRole('button', { name: 'Teknologi', exact: true }).click()
   await expect(page.locator('.post-card')).toHaveCount(1)
@@ -43,7 +43,7 @@ test('all public routes, metadata, portfolio filters, FAQ and service conversion
   }
   await page.getByRole('link', { name: 'Wasla Informatika, beranda', exact: true }).click()
   await expect(page).toHaveURL(/\/$/)
-  await page.goto('/')
+  await page.goto('/layanan')
   const summary = page.locator('.faq-list summary').first()
   await summary.click()
   await expect(summary.locator('..')).toHaveAttribute('open', '')
@@ -71,13 +71,22 @@ test('responsive, keyboard, reduced motion and visual captures', async ({ page, 
     if (width <= 768) {
       const summary = page.locator('.mobile-menu summary')
       await summary.click(); await expect(page.locator('.mobile-menu')).toHaveAttribute('open', '')
+      await expect(page.locator('#main')).toHaveAttribute('inert', '')
       await page.screenshot({ path: `.impeccable/review/menu-${width}.png` })
       await summary.focus(); await page.keyboard.press('Escape'); await expect(page.locator('.mobile-menu')).not.toHaveAttribute('open')
+      await expect(page.locator('#main')).not.toHaveAttribute('inert')
       await summary.focus(); await page.keyboard.press('Enter'); await page.getByRole('navigation', { name: 'Navigasi mobile' }).getByRole('link', { name: 'Layanan', exact: true }).click()
       await expect(page).toHaveURL(/\/layanan$/)
       await expect(page.locator('.mobile-menu')).not.toHaveAttribute('open')
     }
   }
+  await page.goto('/')
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.locator('.mobile-menu summary').click()
+  await expect(page.locator('#main')).toHaveAttribute('inert', '')
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await expect(page.locator('.mobile-menu')).not.toHaveAttribute('open')
+  await expect(page.locator('#main')).not.toHaveAttribute('inert')
   await page.goto('/kontak'); await page.keyboard.press('Tab')
   await expect(page.locator(':focus')).toBeVisible()
   const staticContext = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } })
@@ -97,14 +106,14 @@ test('hero stays readable and parallax respects viewport and reduced motion', as
       await page.emulateMedia({ reducedMotion })
       await page.goto('/')
       await expect(page.locator('h1')).toBeVisible()
-      await expect(page.locator('.hero-stage-image')).toHaveAttribute('alt', /Konsep Alur/)
-      await expect(page.locator('.hero-concept-label')).toHaveText('Konsep eksplorasi — Alur')
+      await expect(page.locator('.hero-stage-image')).toHaveAttribute('alt', /Ilustrasi workstation/)
+      await expect(page.locator('.hero-concept-label')).toHaveCount(0)
       expect(await page.locator('h1').evaluate(el => getComputedStyle(el).opacity)).toBe('1')
       await page.evaluate(() => window.scrollTo(0, 600))
       const offset = () => page.locator('[data-hero-art]').evaluate(el => new DOMMatrixReadOnly(getComputedStyle(el).transform).m42)
       if (width === 1440 && reducedMotion === 'no-preference') {
         await expect.poll(offset).toBeGreaterThan(0)
-        expect(await offset()).toBeLessThanOrEqual(22)
+        expect(await offset()).toBeLessThanOrEqual(72)
       } else {
         await expect.poll(offset).toBe(0)
       }

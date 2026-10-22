@@ -800,6 +800,10 @@ export interface SiteSetting {
    * Unggah mockup atau foto proyek. Gambar contoh dapat diganti di sini.
    */
   heroImage?: (number | null) | Media;
+  /**
+   * Gambar perangkat atau produk di bagian keahlian dan proses.
+   */
+  featureImage?: (number | null) | Media;
   description: string;
   heroTitle: string;
   heroCopy: string;
@@ -847,6 +851,7 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   logoNavy?: T;
   favicon?: T;
   heroImage?: T;
+  featureImage?: T;
   description?: T;
   heroTitle?: T;
   heroCopy?: T;
