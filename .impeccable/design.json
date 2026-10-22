@@ -1,365 +1,256 @@
-{
-  "schemaVersion": 2,
-  "generatedAt": "2026-10-22T05:10:05.017Z",
-  "title": "Design System: Wasla Informatika",
-  "extensions": {
-    "colorMeta": {
-      "navy": {
-        "role": "primary",
-        "displayName": "Navy",
-        "tonalRamp": [
-          "oklch(15.00% 0.05524 256.09)",
-          "oklch(26.43% 0.05524 256.09)",
-          "oklch(37.86% 0.05524 256.09)",
-          "oklch(49.29% 0.05524 256.09)",
-          "oklch(60.71% 0.05524 256.09)",
-          "oklch(72.14% 0.05524 256.09)",
-          "oklch(83.57% 0.05524 256.09)",
-          "oklch(95.00% 0.05524 256.09)"
-        ]
-      },
-      "royal": {
-        "role": "primary",
-        "displayName": "Royal",
-        "tonalRamp": [
-          "oklch(15.00% 0.08811 254.33)",
-          "oklch(26.43% 0.08811 254.33)",
-          "oklch(37.86% 0.08811 254.33)",
-          "oklch(49.29% 0.08811 254.33)",
-          "oklch(60.71% 0.08811 254.33)",
-          "oklch(72.14% 0.08811 254.33)",
-          "oklch(83.57% 0.08811 254.33)",
-          "oklch(95.00% 0.08811 254.33)"
-        ]
-      },
-      "white": {
-        "role": "neutral",
-        "displayName": "White",
-        "tonalRamp": [
-          "oklch(15.00% 0.00000 0.00)",
-          "oklch(26.43% 0.00000 0.00)",
-          "oklch(37.86% 0.00000 0.00)",
-          "oklch(49.29% 0.00000 0.00)",
-          "oklch(60.71% 0.00000 0.00)",
-          "oklch(72.14% 0.00000 0.00)",
-          "oklch(83.57% 0.00000 0.00)",
-          "oklch(95.00% 0.00000 0.00)"
-        ]
-      },
-      "blue": {
-        "role": "primary",
-        "displayName": "Graphic Blue",
-        "tonalRamp": [
-          "oklch(15.00% 0.20813 262.19)",
-          "oklch(26.43% 0.20813 262.19)",
-          "oklch(37.86% 0.20813 262.19)",
-          "oklch(49.29% 0.20813 262.19)",
-          "oklch(60.71% 0.20813 262.19)",
-          "oklch(72.14% 0.20813 262.19)",
-          "oklch(83.57% 0.20813 262.19)",
-          "oklch(95.00% 0.20813 262.19)"
-        ]
-      },
-      "action": {
-        "role": "primary",
-        "displayName": "Action Blue",
-        "tonalRamp": [
-          "oklch(15.00% 0.18677 261.80)",
-          "oklch(26.43% 0.18677 261.80)",
-          "oklch(37.86% 0.18677 261.80)",
-          "oklch(49.29% 0.18677 261.80)",
-          "oklch(60.71% 0.18677 261.80)",
-          "oklch(72.14% 0.18677 261.80)",
-          "oklch(83.57% 0.18677 261.80)",
-          "oklch(95.00% 0.18677 261.80)"
-        ]
-      },
-      "ice": {
-        "role": "neutral",
-        "displayName": "Ice",
-        "tonalRamp": [
-          "oklch(15.00% 0.00622 255.47)",
-          "oklch(26.43% 0.00622 255.47)",
-          "oklch(37.86% 0.00622 255.47)",
-          "oklch(49.29% 0.00622 255.47)",
-          "oklch(60.71% 0.00622 255.47)",
-          "oklch(72.14% 0.00622 255.47)",
-          "oklch(83.57% 0.00622 255.47)",
-          "oklch(95.00% 0.00622 255.47)"
-        ]
-      },
-      "line": {
-        "role": "neutral",
-        "displayName": "Line",
-        "tonalRamp": [
-          "oklch(15.00% 0.01380 247.97)",
-          "oklch(26.43% 0.01380 247.97)",
-          "oklch(37.86% 0.01380 247.97)",
-          "oklch(49.29% 0.01380 247.97)",
-          "oklch(60.71% 0.01380 247.97)",
-          "oklch(72.14% 0.01380 247.97)",
-          "oklch(83.57% 0.01380 247.97)",
-          "oklch(95.00% 0.01380 247.97)"
-        ]
-      },
-      "slate": {
-        "role": "neutral",
-        "displayName": "Slate",
-        "tonalRamp": [
-          "oklch(15.00% 0.03913 255.34)",
-          "oklch(26.43% 0.03913 255.34)",
-          "oklch(37.86% 0.03913 255.34)",
-          "oklch(49.29% 0.03913 255.34)",
-          "oklch(60.71% 0.03913 255.34)",
-          "oklch(72.14% 0.03913 255.34)",
-          "oklch(83.57% 0.03913 255.34)",
-          "oklch(95.00% 0.03913 255.34)"
-        ]
-      },
-      "light": {
-        "role": "neutral",
-        "displayName": "Light Blue",
-        "tonalRamp": [
-          "oklch(15.00% 0.03226 258.37)",
-          "oklch(26.43% 0.03226 258.37)",
-          "oklch(37.86% 0.03226 258.37)",
-          "oklch(49.29% 0.03226 258.37)",
-          "oklch(60.71% 0.03226 258.37)",
-          "oklch(72.14% 0.03226 258.37)",
-          "oklch(83.57% 0.03226 258.37)",
-          "oklch(95.00% 0.03226 258.37)"
-        ]
-      }
-    },
-    "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "Hero headline."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "General page H1."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Section H2."
-      },
-      "subtitle": {
-        "displayName": "Subtitle",
-        "purpose": "Baseline H3."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Default paragraphs; maximum 70ch."
-      },
-      "prose": {
-        "displayName": "Prose",
-        "purpose": "Long-form reading."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Visible form labels."
-      },
-      "button": {
-        "displayName": "Button",
-        "purpose": "Semibold actions and text links."
-      }
-    },
-    "shadows": [
-      {
-        "name": "concept-window",
-        "value": "0 24px 50px #16251d22",
-        "purpose": "Box shadow for the authored concept interface plane."
-      },
-      {
-        "name": "hero-demonstration",
-        "value": "drop-shadow(0 18px 32px #0005)",
-        "purpose": "CSS filter separating the miniature interface from the hero artwork."
-      },
-      {
-        "name": "mobile-navigation",
-        "value": "0 28px 40px #0002",
-        "purpose": "Box shadow separating the open navigation panel from content."
-      }
-    ],
-    "motion": [
-      {
-        "name": "ease",
-        "value": "cubic-bezier(.16,1,.3,1)",
-        "purpose": "Hero entrance and image/concept hover easing."
-      },
-      {
-        "name": "control-transition",
-        "value": "200ms ease",
-        "purpose": "Buttons, arrows, navigation, filters and disclosure feedback."
-      },
-      {
-        "name": "hero-entrance",
-        "value": "650ms cubic-bezier(.16,1,.3,1)",
-        "purpose": "First-session-only, skippable desktop introduction; content stays visible."
-      },
-      {
-        "name": "image-hover",
-        "value": "500ms cubic-bezier(.16,1,.3,1)",
-        "purpose": "Project image scale and article-graphic hover."
-      },
-      {
-        "name": "concept-hover",
-        "value": "600ms cubic-bezier(.16,1,.3,1)",
-        "purpose": "Authored concept plane hover adjustment."
-      },
-      {
-        "name": "artwork-parallax",
-        "value": "Math.min(scrollY * .035, 22)px",
-        "purpose": "Passive rAF-gated desktop artwork offset; disabled below 901px and for reduced motion."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "animation-duration: .01ms; animation-iteration-count: 1; transition-duration: .01ms",
-        "purpose": "Reduced-motion override also removes artwork and project/article hover transforms, smooth scroll and loading travel."
-      }
-    ],
-    "breakpoints": [
-      {
-        "name": "wide-hero",
-        "value": "1600px"
-      },
-      {
-        "name": "laptop-max",
-        "value": "1200px"
-      },
-      {
-        "name": "navigation-tablet-max",
-        "value": "900px"
-      },
-      {
-        "name": "mobile-max",
-        "value": "600px"
-      }
-    ]
-  },
-  "components": [
-    {
-      "name": "Primary Button",
-      "kind": "button",
-      "refersTo": "button-primary",
-      "description": "Primary consultation or submission action.",
-      "html": "<a class=\"ds-button-primary\" href=\"/kontak\">Mulai konsultasi<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
-      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:28px;min-height:54px;padding:14px 24px;border:0;border-radius:var(--radius,4px);font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;font-size:16px;font-weight:600;line-height:1.5;transition:background .2s,transform .2s;white-space:nowrap;text-decoration:none;cursor:pointer;background:var(--action,#245fd1);color:var(--white,#fff);}.ds-button-primary:hover{background:var(--royal,#143a66)}.ds-button-primary svg{width:20px;height:20px;transition:transform .2s}.ds-button-primary:hover svg{transform:translate(2px,-2px)}.ds-button-primary:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}.ds-button-primary:disabled{background:var(--slate,#526277);cursor:wait}@media(prefers-reduced-motion:reduce){.ds-button-primary,.ds-button-primary svg{transition-duration:.01ms}}"
-    },
-    {
-      "name": "White Button",
-      "kind": "button",
-      "refersTo": "button-white",
-      "description": "Inverted action on a navy section.",
-      "html": "<a class=\"ds-button-white\" href=\"/kontak\">Mulai konsultasi<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
-      "css": ".ds-button-white{display:inline-flex;align-items:center;justify-content:center;gap:28px;min-height:54px;padding:14px 24px;border:0;border-radius:var(--radius,4px);font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;font-size:16px;font-weight:600;line-height:1.5;transition:background .2s,transform .2s;white-space:nowrap;text-decoration:none;cursor:pointer;background:var(--white,#fff);color:var(--navy,#071a33);}.ds-button-white:hover{background:var(--light,#dceaff)}.ds-button-white svg{width:20px;height:20px;transition:transform .2s}.ds-button-white:hover svg{transform:translate(2px,-2px)}.ds-button-white:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}.ds-button-white:disabled{background:var(--slate,#526277);cursor:wait}@media(prefers-reduced-motion:reduce){.ds-button-white,.ds-button-white svg{transition-duration:.01ms}}"
-    },
-    {
-      "name": "Outline Button",
-      "kind": "button",
-      "refersTo": "button-outline",
-      "description": "Secondary action on a light surface.",
-      "html": "<a class=\"ds-button-outline\" href=\"/kontak\">Mulai konsultasi<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
-      "css": ".ds-button-outline{display:inline-flex;align-items:center;justify-content:center;gap:28px;min-height:54px;padding:14px 24px;border:0;border-radius:var(--radius,4px);font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;font-size:16px;font-weight:600;line-height:1.5;transition:background .2s,transform .2s;white-space:nowrap;text-decoration:none;cursor:pointer;background:transparent;color:var(--navy,#071a33);border:1px solid var(--line,#e5edf5);}.ds-button-outline:hover{background:var(--ice,#f5f8fc)}.ds-button-outline svg{width:20px;height:20px;transition:transform .2s}.ds-button-outline:hover svg{transform:translate(2px,-2px)}.ds-button-outline:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}.ds-button-outline:disabled{background:var(--slate,#526277);cursor:wait}@media(prefers-reduced-motion:reduce){.ds-button-outline,.ds-button-outline svg{transition-duration:.01ms}}"
-    },
-    {
-      "name": "Text Link",
-      "kind": "button",
-      "refersTo": "text-link",
-      "description": "Underlined editorial navigation action.",
-      "html": "<a class=\"ds-text-link\" href=\"/kontak\">Diskusikan kebutuhan<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
-      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:28px;font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;font-size:16px;font-weight:600;line-height:1.65;padding:10px 0;color:var(--navy,#071a33);text-decoration:none;border-bottom:1px solid currentColor;transition:color .2s}.ds-text-link svg{transition:transform .2s}.ds-text-link:hover{color:var(--action,#245fd1)}.ds-text-link:hover svg{transform:translate(3px,-3px)}.ds-text-link:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-text-link,.ds-text-link svg{transition-duration:.01ms}}"
-    },
-    {
-      "name": "Labelled Field",
-      "kind": "input",
-      "refersTo": "input-field",
-      "description": "Visible label, optional marker, error and result treatments from the contact form.",
-      "html": "<div class=\"ds-field\"><label for=\"ds-company\">Perusahaan <span>(opsional)</span></label><input id=\"ds-company\" name=\"company\" autocomplete=\"organization\" placeholder=\"Nama perusahaan\"/></div>",
-      "css": ".ds-field{font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;color:var(--navy,#071a33)}.ds-field label{display:block;font-size:14px;font-weight:500;line-height:1.65;margin-bottom:10px}.ds-field label span{color:var(--slate,#526277);font-size:12px;font-weight:400}.ds-field input,.ds-field textarea,.ds-field select{box-sizing:border-box;width:100%;min-height:52px;background:var(--ice,#f5f8fc);border:1px solid #cbd7e5;border-radius:4px;padding:14px;color:var(--navy,#071a33);font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;font-size:16px;line-height:1.65;caret-color:var(--blue,#397bff)}.ds-field input::placeholder,.ds-field textarea::placeholder{color:#607086;opacity:1}.ds-field input:focus-visible,.ds-field textarea:focus-visible,.ds-field select:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}.ds-field textarea{min-height:150px;resize:vertical}.ds-field [aria-invalid=true]{border-color:#a32b30}.ds-field-error{font-size:13px;color:#a32b30;margin-top:8px}.ds-feedback{font-size:14px;padding:20px;background:var(--ice,#f5f8fc);border:1px solid var(--line,#e5edf5)}.ds-feedback[data-state=success]{background:#edf5ef;color:#214d34}.ds-feedback[data-state=error]{background:#fdf0f0;color:#872329}"
-    },
-    {
-      "name": "Navigation",
-      "kind": "nav",
-      "refersTo": "navigation",
-      "description": "Solid navy desktop navigation with native mobile disclosure; no framework runtime is needed for the preview.",
-      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"/\" aria-label=\"Wasla Informatika, beranda\"><span>wasla<small>informatika</small><b>.</b></span></a><nav class=\"ds-nav-links\" aria-label=\"Navigasi utama\"><a href=\"/layanan\" aria-current=\"page\">Layanan</a><a href=\"/portofolio\">Karya</a><a href=\"/tentang-kami\">Tentang</a><a href=\"/insights\">Insights</a></nav><a class=\"ds-nav-cta\" href=\"/kontak\">Mulai konsultasi <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a><details class=\"ds-mobile\"><summary aria-label=\"Buka menu navigasi\"><span></span><span></span></summary><nav aria-label=\"Navigasi mobile\"><a href=\"/layanan\">Layanan</a><a href=\"/portofolio\">Karya</a><a href=\"/tentang-kami\">Tentang</a><a href=\"/insights\">Insights</a><a href=\"/kontak\">Mulai konsultasi <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></nav></details></header>",
-      "css": ".ds-nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:32px;min-height:102px;padding:0 24px;background:var(--navy,#071a33);color:var(--white,#fff);border-bottom:1px solid #ffffff20;font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;}.ds-nav a{color:inherit;text-decoration:none}.ds-brand{font-family:var(--font-display,Manrope),sans-serif;flex-shrink:0}.ds-brand>span{display:flex;align-items:baseline;font-size:40px;font-weight:750;letter-spacing:-.06em;line-height:1}.ds-brand small{font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;font-size:11px;font-weight:450;letter-spacing:.03em;margin-left:11px;align-self:center}.ds-brand b{font-weight:inherit;color:#8eb3ff;font-size:47px;margin-left:2px}.ds-nav-links{display:flex;gap:32px}.ds-nav-links a{position:relative;font-size:15px;font-weight:500;padding:12px 0}.ds-nav-links a:after{content:\"\";position:absolute;bottom:5px;left:0;width:100%;height:1px;background:white;transform:scaleX(0);transform-origin:left;transition:transform .2s}.ds-nav-links a:hover:after,.ds-nav-links a[aria-current]:after{transform:scaleX(1)}.ds-nav a:focus-visible,.ds-nav summary:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}.ds-mobile{display:none}.ds-mobile summary{list-style:none;cursor:pointer}.ds-mobile summary::-webkit-details-marker{display:none}@media(max-width:900px){.ds-nav{min-height:82px}.ds-nav-links{display:none}.ds-mobile{display:block}.ds-mobile summary{display:flex;flex-direction:column;gap:7px;justify-content:center;width:44px;height:44px;align-items:center}.ds-mobile summary span{width:25px;height:1px;background:white;transition:transform .2s}.ds-mobile[open] summary span:first-child{transform:translateY(4px) rotate(45deg)}.ds-mobile[open] summary span:last-child{transform:translateY(-4px) rotate(-45deg)}.ds-mobile nav{position:absolute;top:82px;left:0;right:0;background:var(--navy,#071a33);border-bottom:1px solid #ffffff40;padding:24px 24px 40px;display:flex;flex-direction:column;box-shadow:0 28px 40px #0002;z-index:1}.ds-mobile nav a{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-top:1px solid #ffffff25;font-family:var(--font-display,Manrope),sans-serif;font-size:27px}.ds-mobile nav a:last-child{font-size:20px;margin-top:12px;color:#c5d9ff}}@media(max-width:600px){.ds-nav{min-height:76px}.ds-brand>span{font-size:34px}.ds-mobile nav{top:76px}}@media(prefers-reduced-motion:reduce){.ds-nav-links a:after,.ds-mobile summary span{transition-duration:.01ms}}.ds-nav .ds-nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:46px;padding:11px 18px;background:white;color:var(--navy,#071a33);border-radius:4px;font-size:14px;font-weight:600;line-height:1.5;white-space:nowrap;transition:background .2s}.ds-nav .ds-nav-cta:hover{background:var(--light,#dceaff)}.ds-nav-cta svg{width:20px;height:20px;transition:transform .2s}.ds-nav-cta:hover svg{transform:translate(2px,-2px)}@media(max-width:900px){.ds-brand>span{font-size:35px}.ds-brand b{font-size:41px}.ds-nav .ds-nav-cta{display:none}}@media(max-width:600px){.ds-brand>span{font-size:34px}}@media(prefers-reduced-motion:reduce){.ds-nav-cta,.ds-nav-cta svg{transition-duration:.01ms}}"
-    },
-    {
-      "name": "Category Filter",
-      "kind": "chip",
-      "refersTo": "filter",
-      "description": "Real category selection uses aria-pressed; selected and hover states are visually distinct.",
-      "html": "<div class=\"ds-filters\" aria-label=\"Filter kategori\"><button type=\"button\" aria-pressed=\"true\">Semua</button><button type=\"button\" aria-pressed=\"false\">Website</button></div>",
-      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:12px}.ds-filters button{font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;line-height:1.65;color:var(--navy,#071a33);background:transparent;border:1px solid #bdcbdd;border-radius:4px;padding:11px 20px;font-size:14px;font-weight:400;min-height:46px;cursor:pointer;transition:background .2s,color .2s}.ds-filters button:hover{background:var(--ice,#f5f8fc)}.ds-filters button[aria-pressed=true]{background:var(--navy,#071a33);color:white;border-color:var(--navy,#071a33)}.ds-filters button:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}@media(max-width:600px){.ds-filters{gap:8px}.ds-filters button{padding:10px 15px;font-size:12px;min-height:44px}}@media(prefers-reduced-motion:reduce){.ds-filters button{transition-duration:.01ms}}"
-    },
-    {
-      "name": "Project Plate",
-      "kind": "card",
-      "refersTo": "project-image",
-      "description": "Image-led work framing shown with the existing honest missing-image state; no portfolio content is invented.",
-      "html": "<a class=\"ds-project-image\" href=\"/portofolio\" aria-label=\"Lihat portofolio\"><div class=\"ds-image-empty\">Gambar proyek belum tersedia.</div><span class=\"ds-circle-arrow\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>",
-      "css": ".ds-project-image{position:relative;display:block;overflow:hidden;border-radius:12px;background:var(--ice,#f5f8fc);color:var(--navy,#071a33);text-decoration:none;isolation:isolate}.ds-image-empty{display:grid;place-items:center;min-height:300px;color:var(--slate,#526277);padding:40px;font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;font-size:17px;line-height:1.65}.ds-circle-arrow{position:absolute;bottom:20px;right:20px;width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:white;color:var(--navy,#071a33);transition:background .2s,color .2s}.ds-project-image:hover .ds-circle-arrow{background:var(--navy,#071a33);color:white}.ds-project-image:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}@media(max-width:600px){.ds-circle-arrow{width:38px;height:38px;bottom:14px;right:14px}.ds-circle-arrow svg{width:20px}}@media(prefers-reduced-motion:reduce){.ds-circle-arrow{transition-duration:.01ms}}"
-    },
-    {
-      "name": "Service Row",
-      "kind": "custom",
-      "refersTo": "service-row",
-      "description": "Divided editorial row with the original layered service diagram.",
-      "html": "<a class=\"ds-service\" href=\"/layanan/web-application\"><svg class=\"ds-service-art\" width=\"112\" height=\"92\" viewBox=\"0 0 112 92\" fill=\"none\" aria-hidden=\"true\"><g stroke=\"currentColor\"><path d=\"m13 29 43-20 43 20-43 20zM13 45l43 20 43-20M13 61l43 20 43-20\"/><path d=\"M56 49v32M24 35v18M88 35v18\" stroke-dasharray=\"3 4\"/></g></svg><div><span class=\"ds-service-category\">Pengembangan</span><h3>Web Application</h3><p>Aplikasi web yang merapikan proses kerja dan menghubungkan tim Anda.</p></div><span class=\"ds-service-arrow\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>",
-      "css": ".ds-service{display:grid;grid-template-columns:150px 1fr 50px;align-items:center;gap:32px;padding:34px 0;border-top:1px solid #d2deeb;border-bottom:1px solid #d2deeb;color:var(--navy,#071a33);text-decoration:none;transition:color .2s}.ds-service h3{font-family:var(--font-display,Manrope),sans-serif;font-size:34px;font-weight:500;line-height:1.12;letter-spacing:-.025em;margin:0 0 12px}.ds-service-art{color:var(--royal,#143a66);width:112px;height:92px}.ds-service-arrow{width:48px;height:48px;border:1px solid #b5c7dc;border-radius:50%;display:grid;place-items:center;transition:background .2s,color .2s}.ds-service:hover h3{color:var(--action,#245fd1)}.ds-service:hover .ds-service-arrow{background:var(--navy,#071a33);color:white;border-color:var(--navy,#071a33)}.ds-service:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}@media(max-width:900px){.ds-service{grid-template-columns:110px 1fr 45px;gap:24px}.ds-service h3{font-size:28px}.ds-service-art{width:95px}}@media(max-width:600px){.ds-service{grid-template-columns:60px 1fr 28px;gap:16px;padding:28px 0}.ds-service h3{font-size:24px;line-height:1.25}.ds-service-art{width:60px;height:auto}.ds-service-arrow{width:28px;height:28px;border:none}.ds-service-arrow svg{width:21px}}@media(prefers-reduced-motion:reduce){.ds-service,.ds-service-arrow{transition-duration:.01ms}}.ds-service-category{display:block;font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;font-size:12px;line-height:1.65;color:var(--slate,#526277);margin-bottom:10px}.ds-service p{font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;font-size:16px;line-height:1.65;color:var(--slate,#526277);max-width:630px;margin:0}@media(max-width:600px){.ds-service p{font-size:16px;line-height:1.7}.ds-service-category{font-size:12px;margin-bottom:8px}}"
-    },
-    {
-      "name": "FAQ Disclosure",
-      "kind": "custom",
-      "refersTo": "faq",
-      "description": "Native disclosure with fine dividing lines and a rotating plus; uses an existing seeded FAQ.",
-      "html": "<div class=\"ds-faq\"><details><summary>Apa yang perlu disiapkan sebelum konsultasi?<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h16M12 4v16\" stroke=\"currentColor\" stroke-width=\"1.5\" fill=\"none\"/></svg></summary><p>Ceritakan tujuan bisnis, pengguna yang dituju, kendala saat ini, serta sistem atau contoh yang relevan. Jika brief belum lengkap, diskusi awal dapat membantu memetakan kebutuhan.</p></details></div>",
-      "css": ".ds-faq{font-family:var(--font-body,\"Plus Jakarta Sans\"),sans-serif;color:var(--navy,#071a33)}.ds-faq details{border-top:1px solid #cad7e5;border-bottom:1px solid #cad7e5}.ds-faq summary{list-style:none;cursor:pointer;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:30px;font-size:16px;font-weight:500;line-height:1.6}.ds-faq summary::-webkit-details-marker{display:none}.ds-faq summary svg{flex-shrink:0;transition:transform .2s}.ds-faq details[open] summary svg{transform:rotate(45deg)}.ds-faq summary:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px;}.ds-faq details>p{font-size:15px;color:var(--slate,#526277);padding-right:40px;padding-bottom:26px;line-height:1.8;margin:0}@media(max-width:600px){.ds-faq summary{padding:20px 0;font-size:16px}.ds-faq details>p{font-size:16px;padding-right:16px}}@media(prefers-reduced-motion:reduce){.ds-faq summary svg{transition-duration:.01ms}}"
-    }
-  ],
-  "narrative": {
-    "northStar": "Precision in Technology. Creativity in Every Detail.",
-    "overview": "Wasla is an Indonesian technology and digital development studio with a navy-and-white editorial identity. Large Manrope headings establish confidence; open space, fine dividers and readable Plus Jakarta Sans copy make the proposition and next action clear. Original connection geometry gives the technical work a recognizable visual language.\n\nThe system pairs expressive marketing compositions with restrained reading and editing surfaces. Depth belongs to authored interface demonstrations; controls remain straightforward. The original logo has not been supplied, so the full brand name remains a temporary text wordmark. Concept projects retain an explicit disclosure, and actual people or client evidence appear only when supplied.",
-    "keyCharacteristics": [
-      "Navy stages and white reading surfaces with a sparing blue accent.",
-      "Large, balanced headings and generous, content-led spacing.",
-      "Original connection, layer and route geometry.",
-      "Flat editorial rows, image-led work and bounded interface depth.",
-      "ENERGY 3 / RHYTHM 3 / MOTION 2."
-    ],
-    "rules": [
-      {
-        "name": "The Action Contrast Rule",
-        "body": "Keep Action Blue as the white-text primary-button fill; Graphic Blue remains the graphic and focus accent.",
-        "section": "colors"
-      },
-      {
-        "name": "The Reading Measure Rule",
-        "body": "Preserve readable body measure and leading when extending layouts; do not compress body text to imitate the interface demonstrations.",
-        "section": "typography"
-      },
-      {
-        "name": "The Flat Structure Rule",
-        "body": "Keep ordinary content rows and controls flat; reserve dimensional lift for interface demonstrations and the open navigation panel.",
-        "section": "elevation"
-      }
-    ],
-    "dos": [
-      "**Do** preserve the navy-and-white identity, self-hosted font pairing and explicit motion dials.",
-      "**Do** vary composition according to content: editorial rows for services, large plates for work and a quiet measure for reading.",
-      "**Do** keep concept disclosures visible and use actual supplied people and client evidence.",
-      "**Do** preserve keyboard focus, labelled state feedback and the static narrow-screen/reduced-motion composition.",
-      "**Do** use connection geometry to explain technology and keep dimensional shadows inside its established roles."
-    ],
-    "donts": [
-      "**Don't** invent a replacement brand symbol while the original logo is missing.",
-      "**Don't** use Graphic Blue as the small white-text primary-button fill.",
-      "**Don't** turn every content item into a floating card or every control into a pill.",
-      "**Don't** stretch concept artwork typography or palette into the site's reading and navigation system.",
-      "**Don't** block content or actions behind entrance motion, or imply new owner approval from an internal finish review."
-    ]
-  }
+﻿{
+    "schemaVersion":  2,
+    "generatedAt":  "2026-10-22T10:00:00.9159830Z",
+    "title":  "Design System: Wasla Informatika",
+    "extensions":  {
+                       "colorMeta":  {
+                                         "navy":  {
+                                                      "role":  "primary",
+                                                      "displayName":  "Navy",
+                                                      "tonalRamp":  [
+                                                                        "#071a33",
+                                                                        "#10253e",
+                                                                        "#153454"
+                                                                    ]
+                                                  },
+                                         "royal":  {
+                                                       "role":  "primary",
+                                                       "displayName":  "Royal Hover"
+                                                   },
+                                         "hero-panel":  {
+                                                            "role":  "primary",
+                                                            "displayName":  "Hero Panel"
+                                                        },
+                                         "white":  {
+                                                       "role":  "neutral",
+                                                       "displayName":  "White"
+                                                   },
+                                         "ice":  {
+                                                     "role":  "neutral",
+                                                     "displayName":  "Ice"
+                                                 },
+                                         "line":  {
+                                                      "role":  "neutral",
+                                                      "displayName":  "Light Divider"
+                                                  },
+                                         "slate":  {
+                                                       "role":  "neutral",
+                                                       "displayName":  "Slate Text"
+                                                   },
+                                         "light":  {
+                                                       "role":  "neutral",
+                                                       "displayName":  "Light Text"
+                                                   },
+                                         "blue":  {
+                                                      "role":  "primary",
+                                                      "displayName":  "Graphic Blue Focus"
+                                                  },
+                                         "action":  {
+                                                        "role":  "primary",
+                                                        "displayName":  "Action Blue Caret"
+                                                    },
+                                         "dark-line":  {
+                                                           "role":  "neutral",
+                                                           "displayName":  "Dark Divider"
+                                                       },
+                                         "field-line":  {
+                                                            "role":  "neutral",
+                                                            "displayName":  "Field Border"
+                                                        },
+                                         "nav-active":  {
+                                                            "role":  "primary",
+                                                            "displayName":  "Navigation State"
+                                                        },
+                                         "white-hover":  {
+                                                             "role":  "neutral",
+                                                             "displayName":  "Inverted Hover"
+                                                         }
+                                     },
+                       "typographyMeta":  {
+                                              "display":  {
+                                                              "displayName":  "Hero",
+                                                              "purpose":  "Large Manrope homepage proposition; narrow and tablet overrides are documented in DESIGN.md."
+                                                          },
+                                              "headline":  {
+                                                               "displayName":  "General H1",
+                                                               "purpose":  "Baseline headings; page and article introductions have contextual clamps."
+                                                           },
+                                              "title":  {
+                                                            "displayName":  "Section H2",
+                                                            "purpose":  "Section hierarchy with balanced wrapping."
+                                                        },
+                                              "subtitle":  {
+                                                               "displayName":  "H3",
+                                                               "purpose":  "Baseline work, service and content titles."
+                                                           },
+                                              "body":  {
+                                                           "displayName":  "Body",
+                                                           "purpose":  "Plus Jakarta Sans default reading copy, 14px on narrow screens."
+                                                       },
+                                              "supporting":  {
+                                                                 "displayName":  "Supporting",
+                                                                 "purpose":  "Section introductions and supporting descriptions."
+                                                             },
+                                              "compact":  {
+                                                              "displayName":  "Compact",
+                                                              "purpose":  "Service/process and article-preview descriptions."
+                                                          },
+                                              "label":  {
+                                                            "displayName":  "Field Label",
+                                                            "purpose":  "Visible semibold form labels."
+                                                        },
+                                              "button":  {
+                                                             "displayName":  "Action",
+                                                             "purpose":  "Semibold action text, 12px narrow."
+                                                         }
+                                          },
+                       "shadows":  [
+                                       {
+                                           "name":  "mobile-menu",
+                                           "value":  "0 20px 40px #071a3326",
+                                           "purpose":  "Separates the open White mobile navigation panel from page content; ordinary content stays flat."
+                                       }
+                                   ],
+                       "motion":  [
+                                      {
+                                          "name":  "ease",
+                                          "value":  "cubic-bezier(.16, 1, .3, 1)",
+                                          "purpose":  "Image entrance and directional icon/image feedback."
+                                      },
+                                      {
+                                          "name":  "opening-reveal",
+                                          "value":  "900ms; clip-path inset(0 0 12% 0) to inset(0)",
+                                          "purpose":  "Optional first eligible desktop session image reveal, skippable; text remains readable."
+                                      },
+                                      {
+                                          "name":  "desktop-parallax",
+                                          "value":  "min(scrollY * .035, 22)px",
+                                          "purpose":  "Passive rAF-gated image offset only at min-width 901px and normal motion."
+                                      },
+                                      {
+                                          "name":  "control-state",
+                                          "value":  "250ms",
+                                          "purpose":  "Color, background and border feedback."
+                                      },
+                                      {
+                                          "name":  "action-arrow",
+                                          "value":  "350ms",
+                                          "purpose":  "2px button and 3px text-link diagonal movement."
+                                      },
+                                      {
+                                          "name":  "image-hover",
+                                          "value":  "700ms; scale(1.025)",
+                                          "purpose":  "Gentle project/post image feedback; removed for reduced motion."
+                                      },
+                                      {
+                                          "name":  "circle-arrow",
+                                          "value":  "300ms; rotate(45deg)",
+                                          "purpose":  "Image-link destination feedback."
+                                      },
+                                      {
+                                          "name":  "reduced-motion",
+                                          "value":  "animation:none; transition-duration:.01ms; scroll-behavior:auto",
+                                          "purpose":  "Static hero and images with normal content visibility."
+                                      }
+                                  ],
+                       "breakpoints":  [
+                                           {
+                                               "name":  "narrow-max",
+                                               "value":  "600px"
+                                           },
+                                           {
+                                               "name":  "mobile-navigation-max",
+                                               "value":  "900px"
+                                           },
+                                           {
+                                               "name":  "desktop-motion-min",
+                                               "value":  "901px"
+                                           },
+                                           {
+                                               "name":  "laptop-max",
+                                               "value":  "1100px"
+                                           },
+                                           {
+                                               "name":  "wide-hero-min",
+                                               "value":  "1700px"
+                                           }
+                                       ]
+                   },
+    "components":  [
+                       {
+                           "name":  "Primary Button",
+                           "kind":  "button",
+                           "refersTo":  "button-primary",
+                           "description":  "Navy consultation/navigation action with optional directional icon.",
+                           "html":  "\u003ca class=\"ds-button\" href=\"/kontak\"\u003e\u003cspan\u003eMulai konsultasi\u003c/span\u003e\u003csvg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"\u003e\u003cpath d=\"M5 19 19 5M5 5h14v14\"/\u003e\u003c/svg\u003e\u003c/a\u003e",
+                           "css":  ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:28px;min-height:52px;padding:13px 22px;border:1px solid var(--navy,#071a33);border-radius:18px;color:var(--white,#fff);background:var(--navy,#071a33);font:600 13px/1.5 var(--font-body,\u0027Plus Jakarta Sans\u0027),sans-serif;text-decoration:none;transition:background .25s,color .25s,border-color .25s}.ds-button:hover{background:var(--royal,#153454)}.ds-button svg{transition:transform .35s cubic-bezier(.16,1,.3,1)}.ds-button:hover svg{transform:translate(2px,-2px)}.ds-button:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}@media(max-width:600px){.ds-button{min-height:48px;padding:12px 18px;gap:25px;border-radius:16px;font-size:12px}}@media(prefers-reduced-motion:reduce){.ds-button,.ds-button svg{transition-duration:.01ms}}"
+                       },
+                       {
+                           "name":  "Inverted Button",
+                           "kind":  "button",
+                           "refersTo":  "button-white",
+                           "description":  "White action on Navy opening surfaces.",
+                           "html":  "\u003cdiv class=\"ds-navy\"\u003e\u003ca class=\"ds-white\" href=\"/kontak\"\u003eMulai konsultasi\u003c/a\u003e\u003c/div\u003e",
+                           "css":  ".ds-navy{padding:24px;background:var(--navy,#071a33)}.ds-white{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:13px 22px;background:var(--white,#fff);color:var(--navy,#071a33);border:1px solid var(--white,#fff);border-radius:18px;font:600 13px/1.5 var(--font-body,\u0027Plus Jakarta Sans\u0027),sans-serif;text-decoration:none;transition:background .25s,border-color .25s}.ds-white:hover{background:#dceaff;border-color:#dceaff}.ds-white:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}@media(max-width:600px){.ds-white{min-height:48px;padding:12px 18px;border-radius:16px;font-size:12px}}"
+                       },
+                       {
+                           "name":  "Form Field",
+                           "kind":  "input",
+                           "refersTo":  "input-field",
+                           "description":  "Visible label, White field and inline invalid state.",
+                           "html":  "\u003cdiv class=\"ds-field\"\u003e\u003clabel for=\"ds-name\"\u003eNama lengkap\u003c/label\u003e\u003cinput id=\"ds-name\" name=\"name\" autocomplete=\"name\" placeholder=\"Nama Anda\" required\u003e\u003c/div\u003e",
+                           "css":  ".ds-field{font-family:var(--font-body,\u0027Plus Jakarta Sans\u0027),sans-serif;color:var(--navy,#071a33)}.ds-field label{display:block;font-size:12px;font-weight:600;margin-bottom:10px}.ds-field input{width:100%;min-height:50px;padding:13px 14px;border:1px solid #bdc8d5;border-radius:6px;color:var(--navy,#071a33);background:var(--white,#fff);font:400 13px/1.75 var(--font-body,\u0027Plus Jakarta Sans\u0027),sans-serif;caret-color:var(--action,#245fd1)}.ds-field input::placeholder{color:var(--slate,#526277)}.ds-field input:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}.ds-field input[aria-invalid=true]{border-color:#a62424}"
+                       },
+                       {
+                           "name":  "Desktop Navigation",
+                           "kind":  "nav",
+                           "refersTo":  "navigation",
+                           "description":  "Bordered capsule with inset hover/current-page treatments; mobile uses a separate native disclosure.",
+                           "html":  "\u003cdiv class=\"ds-header\"\u003e\u003cnav class=\"ds-nav\" aria-label=\"Navigasi utama\"\u003e\u003ca href=\"/tentang-kami\"\u003eTentang kami\u003c/a\u003e\u003ca href=\"/layanan\" aria-current=\"page\"\u003eLayanan\u003c/a\u003e\u003ca href=\"/portofolio\"\u003ePortofolio\u003c/a\u003e\u003c/nav\u003e\u003c/div\u003e",
+                           "css":  ".ds-header{background:var(--navy,#071a33);padding:24px;color:var(--white,#fff)}.ds-nav{display:inline-flex;align-items:center;gap:2px;padding:5px;border:1px solid #40506a;border-radius:22px}.ds-nav a{padding:8px 19px;border-radius:17px;font:400 12px/1.75 var(--font-body,\u0027Plus Jakarta Sans\u0027),sans-serif;text-decoration:none;color:inherit;transition:background .25s}.ds-nav a:hover,.ds-nav a[aria-current]{background:#203752}.ds-nav a:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}"
+                       },
+                       {
+                           "name":  "Concept Disclosure",
+                           "kind":  "chip",
+                           "refersTo":  "concept-tag",
+                           "description":  "Persistent factual label over concept images, not an interactive badge.",
+                           "html":  "\u003cspan class=\"ds-concept\"\u003eKonsep Eksplorasi\u003c/span\u003e",
+                           "css":  ".ds-concept{display:inline-block;background:var(--white,#fff);color:var(--navy,#071a33);font:400 10px/1.5 var(--font-body,\u0027Plus Jakarta Sans\u0027),sans-serif;padding:7px 12px;border-radius:4px}@media(max-width:600px){.ds-concept{font-size:9px;padding:6px 9px}}"
+                       }
+                   ],
+    "narrative":  {
+                      "northStar":  "Precision in Technology. Creativity in Every Detail.",
+                      "overview":  "Large calm Manrope typography, deep navy stages and White reading surfaces introduce Wasla\u0027s development work. Original project mockup photographs supply a tangible object; fine dividers and open compositions keep services and consultation clear. The user chose a code-first agency direction; no separate Figma comp or owner approval is claimed by this record.",
+                      "keyCharacteristics":  [
+                                                 "Navy and White with cool neutrals",
+                                                 "Self-hosted Manrope and Plus Jakarta Sans",
+                                                 "Large square-edged project imagery",
+                                                 "Rounded rectangular controls and bordered capsule navigation",
+                                                 "ENERGY 3 / RHYTHM 3 / MOTION 2"
+                                             ],
+                      "rules":  [
+                                    {
+                                        "name":  "The Contained Image Rule",
+                                        "body":  "Mockup colors belong to depicted products, not the site\u0027s action palette. The navy tonal ramp above consists only of actual source colors, not generated palette additions.",
+                                        "section":  "colors"
+                                    },
+                                    {
+                                        "name":  "The Flat Structure Rule",
+                                        "body":  "Keep service rows, reading content and project captions flat; only the open mobile menu uses CSS elevation.",
+                                        "section":  "elevation"
+                                    }
+                                ],
+                      "dos":  [
+                                  "Do preserve the approved navy/white typography and declared dials.",
+                                  "Do keep concept disclosures visible and imagery replaceable through Media.",
+                                  "Do retain native disclosures, focus feedback and real destinations.",
+                                  "Do use actual supplied people, client evidence and channels."
+                              ],
+                      "donts":  [
+                                    "Don\u0027t restore the discarded geometric hero, waves or copied artwork.",
+                                    "Don\u0027t invent a replacement logo or client proof.",
+                                    "Don\u0027t hide essential content behind motion or hover.",
+                                    "Don\u0027t turn every content item into a floating card or every control into a capsule."
+                                ]
+                  }
 }

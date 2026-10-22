@@ -5,7 +5,7 @@
       "route": "/",
       "overflow": false,
       "h1": {
-        "size": "96px",
+        "size": "88px",
         "family": "manrope, \"manrope Fallback\", sans-serif"
       },
       "artTransform": "none",

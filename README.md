@@ -72,6 +72,7 @@ Playwright memakai Chrome lokal di Windows. Atur `CHROME_PATH` untuk executable 
 - [Pemeriksaan REA terbaru](docs/evidence/refresh-2026-10-22.md), [arah redesign](docs/redesign-direction.md), [gambar dan panduan penggantian CMS](docs/assets.md).
 - [Sistem desain](docs/design-system.md), [spesifikasi UI/UX dan handoff](docs/ui-ux-specification.md).
 - [Keputusan library](docs/library-decisions.md), [deployment](docs/deployment.md), [validasi](docs/validation.md).
+- [Validasi redesign terbaru](docs/redesign-validation.md), [review visual terbaru](docs/visual-review-redesign.md).
 
 ## Input pemilik yang masih diperlukan
 

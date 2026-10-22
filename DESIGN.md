@@ -1,87 +1,102 @@
----
+﻿---
 name: Wasla Informatika
-description: Indonesian technology studio with navy editorial typography and precise connection geometry.
+description: Indonesian technology studio with navy editorial typography and image-led project discovery.
 colors:
   navy: "#071a33"
-  royal: "#143a66"
+  royal: "#153454"
+  hero-panel: "#10253e"
   white: "#fff"
+  ice: "#f2f5f8"
+  line: "#d5dce4"
+  slate: "#526277"
+  light: "#c8d6e6"
   blue: "#397bff"
   action: "#245fd1"
-  ice: "#f5f8fc"
-  line: "#e5edf5"
-  slate: "#526277"
-  light: "#dceaff"
+  dark-line: "#40506a"
+  field-line: "#bdc8d5"
+  nav-active: "#203752"
+  white-hover: "#dceaff"
 typography:
   display:
     fontFamily: "Manrope, sans-serif"
-    fontSize: "clamp(58px, 6.3vw, 90px)"
+    fontSize: "clamp(52px, 6.15vw, 88px)"
     fontWeight: 500
-    lineHeight: 1.08
+    lineHeight: 1.06
     letterSpacing: "-0.035em"
   headline:
     fontFamily: "Manrope, sans-serif"
-    fontSize: "clamp(42px, 6.6vw, 96px)"
+    fontSize: "clamp(44px, 6.7vw, 96px)"
     fontWeight: 500
     lineHeight: 1.12
     letterSpacing: "-0.035em"
   title:
     fontFamily: "Manrope, sans-serif"
-    fontSize: "clamp(34px, 4.4vw, 64px)"
+    fontSize: "clamp(34px, 4.2vw, 60px)"
     fontWeight: 500
     lineHeight: 1.12
     letterSpacing: "-0.035em"
   subtitle:
     fontFamily: "Manrope, sans-serif"
-    fontSize: "28px"
+    fontSize: "25px"
     fontWeight: 500
-    lineHeight: 1.12
+    lineHeight: 1.3
     letterSpacing: "-0.025em"
   body:
     fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: "17px"
+    fontSize: "15px"
     fontWeight: 400
-    lineHeight: 1.65
-  prose:
-    fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: "18px"
-    fontWeight: 400
-    lineHeight: 1.85
-  label:
+    lineHeight: 1.75
+  supporting:
     fontFamily: "Plus Jakarta Sans, sans-serif"
     fontSize: "14px"
-    fontWeight: 500
-    lineHeight: 1.65
+    fontWeight: 400
+    lineHeight: 1.75
+  compact:
+    fontFamily: "Plus Jakarta Sans, sans-serif"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: 1.75
+  label:
+    fontFamily: "Plus Jakarta Sans, sans-serif"
+    fontSize: "12px"
+    fontWeight: 600
+    lineHeight: 1.75
   button:
     fontFamily: "Plus Jakarta Sans, sans-serif"
-    fontSize: "16px"
+    fontSize: "13px"
     fontWeight: 600
     lineHeight: 1.5
 rounded:
-  control: "4px"
-  mockup-window: "6px"
-  imagery: "12px"
+  tag: "4px"
+  field: "6px"
+  compact-control: "16px"
+  nav-item: "17px"
+  control: "18px"
+  navigation: "22px"
+  circle: "50%"
 spacing:
-  micro: "4px"
   small: "8px"
   compact: "12px"
   regular: "16px"
+  image-caption: "20px"
   comfortable: "24px"
+  action-gap: "28px"
   group: "32px"
-  wide: "48px"
-  gutter-desktop: "56px"
-  gutter-laptop: "32px"
-  gutter-mobile: "20px"
-  section-desktop: "112px"
-  section-laptop: "96px"
-  section-tablet: "80px"
+  wide: "40px"
+  heading-gap: "48px"
+  project-row: "56px"
+  gutter: "clamp(24px, 5vw, 80px)"
+  gutter-mobile: "22px"
+  section-desktop: "120px"
+  section-laptop: "90px"
   section-mobile: "72px"
 components:
   button-primary:
-    backgroundColor: "{colors.action}"
+    backgroundColor: "{colors.navy}"
     textColor: "{colors.white}"
     typography: "{typography.button}"
     rounded: "{rounded.control}"
-    padding: "14px 24px"
+    padding: "13px 22px"
   button-primary-hover:
     backgroundColor: "{colors.royal}"
   button-white:
@@ -89,45 +104,42 @@ components:
     textColor: "{colors.navy}"
     typography: "{typography.button}"
     rounded: "{rounded.control}"
-    padding: "14px 24px"
+    padding: "13px 22px"
   button-white-hover:
-    backgroundColor: "{colors.light}"
+    backgroundColor: "{colors.white-hover}"
   button-outline:
     backgroundColor: "transparent"
     textColor: "{colors.navy}"
-    typography: "{typography.button}"
     rounded: "{rounded.control}"
-    padding: "14px 24px"
+    padding: "13px 22px"
   button-outline-hover:
-    backgroundColor: "{colors.ice}"
-  button-disabled:
-    backgroundColor: "{colors.slate}"
-  text-link:
-    textColor: "{colors.navy}"
-    typography: "{typography.button}"
-    padding: "10px 0px"
-  input-field:
-    backgroundColor: "{colors.ice}"
-    textColor: "{colors.navy}"
-    rounded: "{rounded.control}"
-    padding: "14px"
-  navigation:
     backgroundColor: "{colors.navy}"
     textColor: "{colors.white}"
-  filter:
-    backgroundColor: "transparent"
+  input-field:
+    backgroundColor: "{colors.white}"
     textColor: "{colors.navy}"
-    rounded: "{rounded.control}"
-    padding: "11px 20px"
+    rounded: "{rounded.field}"
+    padding: "13px 14px"
+  filter:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.navy}"
+    rounded: "{rounded.compact-control}"
+    padding: "10px 18px"
   filter-selected:
     backgroundColor: "{colors.navy}"
     textColor: "{colors.white}"
-  project-image:
-    backgroundColor: "{colors.ice}"
-    rounded: "{rounded.imagery}"
+  navigation:
+    backgroundColor: "{colors.navy}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.navigation}"
+  concept-tag:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.navy}"
+    rounded: "{rounded.tag}"
+    padding: "7px 12px"
   service-row:
     textColor: "{colors.navy}"
-    padding: "34px 0px"
+    padding: "28px 0px"
   faq:
     textColor: "{colors.navy}"
     padding: "24px 0px"
@@ -139,145 +151,136 @@ components:
 
 **Creative North Star: "Precision in Technology. Creativity in Every Detail."**
 
-Wasla is an Indonesian technology and digital development studio with a navy-and-white editorial identity. Large Manrope headings establish confidence; open space, fine dividers and readable Plus Jakarta Sans copy make the proposition and next action clear. Original connection geometry gives the technical work a recognizable visual language.
+Wasla uses large calm typography, deep navy stages and generous white reading surfaces to introduce digital development work. Original project mockup photographs give the proposition a tangible object. Fine dividers and open compositions keep services and consultation easy to find.
 
-The system pairs expressive marketing compositions with restrained reading and editing surfaces. Depth belongs to authored interface demonstrations; controls remain straightforward. The original logo has not been supplied, so the full brand name remains a temporary text wordmark. Concept projects retain an explicit disclosure, and actual people or client evidence appear only when supplied.
+The user chose a code-first agency direction informed by Ulysses' scale, Vodjo's information order and Until's type/button confidence. This is an implemented-system record, not a Figma comp or an owner approval claim. The text wordmark remains provisional until the original logo is supplied. Concepts stay visibly labelled; people and client evidence depend on supplied content.
 
 **Key Characteristics:**
 
-- Navy stages and white reading surfaces with a sparing blue accent.
-- Large, balanced headings and generous, content-led spacing.
-- Original connection, layer and route geometry.
-- Flat editorial rows, image-led work and bounded interface depth.
+- Navy and white with cool supporting neutrals.
+- Self-hosted Manrope display and Plus Jakarta Sans body typography.
+- Large project imagery, square image edges and rounded rectangular controls.
+- Flat service rows and varied editorial section rhythm.
 - ENERGY 3 / RHYTHM 3 / MOTION 2.
 
-This implemented-system record merges the established direction after the finish review recorded `ship` in `docs/visual-review.md`. It records source and existing review evidence; it does not claim a new owner sign-off or a new visual audit. Tokens above are normative; `.impeccable/design.json` holds motion, breakpoints, shadows and component previews.
+Tokens above describe the current stylesheet. Motion, breakpoints and preview snippets extend them in `.impeccable/design.json`; page strategy lives in `docs/redesign-direction.md`.
 
 ## Colors
 
-The palette uses a deep navy foundation, cool neutrals and two functional intensities of the same blue accent family.
+The navy family carries identity; White and Ice separate reading surfaces without adding a second brand hue.
 
 ### Primary
 
-- **Navy** (`navy`): header, hero, footer, dark sections, headings and primary text; the continuous identity anchor.
-- **Royal** (`royal`): supporting technical geometry, primary-button hover and scrollbar thumb.
-- **Action Blue** (`action`): primary action fill and readable text-link emphasis on white.
-- **Graphic Blue** (`blue`): focus outlines, caret, selection and limited graphic accents.
+- **Navy:** header, hero, process, footer, primary text and standard button fill.
+- **Royal / Hero Panel:** button hover / image-stage and caption ground.
+- **Graphic Blue:** visible keyboard focus outline.
+- **Action Blue:** input caret, rather than the current primary-button fill.
 
 ### Neutral
 
-- **White** (`white`): reading surfaces, dark-surface text and inverted buttons.
-- **Ice** (`ice`): quiet section alternation, form fields and understated empty-state containers.
-- **Line** (`line`): light dividers and outline controls.
-- **Slate** (`slate`): supporting copy and metadata on light surfaces.
-- **Light Blue** (`light`): supporting text on navy and inverted-button hover.
+- **White / Ice:** reading, inverted controls and fields / services, consultation, closing CTA and empty image grounds.
+- **Line / Field Line:** content dividers / field and service-arrow outlines.
+- **Slate / Light:** supporting copy on light / navy surfaces.
+- **Dark Line / Nav Active:** capsule and dark dividers / desktop link state.
+- **White Hover:** inverted button hover background.
 
-**The Action Contrast Rule.** Keep Action Blue as the white-text primary-button fill; Graphic Blue remains the graphic and focus accent.
-
-Local project concepts have their own contained art palettes. Those colors depict example interfaces and do not expand the site's navigation or action palette. The surface custom property follows its containing section, white by default and Ice in the service section.
+**The Contained Image Rule.** Colors within project mockups belong to the depicted product; they do not expand the site's action palette.
 
 ## Typography
 
-**Display Font:** self-hosted Manrope, with sans-serif fallback. Its open geometric forms suit the precise studio identity.
+**Display Font:** locally hosted Manrope, sans-serif fallback. Its open geometric forms support large, tightly set Indonesian headlines.
 
-**Body Font:** self-hosted Plus Jakarta Sans, with sans-serif fallback. Its readable proportions support Indonesian descriptions, forms and long-form text. Both font files use `font-display: swap`.
+**Body Font:** locally hosted Plus Jakarta Sans, sans-serif fallback. It separates practical descriptions and controls from the display voice. Both use `font-display: swap`.
 
 ### Hierarchy
 
-- **Display:** hero role in the frontmatter, with controlled line breaks.
-- **Headline:** general H1 role; internal page introductions narrow the responsive clamp.
-- **Title:** section H2 role; individual editorial compositions vary scale while preserving family, weight and tracking.
-- **Subtitle:** baseline H3; service and project titles have contextual sizes.
-- **Body:** default copy, with paragraph measure capped at 70ch.
-- **Prose:** long-form copy with generous leading and explicit paragraph/list separation.
-- **Label:** form labels; categories and dates use smaller contextual roles and sentence case.
-- **Button:** semibold action text, also used for underlined text links.
+Frontmatter records hero, general H1/H2/H3, body, supporting, compact, label and button roles. Headings use balanced wrapping. Paragraphs cap at 70ch; rich text is constrained to 72ch.
 
-At or below 600px, general H1/H2/H3 sizes become 44/36/25px, with a 46px hero and 40px article title. Body and prose become 16px. The final narrow-screen overrides keep service descriptions, process copy, article excerpts, FAQ copy, contact notes and empty-team supporting copy at 16px.
+| Context | Current size and leading |
+| --- | --- |
+| Hero above 1100px | display token; preserved line breaks; 900px maximum measure |
+| Hero 901–1100px | 70px |
+| Hero 601–900px | clamp(52px, 8.5vw, 76px) |
+| Hero at or below 600px | clamp(42px, 11.6vw, 64px), 1.1 |
+| Page introduction | clamp(44px, 6.2vw, 88px); 46px narrow |
+| Brand statement | clamp(36px, 4.6vw, 66px), 1.15; 39px narrow |
+| Article H1 | clamp(40px, 5.3vw, 76px) |
+| General narrow H1 / H2 | 44px / 37px |
+| Default narrow body | 14px, 1.75 |
+| Project / service title | 25px; contextual 23px and 20px narrow |
+| Article preview title | 24px, 1.35; 20px tablet and 25px narrow |
+| Metadata / microcopy | 9–12px by context, never the default paragraph role |
 
-**The Reading Measure Rule.** Preserve readable body measure and leading when extending layouts; do not compress body text to imitate the interface demonstrations.
-
-The temporary header and oversized footer wordmarks have tighter tracking than headings; they are identity display treatments, not a general heading rule. Serif type inside labelled concept artwork belongs to those demonstrations only.
+Other implemented contextual display sizes are 19, 20, 22, 23, 27, 28, 29, 30, 31, 32, 34, 35, 36 and 43px. They serve captions, process, quotations, wordmarks, detail headings and plain concept fallbacks. They do not form an enforced mathematical ramp. Footer wordmark uses clamp(110px, 23vw, 340px), then 24vw narrow, with 0.9 leading.
 
 ## Layout
 
-The outer wrapper is capped at 1440px including padding, leaving 1328px of inner content with desktop gutters. Spacing tokens record the recurring rhythm and actual section/gutter values; fine component spacing uses intermediate values found in source.
+The wrapper caps at 1600px including fluid gutters. Generous section rhythm lets imagery and typography establish hierarchy without enclosed cards. Frontmatter records recurring gaps; local 18/22/25/26/30/35/36/45/55/58/60/65/70/80/90px spacing remains component-specific.
 
-| Condition | Gutters | Section rhythm | Responsive behavior |
-| --- | --- | --- | --- |
-| Above 1200px | desktop | desktop | editorial splits; desktop navigation; large work plates |
-| At or below 1200px | laptop | laptop | tighter gaps and hero composition |
-| At or below 900px | laptop | tablet | disclosure navigation; stacked hero; two-column process |
-| At or below 600px | mobile | mobile | single-column projects, articles, forms, process and details |
+| Width | Rhythm and behavior |
+| --- | --- |
+| Above 1100px | 120px sections; fluid gutters; 100px header; hero 1.9:1 split and 8% gap |
+| 901–1100px | 90px sections; hero 1.6:1 split and 5% gap; tighter navigation |
+| 601–900px | 90px sections; 80px header; native mobile menu; stacked hero/services/FAQ/consultation |
+| At or below 600px | 72px sections; 22px gutters; single-column projects/articles/team/testimonials/form; two-column process |
+| At least 1700px | hero split becomes 1.6:1 |
 
-Work uses unequal plates where hierarchy benefits; service lists use divided rows. Articles have a centered column capped at 820px, with paragraph measure still bounded. Contact fields start in two columns and stack on narrow screens. No content relies on a fixed screen-height text area. Anchor scrolling reserves 100px for the sticky header.
-
-Header height changes from 102px to 82px at the navigation breakpoint, then 76px on narrow screens. The mobile statement starts with its H2; its desktop side note is hidden at or below 600px. Preserve spacing when optional content is absent.
+Projects use two columns with 56px row and 32px column gaps. First homepage work spans both columns with a 1.96 image ratio; other project images use 3:2. Narrow projects use 1.35 and 34px gaps. Hero uses a centered cover crop and clamp(370px, 42vw, 640px) height, 420px at laptop, 1.8 ratio at tablet, and 1.26 ratio with 58% horizontal positioning narrow. Narrow hero imagery bleeds through wrapper gutters. Anchor scrolling reserves 110px.
 
 ## Elevation & Depth
 
-The page is flat by default. Navy/White/Ice alternation, hairlines, scale and open space establish structure. Shadows make authored interface planes legible within concept artwork; the mobile menu uses a light separation shadow over page content.
+Ordinary structure is flat. Navy/White/Ice alternation, image scale and hairlines carry depth. The open mobile menu alone uses a separation shadow (`0 20px 40px #071a3326`). Photographic mockup depth belongs to the image; plain concept fallbacks have no decorative CSS shadow.
 
-### Shadow Vocabulary
-
-- **Concept window:** `0 24px 50px #16251d22`, confined to the authored interface plane.
-- **Hero demonstration:** `drop-shadow(0 18px 32px #0005)`, separating the miniature interface from the connection composition.
-- **Mobile navigation:** `0 28px 40px #0002`, separating the open navy panel from content.
-
-**The Flat Structure Rule.** Keep ordinary content rows and controls flat; reserve dimensional lift for interface demonstrations and the open navigation panel.
+**The Flat Structure Rule.** Do not add floating surfaces to service rows, reading content or project captions.
 
 ## Shapes
 
-Controls have lightly eased corners; project images have softer framing; mockup windows sit between them. Use the named radius roles in the frontmatter. Service and project arrow controls are circular (50%); concept labels stay rectangular. Fine one-pixel borders structure content without enclosing every item in a card.
-
-Connection routes, layered planes and linked nodes explain technology and movement. They are original illustration geometry, never a substitute logo. Preserve the original supplied logo geometry when it becomes available.
+Buttons have rounded rectangular corners; filters and compact controls are slightly tighter. The desktop link group is a bordered capsule with inset links. Inputs and concept labels have smaller radii. Images are square-edged. Circular arrows signal destinations inside image links and service rows, rather than independent nested controls. Section boundaries are straight, with no waves.
 
 ## Components
 
 ### Buttons and text links
 
-Primary buttons use Action Blue with White text; inverted buttons use White on Navy; outline buttons use a fine Line border on light surfaces. Standard buttons have a 54px minimum height. The header CTA is 46px; the narrow hero variant is 50px. Text links use an underline and open inline spacing.
+Standard Navy buttons use White text; inverted buttons use White with Navy text. Standard minimum height is 52px. Color/border transitions last 250ms; arrows move 2px diagonally over 350ms. Header CTA uses a 44px minimum and compact-control radius. At or below 600px, standard controls use 48px minimum, 12px type, 12px 18px padding, 25px gap and compact-control radius. Disabled submission retains its fill with 0.55 opacity and a wait cursor.
 
-Background and icon feedback lasts 200ms. The optional diagonal arrow denotes forward navigation or submission. Hover moves a button arrow by 2px and a text-link arrow by 3px. Pending submission uses Slate fill, a wait cursor and saving text. Interactive primitives share a 3px Graphic Blue focus outline with 5px offset.
-
-### Inputs / Fields
-
-Visible labels sit above Ice fields with a fine cool border, control radius, 14px padding and 52px minimum height. Field text is 16px; textareas start at 150px and resize vertically. Optional fields are marked. Errors use a red border and inline explanation; consent and result feedback remain readable. Recoverable errors retain input, and pending/success/error states are labelled. The sidecar preserves implemented status colors without turning them into brand accents.
+Text links use a bottom border, 14px semibold text, 24px gap and 10px vertical padding. Their arrow moves 3px diagonally. All interactive elements share a 3px Graphic Blue focus outline with 5px offset.
 
 ### Navigation
 
-The sticky navy header carries the temporary text wordmark, destination links and consultation action. Desktop links have a fine underline on hover and current page. Native details/summary reveals a solid navy panel at the navigation breakpoint. Escape returns focus to the summary; route selection closes the menu. The proposition never waits for an intro animation.
+The sticky Navy header places a provisional wordmark beside a bordered desktop capsule and consultation action. Hover/current state uses Nav Active; active pages expose `aria-current`. At 900px, native details/summary opens a White rounded link panel. Its summary is 44px square. Escape closes and restores summary focus; route choice closes the menu. No essential information depends on hover.
 
-### Filters and disclosures
+### Project images, services and filters
 
-Category filters are rectangular buttons with a cool border; selected state becomes Navy with White text and `aria-pressed`. Narrow-screen filters retain a 44px minimum height. Project concepts always carry the visible `Konsep eksplorasi` disclosure.
+Media CMS thumbnails lead work; captions carry title/category outside the image. White concept tags persist whenever `isConcept` is true. Hero concepts have a visible image overlay determined from selected project media or explicit concept media metadata. Image hover scales 1.025 over 700ms; reduced motion disables it. Missing concept media uses a plain authored fallback; missing real-project media shows an honest empty state.
 
-### Project plates and service rows
+Services are unnumbered divided links with title, excerpt and circular arrow. Process numbers belong to the ordered four-stage workflow. Filters are 44px-minimum buttons with `aria-pressed`, selected Navy fill and results feedback.
 
-Project images use the imagery radius, a contained visual and circular forward link. Captions remain outside the image with title and category. Hover gently scales real images or adjusts authored interface planes; reduced motion removes these transforms. Service rows pair relevant original line geometry, category/title/copy and a circular navigation arrow, with fine dividing lines.
+### Inputs / Fields
 
-### FAQ, process and optional people
+Visible labels sit above White fields with Field Line borders, 50px minimum height and field radius. Textareas start at 120px and resize vertically. Inline errors use `#a62424`; error feedback uses `#8c2020` on `#fff0ed`, saved feedback `#e2eee8`. These are functional status colors, not brand accents. Pending, recoverable error and saved states are explicit. Values survive recoverable errors. The JavaScript form posts JSON to the private contact endpoint and reports success after persistence.
 
-FAQ uses native details/summary with a rotating plus and body copy beneath. Process is an ordered four-step line sequence, four columns becoming two and then one. Team displays actual supplied profiles or an honest Ice empty state. The About page omits the redundant link back to itself.
+### FAQ, process and optional proof
 
-### Motion
+Native FAQ disclosures rotate a plus 45 degrees when open. Process uses four columns above 900px and two below, including narrow screens. Team and testimonial sections are omitted when eligible published data is empty. About also omits an empty team and suppresses its self-link when present.
 
-Only the first desktop browser session receives the optional 650ms hero entrance; it is skippable and never hides the proposition. Artwork offset follows passive, animation-frame-gated scroll with a 22px cap. Both effects require at least 901px width and no reduced-motion preference. Controls use 200ms feedback; image and concept hover use 500ms and 600ms. Reduced motion removes artwork movement, project/article hover transforms, smooth scrolling and loading travel. No-JavaScript content remains visible.
+### Opening motion
+
+The first eligible desktop session gets a skippable 900ms image clip reveal with cubic-bezier(.16, 1, .3, 1). Text is readable initially. Passive rAF-gated scroll offsets the image by `min(scrollY × .035, 22)` pixels. Both enhancements require at least 901px and normal motion. Narrow and reduced-motion views are static; reduced motion also removes image hover scaling and smooth scrolling. No blocking loader or scroll hijacking.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** preserve the navy-and-white identity, self-hosted font pairing and explicit motion dials.
-- **Do** vary composition according to content: editorial rows for services, large plates for work and a quiet measure for reading.
-- **Do** keep concept disclosures visible and use actual supplied people and client evidence.
-- **Do** preserve keyboard focus, labelled state feedback and the static narrow-screen/reduced-motion composition.
-- **Do** use connection geometry to explain technology and keep dimensional shadows inside its established roles.
+- **Do** preserve Navy/White, self-hosted typography and the declared dials.
+- **Do** give original project imagery space and maintain visible concept disclosures.
+- **Do** retain real destinations, visible focus, native disclosures and labelled form feedback.
+- **Do** use Media relationships and preserve user-selected media during seeding.
+- **Do** use owner-supplied people, client evidence and business channels.
 
 ### Don't:
 
-- **Don't** invent a replacement brand symbol while the original logo is missing.
-- **Don't** use Graphic Blue as the small white-text primary-button fill.
-- **Don't** turn every content item into a floating card or every control into a pill.
-- **Don't** stretch concept artwork typography or palette into the site's reading and navigation system.
-- **Don't** block content or actions behind entrance motion, or imply new owner approval from an internal finish review.
+- **Don't** restore the discarded geometric hero or introduce copied artwork, waves or fake client proof.
+- **Don't** invent a replacement logo while the original is missing.
+- **Don't** turn square image plates into floating cards or every control into a capsule.
+- **Don't** hide essential content behind motion or hover.
+- **Don't** infer owner approval, full accessibility compliance or performance results from this source-derived record.

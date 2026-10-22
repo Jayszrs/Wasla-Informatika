@@ -90,6 +90,28 @@ test('responsive, keyboard, reduced motion and visual captures', async ({ page, 
   await staticContext.close()
 })
 
+test('hero stays readable and parallax respects viewport and reduced motion', async ({ page }) => {
+  for (const width of [1440, 390]) {
+    for (const reducedMotion of ['no-preference', 'reduce'] as const) {
+      await page.setViewportSize({ width, height: 900 })
+      await page.emulateMedia({ reducedMotion })
+      await page.goto('/')
+      await expect(page.locator('h1')).toBeVisible()
+      await expect(page.locator('.hero-stage-image')).toHaveAttribute('alt', /Konsep Alur/)
+      await expect(page.locator('.hero-concept-label')).toHaveText('Konsep eksplorasi — Alur')
+      expect(await page.locator('h1').evaluate(el => getComputedStyle(el).opacity)).toBe('1')
+      await page.evaluate(() => window.scrollTo(0, 600))
+      const offset = () => page.locator('[data-hero-art]').evaluate(el => new DOMMatrixReadOnly(getComputedStyle(el).transform).m42)
+      if (width === 1440 && reducedMotion === 'no-preference') {
+        await expect.poll(offset).toBeGreaterThan(0)
+        expect(await offset()).toBeLessThanOrEqual(22)
+      } else {
+        await expect.poll(offset).toBe(0)
+      }
+    }
+  }
+})
+
 test('contact validation, persistence and server protections', async ({ page, request }) => {
   const headers = { origin: 'http://localhost:3000' }
   await page.goto('/kontak')

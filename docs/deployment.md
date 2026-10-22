@@ -1,6 +1,8 @@
 # Deployment dan operasi
 
 ## Target
+
+Pada Windows, hentikan proses `npm start` sebelum menjalankan build baru. Server standalone memuat DLL Sharp/libvips dari direktori output; build tidak dapat menggantinya selama proses lama masih berjalan. Setelah build berhasil, jalankan kembali `npm start`.
 Node.js 24 LTS dengan Next.js standalone atau host Node yang mendukung Payload. PostgreSQL 18 melalui koneksi jaringan privat/TLS sesuai penyedia. Media di object storage S3-compatible atau volume persisten yang dibackup. Sites/Cloudflare static hosting tidak dipakai karena brief menetapkan aplikasi Next.js/Payload/PostgreSQL di repositori lokal ini. Belum ada deployment publik yang diklaim.
 
 ## Rahasia dan konfigurasi

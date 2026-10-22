@@ -1,5 +1,7 @@
 # Validation and handoff
 
+Latest revision: see [redesign-validation.md](redesign-validation.md) for the image-led design, hero Media field, refreshed REA evidence and current production verification. Results below record the initial implementation baseline.
+
 Final verification: 22 October 2026, Asia/Jakarta. Windows host; Node24.21.0; local Chrome155; native PostgreSQL18.4. The application was tested as a real Next.js production standalone server with the same PostgreSQL database used for development.
 
 ## Results

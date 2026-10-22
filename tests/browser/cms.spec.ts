@@ -20,6 +20,8 @@ test('CMS login, roles, drafts, publishing, media, settings and private submissi
   let editorId: number | undefined
   let projectId: number | undefined
   let mediaId: number | undefined
+  let previousHero: number | null = null
+  let heroChanged = false
   const publicClient = await requestFactory.newContext({ baseURL })
   const editorClient = await requestFactory.newContext({ baseURL, extraHTTPHeaders: { Origin: baseURL } })
   try {
@@ -60,6 +62,9 @@ test('CMS login, roles, drafts, publishing, media, settings and private submissi
     expect(published.ok()).toBe(true)
     anonymous = await publicClient.get(`/api/projects?where[slug][equals]=qa-${unique}`)
     expect((await anonymous.json()).docs).toHaveLength(1)
+    await page.goto(`/portofolio/qa-${unique}`)
+    await expect(page.locator('.detail-visual img')).toHaveAttribute('alt', 'Gambar pengujian lokal, bukan aset klien')
+    await expect(page.locator('.detail-visual img')).toBeVisible()
     const draftUpdate = await editorClient.patch(`/api/projects/${projectId}?draft=true`, { data: { title: 'Draft perubahan privat', _status: 'draft' } })
     expect(draftUpdate.ok()).toBe(true)
     anonymous = await publicClient.get(`/api/projects?where[slug][equals]=qa-${unique}&draft=true`)
@@ -69,11 +74,24 @@ test('CMS login, roles, drafts, publishing, media, settings and private submissi
     expect(noDelete.status()).toBe(403)
     const privateContacts = await request.get('/api/contact-submissions')
     expect(privateContacts.ok()).toBe(true)
-    const settings = (await request.get('/api/globals/site-settings')).ok()
-    expect(settings).toBe(true)
+    const settingsResponse = await request.get('/api/globals/site-settings')
+    expect(settingsResponse.ok()).toBe(true)
+    const settings = await settingsResponse.json()
+    previousHero = typeof settings.heroImage === 'object' ? settings.heroImage?.id || null : settings.heroImage || null
+    const replaceHero = await request.post('/api/globals/site-settings', { data: { heroImage: mediaId } })
+    expect(replaceHero.ok()).toBe(true)
+    heroChanged = true
+    await page.goto('/')
+    await expect(page.locator('.hero-stage-image')).toHaveAttribute('alt', 'Gambar pengujian lokal, bukan aset klien')
+    await expect(page.locator('.hero-stage-image')).toBeVisible()
+    await expect(page.locator('.hero-concept-label')).toHaveCount(0)
+    const restoreHero = await request.post('/api/globals/site-settings', { data: { heroImage: previousHero } })
+    expect(restoreHero.ok()).toBe(true)
+    heroChanged = false
     await page.goto('/admin/collections/services')
     await expect(page.getByRole('link', { name: 'Website Development', exact: true }).first()).toBeVisible()
   } finally {
+    if (heroChanged) await request.post('/api/globals/site-settings', { data: { heroImage: previousHero } })
     if (projectId) await request.delete(`/api/projects/${projectId}`)
     if (mediaId) await request.delete(`/api/media/${mediaId}`)
     if (editorId) await request.delete(`/api/users/${editorId}`)

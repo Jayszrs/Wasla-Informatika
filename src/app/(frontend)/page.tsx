@@ -18,6 +18,10 @@ export default async function Home() {
   const featured = projects.docs.filter(p => p.featured).slice(0, 3)
   const heroProject = featured.find(p => p.visual === 'platform') || featured[0]
   const heroImage = settings.heroImage || heroProject?.thumbnail
+  const heroImageID = typeof heroImage === 'object' ? heroImage?.id : heroImage
+  const heroConcept = heroImageID && featured.find(p => p.isConcept && (typeof p.thumbnail === 'object' ? p.thumbnail?.id : p.thumbnail) === heroImageID)
+  const heroConceptLabel = heroConcept ? `Konsep eksplorasi — ${heroConcept.title.split(' — ')[0]}`
+    : typeof heroImage === 'object' && /konsep/i.test(`${heroImage?.caption || ''} ${heroImage?.alt || ''}`) ? 'Konsep eksplorasi' : null
 
   return <>
     <section className="hero">
@@ -32,6 +36,7 @@ export default async function Home() {
         </div>
         <div className="hero-stage" data-hero-art>
           <MediaImage media={heroImage} className="hero-stage-image" priority />
+          {heroConceptLabel && <span className="concept-tag hero-concept-label">{heroConceptLabel}</span>}
           <div className="hero-stage-caption">
             <span>Strategi. Desain. Teknologi.</span>
             <Link href="/portofolio"><span>Lihat karya kami<small>Eksplorasi desain &amp; pengembangan</small></span><Arrow diagonal /></Link>

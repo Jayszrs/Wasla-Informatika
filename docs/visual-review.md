@@ -1,5 +1,7 @@
 ﻿# Evidence reviewed
 
+Historical review of the initial design. See [visual-review-redesign.md](visual-review-redesign.md) for the current redesign; this earlier verdict does not approve later changes.
+
 Fresh finish review, 22 October 2026. Read PRODUCT.md, DESIGN.md, docs/reference-analysis.md, docs/design-system.md, docs/ui-ux-specification.md and the Impeccable craft floor. Code-led review; no design comp exists.
 
 Viewed the supplied desktop and 390px homepage viewports and full pages; services viewports; desktop/mobile service, portfolio, project, insights, article, about and contact pages; 390px/768px open menus; Payload admin screenshot. Inspected full-resolution homepage regions through Sharp crops, rather than judging full-page thumbnails alone. Confirmed the refreshed portfolio capture now shows exactly three intended concepts, matching portfolio-recapture.json. Inspected shared component, homepage and CSS source read-only. No browser or test run was performed by this reviewer.
