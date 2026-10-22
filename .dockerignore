@@ -1,0 +1,12 @@
+node_modules
+.next
+.env
+.env.*
+.local
+.git
+docs/evidence
+.impeccable/review
+test-results
+playwright-report
+media
+*.log

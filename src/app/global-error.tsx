@@ -1,0 +1,2 @@
+'use client'
+export default function GlobalError({ reset }: { reset: () => void }) { return <html lang="id"><body style={{ padding: '8vw', background: '#071A33', color: '#fff', fontFamily: 'sans-serif' }}><h1>Website sedang tidak tersedia.</h1><p>Konten belum dapat dimuat. Silakan coba lagi beberapa saat.</p><button onClick={reset} style={{ padding: '14px 24px' }}>Coba lagi</button></body></html> }

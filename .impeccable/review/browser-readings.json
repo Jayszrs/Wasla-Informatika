@@ -1,0 +1,407 @@
+{
+  "readings": [
+    {
+      "width": 1440,
+      "route": "/",
+      "overflow": false,
+      "h1": {
+        "size": "96px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": "none",
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "route": "/layanan",
+      "overflow": false,
+      "h1": {
+        "size": "88px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "route": "/layanan/website-development",
+      "overflow": false,
+      "h1": {
+        "size": "88px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "route": "/portofolio",
+      "overflow": false,
+      "h1": {
+        "size": "88px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "route": "/portofolio/ruang-commerce",
+      "overflow": false,
+      "h1": {
+        "size": "88px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "route": "/insights",
+      "overflow": false,
+      "h1": {
+        "size": "88px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "route": "/insights/website-atau-aplikasi-web",
+      "overflow": false,
+      "h1": {
+        "size": "76px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "route": "/tentang-kami",
+      "overflow": false,
+      "h1": {
+        "size": "88px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1440,
+      "route": "/kontak",
+      "overflow": false,
+      "h1": {
+        "size": "88px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "overflow": false,
+      "h1": {
+        "size": "70px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": "none",
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "route": "/layanan",
+      "overflow": false,
+      "h1": {
+        "size": "63.488px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "route": "/layanan/website-development",
+      "overflow": false,
+      "h1": {
+        "size": "63.488px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "route": "/portofolio",
+      "overflow": false,
+      "h1": {
+        "size": "63.488px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "route": "/portofolio/ruang-commerce",
+      "overflow": false,
+      "h1": {
+        "size": "63.488px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "route": "/insights",
+      "overflow": false,
+      "h1": {
+        "size": "63.488px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "route": "/insights/website-atau-aplikasi-web",
+      "overflow": false,
+      "h1": {
+        "size": "54.272px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "route": "/tentang-kami",
+      "overflow": false,
+      "h1": {
+        "size": "63.488px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 1024,
+      "route": "/kontak",
+      "overflow": false,
+      "h1": {
+        "size": "63.488px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "overflow": false,
+      "h1": {
+        "size": "65.28px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": "none",
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "route": "/layanan",
+      "overflow": false,
+      "h1": {
+        "size": "47.616px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "route": "/layanan/website-development",
+      "overflow": false,
+      "h1": {
+        "size": "47.616px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "route": "/portofolio",
+      "overflow": false,
+      "h1": {
+        "size": "47.616px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "route": "/portofolio/ruang-commerce",
+      "overflow": false,
+      "h1": {
+        "size": "47.616px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "route": "/insights",
+      "overflow": false,
+      "h1": {
+        "size": "47.616px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "route": "/insights/website-atau-aplikasi-web",
+      "overflow": false,
+      "h1": {
+        "size": "40.704px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "route": "/tentang-kami",
+      "overflow": false,
+      "h1": {
+        "size": "47.616px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 768,
+      "route": "/kontak",
+      "overflow": false,
+      "h1": {
+        "size": "47.616px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "overflow": false,
+      "h1": {
+        "size": "45.24px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": "none",
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "route": "/layanan",
+      "overflow": false,
+      "h1": {
+        "size": "46px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "route": "/layanan/website-development",
+      "overflow": false,
+      "h1": {
+        "size": "46px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "route": "/portofolio",
+      "overflow": false,
+      "h1": {
+        "size": "46px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "route": "/portofolio/ruang-commerce",
+      "overflow": false,
+      "h1": {
+        "size": "46px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "route": "/insights",
+      "overflow": false,
+      "h1": {
+        "size": "46px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "route": "/insights/website-atau-aplikasi-web",
+      "overflow": false,
+      "h1": {
+        "size": "40px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "route": "/tentang-kami",
+      "overflow": false,
+      "h1": {
+        "size": "46px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    },
+    {
+      "width": 390,
+      "route": "/kontak",
+      "overflow": false,
+      "h1": {
+        "size": "46px",
+        "family": "manrope, \"manrope Fallback\", sans-serif"
+      },
+      "artTransform": null,
+      "brokenImages": []
+    }
+  ],
+  "errors": [],
+  "tokenContrast": {
+    "navyOnWhite": 17.43,
+    "slateOnWhite": 6.23,
+    "lightOnNavy": 14.33,
+    "whiteOnAction": 5.78
+  }
+}
