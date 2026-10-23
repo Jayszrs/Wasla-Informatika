@@ -9,6 +9,7 @@ import { WhatsAppIcon } from '@/components/contact-cards'
 import { mediaSource } from '@/lib/media'
 import { siteURL } from '@/lib/seo'
 import { HeroEnhancement } from '@/components/motion'
+import { SiteMeasurements } from '@/components/site-measurements'
 import './globals.css'
 
 const poppins = localFont({ src: [
@@ -50,8 +51,9 @@ export default async function Layout({ children }: { children: React.ReactNode }
         <div className="footer-contact"><h2>Bicara dengan tim</h2>{contacts.map(person => <a href={person.href} key={person.id} target="_blank" rel="noopener noreferrer"><strong>{person.name}</strong><span>{person.role}</span></a>)}{settings.socials?.filter(s => validPublicLink(s.url)).map(s => <a key={s.id || s.url} href={s.url} rel="noopener noreferrer">{s.label}</a>)}</div>
       </div>
       <div className="footer-bottom"><span>© {new Date().getFullYear()} Wasla Informatika</span><div><Link href="/privasi">Privasi</Link><a href="#top">Kembali ke atas</a></div></div>
-      <div className="footer-signature" aria-hidden="true">wasla</div>
+      <div className="footer-signature" aria-hidden="true"><span className="footer-signature-name">wasla</span><span className="footer-signature-subtitle">informatika</span></div>
     </div></footer>
     <Link className="floating-contact" href="/kontak#tim-kontak" aria-label="Pilih kontak WhatsApp"><WhatsAppIcon size={32}/></Link>
+    {process.env.VERCEL === '1' && <SiteMeasurements/>}
   </body></html>
 }

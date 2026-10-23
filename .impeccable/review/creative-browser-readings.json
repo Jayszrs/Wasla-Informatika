@@ -1,0 +1,143 @@
+{
+  "results": [
+    {
+      "name": "services-intro",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "photography",
+      "width": 1440,
+      "visual": "photography"
+    },
+    {
+      "name": "video-editing",
+      "width": 1440,
+      "visual": "video"
+    },
+    {
+      "name": "creative-editing",
+      "width": 1440,
+      "visual": "creative"
+    },
+    {
+      "name": "team",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "team-flipped",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "footer",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "project",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "gallery",
+      "width": 1440,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "services-intro",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "photography",
+      "width": 390,
+      "visual": "photography"
+    },
+    {
+      "name": "video-editing",
+      "width": 390,
+      "visual": "video"
+    },
+    {
+      "name": "creative-editing",
+      "width": 390,
+      "visual": "creative"
+    },
+    {
+      "name": "team",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "team-flipped",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "footer",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "project",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "gallery",
+      "width": 390,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "services-intro",
+      "width": 1024,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "team",
+      "width": 1024,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "project",
+      "width": 1024,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "services-intro",
+      "width": 1446,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "team",
+      "width": 1446,
+      "overflow": false,
+      "brokenImages": []
+    },
+    {
+      "name": "project",
+      "width": 1446,
+      "overflow": false,
+      "brokenImages": []
+    }
+  ],
+  "errors": []
+}

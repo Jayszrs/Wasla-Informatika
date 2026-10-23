@@ -631,3 +631,72 @@ body:has(.contact-directory) .floating-contact { display: none; }
 @media(hover:none),(pointer:coarse){.service-scene-viewport canvas{pointer-events:none}.service-scene-tools>span{display:none}.scene-touch-control{display:inline-flex;align-items:center}.scene-interactive .service-scene-viewport canvas{pointer-events:auto;touch-action:none}.service-scene-tools{bottom:-8px}.service-picture{margin-bottom:35px}.service-row-image{margin-bottom:12px}}
 @media(prefers-reduced-motion:reduce){.division-flip-inner{transition:none}.division-initials{transition:none}}
 @media(max-width:767px){.footer-contact strong{font-size:12px;line-height:1.6}.footer-contact>a>span{font-size:10px;line-height:1.6}.footer-contact>a{min-height:48px}.footer-contact{gap:12px}}
+
+
+/* Device frames keep the actual CMS screenshots intact inside the presentation. */
+.project-device-stage { position: relative; width: 100%; aspect-ratio: 16 / 10; background: #eaf0f6; overflow: hidden; isolation: isolate; }
+.project-device-stage::before { content: ''; position: absolute; width: 78%; height: 12%; left: 9%; bottom: 10%; border-radius: 50%; background: #0b25451a; filter: blur(16px); z-index: -1; }
+.device-frame { position: relative; min-width: 0; }
+.device-laptop { padding: 1.5% 1.5% 1%; background: #172738; border: 2px solid #778896; border-radius: 12px 12px 4px 4px; }
+.device-laptop::before { content: ''; position: absolute; top: .55%; left: 49.5%; width: 3px; height: 3px; border-radius: 50%; background: #93a4b2; }
+.device-display { position: relative; overflow: hidden; background: #fff; }
+.device-laptop .device-display { aspect-ratio: 16 / 10; border-radius: 3px; }
+.device-display > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.device-base { position: absolute; left: -7%; width: 114%; height: 5%; top: 100%; background: linear-gradient(#d7dfe6 0%, #aebac5 48%, #677685 100%); border-radius: 1px 1px 45% 45%; }
+.device-base::after { content: ''; position: absolute; width: 15%; height: 35%; top: 0; left: 42.5%; background: #8998a6; border-radius: 0 0 5px 5px; }
+.device-phone { padding: 3%; border: 2px solid #6d7e8e; border-radius: 24px; background: #132538; box-shadow: 5px 12px 20px #071a3326; }
+.device-phone .device-display { aspect-ratio: 390 / 844; border-radius: 16px; }
+.device-phone::after { content: ''; position: absolute; top: 2.2%; left: 35%; width: 30%; height: 2.2%; border-radius: 20px; background: #132538; }
+.device-tablet { padding: 2%; border: 2px solid #788a99; border-radius: 18px; background: #142638; }
+.device-tablet .device-display { aspect-ratio: 4 / 3; border-radius: 8px; }
+.project-device-stage > .device-laptop { position: absolute; width: 81%; left: 7%; top: 15%; transform: rotate(-3deg); }
+.project-device-stage > .device-phone { position: absolute; width: 22%; padding: .7%; right: 4%; bottom: 8%; transform: rotate(5deg); border-radius: clamp(9px, 1.8vw, 24px); }
+.project-device-stage > .device-phone .device-display { border-radius: clamp(6px, 1.2vw, 18px); }
+.project-device-stage:not(.has-mobile) > .device-laptop { width: 84%; left: 8%; }
+.homepage-projects > .project-card:last-child:nth-child(odd) .project-image { aspect-ratio: 16 / 9; }
+.homepage-projects > .project-card:last-child:nth-child(odd) .project-device-stage { aspect-ratio: 16 / 9; }
+.homepage-projects > .project-card:last-child:nth-child(odd) .project-device-stage > .device-laptop { width: 70%; top: 8%; left: 12%; }
+.homepage-projects > .project-card:last-child:nth-child(odd) .project-device-stage > .device-phone { width: 18%; right: 8%; }
+.project-image:has(.project-device-stage) { aspect-ratio: 16 / 10; }
+.detail-visual:has(.project-device-stage) { margin-bottom: 72px; background: none; }
+.detail-visual .project-device-stage { aspect-ratio: 16 / 9; }
+.detail-visual .project-device-stage > .device-laptop { width: 73%; left: 10%; top: 8%; }
+.detail-visual .project-device-stage > .device-phone { width: 19%; right: 8%; bottom: 7%; }
+.gallery-device-stage { width: 100%; padding: 6% 9% 9%; background: #edf2f7; }
+.gallery-device-stage.is-portrait { display: grid; place-items: center; padding: 35px; }
+.gallery-device-stage.is-portrait > .device-phone { width: min(250px, 85%); padding: 7px; }
+.gallery-grid .device-display > img, .gallery-grid figure:first-child .device-display > img { width: 100%; height: 100%; max-height: none; object-fit: cover; }
+.gallery-grid a { min-height: 0; width: 100%; }
+.gallery-enlarge { display: none; }
+.service-detail-art { width: 100%; height: 280px; }
+.service-detail-art .service-scene-tools { font-size: 8px; }
+/* Cover rasterized SVG edge pixels with the destination surface, across all waves. */
+.section-wave { margin: 0; overflow: hidden; border: 0; }
+.section-wave svg { height: 100%; }
+.section-wave::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: currentColor; pointer-events: none; }
+.page-intro { border: 0; }
+.footer-signature { max-height: none; overflow: visible; opacity: 1; padding: 22px 0 38px; }
+.footer-signature > .footer-signature-name { display: block; font-size: inherit; font-weight: 600; line-height: .88; letter-spacing: -.04em; margin: 0; opacity: .08; }
+.footer-signature > .footer-signature-subtitle { display: block; font-size: clamp(13px, 1.6vw, 20px); font-weight: 400; line-height: 1.5; letter-spacing: .22em; margin-top: 17px; color: #adc0d5; opacity: 1; }
+.division-portrait > img { object-fit: contain; object-position: center bottom; }
+@media (max-width: 767px) {
+  .project-device-stage > .device-laptop { border-radius: 8px 8px 3px 3px; border-width: 1px; }
+  .project-device-stage > .device-phone { border-width: 1px; }
+  .detail-visual:has(.project-device-stage) { margin-bottom: 42px; }
+  .detail-visual .project-device-stage { aspect-ratio: 16 / 11; }
+  .detail-visual .project-device-stage > .device-laptop { top: 16%; }
+  .detail-visual .project-device-stage > .device-phone { width: 22%; }
+  .gallery-device-stage.is-portrait { padding: 25px; }
+  .footer-signature { max-height: none; padding-bottom: 30px; }
+  .service-detail-art { height: 300px; }
+}
+
+.service-row-image, .service-picture { grid-template-rows: minmax(0, 1fr); }
+.service-scene, .service-scene-viewport { min-height: 0; min-width: 0; }
+.service-scene-viewport { overflow: hidden; }
+.service-scene-fallback { position: absolute; inset: 0; }
+
+@media (max-width: 767px) {
+  .service-row .our-service-content { width: 100%; max-width: none; padding-inline: 15px; }
+  .service-row:nth-child(even) .our-service-content { margin-left: 0; padding-inline: 15px; }
+}

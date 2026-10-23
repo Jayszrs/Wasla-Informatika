@@ -1,0 +1,362 @@
+[
+  {
+    "title": "Fotografi & Dokumentasi",
+    "slug": "photography",
+    "excerpt": "Dokumentasi foto untuk wedding, kerja sama wedding organizer, wisuda, acara keluarga, dan kegiatan perusahaan.",
+    "category": "Fotografi",
+    "content": {
+      "root": {
+        "type": "root",
+        "children": [
+          {
+            "type": "heading",
+            "tag": "h2",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Momen Anda, diceritakan dengan perhatian.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Kami menyediakan fotografi untuk pernikahan, kebutuhan dokumentasi wedding organizer, wisuda, acara keluarga, dan kegiatan perusahaan. Pendekatan visual dibahas mengikuti suasana acara dan hasil foto yang Anda inginkan.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "tag": "h2",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Persiapan sebelum hari acara.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Kita menyusun kebutuhan dokumentasi, daftar momen penting, lokasi, dan alur acara bersama. Referensi gaya, kebutuhan portrait, serta koordinasi dengan penyelenggara dibahas sebelum pemotretan.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "tag": "h2",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Pemilihan dan penyuntingan foto.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Pilihan foto dirapikan melalui penyesuaian warna, pencahayaan, dan retouch sesuai kesepakatan. Cakupan pemotretan, format file, jumlah hasil, serta jadwal penyerahan ditentukan dalam lingkup pekerjaan.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          }
+        ],
+        "direction": null,
+        "format": "",
+        "indent": 0,
+        "version": 1
+      }
+    },
+    "deliverables": [
+      {
+        "id": "creative-0-0",
+        "item": "Pembahasan konsep dan kebutuhan dokumentasi"
+      },
+      {
+        "id": "creative-0-1",
+        "item": "Foto wedding dan dokumentasi untuk wedding organizer"
+      },
+      {
+        "id": "creative-0-2",
+        "item": "Foto wisuda, portrait, dan acara keluarga"
+      },
+      {
+        "id": "creative-0-3",
+        "item": "Dokumentasi kegiatan perusahaan atau komunitas"
+      },
+      {
+        "id": "creative-0-4",
+        "item": "Seleksi foto, penyesuaian warna, dan retouch sesuai lingkup"
+      }
+    ],
+    "order": 11,
+    "_status": "published",
+    "seo": {
+      "title": "Fotografi & Dokumentasi",
+      "description": "Dokumentasi foto untuk wedding, kerja sama wedding organizer, wisuda, acara keluarga, dan kegiatan perusahaan."
+    }
+  },
+  {
+    "title": "Video Editing",
+    "slug": "video-editing",
+    "excerpt": "Penyuntingan video untuk wedding, wisuda, dokumentasi acara, profil bisnis, dan konten media sosial.",
+    "category": "Produksi Kreatif",
+    "content": {
+      "root": {
+        "type": "root",
+        "children": [
+          {
+            "type": "heading",
+            "tag": "h2",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Susun cerita dari setiap rekaman.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Kami membantu menyusun footage menjadi video yang sesuai dengan tujuan Anda: highlight pernikahan, dokumentasi wisuda dan acara, profil bisnis, maupun konten media sosial.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "tag": "h2",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Alur, suara, dan warna yang selaras.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Pekerjaan dapat mencakup pemilihan footage, penyusunan cerita, trimming, transisi yang relevan, penataan audio, subtitle, judul, serta penyesuaian warna. Materi visual dan musik digunakan sesuai hak penggunaan yang tersedia.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "tag": "h2",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Siap untuk media tujuan.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Rasio layar, durasi, format ekspor, materi yang perlu disediakan, dan cakupan revisi dibahas di awal. Hasil disiapkan untuk kanal publikasi yang disepakati tanpa menjanjikan performa konten tertentu.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          }
+        ],
+        "direction": null,
+        "format": "",
+        "indent": 0,
+        "version": 1
+      }
+    },
+    "deliverables": [
+      {
+        "id": "creative-1-0",
+        "item": "Pemetaan brief dan pemilihan footage"
+      },
+      {
+        "id": "creative-1-1",
+        "item": "Penyuntingan highlight wedding, wisuda, dan acara"
+      },
+      {
+        "id": "creative-1-2",
+        "item": "Video profil bisnis atau konten media sosial"
+      },
+      {
+        "id": "creative-1-3",
+        "item": "Subtitle, penataan audio, serta penyesuaian warna"
+      },
+      {
+        "id": "creative-1-4",
+        "item": "Ekspor video sesuai rasio dan kanal publikasi"
+      }
+    ],
+    "order": 12,
+    "_status": "published",
+    "seo": {
+      "title": "Video Editing",
+      "description": "Penyuntingan video untuk wedding, wisuda, dokumentasi acara, profil bisnis, dan konten media sosial."
+    }
+  },
+  {
+    "title": "Desain Grafis & Photo Editing",
+    "slug": "creative-editing",
+    "excerpt": "Desain materi promosi, editing foto, retouch portrait, dan pengolahan visual untuk kebutuhan personal maupun bisnis.",
+    "category": "Produksi Kreatif",
+    "content": {
+      "root": {
+        "type": "root",
+        "children": [
+          {
+            "type": "heading",
+            "tag": "h2",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Visual yang mengikuti kebutuhan Anda.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Kami menyediakan desain grafis dan penyuntingan foto untuk kebutuhan bisnis maupun personal. Mulai dari materi promosi, konten media sosial, poster acara, hingga perapian portrait dan foto produk.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "tag": "h2",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Perbaiki detail, jaga karakter.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Pengolahan foto dapat mencakup pencahayaan, warna, retouch, pembersihan objek, penggantian atau penghapusan latar, dan komposisi sesuai brief. Untuk portrait, karakter orang dan tujuan penggunaan menjadi acuan penyuntingan.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "tag": "h2",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Materi yang mudah digunakan kembali.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "version": 1,
+            "children": [
+              {
+                "type": "text",
+                "text": "Ukuran, format file, kebutuhan cetak atau digital, hak penggunaan aset, serta revisi dibahas bersama. File akhir disiapkan sesuai media yang akan digunakan; file sumber disertakan bila menjadi bagian kesepakatan.",
+                "version": 1,
+                "format": 0
+              }
+            ]
+          }
+        ],
+        "direction": null,
+        "format": "",
+        "indent": 0,
+        "version": 1
+      }
+    },
+    "deliverables": [
+      {
+        "id": "creative-2-0",
+        "item": "Desain poster dan materi promosi"
+      },
+      {
+        "id": "creative-2-1",
+        "item": "Konten visual media sosial"
+      },
+      {
+        "id": "creative-2-2",
+        "item": "Retouch portrait dan penyuntingan foto produk"
+      },
+      {
+        "id": "creative-2-3",
+        "item": "Penghapusan latar serta komposisi foto"
+      },
+      {
+        "id": "creative-2-4",
+        "item": "Penyiapan ukuran dan ekspor untuk cetak atau digital"
+      }
+    ],
+    "order": 13,
+    "_status": "published",
+    "seo": {
+      "title": "Desain Grafis & Photo Editing",
+      "description": "Desain materi promosi, editing foto, retouch portrait, dan pengolahan visual untuk kebutuhan personal maupun bisnis."
+    }
+  }
+]

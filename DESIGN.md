@@ -43,6 +43,7 @@ colors:
   studio-status-amber-bg: "#fff2d9"
   studio-status-amber-text: "#795614"
   gallery-control-line: "#63758a"
+  footer-subtitle: "#adc0d5"
 typography:
   display:
     fontFamily: "Poppins, sans-serif"
@@ -103,8 +104,14 @@ typography:
     fontFamily: "Poppins, sans-serif"
     fontSize: "clamp(100px, 18vw, 230px)"
     fontWeight: 600
-    lineHeight: 0.85
+    lineHeight: 0.88
     letterSpacing: "-0.04em"
+  footer-subtitle:
+    fontFamily: "Poppins, sans-serif"
+    fontSize: "clamp(13px, 1.6vw, 20px)"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "0.22em"
   studio-heading:
     fontFamily: "Poppins, sans-serif"
     fontSize: "28px"
@@ -199,7 +206,10 @@ components:
   footer-wordmark:
     textColor: "{colors.white}"
     typography: "{typography.footer-signature}"
-    padding: "20px 0 0"
+    padding: "22px 0 38px"
+  footer-subtitle:
+    textColor: "{colors.footer-subtitle}"
+    typography: "{typography.footer-subtitle}"
   input-field:
     backgroundColor: "{colors.white}"
     textColor: "{colors.navy}"
@@ -267,7 +277,9 @@ Wasla Studio is the Operate surface of this identity: concrete tasks, readable f
 
 - Photographic public opening and seven real screenshot projects.
 - Actual unboxed Three.js service objects with deliberate interaction.
-- Navy initials or supplied CMS photos in semantic flip cards.
+- Four supplied, transparently retouched CMS portraits in semantic flip cards; honest initials remain the missing-photo fallback.
+- Thirteen services with stable slug-based scenes and six homepage choices, including photography, video and graphic/photo editing.
+- Original CMS screenshots in authored CSS laptop, tablet and phone frames.
 - Left header wordmark, White CTAs and a straight navy footer.
 - Custom Studio Operate workspace with real data and explicit save states.
 
@@ -287,21 +299,21 @@ White is the public reading/consultation/principles/CTA surface and Studio panel
 
 Self-hosted Poppins serves every surface. Public layout loads normal 300/400/500/600/700; Studio loads 400/500/600. Both use swap behavior and sans-serif fallback. Frontmatter owns normative role values. Public hero starts at the Display role; latest narrow overrides use 38px at 767px and 35px at 420px. Public sections use 36px headings, decreasing to 30/29px at 767/575px; reading prose is 15px/1.9 with a 72ch maximum and 14px narrow. Desktop navigation is 11px uppercase; mobile navigation is 20px.
 
-Studio H1 uses Studio Heading, falling to 24px below 767px; H2/H3 are 17/15px. Labels are generally 11px, inputs/actions 12px, secondary timestamps/status labels 10px. The login story headline is 46px desktop, 36px at 991px and 30px at 767px. Numeric content counts use tabular numerals. Public final signature has no subtitle and is decorative, rather than a replacement for readable identity.
+Studio H1 uses Studio Heading, falling to 24px below 767px; H2/H3 are 17/15px. Labels are generally 11px, inputs/actions 12px, secondary timestamps/status labels 10px. The login story headline is 46px desktop, 36px at 991px and 30px at 767px. Numeric content counts use tabular numerals. The decorative final signature pairs large lowercase wasla with informatika at the Footer Subtitle role; readable company identity remains in the information area.
 
 ## Layout
 
 Public wrapper is 1140px including two 15px gutters (1110px inner). Maximums become 960/750/570px at 1199/991/767px, fluid at 575px. Preserve observed section rhythm, generally 55-100px. Header is 82px initially, 64px after scroll, 86px initial mobile, with left wordmark and ID marker only. At 991px and below the full-screen menu replaces desktop navigation. Hero is 100svh with 700px minimum, 680px narrow. Existing waves remain between selected public sections; the footer starts with a straight boundary.
 
-Home project grid uses two columns with 2px seams; the seventh tile spans the row at 2.3 ratio. Below 767px tiles stack at 16:9. Home service objects occupy 300px height, 250px at 991px and 310px at 767px; catalog scene height is 430/370/340/300px at desktop/1199/767/420px. Services stack below 767px. Technology strip retains eight/six/four columns at desktop/1199/767px. Principles and consultation are White; process is a full-width Deep Navy outer section with an inner wrapper.
+Home project grid uses two columns with 2px gaps; the seventh device tile spans the row at 16:9. Device stages normally use 16:10; detail uses 16:9, becoming 16:11 below 767px. Home service objects occupy 300px height, 250px at 991px and 310px at 767px; catalog scene height is 430/370/340/300px at desktop/1199/767/420px. Services stack below 767px; all catalog copy and actions, including alternating rows, retain 15px horizontal gutters. Scene grid tracks use minmax(0,1fr), zero intrinsic minimums and an absolute SVG fallback so intrinsic artwork cannot enlarge the row. Technology strip retains eight/six/four columns at desktop/1199/767px. Principles and consultation are White; process is a full-width Deep Navy outer section with an inner wrapper.
 
-Division cards use four columns with 21px gaps, two columns at 991px and one centered column up to 320px at 420px. Card height is 370px desktop, then 350/390/360/400px at 1199/991/767/420px. Footer information uses three columns (company, navigation, team), becomes two below 767px with company spanning both. Footer padding starts at 65px, 55px narrow. Final signature is left-aligned at .08 opacity, capped at 190px height; narrow uses 26vw type and a 130px cap. It has `aria-hidden="true"`.
+Division cards use four columns with 21px gaps, two columns at 991px and one centered column up to 320px at 420px. Card height is 370px desktop, then 350/390/360/400px at 1199/991/767/420px. Transparent portrait images use object-fit:contain and object-position:center bottom. Footer information uses three columns (company, navigation, team), becomes two below 767px with company spanning both. Footer padding starts at 65px, 55px narrow. The final signature is left-aligned, aria-hidden, with parent opacity 1, max-height:none, overflow:visible and padding 22px 0 38px. Only its wasla child has opacity .08; informatika stays opacity 1 with 17px top margin and Footer Subtitle styling. Narrow name type remains 26vw; bottom padding becomes 30px, with no height cap.
 
 Studio desktop sidebar is fixed at 238px; the shell offsets by the same width. Topbar is 78px and sticky; main width caps at 1510px with 38px 42px 60px padding. At 1199px sidebar/offset become 210px and main horizontal padding 26px. At 991px sidebar becomes a 250px overlay with scrim, shell loses offset, topbar becomes 68px. Below 767px main padding is 26px 18px 40px, overview stacks, table rows become labelled content/action arrangements, media uses two columns, editor becomes one column and save controls move before the form. Editor desktop uses flexible content plus a 270px sticky save rail (235px at 1199px). Calendar keeps seven columns: compact narrow date cells show status marks while the selected-day agenda supplies full task text. Desktop date cells are at least 110px, narrow 66px.
 
 ## Elevation & Depth
 
-Public content is mostly flat; photography and genuine Three.js meshes/materials/lights provide depth. Service objects have transparent canvases, no enclosing card, and raster loading/WebGL fallback only. The model uses rounded boxes, spheres, torus/tubes and physically shaded materials; scenes render on demand and release resources offscreen. Pointer drag/arrow keys rotate the model; Home resets it. Fine-pointer scroll adds bounded orientation. Coarse pointers require Putar objek before drag and Selesai memutar restores scrolling. Reduced motion stops automatic orientation while deliberate controls remain usable. No endless autoplay.
+Public content is mostly flat; photography and genuine Three.js meshes/materials/lights provide depth. Service objects have transparent canvases, no enclosing card, and matching geometric SVG icons while loading or when WebGL is unavailable. The model uses rounded boxes, spheres, torus/tubes and physically shaded materials; scenes render on demand and release resources offscreen. Pointer drag/arrow keys rotate the model; Home resets it. Fine-pointer scroll adds bounded orientation. Coarse pointers require Putar objek before drag and Selesai memutar restores scrolling. Reduced motion stops automatic orientation while deliberate controls remain usable. No endless autoplay. Project devices gain restrained physical framing and a contained shadow; the website visible inside each screen remains the original screenshot.
 
 Studio uses tonal layering with restrained panel shadow `0 5px 22px #071a3306`; sticky toast uses `0 4px 18px #071a3310`. Public scrolled header shadow is `0 2px 10px #071a3310`, floating contact `0 3px 14px #071a3326`. Division flip uses perspective(1200px) and .65s easing, removed for reduced motion. Avoid extending dimensional effects to ordinary form fields.
 
@@ -309,7 +321,7 @@ Studio uses tonal layering with restrained panel shadow `0 5px 22px #071a3306`; 
 
 ## Shapes
 
-Public screenshot tiles stay square; capsule actions use Button radius and nearly square fields use Field radius. Contact/About directory cards retain alternating Contact corners; the homepage flip cards use Division Card corners. Technology links use their own radius. Studio controls are gently rounded using Studio Control, panels use Studio Panel, grouped fields use Studio Field Group; these operational shapes are intentionally quieter than public capsule actions. Calendar selected dates receive a visible blue inset boundary. Footer is straight and seamless.
+Public project tile outer edges stay square; laptop, tablet and phone frames supply device-specific inner corners. Capsule actions use Button radius and nearly square fields use Field radius. Contact/About directory cards retain alternating Contact corners; the shared flip cards use Division Card corners. Technology links use their own radius. Studio controls are gently rounded using Studio Control, panels use Studio Panel, grouped fields use Studio Field Group; these operational shapes are intentionally quieter than public capsule actions. Calendar selected dates receive a visible blue inset boundary. Footer is straight and seamless. Existing section waves remain: their destination-colored 3px pseudo-element covers the bottom raster edge at -1px, without adding a separator or suppressing focus borders.
 
 ## Components
 
@@ -321,11 +333,13 @@ Studio primary/secondary actions have 42px minimum height, Studio Control corner
 
 ### People and contact
 
-Homepage people cards sort Project Manager first. Front is a semantic button with name/role and supplied Team photo or typographic initials; click, Enter and Space reveal a Navy back with biography, separate WhatsApp link and return button. Inactive face is inert and aria-hidden; focus transfers to the back link and returns to the front button. No stock/generated portrait fills missing photos. Contact/About retain the four curved direct-contact cards. Team is the source of names, divisions and valid WhatsApp destinations.
+Shared home/about people cards sort Project Manager first. Front is a semantic button with name/role and supplied Team photo or typographic initials; click, Enter and Space reveal a Navy back with biography, separate WhatsApp link and return button. Inactive face is inert and aria-hidden; focus transfers to the back link and returns to the front button. The four current people are Ahmad Suroso, Jaelani Surya Saputra, Al Hafiz and Laksa. Their owner-supplied photos received professional built-in image_gen retouching and transparent background extraction, with provenance in docs/team-portrait-provenance.json and PNG metadata. Low-resolution inputs do not establish untouched documentary imagery or exact restoration. Alpha was verified in files and after CMS upload. Portraits remain replaceable through Tim & divisi → Foto profil, using contain/center bottom; absent images retain honest initials. Keep each person's existing WhatsApp destination.
 
 Consultation saves privately before exposing an explicit recipient-specific WhatsApp action. It never sends the external message automatically. Values survive recoverable errors. The floating contact opens the directory and hides when that directory is present.
 
 ### Project media and editor
+
+`ProjectMockup` reads the CMS thumbnail for a laptop screen and the first genuine gallery portrait with width/height below .8 for an optional phone. With no mobile source, show the laptop alone. `DeviceFrame` accepts the original image and laptop/tablet/phone choice; frames are CSS, never AI-redrawn websites or baked raster mockups. The seven current projects have original desktop and mobile captures. Gallery portraits below .8 use phones; the first nonportrait item uses a laptop and subsequent nonportrait items use tablets. For example, replacing a CMS thumbnail changes its laptop screen directly, while selecting gallery media opens that original screenshot in the lightbox. Screen presentation uses top-aligned cover sizing; enlargement preserves the original image and caption.
 
 Original project thumbnails remain distinct from galleries. Three additional captures per project were an earlier migration quantity, never an editor limit. In Studio, manually add gallery rows, choose Media or expand inline upload, provide required alternative text, upload an accepted image, enter captions, reorder with Naik/Turun, then save/publish. Upload is explicit; no automatic capture or image generation occurs. Gallery enlargement uses native dialog, previous/next and arrow-key navigation, Escape, scroll lock and focus return; file links remain a fallback.
 
@@ -337,13 +351,41 @@ Overview shows real closest deadlines/new messages, content counts and updated p
 
 Admin and editor manage content, media, schedules and message follow-up. Only admin manages users and deletion. Existing legacy accounts remain valid through first-login migration; sessions use HttpOnly cookies, expire after eight hours and preserve role checks. Private messages/schedules require a staff session. The new studio tables preserve original legacy tables; Neon and Blob remain the data/media services.
 
+### Semantic service scenes and public measurements
+
+The catalog preserves ten technology services and adds Fotografi & Dokumentasi (wedding/WO collaboration, graduation and events), Video Editing and Desain Grafis & Photo Editing. Homepage choices are website-development, web-application, ui-ux-design, photography, video-editing and creative-editing. Consultation links retain the selected service; no price, guaranteed outcome or turnaround is invented.
+
+`getServiceVisual(slug)` owns stable identity independently of CMS order. The 13 types are:
+
+| Slug | Scene type | Subject |
+| --- | --- | --- |
+| website-development | website | Monitor and phone |
+| web-application | application | Workflow laptop |
+| custom-software | software | Connected software modules |
+| e-commerce | commerce | Shopping bag, products and payment |
+| ui-ux-design | design | Interface artboard |
+| it-consultation | consultation | Strategy board and conversation |
+| it-infrastructure / it-infrastructure-support | infrastructure | Server rack |
+| maintenance-support | maintenance | Maintenance tools |
+| systems-integration | integration | Hub and connected nodes |
+| database-digital-solutions | database | Database cylinders |
+| photography | photography | Camera and lens |
+| video-editing | video | Editing timeline and slate |
+| creative-editing | creative | Artboard, pen and swatches |
+
+Published aliases and keyword fallbacks are defined in src/lib/service-visual.ts; unknown slugs fall back to website. Example: moving photography to the first CMS position still renders the camera. The same semantic type drives meshes, accessible label and SVG fallback.
+
+`SiteMeasurements` mounts only in the public frontend layout when VERCEL === '1'. Page-view URLs have query and fragment removed; Speed Insights samples .1 (10%). No form content, private Studio route telemetry or custom form/admin events are added. App installation, platform configuration and production runtime verification are separate evidence states.
+
 ## Do's and Don'ts
 
 ### Do:
 
 - **Do** preserve Wasla navy/white, Poppins, the photographic opening and original project covers.
 - **Do** keep Three.js geometry, explicit touch activation, keyboard rotation and reduced-motion behavior.
-- **Do** use supplied photos or honest initials, manual gallery uploads and independent WhatsApp links.
+- **Do** use provenance-backed retouches of the four supplied photos or honest initials, manual gallery uploads and independent WhatsApp links.
+- **Do** preserve original CMS screenshots within CSS device frames and expose originals in enlargement.
+- **Do** keep informatika readable beneath the low-opacity wasla child, with no signature height cap.
 - **Do** keep Studio forms readable, mobile save controls first and calendar details available in the agenda.
 - **Do** preserve published content until an explicit publish action, role restrictions and private data boundaries.
 
@@ -354,4 +396,4 @@ Admin and editor manage content, media, schedules and message follow-up. Only ad
 - **Don't** invent client work, metrics, schedules, automatic reminders or project stacks.
 - **Don't** treat staged runtime verification, local captures or documentation as completed production promotion or DNS.
 
-Historical direction: earlier code-first records described a right emblem, raster perspective, a coordinator tree, a .14 centered footer signature and Payload editing. Those are history, superseded by the 23 October Studio contract. Prior public evidence remains in `docs/refinement-20261023.md` and `docs/visual-review-motion.md`; current operations are in `docs/wasla-studio.md` and `docs/domain-wasla-my-id.md`. Production release dpl_7pH59fqvSkobj1h4sN7kTJssrZwT is promoted and verified at https://wasla.my.id. Vercel reports configured-correctly; Cloudflare and Google resolve ns1.vercel-dns.com and ns2.vercel-dns.com. HTTPS, canonical, sitemap, existing administrator login, Blob upload, scheduler, contact persistence and desktop/mobile checks passed on the custom domain. See docs/production-verification.md and docs/domain-wasla-my-id.md for operational evidence.
+Historical direction: earlier code-first records described a right emblem, raster perspective, a coordinator tree, a .14 centered footer signature and Payload editing. Those are history, superseded by the 23 October Studio contract and its approved creative extension in `.impeccable/creative-refinement.md`. Current scope and provenance are in `docs/creative-refinement.md`; the full 24-capture review found no app visual fixes and requested this canon extension. Domain DNS and HTTPS already work at https://wasla.my.id. New deployment dpl_3RqmPGEko4anami9d9Ugfmw6Db8s is READY; runtime checks and promotion are pending. This document does not certify that release or analytics delivery. See `docs/production-verification.md` and `docs/domain-wasla-my-id.md` for operational evidence.

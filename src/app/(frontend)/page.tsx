@@ -19,7 +19,7 @@ export default async function Home() {
   const [settings, services, projects, testimonials, team] = await Promise.all([getSettings(), getServices(), getProjects(), getTestimonials(), getTeam()])
   const featured = projects.docs.filter(p => p.featured).slice(0, 8)
   const contacts = teamContacts(team.docs)
-  const selectedServices = ['website-development', 'web-application', 'ui-ux-design'].map(slug => services.docs.find(s => s.slug === slug)).filter(s => s !== undefined)
+  const selectedServices = ['website-development', 'web-application', 'ui-ux-design', 'photography', 'video-editing', 'creative-editing'].map(slug => services.docs.find(s => s.slug === slug)).filter(s => s !== undefined)
   const heroImage = settings.heroImage
   const heroImageID = typeof heroImage === 'object' ? heroImage?.id : heroImage
   const heroConcept = heroImageID && projects.docs.find(p => p.isConcept && (typeof p.thumbnail === 'object' ? p.thumbnail?.id : p.thumbnail) === heroImageID)
@@ -49,9 +49,9 @@ export default async function Home() {
     <SectionWave variant="light-dark"/>
 
     <section className="services-section" id="layanan"><div className="wrap">
-      <div className="section-heading centered"><h2>Layanan kami</h2><p>Solusi digital yang disusun sesuai kebutuhan, dengan perhatian pada desain, teknologi, dan kemudahan penggunaan.</p></div>
-      <div className="service-cards">{selectedServices.map((s, i) => <article className="service-card" key={s.id} data-reveal>
-        <div className="service-picture"><ServiceScene variant={i} dark/></div>
+      <div className="section-heading centered"><h2>Layanan kami</h2><p>Pengembangan website dan aplikasi, fotografi, serta penyuntingan visual untuk kebutuhan bisnis dan momen Anda.</p></div>
+      <div className="service-cards">{selectedServices.map(s => <article className="service-card" key={s.id} data-reveal>
+        <div className="service-picture"><ServiceScene service={s.slug} dark/></div>
         <h3><Link href={`/layanan/${s.slug}`}>{s.title}</Link></h3><p>{s.excerpt}</p>
         <ButtonLink href={`/layanan/${s.slug}`} variant="button-outline-light">Pelajari layanan</ButtonLink>
       </article>)}</div>

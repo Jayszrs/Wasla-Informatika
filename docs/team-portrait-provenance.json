@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "ahmad-suroso",
+    "teamId": 2,
+    "name": "Ahmad Suroso",
+    "source": "C:\\Users\\jaela\\.codex\\generated_images\\01a161d8-4b90-7ed0-8690-4abd7d24eeb3\\exec-2c9354ac-2199-4d77-85ff-3248bc88ef5c.png",
+    "file": "public/images/team/ahmad-suroso.png",
+    "tool": "built-in image_gen",
+    "userSource": "Owner-supplied portrait in user message, images 6–9 respectively",
+    "prompt": "Edit target: FIRST of the five most recent user-supplied images: small passport portrait of Ahmad Suroso, white shirt and tie against blue. Use only that person. The fifth image is an unrelated website screenshot, IGNORE it. Use case: identity-preserve and background-extraction. Create ONE individual professional team portrait for Wasla Informatika website. Preserve the exact recognizable facial identity, age, hairstyle, skin tone, expression and natural proportions of the selected person; no face substitution or beautification that changes identity. Restore low-resolution detail conservatively, improve exposure and soft studio lighting, remove screenshot UI, borders, banners, words, background and lanyard if present. Professional natural navy/dark charcoal collared shirt or understated jacket appropriate to existing clothes. Head and upper torso, centered, all hair and both shoulders fully included with comfortable margin; consistent vertical portrait composition suitable for a team card. Genuine transparent alpha background, no backdrop, no ground shadow, no graphic, no text, no frame. Photorealistic, polished but with real skin texture. Only one person, no collage. Save the generated image file as an output artifact."
+  },
+  {
+    "slug": "jaelani-surya-saputra",
+    "teamId": 1,
+    "name": "Jaelani Surya Saputra",
+    "source": "C:\\Users\\jaela\\.codex\\generated_images\\01a161d8-4b90-7ed0-8690-4abd7d24eeb3\\exec-e6d2b4fd-7277-4337-97a2-898deb8e0209.png",
+    "file": "public/images/team/jaelani-surya-saputra.png",
+    "tool": "built-in image_gen",
+    "userSource": "Owner-supplied portrait in user message, images 6–9 respectively",
+    "prompt": "Edit target: SECOND of the five most recent user-supplied images: Jaelani Surya Saputra standing in dark jacket, black shirt, with jayszrs name banner. Use only that person. The fifth image is an unrelated website screenshot, IGNORE it. Use case: identity-preserve and background-extraction. Create ONE individual professional team portrait for Wasla Informatika website. Preserve the exact recognizable facial identity, age, hairstyle, skin tone, expression and natural proportions of the selected person; no face substitution or beautification that changes identity. Restore low-resolution detail conservatively, improve exposure and soft studio lighting, remove screenshot UI, borders, banners, words, background and lanyard if present. Professional natural navy/dark charcoal collared shirt or understated jacket appropriate to existing clothes. Head and upper torso, centered, all hair and both shoulders fully included with comfortable margin; consistent vertical portrait composition suitable for a team card. Genuine transparent alpha background, no backdrop, no ground shadow, no graphic, no text, no frame. Photorealistic, polished but with real skin texture. Only one person, no collage. Save the generated image file as an output artifact."
+  },
+  {
+    "slug": "al-hafiz",
+    "teamId": 3,
+    "name": "Al Hafiz",
+    "source": "C:\\Users\\jaela\\.codex\\generated_images\\01a161d8-4b90-7ed0-8690-4abd7d24eeb3\\exec-e00a2264-cbb5-428d-b896-1c990f5de8d1.png",
+    "file": "public/images/team/al-hafiz.png",
+    "tool": "built-in image_gen",
+    "userSource": "Owner-supplied portrait in user message, images 6–9 respectively",
+    "prompt": "Edit target: THIRD of the five most recent user-supplied images: Al Hafiz with black wavy hair in circular profile crop, black collared shirt, facing right. Use only that person. Preserve his three-quarter/profile pose. The fifth image is an unrelated website screenshot, IGNORE it. Use case: identity-preserve and background-extraction. Create ONE individual professional team portrait for Wasla Informatika website. Preserve the exact recognizable facial identity, age, hairstyle, skin tone, expression and natural proportions of the selected person; no face substitution or beautification that changes identity. Restore low-resolution detail conservatively, improve exposure and soft studio lighting, remove screenshot UI, borders, banners, words, background and lanyard if present. Professional natural navy/dark charcoal collared shirt or understated jacket appropriate to existing clothes. Head and upper torso, centered, all hair and both shoulders fully included with comfortable margin; consistent vertical portrait composition suitable for a team card. Genuine transparent alpha background, no backdrop, no ground shadow, no graphic, no text, no frame. Photorealistic, polished but with real skin texture. Only one person, no collage. Save the generated image file as an output artifact."
+  },
+  {
+    "slug": "laksa",
+    "teamId": 4,
+    "name": "Laksa",
+    "source": "C:\\Users\\jaela\\.codex\\generated_images\\01a161d8-4b90-7ed0-8690-4abd7d24eeb3\\exec-d4e68532-4718-4de8-aead-138d2cc70d1a.png",
+    "file": "public/images/team/laksa.png",
+    "tool": "built-in image_gen",
+    "userSource": "Owner-supplied portrait in user message, images 6–9 respectively",
+    "prompt": "Edit target: FOURTH of the five most recent user-supplied images: Laksa, gray collared shirt, three-quarter pose against blue wall. Use only that person. The fifth image is an unrelated website screenshot, IGNORE it. Use case: identity-preserve and background-extraction. Create ONE individual professional team portrait for Wasla Informatika website. Preserve the exact recognizable facial identity, age, hairstyle, skin tone, expression and natural proportions of the selected person; no face substitution or beautification that changes identity. Restore low-resolution detail conservatively, improve exposure and soft studio lighting, remove screenshot UI, borders, banners, words, background and lanyard if present. Professional natural navy/dark charcoal collared shirt or understated jacket appropriate to existing clothes. Head and upper torso, centered, all hair and both shoulders fully included with comfortable margin; consistent vertical portrait composition suitable for a team card. Genuine transparent alpha background, no backdrop, no ground shadow, no graphic, no text, no frame. Photorealistic, polished but with real skin texture. Only one person, no collage. Save the generated image file as an output artifact."
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-23T09:58:15.566Z",
+  "local": {
+    "build": "pass",
+    "typecheck": "pass",
+    "lint": {
+      "errors": 0,
+      "warnings": 7
+    },
+    "unitTests": 4,
+    "browserTests": 11,
+    "affectedBrowserRetest": 4,
+    "captures": 24,
+    "overflow": 0,
+    "brokenImages": 0,
+    "pageErrors": []
+  },
+  "portraitAlpha": {
+    "generatedFiles": 4,
+    "localCmsUploads": 4,
+    "verified": true
+  },
+  "dependencyAudit": {
+    "productionVulnerabilities": 0
+  },
+  "rea": {
+    "before": "ev_77cc9fedb1d0baaf3f15c9acc2b29abef06f777e0edbe00d8ef4eaab4209d08f",
+    "scope": "Public services URL in provider-owned Chrome; DOM and screenshot; no proprietary source or private account capture"
+  },
+  "platform": {
+    "webAnalyticsConfigured": true,
+    "speedInsightsConfigured": true,
+    "sdkDeploymentPending": true,
+    "plusPurchased": false,
+    "browserChecklistPendingOwnerLogin": true
+  }
+}

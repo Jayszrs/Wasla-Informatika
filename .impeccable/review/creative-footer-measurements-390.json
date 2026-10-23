@@ -1,0 +1,37 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "clip": {
+    "x": 0,
+    "y": 0,
+    "width": 390,
+    "height": 844
+  },
+  "scrollY": 11908,
+  "scrollHeight": 12752,
+  "elements": {
+    ".site-footer": {
+      "x": 0,
+      "y": 29.125,
+      "width": 390,
+      "height": 814.703125,
+      "bottom": 843.828125
+    },
+    ".footer-signature": {
+      "x": 15,
+      "y": 666.09375,
+      "width": 360,
+      "height": 177.734375,
+      "bottom": 843.828125
+    },
+    ".footer-signature-subtitle": {
+      "x": 15,
+      "y": 794.328125,
+      "width": 360,
+      "height": 19.5,
+      "bottom": 813.828125
+    }
+  }
+}

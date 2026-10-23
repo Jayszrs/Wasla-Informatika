@@ -7,7 +7,8 @@ import { ConceptVisual, SectionWave } from './artwork'
 import { ServiceScene } from './service-scene'
 import { mediaSource } from '@/lib/media'
 import { teamContacts } from '@/lib/contacts'
-import { ContactCards } from './contact-cards'
+import { DivisionStructure } from './division-structure'
+import { ProjectMockup } from './device-mockup'
 
 export function ButtonLink({
   href,
@@ -74,7 +75,7 @@ export function MediaImage({ media, className = '', priority = false, sizes = '(
 
 export function ProjectImage({ project }: { project: Project }) {
   return project.thumbnail && typeof project.thumbnail === 'object' && project.thumbnail.url ? (
-    <MediaImage media={project.thumbnail} />
+    <ProjectMockup project={project} />
   ) : project.isConcept ? (
     <ConceptVisual variant={project.visual} />
   ) : (
@@ -131,10 +132,10 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
   )
 }
 
-export function ServiceRow({ service, index }: { service: Service; index: number }) {
+export function ServiceRow({ service }: { service: Service; index?: number }) {
   return (
     <article className="service-row our-service-item">
-      <div className="service-row-image"><ServiceScene variant={index}/></div>
+      <div className="service-row-image"><ServiceScene service={service.slug}/></div>
       <div className="our-service-content">
         <h3 className="our-service-title">{service.title}</h3>
         <p className="our-service-desc">{service.excerpt}</p>
@@ -150,7 +151,7 @@ export function CTA({ title = 'Langkah berikutnya, kita mulai bersama.' }: { tit
       <div className="wrap">
         <div className="final-cta-content">
           <h2>{title}</h2>
-          <p>Ceritakan rencana Anda. Kita temukan arah teknologi yang sesuai dengan kebutuhan bisnis.</p>
+          <p>Ceritakan rencana Anda. Kita petakan kebutuhan digital atau produksi visual sesuai tujuan Anda.</p>
           <ButtonLink href="/kontak" variant="button-white btn-white" arrow>
             Mulai konsultasi
           </ButtonLink>
@@ -187,43 +188,7 @@ export function Process() {
 }
 
 export function TeamSection({ members, showAboutLink = true }: { members: Team[]; showAboutLink?: boolean }) {
-  return (
-    <section className="team-section wrap">
-      <div className="section-heading">
-        <div>
-          <h2>Manusia di balik<br />setiap solusi.</h2>
-        </div>
-        {showAboutLink && <TextLink href="/tentang-kami">Mengenal Wasla</TextLink>}
-      </div>
-      {members.length && !members.some(member => member.photo) && teamContacts(members).length ? <ContactCards contacts={teamContacts(members)}/> : members.length ? (
-        <div className="team-grid">
-          {members.map(m => (
-            <article key={m.id} className="team-card">
-              <MediaImage media={m.photo} />
-              <h3>{m.name}</h3>
-              <span className="team-role">{m.role}</span>
-              <p>{m.biography}</p>
-              {m.socials
-                ?.filter(s => /^https:\/\//.test(s.url || ''))
-                .map(s => (
-                  <a key={s.id} href={s.url!} rel="noopener noreferrer">
-                    {s.label}
-                  </a>
-                ))}
-            </article>
-          ))}
-        </div>
-      ) : (
-        <div className="team-empty">
-          <p>
-            Kolaborasi adalah bagian dari cara kami bekerja: memahami konteks bisnis, membahas pilihan dengan terbuka, dan
-            memberi perhatian pada detail.
-          </p>
-          <p>Profil tim akan diperkenalkan setelah informasi resminya tersedia.</p>
-        </div>
-      )}
-    </section>
-  )
+  return <section className="team-section wrap"><DivisionStructure contacts={teamContacts(members)} members={members}/>{showAboutLink && <TextLink href="/tentang-kami">Mengenal Wasla</TextLink>}</section>
 }
 
 export function FAQSection({ items }: { items: { id: number; question: string; answer: string }[] }) {

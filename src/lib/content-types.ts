@@ -75,7 +75,7 @@ export interface Service {
   } | null;
   illustration?: (number | null) | Media;
   image?: (number | null) | Media;
-  category: 'Pengembangan' | 'Desain' | 'Infrastruktur' | 'Konsultasi';
+  category: 'Pengembangan' | 'Desain' | 'Infrastruktur' | 'Konsultasi' | 'Fotografi' | 'Produksi Kreatif';
   deliverables?:
     | {
         item: string;
