@@ -1,0 +1,6 @@
+{
+  "source": "built-in imagegen",
+  "prompt": "Edit the supplied logo image, which is the small white-background logo among the last three user images (the other two images are website screenshots and must be ignored). Extract ONLY that existing Wasla emblem: an almost circular cobalt/deep-blue ring with open upper-right gap, interlocking flowing cyan-blue, violet/magenta and emerald-green ribbon strokes with an upward green arrow on the right. Preserve its EXACT provided geometry, proportions, color placement and recognizable intertwined shape; do not invent letters, extra symbols, text, framing or a new logo. Remove the white background and gray outside shadow, clean compression artifacts, and produce a crisp faithful 1024px transparent-background logo cutout, centered with a modest 8 percent transparent margin. Retain the dimensional polished 3D material from the original. This is restoration/extraction of the user's supplied brand asset, not a redesign. Output only the emblem on true transparency.",
+  "original": "exec-7c104065-69f6-467a-a383-bd45f9a0a949.png",
+  "date": "2026-10-23"
+}

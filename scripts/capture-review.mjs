@@ -7,7 +7,7 @@ const readings = []
 for (const width of [1440, 1024, 768, 390]) {
   const page = await browser.newPage({ viewport: { width, height: width === 390 ? 844 : 900 }, reducedMotion: 'reduce' })
   page.on('pageerror', e => errors.push(e.message))
-  for (const [name, route] of [['home', '/'], ['services', '/layanan'], ['service', '/layanan/website-development'], ['portfolio', '/portofolio'], ['project', '/portofolio/ruang-commerce'], ['insights', '/insights'], ['article', '/insights/website-atau-aplikasi-web'], ['about', '/tentang-kami'], ['contact', '/kontak']]) {
+  for (const [name, route] of [['home', '/'], ['services', '/layanan'], ['service', '/layanan/website-development'], ['portfolio', '/portofolio'], ['project', '/portofolio/catatan-mengaji-bani-saleh'], ['insights', '/insights'], ['article', '/insights/website-atau-aplikasi-web'], ['about', '/tentang-kami'], ['contact', '/kontak']]) {
     await page.goto(`http://localhost:3000${route}`, { waitUntil: 'domcontentloaded', timeout: 90_000 })
     await page.locator('h1').waitFor()
     await page.locator('.site-header .brand').waitFor({ state: 'visible' })

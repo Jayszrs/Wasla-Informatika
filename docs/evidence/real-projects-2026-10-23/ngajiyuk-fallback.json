@@ -1,0 +1,28 @@
+{
+  "provider": "Playwright fallback (not REA)",
+  "requestedUrl": "https://ngajiyuk.sdilbanisalehsetu.com/",
+  "startedAt": "2026-10-23T02:05:18.365Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "actions": [
+    "navigate public landing only",
+    "wait for fonts and visible images; maximum 8 seconds"
+  ],
+  "technologyClaims": [],
+  "limitation": "REA navigation failed before initial state; fallback uses domcontentloaded. No authentication, forms, private assets, source scripts, or child records inspected.",
+  "status": 200,
+  "actualUrl": "https://ngajiyuk.sdilbanisalehsetu.com/",
+  "title": "Ngaji Yuk! · SD Islam Labschool Bani Saleh",
+  "headings": [
+    "Pendampingan hafalan yang lebih terarah, setiap hari.",
+    "Dibuat untuk alur belajar yang benar-benar berjalan.",
+    "Dari kelas hingga rumah, tetap tersambung.",
+    "Lebih fokus mendampingi, lebih sedikit mengurus administrasi.",
+    "Perkembangan anak hadir dengan jelas, bukan sekadar angka.",
+    "Bangun pendampingan Tahsin & Tahfidz yang lebih konsisten."
+  ],
+  "screenshot": "ngajiyuk.png",
+  "result": "captured"
+}

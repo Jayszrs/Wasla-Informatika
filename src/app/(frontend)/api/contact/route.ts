@@ -39,7 +39,13 @@ export async function POST(request: Request) {
       const service = await payload.count({ collection: 'services', where: { title: { equals: parsed.data.service } }, overrideAccess: false })
       if (!service.totalDocs) return json({ error: 'Pilih layanan yang tersedia.', fields: { service: ['Layanan ini belum tersedia. Pilih kembali.'] } }, 400)
     }
-    const { website: _honeypot, ...data } = parsed.data
+    const { website: _honeypot, recipient, ...data } = parsed.data
+    if (recipient) {
+      const contacts = await payload.find({ collection: 'team', where: { id: { equals: recipient } }, limit: 1, overrideAccess: false })
+      const person = contacts.docs[0]
+      if (!person || !person.socials?.some(s => /^https:\/\/wa\.me\/[1-9]\d{8,14}$/.test(s.url || ''))) return json({ error: 'Pilih kontak yang tersedia.', fields: { recipient: ['Kontak belum tersedia. Pilih kembali.'] } }, 400)
+      data.message = `Tujuan: ${person.name} — ${person.role}\n\n${data.message}`
+    }
     const record = await payload.create({ collection: 'contact-submissions', overrideAccess: true, data: { ...data, status: 'baru' } })
     if (process.env.SMTP_HOST && process.env.CONTACT_NOTIFY_EMAIL) {
       try { await payload.sendEmail({ to: process.env.CONTACT_NOTIFY_EMAIL, subject: 'Pesan konsultasi baru — Wasla', text: `Pesan baru telah tersimpan. Buka panel admin untuk meninjau pesan #${record.id}.` }) }

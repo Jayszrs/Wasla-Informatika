@@ -42,7 +42,8 @@ export const Media: CollectionConfig = {
     if (!req.file) return
     const b = req.file.data
     const valid = b.subarray(0, 3).toString('hex') === 'ffd8ff' || b.subarray(0, 8).toString('hex') === '89504e470d0a1a0a' || b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP' || b.toString('ascii', 4, 8) === 'ftyp' && /avif|avis/.test(b.toString('ascii', 8, 32))
-    if (!valid || req.file.size > 8 * 1024 * 1024) throw new APIError('Unggah gambar PNG, JPEG, WebP, atau AVIF, maksimal 8 MB.', 400)
+    const limitMB = process.env.VERCEL === '1' ? 4 : 8
+    if (!valid || req.file.size > limitMB * 1024 * 1024) throw new APIError(`Unggah gambar PNG, JPEG, WebP, atau AVIF, maksimal ${limitMB} MB.`, 400)
   }] },
   fields: [text('alt'), area('caption', false)],
 }
@@ -51,7 +52,7 @@ export const Services = editorial({ slug: 'services', labels: { singular: 'Layan
   { name: 'category', type: 'select', required: true, options: ['Pengembangan', 'Desain', 'Infrastruktur', 'Konsultasi'] },
   { name: 'deliverables', type: 'array', fields: [text('item')] }, order, seo,
 ] })
-export const Projects = editorial({ slug: 'projects', labels: { singular: 'Proyek', plural: 'Portofolio' }, fields: [
+export const Projects = editorial({ slug: 'projects', labels: { singular: 'Project', plural: 'Project' }, fields: [
   text('title'), slug, text('category'), text('client', false), area('excerpt'), area('challenge'), area('solution'), area('results', false),
   { name: 'isConcept', type: 'checkbox', defaultValue: true, admin: { description: 'Aktifkan untuk demonstrasi; jangan tampilkan sebagai proyek klien.' } },
   { name: 'visual', type: 'select', options: ['commerce', 'platform', 'editorial'], defaultValue: 'commerce' },
@@ -60,7 +61,7 @@ export const Projects = editorial({ slug: 'projects', labels: { singular: 'Proye
   { name: 'externalLink', type: 'text', validate: (v: unknown) => !v || typeof v === 'string' && /^https:\/\//.test(v) || 'Gunakan URL HTTPS.' },
   { name: 'featured', type: 'checkbox', defaultValue: false }, order, seo,
 ] })
-export const Posts = editorial({ slug: 'posts', labels: { singular: 'Artikel', plural: 'Insights' }, fields: [
+export const Posts = editorial({ slug: 'posts', labels: { singular: 'Artikel', plural: 'Artikel' }, fields: [
   text('title'), slug, area('excerpt'), { name: 'content', type: 'richText', required: true }, image('image'),
   { name: 'author', type: 'relationship', relationTo: 'team' }, text('category'),
   { name: 'tags', type: 'array', fields: [text('tag')] }, { name: 'publishedAt', type: 'date', required: true, index: true }, seo,

@@ -18,9 +18,9 @@ test('all public routes, metadata, portfolio filters, FAQ and service conversion
   page.on('pageerror', e => errors.push(e.message))
   for (const [path, heading] of [
     ['/', 'Software House'], ['/layanan', 'Layanan'], ['/layanan/website-development', 'Website Development'],
-    ['/portofolio', 'Karya Kami'], ['/portofolio/ruang-commerce', 'Ruang — Commerce'],
-    ['/insights', 'Insights'], ['/insights/website-atau-aplikasi-web', 'Website atau aplikasi'],
-    ['/tentang-kami', 'Tentang Wasla'], ['/kontak', 'Kontak'], ['/privasi', 'Informasi Anda,'],
+    ['/portofolio', 'Project'], ['/portofolio/catatan-mengaji-bani-saleh', 'Catatan Mengaji'],
+    ['/insights', 'Artikel'], ['/insights/website-atau-aplikasi-web', 'Website atau aplikasi'],
+    ['/tentang-kami', 'Tentang Wasla'], ['/kontak', 'Mari terhubung.'], ['/privasi', 'Informasi Anda,'],
   ]) {
     const response = await page.goto(path)
     expect(response?.status(), path).toBe(200)
@@ -29,17 +29,18 @@ test('all public routes, metadata, portfolio filters, FAQ and service conversion
     expect(new URL(canonical!).pathname).toBe(path)
   }
   await page.goto('/portofolio')
-  await page.getByRole('button', { name: 'E-Commerce', exact: true }).click()
+  await page.getByRole('button', { name: 'E-Katalog', exact: true }).click()
   await expect(page.locator('.project-card')).toHaveCount(1)
-  await expect(page.getByRole('status')).toContainText('1 karya')
+  await expect(page.getByRole('status')).toContainText('1 project')
   await page.getByRole('button', { name: 'Semua', exact: true }).click()
-  await expect(page.locator('.project-card')).toHaveCount(4)
+  await expect(page.locator('.project-card')).toHaveCount(7)
+  await expect(page.locator('.concept-tag')).toHaveCount(0)
   await page.goto('/insights')
   await page.getByRole('button', { name: 'Teknologi', exact: true }).click()
   await expect(page.locator('.post-card')).toHaveCount(1)
   await page.getByRole('button', { name: 'Semua', exact: true }).click()
   await expect(page.locator('.post-card')).toHaveCount(3)
-  for (const [label, path] of [['Layanan', '/layanan'], ['Karya', '/portofolio'], ['Tentang', '/tentang-kami'], ['Insights', '/insights']]) {
+  for (const [label, path] of [['Layanan', '/layanan'], ['Project', '/portofolio'], ['Tentang', '/tentang-kami'], ['Artikel', '/insights']]) {
     await page.getByRole('navigation', { name: 'Navigasi utama', exact: true }).getByRole('link', { name: label, exact: true }).click()
     await expect(page).toHaveURL(new RegExp(`${path}$`))
   }
@@ -175,4 +176,56 @@ test('contact validation, persistence and server protections', async ({ page, re
     expect(docs.some((d: { message: string }) => d.message.includes('Pesan QA lokal'))).toBe(true)
     for (const doc of docs) if (doc.name === 'Pengujian Browser') await admin.delete(`/api/contact-submissions/${doc.id}`)
   } finally { await admin.dispose() }
+})
+
+test('seven real project destinations and four WhatsApp recipient summaries', async ({ page, request }) => {
+  await resetTestRateLimit()
+  const expectedProjects = [
+    'https://ngajiyuk.sdilbanisalehsetu.com/', 'https://ipnubekasi.my.id/', 'https://www.batualamsupplier.com/',
+    'https://www.fazmastone.com/', 'https://cimuning.com/', 'https://mahamerubaja.vercel.app/', 'https://sitpermatahati.up.railway.app/',
+  ]
+  await page.goto('/portofolio')
+  const live = await page.locator('.project-live').evaluateAll(links => links.map(link => (link as HTMLAnchorElement).href))
+  expect(live.sort()).toEqual([...expectedProjects].sort())
+  const details = await page.locator('.project-image').evaluateAll(links => links.map(link => (link as HTMLAnchorElement).pathname))
+  for (const detail of details) {
+    expect((await page.goto(detail))?.status()).toBe(200)
+    await expect(page.getByRole('link', { name: 'Kunjungi website', exact: true })).toHaveAttribute('href', /^https:\/\//)
+  }
+  const contacts = [
+    ['Jaelani Surya Saputra', 'https://wa.me/6281318533055'], ['Amat Suroso', 'https://wa.me/6281310154447'],
+    ['Alhafiz', 'https://wa.me/6289697505769'], ['Laksa', 'https://wa.me/6289643092842'],
+  ]
+  const admin = await requestFactory.newContext({ baseURL: process.env.TEST_BASE_URL || 'http://localhost:3000', extraHTTPHeaders: { Origin: 'http://localhost:3000' } })
+  try {
+    await admin.post('/api/users/login', { data: { email: process.env.BOOTSTRAP_ADMIN_EMAIL, password: process.env.BOOTSTRAP_ADMIN_PASSWORD } })
+    for (const [name, href] of contacts) {
+      await page.goto('/kontak')
+      await expect(page.locator('.contact-person').filter({ hasText: name })).toHaveAttribute('href', href)
+      const selected = await page.locator('#recipient option').filter({ hasText: name }).getAttribute('value')
+      await page.locator('#recipient').selectOption(selected!)
+      await page.locator('#name').fill('Penguji WhatsApp')
+      await page.locator('#email').fill('whatsapp@example.invalid')
+      await page.locator('#service').selectOption({ label: 'Website Development' })
+      await page.locator('#message').fill('Ringkasan QA WhatsApp & detail project tanpa pengiriman pesan nyata.')
+      await page.locator('#consent').check()
+      await page.getByRole('button', { name: 'Kirim pesan', exact: true }).click()
+      await expect(page.locator('.form-feedback')).toHaveAttribute('data-state', 'success')
+      const prepared = new URL((await page.locator('.whatsapp-followup').getAttribute('href'))!)
+      expect(`${prepared.origin}${prepared.pathname}`).toBe(href)
+      expect(prepared.searchParams.get('text')).toContain('QA WhatsApp & detail project')
+      expect(prepared.searchParams.get('text')).toContain(`Halo ${name}`)
+    }
+    const saved = await admin.get('/api/contact-submissions?where[email][equals]=whatsapp@example.invalid')
+    const docs = (await saved.json()).docs
+    expect(docs.filter((doc: { name: string }) => doc.name === 'Penguji WhatsApp')).toHaveLength(4)
+    for (const [name] of contacts) expect(docs.some((doc: { message: string }) => doc.message.startsWith(`Tujuan: ${name}`))).toBe(true)
+  } finally {
+    const saved = await admin.get('/api/contact-submissions?where[email][equals]=whatsapp@example.invalid')
+    for (const doc of (await saved.json()).docs || []) if (doc.name === 'Penguji WhatsApp') await admin.delete(`/api/contact-submissions/${doc.id}`)
+    await admin.dispose()
+    await resetTestRateLimit()
+  }
+  const archived = await request.get('/api/projects?where[slug][equals]=ruang-commerce&draft=true')
+  expect((await archived.json()).docs).toHaveLength(0)
 })

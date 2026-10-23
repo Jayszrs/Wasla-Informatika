@@ -42,11 +42,7 @@ export function NavigationBar({ settings, navigation }: { settings: SiteSetting;
     <header className={`site-header ${onHome ? 'header-home' : 'header-inner-page'} ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="header-inner wrap">
         <Link className="brand" href="/" onClick={close} aria-label="Wasla Informatika, beranda">
-          {logo?.url ? (
-            <Image className={lightHeader && !navyLogo ? 'logo-monochrome' : undefined} src={mediaSource(logo.url)} width={140} height={48} alt={logo.alt} />
-          ) : (
-            <span>wasla<span className="brand-sub">informatika</span><span className="brand-period">.</span></span>
-          )}
+          <span>wasla<span className="brand-sub">informatika</span><span className="brand-period">.</span></span>
         </Link>
         <nav className="desktop-nav" aria-label="Navigasi utama">
           {links.map(l => (
@@ -57,6 +53,7 @@ export function NavigationBar({ settings, navigation }: { settings: SiteSetting;
           ))}
           {!links.some(l => l.href === '/kontak') && <Link href="/kontak">Kontak</Link>}
         </nav>
+        <Link className="header-emblem" href="/" aria-label="Logo Wasla Informatika"><Image src={logo?.url ? mediaSource(logo.url) : '/images/brand/wasla-emblem.webp'} width={48} height={48} alt="Logo Wasla Informatika"/></Link>
         <span className="header-language" aria-label="Bahasa Indonesia">ID</span>
         <details
           ref={menu}

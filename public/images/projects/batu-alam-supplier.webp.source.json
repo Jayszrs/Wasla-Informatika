@@ -1,0 +1,49 @@
+{
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "source_original": "docs/evidence/real-projects-2026-10-23/batu-alam-supplier-scroll-top.png",
+  "source_original_sha256": "6ccac08c90e8dba29458a6fcff9a0601b5716e0d03f96f8f4404b8746611a60a",
+  "source_url": "https://www.batualamsupplier.com/",
+  "actual_url": "https://www.batualamsupplier.com/",
+  "observed_name": "Fazmastone / Batu Alam Supplier",
+  "observed_type": "Profil pemasok dan katalog batu alam",
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_dc8e597a79c11e487631626f33e8a401befa81ab5a03bd9b3c585cfc816003c2",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "capture_scope": "Verified public root viewport after Control+Home. The live root begins with Client Testimonial, not a stone-product hero. No content or style changes.",
+  "actions": [
+    "settle-public-images-and-fonts",
+    "return-home (Control+Home)",
+    "settle-scroll-top"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "attribution": "Website screenshot from https://www.batualamsupplier.com/; website ownership asserted by the user. This provenance record does not independently verify ownership or third-party asset licenses.",
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged 1440x1000 viewport composition"
+  ],
+  "technology_verified": [],
+  "technology_unverified": [
+    "Framework",
+    "CMS",
+    "Database",
+    "Hosting configuration",
+    "Authentication implementation"
+  ],
+  "scroll_verification": {
+    "record": "docs/evidence/real-projects-2026-10-23/batu-scroll-top-fallback.json",
+    "provider": "Separate Playwright fallback verification, not REA",
+    "http_status": 200,
+    "scrollX": 0,
+    "scrollY": 0,
+    "documentScrollTop": 0,
+    "mainScrollTop": 0,
+    "first_main_heading": "Client Testimonial",
+    "first_main_heading_top": 352.5,
+    "normal_motion_not_compared": true
+  }
+}

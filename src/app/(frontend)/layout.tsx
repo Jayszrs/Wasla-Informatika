@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Link from 'next/link'
-import { getNavigation, getSettings } from '@/lib/cms'
+import Image from 'next/image'
+import { getNavigation, getSettings, getTeam } from '@/lib/cms'
 import { NavigationBar } from '@/components/navigation'
 import { Arrow } from '@/components/icons'
 import { SectionWave } from '@/components/artwork'
-import { validPublicLink, validWhatsApp } from '@/lib/validation'
+import { validPublicLink } from '@/lib/validation'
+import { teamContacts } from '@/lib/contacts'
+import { WhatsAppIcon } from '@/components/contact-cards'
+import { mediaSource } from '@/lib/media'
 import { siteURL } from '@/lib/seo'
 import './globals.css'
 
@@ -26,11 +30,12 @@ export async function generateMetadata(): Promise<Metadata> {
     description: settings.seoDescription || settings.description,
     openGraph: { type: 'website', locale: 'id_ID', siteName: 'Wasla Informatika', images: ['/opengraph-image'] },
     twitter: { card: 'summary_large_image' }, robots: { index: true, follow: true },
-    icons: favicon ? { icon: favicon } : undefined,
+    icons: { icon: favicon ? mediaSource(favicon) : '/images/brand/favicon.png', apple: '/images/brand/favicon.png' },
   }
 }
 export default async function Layout({ children }: { children: React.ReactNode }) {
-  const [settings, nav] = await Promise.all([getSettings(), getNavigation()])
+  const [settings, nav, team] = await Promise.all([getSettings(), getNavigation(), getTeam()])
+  const contacts = teamContacts(team.docs)
   const publicLinks = nav.links?.filter(l => l.enabled && validPublicLink(l.href)) || []
   return <html lang="id" className={poppins.variable} id="top"><body>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -41,12 +46,13 @@ export default async function Layout({ children }: { children: React.ReactNode }
     <NavigationBar settings={settings} navigation={nav}/>
     <main id="main">{children}</main>
     <footer className="site-footer"><SectionWave variant="light-dark"/><div className="wrap">
-      <div className="footer-top"><div className="footer-statement"><Link className="footer-wordmark" href="/" aria-label="Wasla Informatika">wasla<span>informatika</span></Link><strong>{settings.name}</strong><p>{settings.description}</p></div>
-        <div className="footer-contact">{settings.email && <a href={`mailto:${settings.email}`}>{settings.email}</a>}{validWhatsApp(settings.whatsapp) && <a href={`https://wa.me/${settings.whatsapp}`}>Diskusi melalui WhatsApp<Arrow diagonal/></a>}{settings.address && <address>{settings.address}</address>}{settings.socials?.filter(s => validPublicLink(s.url)).map(s => <a key={s.id || s.url} href={s.url} rel="noopener noreferrer">{s.label}<Arrow diagonal/></a>)}</div>
+      <div className="footer-top"><div className="footer-statement"><Link className="footer-brand" href="/" aria-label="Wasla Informatika"><Image src="/images/brand/wasla-emblem.webp" width={56} height={56} alt=""/><strong>{settings.name}</strong></Link><p>{settings.description}</p></div>
+        <div className="footer-contact">{contacts.map(person => <a href={person.href} key={person.id} target="_blank" rel="noopener noreferrer">{person.name}<Arrow diagonal/></a>)}{settings.email && <a href={`mailto:${settings.email}`}>{settings.email}</a>}{settings.address && <address>{settings.address}</address>}{settings.socials?.filter(s => validPublicLink(s.url)).map(s => <a key={s.id || s.url} href={s.url} rel="noopener noreferrer">{s.label}<Arrow diagonal/></a>)}</div>
       </div>
       <a href="#top" className="back-top" aria-label="Kembali ke atas"><Arrow diagonal/></a>
       <div className="footer-bottom"><nav aria-label="Navigasi footer"><Link href="/">Beranda</Link>{publicLinks.map(l => <Link key={l.id || l.href} href={l.href}>{l.label}</Link>)}<Link href="/kontak">Kontak</Link><Link href="/privasi">Privasi</Link></nav><span>© {new Date().getFullYear()} Wasla Informatika</span></div>
+      <div className="footer-signature" aria-hidden="true">wasla<span>informatika</span></div>
     </div></footer>
-    <a className="floating-contact" href={validWhatsApp(settings.whatsapp) ? `https://wa.me/${settings.whatsapp}` : '/kontak'} aria-label={validWhatsApp(settings.whatsapp) ? 'Diskusi melalui WhatsApp' : 'Buka konsultasi'}><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M27 15a11 11 0 0 1-11 11c-2 0-3.8-.5-5.4-1.4L5 27l1.9-5.8A11 11 0 1 1 27 15Z"/><path d="M10 14h12M10 18h8" strokeLinecap="round"/></svg></a>
+    <Link className="floating-contact" href="/kontak#tim-kontak" aria-label="Pilih kontak WhatsApp"><WhatsAppIcon size={32}/></Link>
   </body></html>
 }

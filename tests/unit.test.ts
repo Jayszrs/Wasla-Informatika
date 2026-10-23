@@ -1,6 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { contactSchema, validPublicLink, validWhatsApp } from '../src/lib/validation'
+import { whatsappMessage } from '../src/lib/contacts'
 
 const valid = { name: 'Penguji Lokal', email: 'test@example.invalid', company: '', phone: '+62 812 0000', service: 'Website Development', message: 'Pesan pengujian yang cukup panjang.', consent: true, website: '' }
 test('contact: validates required consent, email, message and honeypot', () => {
@@ -21,4 +22,12 @@ test('public links and WhatsApp reject unsafe or invented formats', () => {
   assert.equal(validPublicLink('https://example.invalid'), true)
   assert.equal(validWhatsApp('6281234567890'), true)
   for (const number of ['', '+6281234567890', '08123456789', 'abc']) assert.equal(validWhatsApp(number), false)
+})
+test('WhatsApp summary encodes user text and validates recipient identifiers', () => {
+  const href = whatsappMessage({ id: '1', name: 'Penguji', role: 'Web Developer', phone: '+6281234567890', href: 'https://wa.me/6281234567890' }, { name: 'Nama & Rekan', email: 'test@example.invalid', service: 'Website Development', message: 'Baris satu\nBaris dua & detail?' })
+  const url = new URL(href)
+  assert.equal(url.pathname, '/6281234567890')
+  assert.match(url.searchParams.get('text')!, /Nama & Rekan/)
+  assert.match(url.searchParams.get('text')!, /Baris satu\nBaris dua & detail\?/)
+  for (const recipient of ['javascript:alert(1)', '-1', '2147483648', '999999999999999999']) assert.equal(contactSchema.safeParse({ ...valid, recipient }).success, false)
 })

@@ -1,6 +1,7 @@
 import * as migration_20261022_043543_initial from './20261022_043543_initial';
 import * as migration_20261022_093319_hero_image from './20261022_093319_hero_image';
 import * as migration_20261022_102006_feature_image from './20261022_102006_feature_image';
+import * as migration_20261023_022943_vercel_media_storage from './20261023_022943_vercel_media_storage';
 
 export const migrations = [
   {
@@ -16,6 +17,11 @@ export const migrations = [
   {
     up: migration_20261022_102006_feature_image.up,
     down: migration_20261022_102006_feature_image.down,
-    name: '20261022_102006_feature_image'
+    name: '20261022_102006_feature_image',
+  },
+  {
+    up: migration_20261023_022943_vercel_media_storage.up,
+    down: migration_20261023_022943_vercel_media_storage.down,
+    name: '20261023_022943_vercel_media_storage'
   },
 ];

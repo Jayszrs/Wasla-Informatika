@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T13:51:23.577166+00:00",
+  "generatedAt": "2026-10-23T02:56:52.776005+00:00",
   "title": "Design System: Wasla Informatika",
   "extensions": {
     "colorMeta": {
@@ -45,10 +45,6 @@
         "role": "primary",
         "displayName": "Focus Blue"
       },
-      "service-picture": {
-        "role": "primary",
-        "displayName": "Service Illustration Ground"
-      },
       "field-line": {
         "role": "neutral",
         "displayName": "Field Border"
@@ -56,6 +52,30 @@
       "menu-bar": {
         "role": "primary",
         "displayName": "Menu Top Band"
+      },
+      "button-white-hover": {
+        "role": "neutral",
+        "displayName": "White Action Hover"
+      },
+      "footer-line": {
+        "role": "neutral",
+        "displayName": "Footer Divider"
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Field Error"
+      },
+      "error-text": {
+        "role": "neutral",
+        "displayName": "Error Feedback Text"
+      },
+      "error-bg": {
+        "role": "neutral",
+        "displayName": "Error Feedback Ground"
+      },
+      "success-bg": {
+        "role": "neutral",
+        "displayName": "Saved Feedback Ground"
       }
     },
     "typographyMeta": {
@@ -98,6 +118,14 @@
       "masthead": {
         "displayName": "Internal Masthead",
         "purpose": "Centered White Poppins600 title on Deep Navy:54px desktop,42px below767px; subtitle13px at both widths."
+      },
+      "footer-signature": {
+        "displayName": "Final Wasla Signature",
+        "purpose": "Owner-requested huge final footer wordmark below navigation/copyright; fluid within wrapper."
+      },
+      "footer-subtitle": {
+        "displayName": "Final Informatika Subtitle",
+        "purpose": "Widely tracked secondary identity line below the final signature."
       }
     },
     "shadows": [
@@ -152,6 +180,11 @@
         "name": "static-fallback",
         "value": "width<=900px or prefers-reduced-motion",
         "purpose": "Hero/feature/reveals static; reduced motion removes animation and smooth scrolling."
+      },
+      {
+        "name": "service-object-hover",
+        "value": "650ms; translateY(-8px) rotateY(-5deg)",
+        "purpose": "Contained transparent service image feedback; reduced-motion removes transform."
       }
     ],
     "breakpoints": [
@@ -210,14 +243,14 @@
       "name": "Flat Desktop Navigation",
       "kind": "nav",
       "description": "Uppercase links over Navy, changing to Slate on White after scroll; no capsule container.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Navigasi utama\"><a href=\"/tentang-kami\">Tentang kami</a><a href=\"/layanan\" aria-current=\"page\">Layanan</a><a href=\"/portofolio\">Portofolio</a></nav>",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navigasi utama\"><a href=\"/tentang-kami\">Tentang kami</a><a href=\"/layanan\" aria-current=\"page\">Layanan</a><a href=\"/portofolio\">Project</a><a href=\"/insights\">Artikel</a></nav>",
       "css": ".ds-nav{display:flex;align-items:center;gap:30px;padding:20px;background:var(--navy-deep,#030e1d)}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--light,#c5d0dd);font:500 11px/1.7 var(--font-poppins,Poppins),sans-serif;text-transform:uppercase;letter-spacing:.025em;text-decoration:none}.ds-nav a:hover,.ds-nav a[aria-current]{color:var(--white,#fff)}.ds-nav a:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}"
     },
     {
       "name": "Concept Disclosure",
       "kind": "chip",
       "refersTo": "concept-tag",
-      "description": "Persistent factual image label; no interaction.",
+      "description": "Persistent factual label for any future concept; current seven real projects are not concepts.",
       "html": "<span class=\"ds-concept\">Konsep Eksplorasi</span>",
       "css": ".ds-concept{display:inline-block;padding:5px 10px;border-radius:3px;background:var(--white,#fff);color:var(--navy,#071a33);font:400 9px/1.5 var(--font-poppins,Poppins),sans-serif}"
     },
@@ -233,39 +266,62 @@
       "kind": "custom",
       "refersTo": "portfolio-filter",
       "description": "Centered unboxed portfolio category buttons; article filters retain capsules. The accessible count occupies no visual gallery space.",
-      "html": "<div class=\"ds-filters\" aria-label=\"Filter kategori portofolio\"><button aria-pressed=\"true\">Semua</button><button aria-pressed=\"false\">Website</button><button aria-pressed=\"false\">Aplikasi</button></div><p class=\"ds-count\" role=\"status\">4 karya ditampilkan</p>",
+      "html": "<div class=\"ds-filters\" aria-label=\"Filter kategori portofolio\"><button aria-pressed=\"true\">Semua</button><button aria-pressed=\"false\">Website</button><button aria-pressed=\"false\">Aplikasi</button></div><p class=\"ds-count\" role=\"status\">7 project ditampilkan</p>",
       "css": ".ds-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;margin-bottom:14px}.ds-filters button{min-height:44px;padding:6px 0;border:0;border-radius:0;background:transparent;color:var(--slate,#5b6879);font:600 20px/1.7 var(--font-poppins,Poppins),sans-serif;cursor:pointer}.ds-filters button:hover,.ds-filters button[aria-pressed=true]{background:transparent;color:var(--navy,#071a33)}.ds-filters button[aria-pressed=true]{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}.ds-filters button:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}.ds-count{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}@media(max-width:767px){.ds-filters{gap:4px 20px}.ds-filters button{font-size:18px}}"
+    },
+    {
+      "name": "Curved WhatsApp Contact",
+      "kind": "card",
+      "refersTo": "contact-card",
+      "description": "Owner-requested alternating curved corners; exact person, role and WhatsApp phone from Team.",
+      "html": "<a class=\"ds-person\" href=\"https://wa.me/6281318533055\" target=\"_blank\" rel=\"noopener noreferrer\"><div><h3>Jaelani Surya Saputra</h3><p>Software Engineering</p><span>+6281318533055</span></div><span class=\"ds-person-action\"><svg width=\"42\" height=\"42\" viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" aria-hidden=\"true\"><path d=\"M27 15.3a11 11 0 0 1-11 11c-2 0-3.8-.5-5.4-1.4L5 27l1.9-5.8A11 11 0 1 1 27 15.3Z\"/><path d=\"M11.3 10.3c.5-.3 1.2-.3 1.4.3l1 2.2c.2.5-.3 1-.8 1.4.9 1.8 2.2 3.1 4.1 4 .4-.5.9-1.2 1.4-1l2.1 1c.6.3.6.9.3 1.5-.7 1.4-2.3 1.8-3.6 1.3-4.7-1.7-7.5-4.4-8.2-7.2-.4-1.4.8-3 2.3-3.5Z\" stroke-linejoin=\"round\"/></svg><span>WhatsApp</span></span></a>",
+      "css": ".ds-person{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:30px 34px;border:1px solid var(--line,#dce1e7);border-radius:65px 25px 65px 25px;background:var(--white,#fff);color:var(--navy,#071a33);font-family:var(--font-poppins,Poppins),sans-serif;text-decoration:none;transition:background .25s,color .25s,border-color .25s}.ds-person h3{margin:0 0 6px;font-size:21px;font-weight:600;line-height:1.4;letter-spacing:-.025em}.ds-person p{margin:0 0 12px;font-size:12px;color:var(--slate,#5b6879)}.ds-person div>span{font-size:13px;font-variant-numeric:tabular-nums}.ds-person-action{display:grid;gap:9px;justify-items:center;font-size:10px;flex-shrink:0}.ds-person:hover{background:var(--navy,#071a33);color:var(--white,#fff);border-color:var(--navy,#071a33)}.ds-person:hover p{color:var(--light,#c5d0dd)}.ds-person:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}@media(max-width:767px){.ds-person{padding:26px;gap:15px;border-radius:50px 22px 50px 22px}.ds-person h3{font-size:20px}.ds-person-action svg{width:34px;height:34px}}@media(prefers-reduced-motion:reduce){.ds-person{transition-duration:.01ms}}"
+    },
+    {
+      "name": "Final Footer Signature",
+      "kind": "custom",
+      "refersTo": "footer-wordmark",
+      "description": "Huge final lowercase identity follows footer information and metadata, as explicitly requested by the owner.",
+      "html": "<div class=\"ds-footer-ground\"><div class=\"ds-footer-signature\" aria-label=\"Wasla Informatika\">wasla<span>informatika</span></div></div>",
+      "css": ".ds-footer-ground{background:var(--navy-deep,#030e1d);color:var(--white,#fff);padding-inline:15px}.ds-footer-signature{max-width:1110px;margin-inline:auto;padding-block:20px 30px;text-align:center;font-family:var(--font-poppins,Poppins),sans-serif;font-size:clamp(100px,26vw,370px);font-weight:600;line-height:.9;letter-spacing:-.04em}.ds-footer-signature>span{display:block;font-size:clamp(12px,1.5vw,21px);line-height:1.5;letter-spacing:.35em;font-weight:400;margin-top:25px}"
     }
   ],
   "narrative": {
     "northStar": "A familiar software-house experience, with Wasla's own work and voice.",
-    "overview": "The latest user direction pins a close Vodjo.com composition. Conventional centered grid, full-height photography, compact Poppins hierarchy, dense four-work grid, dark three-column services and broad authored waves replace the preceding editorial world. Internal routes use centered Navy mastheads with layered waves; Services uses alternating media/text bands, About pairs CMS feature imagery with copy, and dedicated Contact form fields stay single-column. Wasla branding, original assets, Indonesian copy and truthful CMS content remain authoritative.",
+    "overview": "Preserve the Vodjo-led conventional centered grid, full-height photograph, compact Poppins hierarchy, navy/white fields and authored wave cadence. The latest owner-approved corrections extend this existing world with seven real screenshot projects, unboxed transparent dimensional service objects, eight actual monochrome technology marks, restored colorful identity, four curved contacts and an oversized final wasla signature. Code-first implementation has an independent ship verdict for the captured local correction scope; production remains separate.",
     "keyCharacteristics": [
-      "Full photographic hero and left proposition",
-      "1140px outer/1110px inner grid",
-      "Poppins300/400/500/600/700",
-      "Dense16:9 homepage work with2px seams; catalog text filters and narrow external captions",
-      "Original waves and capsule actions",
-      "ENERGY3/RHYTHM2/MOTION2"
+      "Photographic hero with left proposition and right-weighted workstation",
+      "1140px outer/1110px inner centered grid",
+      "Self-hosted Poppins 300/400/500/600/700",
+      "Seven real screenshot projects; seventh spans desktop row",
+      "Transparent unboxed 3D service objects on navy/white",
+      "Eight actual technology marks and colorful owner emblem",
+      "Four curved contacts with private-save then explicit WhatsApp handoff",
+      "Huge final lowercase wasla signature",
+      "ENERGY 3 / RHYTHM 2 / MOTION 2"
     ],
     "rules": [
       {
-        "name": "The Truthful Substitution Rule",
-        "body": "Technology tiles preserve the strip's visual role without implying client relationships; missing proof stays omitted.",
+        "name": "The Evidence Rule",
+        "body": "Technology marks describe studio capability, not clients or project stacks. Publish supplied facts and verified real screenshot work; do not invent outcomes.",
         "section": "colors"
+      },
+      {
+        "name": "The Latest Owner Direction Rule",
+        "body": "The huge final footer and alternating curved contact corners are intentional and supersede earlier compact-footer and generic-radius defaults.",
+        "section": "typography"
       }
     ],
     "dos": [
-      "Do preserve the pinned close-reference structure and proportions.",
-      "Do use original images and persistent concept disclosures.",
-      "Do retain real destinations, accessible menu behavior and private persistence.",
-      "Do keep source-extracted tokens authoritative."
+      "Do retain pinned proportions, Poppins, waves and navy/white.",
+      "Do preserve seven real projects, transparent objects, actual marks, colorful emblem, curved contacts and final huge signature.",
+      "Do retain CMS control, visible focus and private persistence before explicit WhatsApp handoff.",
+      "Do keep narrow/reduced-motion views static and readable."
     ],
     "donts": [
-      "Don't restore the discarded oversized editorial poster or asymmetric gallery.",
-      "Don't copy reference assets, code, client claims or contact details.",
-      "Don't fabricate endorsements, staff or testimonials.",
-      "Don't infer final review approval from documentation."
+      "Do not restore obsolete four-concept, boxed-service, technology-text or compact-footer guidance.",
+      "Do not invent project stacks, outcomes, endorsements, staff or contact details.",
+      "Do not treat documentation or local review as production certification."
     ]
   }
 }

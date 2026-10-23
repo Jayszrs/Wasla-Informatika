@@ -1,0 +1,6 @@
+{
+  "source": "built-in imagegen",
+  "prompt": "Edit image 1, the existing black smartphone mockup on transparency. Preserve its exact three-quarter perspective, black frame, camera cutout, white screen, proportions, lighting and transparent background. Replace the large text-only Wasla wordmark on the screen with the supplied logo emblem from image 2: the blue/cyan/violet interlocking circular ribbon and green upward arrow. Keep the emblem faithful in recognizable shape and colors, place it centered on the white screen, adapted naturally to the screen perspective. Under it add small tasteful navy text 'wasla' and below that 'informatika'. The emblem is the dominant screen feature. No new interface, no extra objects, no background or card, no invented logo, and no recoloring of the original brand. Output a polished transparent PNG product mockup.",
+  "original": "exec-09883fb0-dd8b-47bb-b1e2-73f9d3b004f8.png",
+  "date": "2026-10-23"
+}

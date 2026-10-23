@@ -6,7 +6,7 @@ export default withPayload({
   turbopack: { root: process.cwd() },
   experimental: { cpus: 2, webpackMemoryOptimizations: true },
   poweredByHeader: false,
-  images: { remotePatterns: process.env.S3_PUBLIC_URL ? [{ protocol: 'https', hostname: new URL(process.env.S3_PUBLIC_URL).hostname }] : [] },
+  images: { remotePatterns: [{ protocol: 'https', hostname: '*.public.blob.vercel-storage.com' }, ...(process.env.S3_PUBLIC_URL ? [{ protocol: 'https', hostname: new URL(process.env.S3_PUBLIC_URL).hostname }] : [])] },
   async headers() {
     return [{ source: '/:path*', headers: [
       { key: 'X-Content-Type-Options', value: 'nosniff' },

@@ -47,7 +47,7 @@ if (!settings.heroTitle) await payload.updateGlobal({ slug: 'site-settings', ove
 const navigation = await payload.findGlobal({ slug: 'navigation', overrideAccess: true })
 if (!navigation.links?.length) await payload.updateGlobal({ slug: 'navigation', overrideAccess: true, data: { links: [
   { label: 'Tentang', href: '/tentang-kami', enabled: true, order: 0 }, { label: 'Layanan', href: '/layanan', enabled: true, order: 1 },
-  { label: 'Karya', href: '/portofolio', enabled: true, order: 2 }, { label: 'Insights', href: '/insights', enabled: true, order: 3 },
+  { label: 'Project', href: '/portofolio', enabled: true, order: 2 }, { label: 'Artikel', href: '/insights', enabled: true, order: 3 },
 ] } })
 console.log('Seed complete. Existing content preserved. No client evidence or team members invented.')
 await payload.destroy()

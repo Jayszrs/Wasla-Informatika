@@ -1,0 +1,15 @@
+.git
+.env
+.env.*
+!.env.example
+.local
+.agents
+.impeccable
+.next
+node_modules
+media
+docs/evidence
+playwright-report
+test-results
+*.log
+*.tsbuildinfo

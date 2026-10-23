@@ -1,0 +1,88 @@
+{
+  "provider": "Playwright fallback verification (not REA)",
+  "requestedUrl": "https://www.batualamsupplier.com/",
+  "capturedAt": "2026-10-23T02:31:35.286Z",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "actions": [
+    "navigate public root",
+    "await fonts and visible images, bounded eight seconds",
+    "Control+Home",
+    "explicit scroll to 0,0",
+    "read visible heading geometry and screenshot"
+  ],
+  "limitations": [
+    "No original hero is invented or recreated.",
+    "No page content or styles changed.",
+    "No forms or authentication used."
+  ],
+  "status": 200,
+  "actualUrl": "https://www.batualamsupplier.com/",
+  "title": "Fazmastone - Supplier Batu Andesit Premium",
+  "visibleGeometry": {
+    "scrollX": 0,
+    "scrollY": 0,
+    "documentScrollTop": 0,
+    "documentHeight": 8739,
+    "headings": [
+      {
+        "text": "Client Testimonial",
+        "top": 352.5,
+        "height": 48
+      },
+      {
+        "text": "Richard Sanchez",
+        "top": 641.5,
+        "height": 20
+      },
+      {
+        "text": "Rufus Stewart",
+        "top": 618.75,
+        "height": 20
+      },
+      {
+        "text": "Lars Peeters",
+        "top": 618.75,
+        "height": 20
+      },
+      {
+        "text": "Keunggulan Produk Kami",
+        "top": 1080,
+        "height": 48
+      },
+      {
+        "text": "Katalog Produk",
+        "top": 1954,
+        "height": 40
+      },
+      {
+        "text": "Portofolio Proyek Kami",
+        "top": 7166,
+        "height": 48
+      },
+      {
+        "text": "Butuh Penawaran Harga Batu Alam Terbaru?",
+        "top": 8014,
+        "height": 96
+      }
+    ],
+    "scrollContainers": [
+      {
+        "tag": "BODY",
+        "scrollTop": 0,
+        "clientHeight": 8739,
+        "scrollHeight": 8739
+      },
+      {
+        "tag": "MAIN",
+        "scrollTop": 0,
+        "clientHeight": 8358,
+        "scrollHeight": 8358
+      }
+    ]
+  },
+  "screenshot": "batu-alam-supplier-verified-scroll-top.png",
+  "result": "captured"
+}

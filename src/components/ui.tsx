@@ -5,6 +5,8 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 import { Arrow, Plus } from './icons'
 import { ConceptVisual, SectionWave, ServiceArt } from './artwork'
 import { mediaSource } from '@/lib/media'
+import { teamContacts } from '@/lib/contacts'
+import { ContactCards } from './contact-cards'
 
 export function ButtonLink({
   href,
@@ -91,7 +93,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <span className="circle-arrow">
           <Arrow diagonal />
         </span>
-        <div className="project-overlay" aria-hidden="true"><span>{project.category}</span><strong>{project.title}</strong><span className="project-view">Lihat studi kasus<Arrow diagonal/></span></div>
+        <div className="project-overlay" aria-hidden="true"><span>{project.category}</span><strong>{project.title}</strong><span className="project-view">Lihat project<Arrow diagonal/></span></div>
       </Link>
       <div className="project-caption">
         <h3>
@@ -99,6 +101,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </h3>
         <span>{project.category}</span>
       </div>
+      {project.externalLink?.startsWith('https://') && <a className="project-live" href={project.externalLink} target="_blank" rel="noopener noreferrer" aria-label={`Buka website ${project.title}`}>Kunjungi website<Arrow diagonal/></a>}
     </article>
   )
 }
@@ -197,7 +200,7 @@ export function TeamSection({ members, showAboutLink = true }: { members: Team[]
         </div>
         {showAboutLink && <TextLink href="/tentang-kami">Mengenal Wasla</TextLink>}
       </div>
-      {members.length ? (
+      {members.length && !members.some(member => member.photo) && teamContacts(members).length ? <ContactCards contacts={teamContacts(members)}/> : members.length ? (
         <div className="team-grid">
           {members.map(m => (
             <article key={m.id} className="team-card">

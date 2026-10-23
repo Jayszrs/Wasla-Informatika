@@ -54,7 +54,7 @@
     },
     {
       "width": 1440,
-      "route": "/portofolio/ruang-commerce",
+      "route": "/portofolio/catatan-mengaji-bani-saleh",
       "overflow": false,
       "h1": {
         "size": "54px",
@@ -171,7 +171,7 @@
     },
     {
       "width": 1024,
-      "route": "/portofolio/ruang-commerce",
+      "route": "/portofolio/catatan-mengaji-bani-saleh",
       "overflow": false,
       "h1": {
         "size": "54px",
@@ -288,7 +288,7 @@
     },
     {
       "width": 768,
-      "route": "/portofolio/ruang-commerce",
+      "route": "/portofolio/catatan-mengaji-bani-saleh",
       "overflow": false,
       "h1": {
         "size": "54px",
@@ -405,7 +405,7 @@
     },
     {
       "width": 390,
-      "route": "/portofolio/ruang-commerce",
+      "route": "/portofolio/catatan-mengaji-bani-saleh",
       "overflow": false,
       "h1": {
         "size": "42px",

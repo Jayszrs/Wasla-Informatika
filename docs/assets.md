@@ -1,4 +1,26 @@
-# Gambar contoh Wasla
+# Aset Wasla — pembaruan 23 Oktober 2026
+
+## Aset yang sekarang ditampilkan
+
+Tujuh project menggunakan screenshot website publik asli yang diberikan pemilik, bukan gambar website hasil generasi. Sumber, tanggal, metode capture dan batas pengamatan ada di [laporan bukti](evidence/real-projects-2026-10-23.md). REA digunakan untuk enam website; Ngaji Yuk menggunakan fallback Playwright setelah navigasi REA gagal. Screenshot Batu Alam Supplier memang dimulai dari bagian Client Testimonial pada website aslinya.
+
+`public/images/projects/` menyimpan screenshot tersebut. Sidecar `.source.json` menyimpan bukti rinci dan `.webp.json` menyimpan asal melalui `impeccable embed-prompt`. Framework, hasil bisnis dan metrik project tidak diklaim tanpa bukti.
+
+`public/images/services/{web,app,design}-3d.webp` adalah ilustrasi layanan orisinal dengan alpha transparan. `public/images/brand/wasla-emblem.webp` merupakan restorasi raster dari gambar logo yang dikirim pemilik, bukan file vektor asli. Favicon merupakan turunannya. `wasla-device-branded.webp` adalah ilustrasi perangkat dengan logo tersebut, bukan produk klien. Prompt persis dan sumber generasi disimpan di [manifest prompt](assets/brand-20261023-prompts.json) dan sidecar masing-masing file. Ketigabelas raster baru lolos pemeriksaan provenance: tidak ada yang kehilangan asal/prompt.
+
+Logo teknologi di `public/images/technology/` berasal dari Simple Icons, disertai provenance dan lisensi CC0. Logo pada bagian teknologi menunjukkan cakupan teknologi studio, bukan klaim stack masing-masing project.
+
+## Pengelolaan CMS saat ini
+
+Unggah media melalui `/admin` → Media, lalu pilih di Project, Artikel, Layanan atau Pengaturan Website. Format yang diterima: PNG, JPEG, WebP dan AVIF. Batas lokal 8 MB; di Vercel 4 MB karena upload diproses server dan diperiksa signature filenya. Gunakan gambar transparan untuk objek layanan/perangkat.
+
+Field `illustration` mengatur objek layanan di beranda; `image` mengatur visual utama halaman layanan. Gambar/logo/favicon tetap dapat diganti melalui CMS. Empat anggota tim dan URL WhatsApp dikelola pada koleksi Team. Hanya URL WhatsApp valid yang menjadi tujuan kontak.
+
+Pada instalasi baru, urutan pengisian adalah `npm run seed`, `npm run seed:media`, kemudian `npm run seed:real`. Perintah terakhir merupakan migrasi konten satu kali: menerapkan tujuh project, empat kontak, visual dan label sesuai permintaan pemilik, serta mengarsipkan empat konsep sebagai draft. Jangan menjalankannya sebagai bagian startup rutin karena pilihan konten pada slug terkait akan diterapkan kembali.
+
+## Arsip aset konsep fase awal
+
+Daftar berikut mencatat aset lama yang tetap menjadi sumber seed/histori. Empat project konsep tidak lagi diterbitkan; artikel sekarang memakai screenshot project asli. Gambar workstation masih dipakai sebagai ilustrasi hero, sementara mockup perangkat lama sudah diganti versi berlogo.
 
 Empat gambar proyek, satu foto workstation ilustratif, dan satu mockup perangkat dibuat khusus melalui **built-in imagegen**, bukan diambil dari referensi. Mockup konsep fiktif menunjukkan arah desain; bukan proyek klien atau foto kantor Wasla. Teks pada layar merupakan bagian gambar contoh, bukan kontrol website yang dapat digunakan.
 

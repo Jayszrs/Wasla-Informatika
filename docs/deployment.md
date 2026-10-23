@@ -1,5 +1,17 @@
 # Deployment dan operasi
 
+## Vercel — target aktif 23 Oktober 2026
+
+Akun: `jaelanisuryasaputra10@gmail.com`; scope: `jae-f2e1`; project manual pemilik: `waslainformatika`, ID `prj_y57AtYGyBMYsK9a8b7auDps05t54`; domain: `https://waslainformatika.vercel.app`. Checkout lokal sudah terhubung ke project tersebut. Project awal `wasla-informatika` bukan tujuan rilis aktif. Gunakan konfigurasi CLI terisolasi `.local/vercel-account-10` dan selalu periksa project sebelum mutasi.
+
+Build command project telah disetel ke `npm run build` agar menggunakan Webpack seperti build yang diuji. Runtime Node 24.x. `PAYLOAD_SECRET` produksi baru, `NEXT_PUBLIC_SITE_URL`, `TRUST_PROXY` dan koneksi Blob telah ditambahkan. Jangan menyalin kredensial admin lokal ke produksi. Rahasia bootstrap produksi disimpan privat di `.local/`, diabaikan Git dan `.vercelignore`.
+
+Blob store `wasla-media` di `sin1` menyediakan media persisten melalui `@payloadcms/storage-vercel-blob`. Token hanya di server. Upload maksimum 4 MB di Vercel; pemeriksaan signature server dipertahankan. Penyimpanan lokal tetap memakai `media/` untuk pengembangan. Untuk proses bootstrap yang dijalankan di komputer, aktifkan `USE_VERCEL_BLOB=true` dan gunakan env produksi yang ditarik ke file di `.local/`, bukan menimpa `.env` lokal.
+
+Database Neon belum terpasang pada pemeriksaan terakhir. Pemilik perlu membuat database Free melalui dashboard Storage project, atau menerima persyaratan Marketplace Neon sebelum CLI dapat memasangnya. Setelah koneksi `DATABASE_URL` tersedia: jalankan seluruh migrasi terdaftar, bootstrap admin dengan kredensial produksi baru, lalu `seed`, `seed:media`, `seed:real` satu kali. Jangan menaruh seed pada startup atau build rutin. `seed:real` menerapkan pilihan konten pemilik dan dapat menimpa pilihan field pada record terkait jika dijalankan lagi.
+
+Rilis source terbaru dipentaskan menggunakan `vercel deploy --prod --skip-domain`. Sebelum `vercel promote`, verifikasi halaman publik, tujuh project, login CMS, perubahan konten, upload Blob, private submissions dan ringkasan WhatsApp. Build berstatus Ready saja belum membuktikan database atau CMS berjalan. Deployment manual pertama dari commit GitHub lama gagal karena `PAYLOAD_SECRET` kosong; konfigurasi itu sudah diperbaiki. Perubahan terbaru saat ini berada pada checkout lokal/unggahan CLI, belum diklaim telah disinkronkan ke branch GitHub.
+
 ## Target
 
 Pada Windows, hentikan proses `npm start` sebelum menjalankan build baru. Server standalone memuat DLL Sharp/libvips dari direktori output; build tidak dapat menggantinya selama proses lama masih berjalan. Setelah build berhasil, jalankan kembali `npm start`.

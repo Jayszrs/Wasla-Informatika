@@ -1,11 +1,14 @@
 import Link from 'next/link'
-import { getServices, getProjects, getSettings, getTestimonials } from '@/lib/cms'
+import { getServices, getProjects, getSettings, getTestimonials, getTeam } from '@/lib/cms'
 import { Arrow } from '@/components/icons'
 import { SectionWave, ServiceArt } from '@/components/artwork'
 import { ButtonLink, MediaImage, ProjectCard } from '@/components/ui'
 import { ContactForm } from '@/components/contact-form'
 import { HeroEnhancement } from '@/components/motion'
 import { pageMeta } from '@/lib/seo'
+import { ContactCards } from '@/components/contact-cards'
+import { TechnologyLogos } from '@/components/technology-logos'
+import { teamContacts } from '@/lib/contacts'
 
 export async function generateMetadata() {
   const s = await getSettings()
@@ -13,8 +16,9 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  const [settings, services, projects, testimonials] = await Promise.all([getSettings(), getServices(), getProjects(), getTestimonials()])
-  const featured = projects.docs.filter(p => p.featured).slice(0, 4)
+  const [settings, services, projects, testimonials, team] = await Promise.all([getSettings(), getServices(), getProjects(), getTestimonials(), getTeam()])
+  const featured = projects.docs.filter(p => p.featured).slice(0, 8)
+  const contacts = teamContacts(team.docs)
   const selectedServices = ['website-development', 'web-application', 'ui-ux-design'].map(slug => services.docs.find(s => s.slug === slug)).filter(s => s !== undefined)
   const heroImage = settings.heroImage
   const heroImageID = typeof heroImage === 'object' ? heroImage?.id : heroImage
@@ -38,10 +42,10 @@ export default async function Home() {
     <SectionWave layered/>
 
     <section className="works-section wrap" id="featured-works">
-      <div className="section-heading centered"><h2>Portofolio pilihan</h2><p>Eksplorasi website dan aplikasi yang mempertemukan desain, fungsi, dan kebutuhan bisnis.</p></div>
+      <div className="section-heading centered"><h2>Project pilihan</h2><p>Website dan aplikasi yang telah kami kerjakan untuk pendidikan, organisasi, dan bisnis.</p></div>
       <div className="project-grid homepage-projects" data-reveal>{featured.map(p => <ProjectCard key={p.id} project={p}/>)}</div>
-      {!featured.length && <p>Portofolio sedang disiapkan. Mari diskusikan kebutuhan Anda.</p>}
-      <div className="section-action"><ButtonLink href="/portofolio" variant="button-outline">Lihat semua karya</ButtonLink></div>
+      {!featured.length && <p>Project sedang diperbarui. Mari diskusikan kebutuhan Anda.</p>}
+      <div className="section-action"><ButtonLink href="/portofolio" variant="button-outline">Lihat semua project</ButtonLink></div>
     </section>
     <SectionWave variant="light-dark"/>
 
@@ -64,9 +68,9 @@ export default async function Home() {
       </div>
     </section>
 
-    <section className="technology-section wrap"><div className="section-heading centered"><h2>Teknologi kami</h2><p>Fondasi untuk website, aplikasi, dan pengelolaan konten yang terhubung.</p></div><div className="technology-grid">{['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Payload CMS'].map(name => <div key={name}>{name}</div>)}</div></section>
+    <section className="technology-section wrap"><div className="section-heading centered"><h2>Teknologi kami</h2><p>Perangkat yang kami gunakan untuk merancang, membangun, dan mengelola produk digital.</p></div><TechnologyLogos/></section>
 
-    <section className="consultation-section" id="konsultasi"><div className="wrap consultation-grid"><div className="consultation-info"><h2>Konsultasi proyek</h2><h3>Punya rencana digital?<br/>Mari mulai dari percakapan.</h3><p>Ceritakan tujuan bisnis, kendala saat ini, atau produk yang ingin Anda bangun. Kita petakan kebutuhan dan tentukan langkah berikutnya bersama.</p><p>Lingkup, jadwal, dan biaya dibahas berdasarkan kebutuhan proyek yang disepakati.</p>{settings.email && <a className="text-link" href={`mailto:${settings.email}`}>{settings.email}<Arrow diagonal/></a>}</div><ContactForm services={services.docs.map(s => s.title)}/></div></section>
+    <section className="consultation-section" id="konsultasi"><div className="wrap"><div className="contact-heading"><h2>Orang yang tepat.<br/>Percakapan yang berarti.</h2><p>Pilih divisi yang ingin Anda hubungi. Keempat kontak terhubung langsung ke WhatsApp masing-masing.</p></div><ContactCards contacts={contacts}/><div className="consultation-grid"><div className="consultation-info"><h2>Ceritakan project Anda.</h2><p>Sampaikan tujuan bisnis dan kebutuhan Anda. Pilih rekan diskusi, siapkan ringkasan, lalu lanjutkan percakapan melalui WhatsApp.</p><p>Lingkup, jadwal, dan biaya dibahas bersama sesuai kebutuhan project.</p>{settings.email && <a className="text-link" href={`mailto:${settings.email}`}>{settings.email}<Arrow diagonal/></a>}</div><ContactForm services={services.docs.map(s => s.title)} contacts={contacts}/></div></div></section>
 
     {!!testimonials.docs.length && <section className="testimonials-section wrap"><div className="section-heading centered"><h2>Cerita kolaborasi</h2><p>Pengalaman yang dibagikan oleh rekan kolaborasi Wasla.</p></div><div className="testimonials-grid">{testimonials.docs.map(t => <figure key={t.id} className="testimony-card"><blockquote>{t.quote}</blockquote><figcaption><strong>{t.clientName}</strong> · {t.company}</figcaption></figure>)}</div></section>}
   </>

@@ -1,8 +1,18 @@
-import { getServices, getSettings } from '@/lib/cms'
+import { getServices, getSettings, getTeam } from '@/lib/cms'
 import { PageIntro } from '@/components/ui'
 import { ContactForm } from '@/components/contact-form'
+import { ContactCards } from '@/components/contact-cards'
+import { teamContacts } from '@/lib/contacts'
 import { Arrow } from '@/components/icons'
-import { validWhatsApp } from '@/lib/validation'
 import { pageMeta } from '@/lib/seo'
-export const metadata = pageMeta('Mulai Konsultasi', 'Ceritakan kebutuhan website, aplikasi, atau solusi IT Anda kepada Wasla Informatika.', '/kontak')
-export default async function Page({ searchParams }: { searchParams: Promise<{ layanan?: string }> }) { const [services, s, params] = await Promise.all([getServices(), getSettings(), searchParams]); return <><PageIntro title="Kontak" copy="Ceritakan apa yang ingin Anda bangun atau perbaiki. Kita mulai dari memahami kebutuhan, lalu menentukan langkah yang sesuai."/><section className="wrap contact-section"><aside className="contact-note"><h2>Mulai dari cerita Anda.</h2><p>Belum memiliki brief lengkap? Sampaikan tujuan bisnis dan tantangan yang sedang Anda hadapi.</p>{s.email && <a href={`mailto:${s.email}`}>{s.email}<Arrow diagonal/></a>}{validWhatsApp(s.whatsapp) && <a href={`https://wa.me/${s.whatsapp}`} rel="noopener noreferrer">Diskusi melalui WhatsApp<Arrow diagonal/></a>}{s.address && <p>{s.address}</p>}<p>Lingkup, jadwal, dan biaya dibahas setelah kebutuhan dipahami. Tidak ada harga atau jaminan yang diasumsikan sebelum kesepakatan.</p></aside><ContactForm services={services.docs.map(s => s.title)} initialService={params.layanan}/></section></> }
+
+export const metadata = pageMeta('Kontak & Konsultasi', 'Hubungi divisi Software Engineering, Project Management, Web Development dan Full Stack Engineering Wasla Informatika.', '/kontak')
+export default async function Page({ searchParams }: { searchParams: Promise<{ layanan?: string }> }) {
+  const [services, settings, team, params] = await Promise.all([getServices(), getSettings(), getTeam(), searchParams])
+  const contacts = teamContacts(team.docs)
+  return <>
+    <PageIntro title="Mari terhubung." copy="Empat rekan diskusi. Satu tujuan: mewujudkan project digital Anda."/>
+    <section className="wrap contact-directory" id="tim-kontak"><div className="contact-heading"><h2>Kenali rekan diskusi Anda.</h2><p>Pilih divisi sesuai kebutuhan. Setiap kontak membuka WhatsApp langsung ke orang yang Anda pilih.</p></div><ContactCards contacts={contacts}/></section>
+    <section className="wrap contact-section"><aside className="contact-note"><h2>Mulai dari cerita Anda.</h2><p>Belum memiliki brief lengkap? Ceritakan kebutuhan Anda, pilih kontak, lalu lanjutkan percakapan melalui WhatsApp setelah ringkasan tersimpan.</p>{settings.email && <a href={`mailto:${settings.email}`}>{settings.email}<Arrow diagonal/></a>}{settings.address && <p>{settings.address}</p>}<p>Lingkup, jadwal, dan biaya dibahas bersama setelah kebutuhan project dipahami.</p></aside><ContactForm services={services.docs.map(service => service.title)} initialService={params.layanan} contacts={contacts}/></section>
+  </>
+}
