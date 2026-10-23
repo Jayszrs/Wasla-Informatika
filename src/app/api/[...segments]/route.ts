@@ -1,4 +1,4 @@
-import { studioAPI } from '@/lib/studio-api'
+import { studioAPI } from '@/backend/api'
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 async function handle(request: Request, context: { params: Promise<{ segments: string[] }> }) { return studioAPI(request, (await context.params).segments) }

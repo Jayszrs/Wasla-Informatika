@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation'
-import { currentUser } from '@/lib/studio-auth'
-import { listDocuments } from '@/lib/studio-content'
-import type { Project, Post, Service } from '@/lib/content-types'
-import { Content, PageIntro, ProjectImage } from '@/components/ui'
+import { currentUser } from '@/backend/auth'
+import { listDocuments } from '@/backend/content'
+import type { Project, Post, Service } from '@/shared/content-types'
+import { Content, PageIntro, ProjectImage } from '@/frontend/components/ui'
 export const metadata = { title: 'Preview draft', robots: { index: false, follow: false } }
 export default async function Preview({ searchParams }: { searchParams: Promise<{ collection?: string; id?: string }> }) {
   const params = await searchParams

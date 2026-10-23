@@ -1,7 +1,7 @@
 import { redirect, notFound } from 'next/navigation'
-import { currentUser } from '@/lib/studio-auth'
-import { StudioWorkspace, StudioLogin } from '@/components/studio-workspace'
-import { studioSchema } from '@/lib/studio-schema'
+import { currentUser } from '@/backend/auth'
+import { StudioWorkspace, StudioLogin } from '@/frontend/studio/workspace'
+import { studioSchema } from '@/shared/studio-schema'
 export default async function AdminPage({ params }: { params: Promise<{ segments?: string[] }> }) {
   const segments = (await params).segments || []
   const user = await currentUser()

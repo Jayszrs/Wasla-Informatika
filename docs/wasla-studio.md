@@ -10,6 +10,12 @@ Pengganti CMS Payload dengan dashboard khusus Wasla. Pemindahan 23 Oktober 2026 
 4. Simpan sebagai draft untuk meninjau perubahan. Pada project yang telah terbit, draft perubahan tidak menimpa versi publik. Terbitkan untuk mengganti versi publik. Tarik dari website untuk menonaktifkan publikasi.
 5. Preview draft memerlukan sesi staf. Riwayat menyimpan sampai 20 penyimpanan per dokumen; muat sebagai draft lalu tinjau dan simpan. Konten lama sebelum migrasi tidak memiliki riwayat baru secara retroaktif.
 
+## Paket website
+
+Buka **Pengaturan website → Paket website**. Setiap baris memuat nama, slug unik, harga rupiah berupa angka, deskripsi, keterangan CMS, dan layanan tujuan. Baseline yang disetujui pemilik: Landing Page Rp5.000.000 tanpa CMS; Web Application Rp8.000.000; Company Profile + CMS Rp10.000.000. Simpan untuk memperbarui beranda, `/paket-website`, dan isi awal pesan konsultasi. Perubahan harga tidak mengubah field pengaturan lain. Hapus semua baris bila paket sementara tidak ditampilkan; halaman menampilkan ajakan konsultasi yang sesuai.
+
+Tombol paket membuka formulir berisi pilihan layanan dan ringkasan paket. Pengunjung masih meninjau, melengkapi identitas dan menyetujui penggunaan data sebelum mengirim. Fitur, jadwal, domain, hosting dan dukungan dibahas dalam penawaran.
+
 ## Scheduler project
 
 Tambah nama pekerjaan, penanggung jawab dari tim, tanggal mulai dan tenggat. Klien, ID project dan catatan opsional. Status: direncanakan, dikerjakan, ditinjau, selesai. Tenggat tidak dapat mendahului tanggal mulai. Kalender menampilkan rentang pekerjaan; pilih tanggal untuk agenda, gunakan filter status dan tombol bulan. Edit jadwal untuk menjadwal ulang. Administrator dapat menghapus jadwal.

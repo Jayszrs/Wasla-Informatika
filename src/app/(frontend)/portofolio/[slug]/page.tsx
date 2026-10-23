@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation'
-import { projectBySlug } from '@/lib/cms'
-import { PageIntro, ProjectImage, CTA, TextLink } from '@/components/ui'
-import { ProjectGallery } from '@/components/project-gallery'
-import { pageMeta } from '@/lib/seo'
-import { seoImageSource, mediaSource } from '@/lib/media'
+import { projectBySlug } from '@/backend/cms'
+import { PageIntro, ProjectImage, CTA, TextLink } from '@/frontend/components/ui'
+import { ProjectGallery } from '@/frontend/components/project-gallery'
+import { pageMeta } from '@/frontend/lib/seo'
+import { seoImageSource, mediaSource } from '@/shared/media'
 type Props = { params: Promise<{ slug: string }> }
 export async function generateMetadata({ params }: Props) { const p = await projectBySlug((await params).slug); return p ? pageMeta(p.seo?.title || p.title, p.seo?.description || p.excerpt, `/portofolio/${p.slug}`, seoImageSource(p.seo?.image)) : {} }
 export default async function Page({ params }: Props) {

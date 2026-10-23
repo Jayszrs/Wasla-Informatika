@@ -1,14 +1,15 @@
+import { WebsitePackages } from '@/frontend/components/website-packages'
 import Link from 'next/link'
-import { getServices, getProjects, getSettings, getTestimonials, getTeam } from '@/lib/cms'
-import { Arrow } from '@/components/icons'
-import { SectionWave } from '@/components/artwork'
-import { ServiceScene } from '@/components/service-scene'
-import { ButtonLink, MediaImage, ProjectCard } from '@/components/ui'
-import { ContactForm } from '@/components/contact-form'
-import { pageMeta } from '@/lib/seo'
-import { DivisionStructure } from '@/components/division-structure'
-import { TechnologyLogos } from '@/components/technology-logos'
-import { teamContacts } from '@/lib/contacts'
+import { getServices, getProjects, getSettings, getTestimonials, getTeam } from '@/backend/cms'
+import { Arrow } from '@/frontend/components/icons'
+import { SectionWave } from '@/frontend/components/artwork'
+import { ServiceScene } from '@/frontend/components/service-scene'
+import { ButtonLink, MediaImage, ProjectCard } from '@/frontend/components/ui'
+import { ContactForm } from '@/frontend/components/contact-form'
+import { pageMeta } from '@/frontend/lib/seo'
+import { DivisionStructure } from '@/frontend/components/division-structure'
+import { TechnologyLogos } from '@/frontend/components/technology-logos'
+import { teamContacts } from '@/shared/contacts'
 
 export async function generateMetadata() {
   const s = await getSettings()
@@ -58,6 +59,8 @@ export default async function Home() {
       <div className="section-action"><Link className="all-services" href="/layanan">Jelajahi seluruh layanan</Link></div>
     </div></section>
     <SectionWave/>
+
+    <WebsitePackages packages={settings.websitePackages}/>
 
     <section className="agency-feature wrap">
       <div className="agency-feature-visual" data-parallax-feature><MediaImage media={settings.featureImage} className="agency-device-image"/><span className="illustration-note">Visual ilustrasi perangkat</span></div>

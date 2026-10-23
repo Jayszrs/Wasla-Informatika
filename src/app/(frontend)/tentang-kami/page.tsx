@@ -1,6 +1,6 @@
-import { getTeam, getSettings } from '@/lib/cms'
-import { PageIntro, TeamSection, Process, CTA, MediaImage } from '@/components/ui'
-import { pageMeta } from '@/lib/seo'
+import { getTeam, getSettings } from '@/backend/cms'
+import { PageIntro, TeamSection, Process, CTA, MediaImage } from '@/frontend/components/ui'
+import { pageMeta } from '@/frontend/lib/seo'
 
 export const metadata = pageMeta('Tentang Kami', 'Kenali pendekatan Wasla Informatika dalam menghubungkan kebutuhan bisnis dengan strategi, desain, dan teknologi.', '/tentang-kami')
 

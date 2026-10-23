@@ -44,6 +44,8 @@ colors:
   studio-status-amber-text: "#795614"
   gallery-control-line: "#63758a"
   footer-subtitle: "#adc0d5"
+  package-surface: "#f1f5f9"
+  package-copy: "#52647c"
 typography:
   display:
     fontFamily: "Poppins, sans-serif"
@@ -112,6 +114,18 @@ typography:
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "0.22em"
+  package-title:
+    fontFamily: "Poppins, sans-serif"
+    fontSize: "22px"
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: "-0.025em"
+  package-price:
+    fontFamily: "Poppins, sans-serif"
+    fontSize: "28px"
+    fontWeight: 600
+    lineHeight: 1.7
+    letterSpacing: "-0.03em"
   studio-heading:
     fontFamily: "Poppins, sans-serif"
     fontSize: "28px"
@@ -138,6 +152,7 @@ rounded:
   circle: "50%"
   technology-link: "16px"
   division-card: "24px"
+  package-row: "16px"
   studio-control: "8px"
   studio-panel: "12px"
   studio-field-group: "10px"
@@ -235,6 +250,17 @@ components:
   portfolio-filter-selected:
     backgroundColor: "transparent"
     textColor: "{colors.navy}"
+  package-row:
+    backgroundColor: "{colors.package-surface}"
+    textColor: "{colors.navy}"
+    rounded: "{rounded.package-row}"
+    padding: "34px"
+  package-action:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.navy}"
+    typography: "{typography.button}"
+    rounded: "{rounded.button}"
+    padding: "10px 26px"
   studio-primary:
     backgroundColor: "{colors.navy}"
     textColor: "{colors.white}"
@@ -269,7 +295,7 @@ components:
 
 **Creative North Star: "A familiar software-house experience, with Wasla's own work and voice."**
 
-The public site keeps the owner's established software-house composition: photographic opening, centered grid, Poppins hierarchy, real project screenshots, navy/white fields and capsule actions. The latest approved contract replaces service-image tilt with actual Three.js geometry and the connected division diagram with click-to-flip people cards. The header has the left wordmark and static ID marker; the right emblem is removed. The footer is a seamless straight navy region with readable company/navigation/team information and a low-opacity final signature. Public CTA surfaces are White.
+The public site keeps the owner's established software-house composition: photographic opening, centered grid, Poppins hierarchy, real project screenshots, navy/white fields and capsule actions. The latest approved contract replaces service-image tilt with actual Three.js geometry and the connected division diagram with click-to-flip people cards. The header has the left wordmark and static ID marker; the right emblem is removed. The footer is a seamless straight navy region with readable company/contact/service/navigation groups and a low-opacity wasla signature with a readable informatika subtitle. Website-package comparison rows extend the same quiet navy/white system. Public CTA surfaces are White.
 
 Wasla Studio is the Operate surface of this identity: concrete tasks, readable forms, predictable navigation, real counts and honest empty states. It is a custom dashboard and internal scheduler, with no Payload runtime. Latest owner direction in `.impeccable/studio-direction.md` supersedes historic canon. This source-extracted record refreshes the existing design system; no new comp or invented photography is claimed.
 
@@ -281,6 +307,7 @@ Wasla Studio is the Operate surface of this identity: concrete tasks, readable f
 - Thirteen services with stable slug-based scenes and six homepage choices, including photography, video and graphic/photo editing.
 - Original CMS screenshots in authored CSS laptop, tablet and phone frames.
 - Left header wordmark, White CTAs and a straight navy footer.
+- CMS-owned website-package rows with explicit price/scope and contextual consultation.
 - Custom Studio Operate workspace with real data and explicit save states.
 
 ## Colors
@@ -291,7 +318,7 @@ Wasla Navy carries text, filled actions and active Studio navigation. Deep Navy 
 
 ### Neutral
 
-White is the public reading/consultation/principles/CTA surface and Studio panels. Ice remains available for contextual media. Public Slate/Light support light/dark copy. Studio Ground separates white work surfaces; Studio Muted, Studio Line and Studio Field Line preserve operational hierarchy. Division Front/Portrait support real photos or Navy Initials. Status green, blue and amber always accompany text labels rather than carrying meaning alone.
+White is the public reading/consultation/principles/CTA surface and Studio panels. Ice remains available for contextual media. Public Slate/Light support light/dark copy. Studio Ground separates white work surfaces; Studio Muted, Studio Line and Studio Field Line preserve operational hierarchy. Division Front/Portrait support real photos or Navy Initials. Package Surface gives comparison rows a quiet background; Package Copy carries their CMS scope. Status green, blue and amber always accompany text labels rather than carrying meaning alone.
 
 **The Evidence Rule.** Technology marks describe studio capabilities, not client relationships or displayed project stacks. Publish only supplied company facts and eligible proof.
 
@@ -307,7 +334,9 @@ Public wrapper is 1140px including two 15px gutters (1110px inner). Maximums bec
 
 Home project grid uses two columns with 2px gaps; the seventh device tile spans the row at 16:9. Device stages normally use 16:10; detail uses 16:9, becoming 16:11 below 767px. Home service objects occupy 300px height, 250px at 991px and 310px at 767px; catalog scene height is 430/370/340/300px at desktop/1199/767/420px. Services stack below 767px; all catalog copy and actions, including alternating rows, retain 15px horizontal gutters. Scene grid tracks use minmax(0,1fr), zero intrinsic minimums and an absolute SVG fallback so intrinsic artwork cannot enlarge the row. Technology strip retains eight/six/four columns at desktop/1199/767px. Principles and consultation are White; process is a full-width Deep Navy outer section with an inner wrapper.
 
-Division cards use four columns with 21px gaps, two columns at 991px and one centered column up to 320px at 420px. Card height is 370px desktop, then 350/390/360/400px at 1199/991/767/420px. Transparent portrait images use object-fit:contain and object-position:center bottom. Footer information uses three columns (company, navigation, team), becomes two below 767px with company spanning both. Footer padding starts at 65px, 55px narrow. The final signature is left-aligned, aria-hidden, with parent opacity 1, max-height:none, overflow:visible and padding 22px 0 38px. Only its wasla child has opacity .08; informatika stays opacity 1 with 17px top margin and Footer Subtitle styling. Narrow name type remains 26vw; bottom padding becomes 30px, with no height cap.
+Division cards use four columns with 21px gaps, two columns at 991px and one centered column up to 320px at 420px. Card height is 370px desktop, then 350/390/360/400px at 1199/991/767/420px. Transparent portrait images use object-fit:contain and object-position:center bottom. Footer information uses four desktop columns (company, contacts, services and exploration), two at 991px. At 767px company and contacts span the full grid; contacts form two columns while service/exploration groups remain side by side. Footer padding starts at 65px, 55px narrow. The final signature is left-aligned, aria-hidden, with parent opacity 1, max-height:none, overflow:visible and padding 22px 0 38px. Only its wasla child has opacity .08; informatika stays opacity 1 with 17px top margin and Footer Subtitle styling. Narrow name type remains 26vw; bottom padding becomes 30px, with no height cap.
+
+Website packages use description, price/CMS scope and action columns in each row, with 38px gaps and 34px padding. At 1199px these become 24px gaps/27px padding; at 991px the action spans both content columns. At 767px each row stacks with 22px gaps, 25px 22px padding and a full-width action. The section uses 75px 90px vertical padding, 55px 65px narrow; the standalone variant removes top padding after its intro. Its heading changes from two columns to one at 767px. Public page scrollbars are hidden through scrollbar-width and WebKit scrollbar styling; native scroll behavior remains. This stylesheet is scoped to the public route group, leaving Studio and internal overflow controls intact.
 
 Studio desktop sidebar is fixed at 238px; the shell offsets by the same width. Topbar is 78px and sticky; main width caps at 1510px with 38px 42px 60px padding. At 1199px sidebar/offset become 210px and main horizontal padding 26px. At 991px sidebar becomes a 250px overlay with scrim, shell loses offset, topbar becomes 68px. Below 767px main padding is 26px 18px 40px, overview stacks, table rows become labelled content/action arrangements, media uses two columns, editor becomes one column and save controls move before the form. Editor desktop uses flexible content plus a 270px sticky save rail (235px at 1199px). Calendar keeps seven columns: compact narrow date cells show status marks while the selected-day agenda supplies full task text. Desktop date cells are at least 110px, narrow 66px.
 
@@ -321,7 +350,7 @@ Studio uses tonal layering with restrained panel shadow `0 5px 22px #071a3306`; 
 
 ## Shapes
 
-Public project tile outer edges stay square; laptop, tablet and phone frames supply device-specific inner corners. Capsule actions use Button radius and nearly square fields use Field radius. Contact/About directory cards retain alternating Contact corners; the shared flip cards use Division Card corners. Technology links use their own radius. Studio controls are gently rounded using Studio Control, panels use Studio Panel, grouped fields use Studio Field Group; these operational shapes are intentionally quieter than public capsule actions. Calendar selected dates receive a visible blue inset boundary. Footer is straight and seamless. Existing section waves remain: their destination-colored 3px pseudo-element covers the bottom raster edge at -1px, without adding a separator or suppressing focus borders.
+Public project tile outer edges stay square; laptop, tablet and phone frames supply device-specific inner corners. Capsule actions use Button radius and nearly square fields use Field radius. Contact/About directory cards retain alternating Contact corners; the shared flip cards use Division Card corners. Technology links use their own radius. Package rows use Package Row corners and a flat tonal fill without raised pricing-card effects. Studio controls are gently rounded using Studio Control, panels use Studio Panel, grouped fields use Studio Field Group; these operational shapes are intentionally quieter than public capsule actions. Calendar selected dates receive a visible blue inset boundary. Footer is straight and seamless. Existing section waves remain: their destination-colored 3px pseudo-element covers the bottom raster edge at -1px, without adding a separator or suppressing focus borders.
 
 ## Components
 
@@ -330,6 +359,14 @@ Public project tile outer edges stay square; laptop, tablet and phone frames sup
 Public actions have 44px minimum height, capsule shape and 250ms color states; home service actions use 40px. Global public focus is 3px Blue with 5px offset. Public text links have no decorative underline or arrow. Project/Artikel labels retain `/portofolio` and `/insights`. Mobile menu makes background inert, locks scrolling, wraps Tab, closes on Escape/route/resize and restores focus. ID describes language.
 
 Studio primary/secondary actions have 42px minimum height, Studio Control corners and 180ms states. Navy primary hover becomes Studio Primary Hover; white outlined secondary hover becomes Studio Secondary Hover. Keyboard focus is 3px Studio Focus with 3px offset. Sidebar active item uses Navy/White and aria-current. Pending actions disable and dim; errors remain readable and recoverable. Mobile drawer is separate from the public navigation.
+
+### Website packages and footer groups
+
+`src/frontend/components/website-packages.tsx` renders CMS-owned rows on the homepage and `/paket-website`; shared defaults/formatting/context links live in `src/shared/website-packages.ts`. Each row has a Package Title, compact description, Package Price, visible CMS scope and a white outline consultation action that fills navy on hover. Price reduces to 25px at 1199px and returns to 28px on mobile; title becomes 21px at 767px. Section notes state that features, timing, domain, hosting and support are proposal details. There are no popularity badges or invented inclusions. Empty CMS arrays show an honest update message and contact route.
+
+The owner-approved defaults are Landing Page Rp5.000.000 without CMS; Web Application Rp8.000.000 with management according to project scope; Company Profile + CMS Rp10.000.000 including CMS. The action carries service and package slug into `/kontak`; the current CMS name, price and scope prefill an editable message. Pengaturan website ? Paket website exposes name, slug, price, description, CMS scope and consultation service.
+
+The shared footer groups company details, Hubungi Kami, Layanan Kami and Jelajahi Wasla. Contacts retain actual names, roles, phone numbers and existing WhatsApp destinations. Service-specific links render only when the matching service is published; catalog/packages links and configured valid navigation/social destinations remain real anchors. The decorative final signature follows copyright, privacy and back-to-top rather than replacing accessible company information.
 
 ### People and contact
 
@@ -353,7 +390,7 @@ Admin and editor manage content, media, schedules and message follow-up. Only ad
 
 ### Semantic service scenes and public measurements
 
-The catalog preserves ten technology services and adds Fotografi & Dokumentasi (wedding/WO collaboration, graduation and events), Video Editing and Desain Grafis & Photo Editing. Homepage choices are website-development, web-application, ui-ux-design, photography, video-editing and creative-editing. Consultation links retain the selected service; no price, guaranteed outcome or turnaround is invented.
+The catalog preserves ten technology services and adds Fotografi & Dokumentasi (wedding/WO collaboration, graduation and events), Video Editing and Desain Grafis & Photo Editing. Homepage choices are website-development, web-application, ui-ux-design, photography, video-editing and creative-editing. Consultation links retain the selected service; package prices use owner-approved CMS values, while guaranteed outcomes and turnaround are not invented.
 
 `getServiceVisual(slug)` owns stable identity independently of CMS order. The 13 types are:
 
@@ -373,7 +410,7 @@ The catalog preserves ten technology services and adds Fotografi & Dokumentasi (
 | video-editing | video | Editing timeline and slate |
 | creative-editing | creative | Artboard, pen and swatches |
 
-Published aliases and keyword fallbacks are defined in src/lib/service-visual.ts; unknown slugs fall back to website. Example: moving photography to the first CMS position still renders the camera. The same semantic type drives meshes, accessible label and SVG fallback.
+Published aliases and keyword fallbacks are defined in src/frontend/lib/service-visual.ts; unknown slugs fall back to website. Example: moving photography to the first CMS position still renders the camera. The same semantic type drives meshes, accessible label and SVG fallback.
 
 `SiteMeasurements` mounts only in the public frontend layout when VERCEL === '1'. Page-view URLs have query and fragment removed; Speed Insights samples .1 (10%). No form content, private Studio route telemetry or custom form/admin events are added. App installation, platform configuration and production runtime verification are separate evidence states.
 
@@ -386,6 +423,7 @@ Published aliases and keyword fallbacks are defined in src/lib/service-visual.ts
 - **Do** use provenance-backed retouches of the four supplied photos or honest initials, manual gallery uploads and independent WhatsApp links.
 - **Do** preserve original CMS screenshots within CSS device frames and expose originals in enlargement.
 - **Do** keep informatika readable beneath the low-opacity wasla child, with no signature height cap.
+- **Do** keep package price and CMS scope visible together, preserve native public scrolling and use actual footer destinations.
 - **Do** keep Studio forms readable, mobile save controls first and calendar details available in the agenda.
 - **Do** preserve published content until an explicit publish action, role restrictions and private data boundaries.
 
@@ -396,4 +434,4 @@ Published aliases and keyword fallbacks are defined in src/lib/service-visual.ts
 - **Don't** invent client work, metrics, schedules, automatic reminders or project stacks.
 - **Don't** treat staged runtime verification, local captures or documentation as completed production promotion or DNS.
 
-Historical direction: earlier code-first records described a right emblem, raster perspective, a coordinator tree, a .14 centered footer signature and Payload editing. Those are history, superseded by the 23 October Studio contract and its approved creative extension in `.impeccable/creative-refinement.md`. Current scope and provenance are in `docs/creative-refinement.md`; the full 24-capture review found no app visual fixes and requested this canon extension. Domain DNS and HTTPS already work at https://wasla.my.id. New deployment dpl_3RqmPGEko4anami9d9Ugfmw6Db8s is READY; runtime checks and promotion are pending. This document does not certify that release or analytics delivery. See `docs/production-verification.md` and `docs/domain-wasla-my-id.md` for operational evidence.
+Historical direction: earlier code-first records described a right emblem, raster perspective, a coordinator tree, a .14 centered footer signature and Payload editing. Those are history, superseded by the 23 October Studio contract and its approved creative extension in `.impeccable/creative-refinement.md`. Package/footer continuation is in `.impeccable/packages-refinement.md`; source organization uses `src/frontend`, `src/backend` and `src/shared` while App Router routes remain in `src/app`. Current creative scope and provenance are in `docs/creative-refinement.md`; the earlier 24-capture creative review remains dated evidence. The current package/footer record `.impeccable/review/packages-browser-readings.json` lists 21 captures at 1440/1477/1024/390px, zero recorded overflow/broken images/browser errors and separate mobile footer upper/bottom views. Parent validation reports a passing build, 13 browser/four unit tests and lint with zero errors/seven existing warnings. This source-only documentation pass does not make an independent visual verdict. Domain DNS and HTTPS already work at https://wasla.my.id. New deployment dpl_3RqmPGEko4anami9d9Ugfmw6Db8s is READY; runtime checks and promotion are pending. This document does not certify that release or analytics delivery. See `docs/production-verification.md` and `docs/domain-wasla-my-id.md` for operational evidence.

@@ -1,0 +1,320 @@
+{
+  "results": [
+    {
+      "file": ".impeccable/review/packages-home-viewport-1440.png",
+      "section": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 9230,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-opening-viewport-1440.png",
+      "section": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 2368,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-comparison-section-1440.png",
+      "section": ".website-packages",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 345,
+        "scrollHeight": 2368,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-footer-upper-viewport-1440.png",
+      "section": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 1455,
+        "scrollHeight": 2368,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-footer-bottom-viewport-1440.png",
+      "section": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 1468,
+        "scrollHeight": 2368,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-services-opening-viewport-1440.png",
+      "section": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 8571,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-team-section-1440.png",
+      "section": ".division-structure",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 6735,
+        "scrollHeight": 9230,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-home-viewport-390.png",
+      "section": null,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 14279,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-opening-viewport-390.png",
+      "section": null,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 2935,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-comparison-section-390.png",
+      "section": ".website-packages",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "scrollY": 249,
+        "scrollHeight": 2935,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-footer-upper-viewport-390.png",
+      "section": null,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "scrollY": 1792,
+        "scrollHeight": 2935,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-footer-bottom-viewport-390.png",
+      "section": null,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "scrollY": 2091,
+        "scrollHeight": 2935,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-services-opening-viewport-390.png",
+      "section": null,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 9912,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-team-section-390.png",
+      "section": ".division-structure",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "scrollY": 10446,
+        "scrollHeight": 14279,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-mobile-menu-viewport-390.png",
+      "section": null,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 14279,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-home-viewport-1024.png",
+      "section": null,
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 9018,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-opening-viewport-1024.png",
+      "section": null,
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 2280,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-comparison-section-1024.png",
+      "section": ".website-packages",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 303,
+        "scrollHeight": 2280,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-home-viewport-1477.png",
+      "section": null,
+      "viewport": {
+        "width": 1477,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 9230,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-opening-viewport-1477.png",
+      "section": null,
+      "viewport": {
+        "width": 1477,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 0,
+        "scrollHeight": 2368,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/packages-comparison-section-1477.png",
+      "section": ".website-packages",
+      "viewport": {
+        "width": 1477,
+        "height": 900
+      },
+      "measurements": {
+        "scrollY": 345,
+        "scrollHeight": 2368,
+        "overflow": false,
+        "scrollbar": "none",
+        "brokenImages": []
+      }
+    }
+  ],
+  "errors": []
+}

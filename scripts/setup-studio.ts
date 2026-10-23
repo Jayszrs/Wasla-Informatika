@@ -1,7 +1,7 @@
 import 'dotenv/config'
-import { pool, schemaSQL } from '../src/lib/studio-db'
-import { hashPassword } from '../src/lib/studio-auth'
-import initial from '../src/lib/studio-initial.json'
+import { pool, schemaSQL } from '../src/backend/database'
+import { hashPassword } from '../src/backend/auth'
+import initial from '../src/backend/data/initial-content.json'
 await pool.query(schemaSQL)
 const client = await pool.connect()
 try {

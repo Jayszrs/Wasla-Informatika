@@ -42,6 +42,7 @@ npm start
 - Project, layanan, artikel, FAQ, testimoni: draft, terbit, preview privat, riwayat penyimpanan dan pemulihan sebagai draft.
 - Galeri: unggah langsung dari form project atau pilih Media, keterangan dan urutan gambar. Foto profil tim juga dapat diganti dari CMS.
 - Tim, navigasi dan pengaturan website: edit konten asli tanpa mengubah kode.
+- Paket website: harga, nama, deskripsi, cakupan CMS dan layanan tujuan dapat diubah pada Pengaturan website. Pilihan paket masuk ke pesan konsultasi untuk ditinjau pengunjung.
 - Pesan konsultasi: hanya staf, dengan status baru/dihubungi/selesai.
 - Administrator mengelola pengguna dan penghapusan. Editor mengelola konten/jadwal/pesan tanpa menghapus atau mengubah hak akses.
 
@@ -65,4 +66,4 @@ Pengujian browser menggunakan Chrome yang terpasang. Isi akun pengujian lokal pa
 
 Website: **https://wasla.my.id**. Dashboard: **https://wasla.my.id/admin**. Project Vercel: `waslainformatika`, scope `jae-f2e1`, akun pemilik yang telah diverifikasi. Database Neon dan Vercel Blob tetap digunakan. DNS, HTTPS, canonical dan alur Studio sudah diverifikasi pada domain baru; bukti ada di dokumentasi deployment.
 
-Lihat [panduan CMS](docs/wasla-studio.md), [deployment](docs/deployment.md), dan [riset kartu flip](docs/rea-flip-reference.md). Kredensial, token, dump database dan file `.env` tidak boleh dikomit.
+Source tampilan berada di `src/frontend`, logika server di `src/backend`, dan tipe/helper bersama di `src/shared`. Route Next.js tetap di `src/app`. Lihat [struktur source dan pembersihan](docs/source-structure.md), [panduan CMS](docs/wasla-studio.md), [deployment](docs/deployment.md), dan [riset kartu flip](docs/rea-flip-reference.md). Kredensial, token, dump database dan file `.env` tidak boleh dikomit.

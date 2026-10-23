@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation'
-import { serviceBySlug } from '@/lib/cms'
-import { PageIntro, Content, CTA, ButtonLink } from '@/components/ui'
-import { ServiceScene } from '@/components/service-scene'
-import { pageMeta } from '@/lib/seo'
-import { seoImageSource } from '@/lib/media'
+import { serviceBySlug } from '@/backend/cms'
+import { PageIntro, Content, CTA, ButtonLink } from '@/frontend/components/ui'
+import { ServiceScene } from '@/frontend/components/service-scene'
+import { pageMeta } from '@/frontend/lib/seo'
+import { seoImageSource } from '@/shared/media'
 type Props = { params: Promise<{ slug: string }> }
 export async function generateMetadata({ params }: Props) { const { slug } = await params; const s = await serviceBySlug(slug); return s ? pageMeta(s.seo?.title || s.title, s.seo?.description || s.excerpt, `/layanan/${s.slug}`, seoImageSource(s.seo?.image)) : {} }
 export default async function Page({ params }: Props) {

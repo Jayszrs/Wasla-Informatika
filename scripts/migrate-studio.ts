@@ -6,7 +6,7 @@ if (production) {
   if (!new URL(env.DATABASE_URL_UNPOOLED || env.DATABASE_URL).hostname.endsWith('.neon.tech')) throw new Error('Unexpected production database')
   Object.assign(process.env, env, { DATABASE_URL: env.DATABASE_URL_UNPOOLED || env.DATABASE_URL })
 } else dotenv.config()
-const { pool, schemaSQL } = await import('../src/lib/studio-db')
+const { pool, schemaSQL } = await import('../src/backend/database')
 const backup = JSON.parse(fs.readFileSync(`.local/legacy-${production ? 'production' : 'local'}-backup.json`, 'utf8'))
 if (!backup.collections.projects || !backup.globals['site-settings']) throw new Error('Incomplete legacy backup')
 await pool.query(schemaSQL)

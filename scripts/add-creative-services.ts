@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import dotenv from 'dotenv'
-import services from '../src/lib/creative-services.json'
+import services from '../src/backend/data/creative-services.json'
 
 const production = process.argv.includes('--production')
 if (production) {
@@ -9,9 +9,9 @@ if (production) {
   if (!new URL(connection).hostname.endsWith('.neon.tech')) throw new Error('Unexpected production database')
   Object.assign(process.env, env, { DATABASE_URL: connection })
 } else dotenv.config()
-const { pool } = await import('../src/lib/studio-db')
-const { saveDocument } = await import('../src/lib/studio-content')
-const { validateDocument } = await import('../src/lib/studio-validation')
+const { pool } = await import('../src/backend/database')
+const { saveDocument } = await import('../src/backend/content')
+const { validateDocument } = await import('../src/backend/content-validation')
 try {
   const before = await pool.query("SELECT collection,id,data,published,revision FROM studio_documents WHERE collection IN ('services','team') ORDER BY collection,id")
   fs.mkdirSync('.local', { recursive: true })

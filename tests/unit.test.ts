@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { contactSchema, validPublicLink, validWhatsApp } from '../src/lib/validation'
-import { whatsappMessage } from '../src/lib/contacts'
+import { contactSchema, validPublicLink, validWhatsApp } from '../src/shared/validation'
+import { whatsappMessage } from '../src/shared/contacts'
 
 const valid = { name: 'Penguji Lokal', email: 'test@example.invalid', company: '', phone: '+62 812 0000', service: 'Website Development', message: 'Pesan pengujian yang cukup panjang.', consent: true, website: '' }
 test('contact: validates required consent, email, message and honeypot', () => {
