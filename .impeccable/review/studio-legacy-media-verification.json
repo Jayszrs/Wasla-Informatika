@@ -1,0 +1,16 @@
+{
+  "url": "https://wasla.my.id",
+  "checkedAt": "2026-10-23T08:47:28.833Z",
+  "checks": [
+    {
+      "filename": "batu-alam-supplier-1.webp",
+      "status": 200,
+      "type": "image/webp"
+    },
+    {
+      "filename": "favicon-1.png",
+      "status": 200,
+      "type": "image/png"
+    }
+  ]
+}

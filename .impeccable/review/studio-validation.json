@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-23T05:02:47.702Z",
+  "checkedAt": "2026-10-23T08:53:47.596Z",
   "local": {
     "build": "pass",
     "typecheck": "pass",
@@ -42,7 +42,36 @@
   "domain": {
     "name": "wasla.my.id",
     "attached": true,
-    "dnsReady": false,
-    "reason": "Registrar session expired before nameserver change could be saved."
-  }
+    "dnsReady": true,
+    "success": true,
+    "url": "https://wasla.my.id",
+    "deploymentId": "dpl_7pH59fqvSkobj1h4sN7kTJssrZwT",
+    "checkedAt": "2026-10-23T08:54:35.312Z",
+    "https": 200,
+    "canonical": "https://wasla.my.id",
+    "sitemapOrigin": "https://wasla.my.id",
+    "robotsSitemap": "https://wasla.my.id/sitemap.xml",
+    "vercelDomainStatus": "configured-correctly",
+    "nameservers": [
+      "ns1.vercel-dns.com",
+      "ns2.vercel-dns.com"
+    ]
+  },
+  "production": {
+    "success": true,
+    "url": "https://wasla.my.id",
+    "checkedAt": "2026-10-23T08:53:47.596Z",
+    "checks": [
+      "Seven public routes render without overflow",
+      "Seven real projects and preserved galleries",
+      "Scheduler and consultation messages remain private",
+      "Existing production administrator signs in to custom Studio",
+      "New CMS image persists in Blob and downloads as WebP",
+      "Scheduler creates, saves and changes status in production",
+      "Custom dashboard and calendar render after authentication",
+      "Contact form saves privately and offers the correct WhatsApp link without sending",
+      "Desktop and mobile public/admin renders without overflow"
+    ]
+  },
+  "deploymentId": "dpl_7pH59fqvSkobj1h4sN7kTJssrZwT"
 }

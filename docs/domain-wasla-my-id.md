@@ -1,18 +1,27 @@
-# Domain wasla.my.id — status pengaturan
+# Domain wasla.my.id ? aktif
 
-Tanggal pemeriksaan: 23 Oktober 2026.
+Diverifikasi 23 Oktober 2026 pada project Vercel `waslainformatika`, scope `jae-f2e1`.
 
-- Domain wasla.my.id sudah ditambahkan ke project Vercel waslainformatika, scope jae-f2e1, akun tujuan yang telah diverifikasi.
-- Kepemilikan diterima Vercel; konfigurasi DNS belum valid.
-- Registrar yang terlihat pada browser: TTM Host, halaman pengelolaan domain https://member.ttmhost.co.id/clientarea.php?action=domaindetails&id=803.
-- DNS Management di panel merupakan add-on berbayar (Rp65.000 saat diperiksa). Add-on tidak dibeli.
-- Jalur gratis yang disiapkan: nameserver ns1.vercel-dns.com dan ns2.vercel-dns.com.
-- Form nameserver telah diisi, tetapi penyimpanan mengembalikan halaman login karena sesi registrar habis. Belum ada bukti perubahan nameserver tersimpan. Pemeriksaan Vercel terakhir masih membaca ns1.ttmhostjaya.my.id dan ns2.ttmhostjaya.my.id.
+Website: **https://wasla.my.id**. Dashboard: **https://wasla.my.id/admin**.
 
-## Langkah berikutnya
+## Konfigurasi tersimpan
 
-Pemilik masuk kembali pada panel TTM Host. Pilih wasla.my.id ? Nameservers ? nameserver kustom; isi dua nameserver Vercel di atas dan simpan. Perubahan DNS dapat membutuhkan waktu propagasi; keberhasilan harus diverifikasi dari Vercel dan HTTPS, bukan hanya tombol simpan.
+Nameserver kustom berhasil disimpan melalui panel TTM Host setelah pemilik masuk kembali:
 
-Vercel menyediakan alternatif record A jika pemilik memilih DNS hosting lain: pemeriksaan `domains verify` memberikan 216.198.79.1 dan 64.29.17.1 untuk @, serta fallback 76.76.21.21. Jangan mengubah MX/TXT atau layanan email yang tidak terkait. Karena add-on DNS saat ini belum aktif dan domain baru tidak menyajikan jawaban DNS yang valid, jalur nameserver gratis dipilih.
+- `ns1.vercel-dns.com`
+- `ns2.vercel-dns.com`
 
-Setelah DNS/HTTPS valid, ubah NEXT_PUBLIC_SITE_URL produksi ke https://wasla.my.id lalu deploy ulang untuk canonical, sitemap dan Open Graph. Akses kontak menerima origin kedua alamat Wasla; alamat vercel.app tetap dapat digunakan selama proses sambungan. Jangan menandai domain siap sebelum pemeriksaan HTTPS berhasil.
+Panel menampilkan ?Perubahan Berhasil Disimpan!?. DNS Management berbayar tidak dibeli; DNS dikelola melalui Vercel. Bukti panel: `.impeccable/review/domain-nameservers-saved.jpg`.
+
+## Bukti domain berfungsi
+
+- Resolver Cloudflare `1.1.1.1` dan Google `8.8.8.8` mengembalikan kedua nameserver Vercel.
+- Vercel `domains verify`: `configured-correctly`, kepemilikan pada scope aktif, tanpa konflik konfigurasi.
+- Sertifikat berhasil diterbitkan. Permintaan HTTPS dengan validasi TLS aktif mengembalikan HTTP 200.
+- `NEXT_PUBLIC_SITE_URL` produksi sudah `https://wasla.my.id`.
+- Deployment `dpl_7pH59fqvSkobj1h4sN7kTJssrZwT` sudah dipromosikan; canonical homepage, sitemap dan robots menunjuk domain baru.
+- Login Studio, unggah Blob, penyimpanan jadwal, formulir konsultasi dan tampilan desktop/mobile lulus pengujian pada domain baru.
+
+Laporan mesin: `.impeccable/review/domain-production-verification.json` dan `.impeccable/review/studio-production-verification.json`. Jawaban A dapat berbeda antar resolver karena routing edge Vercel. Jangan mengganti record hanya karena alamat edge berbeda.
+
+Alamat `waslainformatika.vercel.app` tetap tersedia sebagai alias. Nama `www` tidak dikonfigurasi pada pekerjaan ini. Jika kelak menambahkan email domain, kelola record MX/TXT melalui DNS Vercel.

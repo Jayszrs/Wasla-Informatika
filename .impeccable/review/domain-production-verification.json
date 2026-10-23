@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "url": "https://wasla.my.id",
+  "deploymentId": "dpl_7pH59fqvSkobj1h4sN7kTJssrZwT",
+  "checkedAt": "2026-10-23T08:54:35.312Z",
+  "https": 200,
+  "canonical": "https://wasla.my.id",
+  "sitemapOrigin": "https://wasla.my.id",
+  "robotsSitemap": "https://wasla.my.id/sitemap.xml",
+  "vercelDomainStatus": "configured-correctly",
+  "nameservers": [
+    "ns1.vercel-dns.com",
+    "ns2.vercel-dns.com"
+  ]
+}

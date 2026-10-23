@@ -63,6 +63,6 @@ Pengujian browser menggunakan Chrome yang terpasang. Isi akun pengujian lokal pa
 
 ## Produksi
 
-Project Vercel: `waslainformatika`, scope `jae-f2e1`, akun pemilik yang telah diverifikasi pada sesi ini. Database Neon dan Vercel Blob tetap digunakan. Domain tujuan: `wasla.my.id`; status DNS aktual dicatat di dokumentasi deployment.
+Website: **https://wasla.my.id**. Dashboard: **https://wasla.my.id/admin**. Project Vercel: `waslainformatika`, scope `jae-f2e1`, akun pemilik yang telah diverifikasi. Database Neon dan Vercel Blob tetap digunakan. DNS, HTTPS, canonical dan alur Studio sudah diverifikasi pada domain baru; bukti ada di dokumentasi deployment.
 
 Lihat [panduan CMS](docs/wasla-studio.md), [deployment](docs/deployment.md), dan [riset kartu flip](docs/rea-flip-reference.md). Kredensial, token, dump database dan file `.env` tidak boleh dikomit.

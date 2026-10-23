@@ -1,4 +1,4 @@
-# Wasla Studio and public refinement — direction contract
+# Wasla Studio and public refinement â€” direction contract
 
 Owner request, 23 October 2026: replace Payload rather than reskinning it; custom navy/white admin CMS dashboard and project scheduler; preserve existing content and admin access; actual rendered 3D service objects; remove the top-right header emblem, decorative link arrows/underlines, footer seams and gray CTA blocks; professional footer; improve mobile; click-to-flip division cards inspired by the owner's IPNU reference; configure wasla.my.id.
 
@@ -10,7 +10,7 @@ Signature interaction: public services are Three.js mesh scenes, rotated via poi
 
 Footer: seamless straight navy region, left wordmark/company description, navigation and named team contacts, small copyright/privacy/back-to-top, low-opacity decorative final wordmark. No footer wave/seam or decorative arrows. Public CTA surfaces white. Real gallery/lightbox preserved. Header keeps left wordmark and ID label; round ornament is removed. Favicon remains navy.
 
-Truth boundaries: seven completed public websites, four supplied people and phone destinations. No fabricated portraits, proof, metrics or automated notifications. Scheduler only plans work internally; it does not send reminders. Domain is attached to Vercel, but registrar session expired before nameserver save; DNS remains pending user login. Do not represent DNS as complete.
+Truth boundaries: seven completed public websites, four supplied people and phone destinations. No fabricated portraits, proof, metrics or automated notifications. Scheduler only plans work internally; it does not send reminders. Production release dpl_7pH59fqvSkobj1h4sN7kTJssrZwT is promoted and verified at https://wasla.my.id. Vercel reports configured-correctly; Cloudflare and Google resolve ns1.vercel-dns.com and ns2.vercel-dns.com. HTTPS, canonical, sitemap, existing administrator login, Blob upload, scheduler, contact persistence and desktop/mobile checks passed on the custom domain. See docs/production-verification.md and docs/domain-wasla-my-id.md for operational evidence.
 
 Functional evidence: tests/browser/cms.spec.ts, public.spec.ts, refinement.spec.ts; docs/rea-flip-reference.md. Database imported into independent studio_* tables, original legacy tables kept. Credentials/dumps/tokens remain ignored under .local/.env. No runtime Payload dependencies.
 

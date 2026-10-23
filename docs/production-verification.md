@@ -1,8 +1,51 @@
+# Verifikasi produksi Wasla Studio ? 23 Oktober 2026
+
+Website aktif: **https://wasla.my.id**. CMS: **https://wasla.my.id/admin**. Akun administrator lama tetap dapat digunakan.
+
+## Rilis aktif
+
+Deployment `dpl_7pH59fqvSkobj1h4sN7kTJssrZwT`, target production/READY, build 54 detik, telah dipromosikan ke domain publik. Canonical diperiksa sebelum promosi; pengujian lengkap di bawah dijalankan kembali pada domain baru tanpa bypass autentikasi Vercel.
+
+- CMS Wasla Studio menggantikan Payload: dashboard, konten, unggah galeri, pengaturan, pengguna, pesan konsultasi, revisi serta draft/publish.
+- Scheduler privat menyediakan kalender, agenda, penanggung jawab, rentang tanggal dan status. Tidak ada pengingat otomatis yang diklaim.
+- Objek layanan memakai mesh Three.js interaktif, bukan hanya perspektif gambar. Kartu divisi dapat dibalik dengan mouse/keyboard; foto dapat diunggah melalui CMS dan placeholder memakai inisial jujur.
+- Header tanpa ornamen kanan, link project tanpa panah/garis dekoratif, CTA putih, footer navy lurus tanpa sambungan putih, serta layout mobile yang diperbaiki.
+- Database lama tidak dihapus. Migrasi mempertahankan ID, akun, tujuh project nyata, galeri dan media. Pemeriksaan cutover tidak menemukan record lama yang lebih baru sebelum promosi.
+
+## Verifikasi domain dan runtime
+
+| Pemeriksaan | Hasil |
+| --- | --- |
+| DNS dan kepemilikan | Dua nameserver Vercel terbaca dari Cloudflare/Google; Vercel `configured-correctly` |
+| HTTPS | HTTP 200 dengan validasi sertifikat normal |
+| Metadata | Canonical, sitemap dan robots memakai https://wasla.my.id |
+| Halaman publik | Tujuh rute utama HTTP 200 tanpa overflow teramati |
+| Project | Tujuh project nyata terbit, setiap galeri minimal tiga gambar tambahan |
+| Privasi | Jadwal dan pesan konsultasi menolak akses anonim |
+| Akun | Administrator produksi berhasil login ke Studio dengan kredensial lama |
+| Media | Upload, Blob HEAD dan download WebP berhasil |
+| Scheduler | Create dan perubahan status tersimpan di produksi |
+| Dashboard | Ringkasan dan kalender tampil setelah autentikasi |
+| Konsultasi | Form menyimpan pesan privat lalu menyediakan link WhatsApp Amat Suroso yang benar; tidak mengirim pesan eksternal otomatis |
+| Responsif | Homepage/admin lebar 1440 dan 390 tanpa overflow atau page error teramati |
+
+Fixture upload, jadwal dan pesan verifikasi dihapus menggunakan ID persis. Bukti mesin: `.impeccable/review/studio-production-verification.json`, `domain-production-verification.json`, `studio-validation.json` dan `studio-legacy-media-verification.json`. Bukti media lama mencakup dua file representatif, bukan klaim mendekode semua 43 media.
+
+Build, typecheck, empat tes unit dan sembilan tes browser lokal lulus. Lint: nol error, delapan warning yang dicatat. Capture lokal mencakup 24 kombinasi admin dan 36 publik; coverage emulasi tidak mengklaim seluruh perangkat fisik. Review independen [Studio](visual-review-studio.md) memberikan ship. Audit dependensi produksi saat pemeriksaan: nol kerentanan dilaporkan.
+
+Source dirilis dari checkout lokal melalui CLI, tanpa klaim push GitHub. Kredensial tidak ditulis pada laporan publik. Panduan: [CMS](wasla-studio.md), [deployment](deployment.md), [domain](domain-wasla-my-id.md).
+
+---
+
+## Arsip sebelum Wasla Studio
+
+Seluruh bagian berikut adalah riwayat rilis sebelumnya. Pernyataan Payload, ornamen header, raster perspective dan URL vercel.app di arsip tidak menjelaskan rilis aktif.
+
 # Verifikasi produksi — 23 Oktober 2026
 
 Situs publik: **https://waslainformatika.vercel.app**. CMS: **https://waslainformatika.vercel.app/admin**.
 
-## Rilis refinement terbaru
+## Riwayat rilis refinement Payload
 
 Deployment `dpl_2KvdJMGDipWxCqczTtHVoSyzsHio` dibangun dalam 56 detik, target production/READY, diuji pada URL pentahapan dan dipromosikan ke domain publik. Pembaruan: lambang navy dan favicon bulat, mockup navy, footer dekoratif opacity 0.14, perspektif objek layanan mengikuti pointer/scroll dengan fallback statis pada touch/reduced motion, 24 teknologi dengan warna saat hover/fokus, struktur divisi, latar konsultasi putih, proses selebar layar, serta 21 screenshot galeri nyata dari REA.
 
@@ -12,7 +55,7 @@ Delapan tes browser, empat tes unit, build dan lint berhasil. Setelah koreksi fa
 
 Pemeriksaan pentahapan final mengonfirmasi 24 logo, warna fokus, empat divisi, putihnya konsultasi, redupnya footer, favicon navy, seluruh galeri CMS, next/Escape, pointer perspective, reduced motion dan viewport mobile. Bukti domain publik berada di `.impeccable/review/refinement-production-verification.json`. Pengujian CMS/storage/contact lengkap juga berhasil pada deployment refinement sebelum koreksi satu kondisi pointer; koreksi tidak mengubah backend.
 
-Riwayat bootstrap dan rilis pertama di bawah dipertahankan untuk operasi; ID rilis aktif adalah ID refinement di atas. Source tetap diunggah melalui CLI; tidak ada push GitHub yang diklaim.
+Catatan bootstrap dan rilis pertama di bawah adalah riwayat; seluruh ID di bagian riwayat ini sudah digantikan oleh rilis Studio di awal dokumen. Source tetap diunggah melalui CLI; tidak ada push GitHub yang diklaim.
 
 ## Rilis
 

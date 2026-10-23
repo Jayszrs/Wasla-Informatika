@@ -782,7 +782,7 @@
       "review": "docs/visual-review-studio.md owns the fresh visual verdict; documenter does not invent a review outcome.",
       "detector": "Current .impeccable/review/detector-studio.json has an empty result; not rerun by documenter.",
       "validation": "Root reports nine browser tests and 24 admin plus 36 public captures passing with no observed overflow/errors. Documentation-only refresh parses YAML/JSON and resolves token references.",
-      "release": "Stage READY at https://waslainformatika-nehon1bg1-jae-f2e1.vercel.app passed runtime verification. Primary-domain promotion pending visual review; wasla.my.id attached but DNS incomplete, current NS remain TTM Host.",
+      "release": "Production release dpl_7pH59fqvSkobj1h4sN7kTJssrZwT is promoted and verified at https://wasla.my.id. Vercel reports configured-correctly; Cloudflare and Google resolve ns1.vercel-dns.com and ns2.vercel-dns.com. HTTPS, canonical, sitemap, existing administrator login, Blob upload, scheduler, contact persistence and desktop/mobile checks passed on the custom domain. See docs/production-verification.md and docs/domain-wasla-my-id.md for operational evidence.",
       "history": "Earlier refinement review, raster perspective, right emblem, coordinator tree, .14 footer and Payload release are superseded historical evidence."
     }
   },

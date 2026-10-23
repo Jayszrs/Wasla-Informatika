@@ -1,10 +1,10 @@
 # Deployment dan operasi Wasla Studio
 
-Target aktif: akun jaelanisuryasaputra10@gmail.com, scope `jae-f2e1`, project `waslainformatika` (`prj_y57AtYGyBMYsK9a8b7auDps05t54`). Project lama `wasla-informatika` bukan target rilis. Public URL saat ini https://waslainformatika.vercel.app, CMS `/admin`. Domain tujuan `wasla.my.id` sudah ditambahkan tetapi DNS belum selesai; lihat [status domain](domain-wasla-my-id.md).
+Target aktif: akun jaelanisuryasaputra10@gmail.com, scope `jae-f2e1`, project `waslainformatika` (`prj_y57AtYGyBMYsK9a8b7auDps05t54`). Project lama `wasla-informatika` bukan target rilis. Website aktif https://wasla.my.id, CMS https://wasla.my.id/admin. DNS dan HTTPS sudah terverifikasi; lihat [bukti domain](domain-wasla-my-id.md). Alamat vercel.app tetap tersedia sebagai alias.
 
 ## Rilis custom CMS 23 Oktober 2026
 
-Deployment pentahapan `dpl_H6DSFHPgaHYd5Eq8cwqxUKek7qWH`: https://waslainformatika-nehon1bg1-jae-f2e1.vercel.app. Build Vercel berhasil dalam 54 detik. Ini menggantikan seluruh dependensi dan UI Payload dengan Wasla Studio. Status promosi dan verifikasi alamat utama dicatat pada [production-verification.md](production-verification.md).
+Deployment aktif `dpl_7pH59fqvSkobj1h4sN7kTJssrZwT`: https://waslainformatika-cu98ktauc-jae-f2e1.vercel.app. Build berhasil dalam 54 detik; canonical domain baru diperiksa sebelum promosi. Rilis sudah dipromosikan dan diuji pada https://wasla.my.id. Seluruh dependensi dan UI Payload diganti Wasla Studio. Rilis Studio awal `dpl_H6DSFHPgaHYd5Eq8cwqxUKek7qWH` juga lulus verifikasi; rilis aktif hanya mengganti environment canonical. Bukti rinci dicatat pada [production-verification.md](production-verification.md).
 
 Rilis sebelumnya `dpl_2KvdJMGDipWxCqczTtHVoSyzsHio` memakai Payload dan menjadi riwayat pemulihan. Saat migrasi, snapshot privat dibuat untuk semua koleksi/global, hash akun disalin, dan tabel `studio_*` baru dibuat. ID media/project tetap. Tabel lama tidak dihapus. Pemeriksaan cutover mengambil lagi data lama sebelum promosi dan hanya mengaplikasikan record yang lebih baru; data baru Studio tidak ditimpa.
 
@@ -13,7 +13,7 @@ Rilis sebelumnya `dpl_2KvdJMGDipWxCqczTtHVoSyzsHio` memakai Payload dan menjadi 
 - Node.js 24; Next.js standalone, build `npm run build` memakai Webpack.
 - `DATABASE_URL`: pooled Neon untuk runtime. `DATABASE_URL_UNPOOLED`: koneksi langsung untuk migrasi/operasi administratif.
 - `STUDIO_SECRET`: rahasia acak untuk HMAC pembatas formulir. Lingkungan produksi lama tetap dapat memakai `PAYLOAD_SECRET` sebagai fallback nama variabel; tidak ada runtime CMS Payload. Session Studio berupa token acak yang di-hash, bukan JWT Payload.
-- `NEXT_PUBLIC_SITE_URL`: alamat HTTPS kanonis. Saat DNS wasla.my.id dan HTTPS telah valid, ganti menjadi https://wasla.my.id dan deploy ulang.
+- `NEXT_PUBLIC_SITE_URL`: alamat HTTPS kanonis. Nilai aktif https://wasla.my.id sudah diterapkan pada deployment; canonical, sitemap dan robots telah diperiksa.
 - `BLOB_READ_WRITE_TOKEN`: hanya server. Unggahan baru menggunakan SDK `@vercel/blob`; decoder gambar memvalidasi dan menormalisasi WebP. Batas 4 MB di Vercel. File lama tetap dapat diunduh dari `/api/media/file/...`.
 - `TRUST_PROXY=true` pada Vercel. Jangan menyalin kredensial admin lokal ke produksi.
 
