@@ -1,0 +1,1 @@
+Sourced actual public website screenshot. Origin: https://cimuning.com/. Captured by REA controlled browser scenario on 2026-10-23; viewport 390x844; evidence ev_ef2bdcc154bae3d389a8f3c2f3d3a646ce64434c11d4d3b35dc448c255ba2dd0, step mobile-root. Tampilan beranda Cimuning Digital Hub di perangkat mobile. PNG converted to WebP with unchanged viewport composition. Not AI-generated.

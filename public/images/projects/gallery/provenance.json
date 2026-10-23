@@ -1,0 +1,1345 @@
+[
+  {
+    "slug": "ngajiyuk",
+    "title": "Ngaji Yuk!",
+    "variant": "detail-1",
+    "caption": "Bagian beranda Ngaji Yuk!, tampilan desktop pertama.",
+    "src": "/images/projects/gallery/ngajiyuk-detail-1.webp",
+    "source_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+    "actual_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_798eb38d9e20c2379af700db1afec1c106a06287559f4e30dc63e1cf2907cfd4",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-1",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/ngajiyuk-detail-1.png",
+    "source_original_sha256": "73ebb6787e5b04be31be8cf66cd676fb3a550b69544b9489a51fdefd8494dc3a",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "ngajiyuk",
+    "title": "Ngaji Yuk!",
+    "variant": "detail-2",
+    "caption": "Bagian beranda Ngaji Yuk!, tampilan desktop kedua.",
+    "src": "/images/projects/gallery/ngajiyuk-detail-2.webp",
+    "source_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+    "actual_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_798eb38d9e20c2379af700db1afec1c106a06287559f4e30dc63e1cf2907cfd4",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-2",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/ngajiyuk-detail-2.png",
+    "source_original_sha256": "fbfc8a6512409184ac1bc5f43f4c08a2a2613300e17d8c44a6d7e946ddf0b74b",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-2"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-2"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "ngajiyuk",
+    "title": "Ngaji Yuk!",
+    "variant": "mobile",
+    "caption": "Tampilan beranda Ngaji Yuk! di perangkat mobile.",
+    "src": "/images/projects/gallery/ngajiyuk-mobile.webp",
+    "source_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+    "actual_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_ebacaf8e5e3476f1b7730e3705b8cdd2a18e9a39d8fb8696c0e53294345bbc16",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "mobile-root",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/ngajiyuk-mobile.png",
+    "source_original_sha256": "af1ec7785bcae510c9d6456ad8b3d51ca384ae0e5a6a5a6426b2e4d66580d003",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 844,
+      "width": 390
+    },
+    "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 5000,
+        "step_id": "mobile-root"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "ipnubekasi",
+    "title": "IPNU IPPNU Kota Bekasi",
+    "variant": "detail-1",
+    "caption": "Bagian beranda IPNU IPPNU Kota Bekasi, tampilan desktop pertama.",
+    "src": "/images/projects/gallery/ipnubekasi-detail-1.webp",
+    "source_url": "https://ipnubekasi.my.id/",
+    "actual_url": "https://ipnubekasi.my.id/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_baa2467b917de11b2ceba5787a37b5d4beabdcaa50efa7dec75db71072a2aa83",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-1",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/ipnubekasi-detail-1.png",
+    "source_original_sha256": "576b46ab6775dc6ec864c3a8edc275d58fd755b3e564baca01ccb94e508dc9b0",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "ipnubekasi",
+    "title": "IPNU IPPNU Kota Bekasi",
+    "variant": "detail-2",
+    "caption": "Bagian beranda IPNU IPPNU Kota Bekasi, tampilan desktop kedua.",
+    "src": "/images/projects/gallery/ipnubekasi-detail-2.webp",
+    "source_url": "https://ipnubekasi.my.id/",
+    "actual_url": "https://ipnubekasi.my.id/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_baa2467b917de11b2ceba5787a37b5d4beabdcaa50efa7dec75db71072a2aa83",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-2",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/ipnubekasi-detail-2.png",
+    "source_original_sha256": "149766d84883ca7cde4cdaa251b45c39017e697529b4a23370e908399c67b680",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-2"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-2"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "ipnubekasi",
+    "title": "IPNU IPPNU Kota Bekasi",
+    "variant": "mobile",
+    "caption": "Tampilan beranda IPNU IPPNU Kota Bekasi di perangkat mobile.",
+    "src": "/images/projects/gallery/ipnubekasi-mobile.webp",
+    "source_url": "https://ipnubekasi.my.id/",
+    "actual_url": "https://ipnubekasi.my.id/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_6decaa41ee20612421fb07fbc83a266cb18eaeae879b725b80fee24641205710",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "mobile-root",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/ipnubekasi-mobile.png",
+    "source_original_sha256": "a8aaa9dee07dc7384fdf43fe1ec824fd144079f79de1b61498dffb14255ad879",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 844,
+      "width": 390
+    },
+    "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 5000,
+        "step_id": "mobile-root"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "batu-alam-supplier",
+    "title": "Batu Alam Supplier",
+    "variant": "detail-1",
+    "caption": "Bagian beranda Batu Alam Supplier, tampilan desktop pertama.",
+    "src": "/images/projects/gallery/batu-alam-supplier-detail-1.webp",
+    "source_url": "https://www.batualamsupplier.com/",
+    "actual_url": "https://www.batualamsupplier.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_68252a072d11391d85c58e1fe87bb2c51d8bea121a97464af264fcb079716747",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-1",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/batu-alam-supplier-detail-1.png",
+    "source_original_sha256": "b071adff83ba9e5156087c4fba8746a1af0ad313cf8a30a924113385d1553954",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "batu-alam-supplier",
+    "title": "Batu Alam Supplier",
+    "variant": "detail-2",
+    "caption": "Bagian beranda Batu Alam Supplier, tampilan desktop kedua.",
+    "src": "/images/projects/gallery/batu-alam-supplier-detail-2.webp",
+    "source_url": "https://www.batualamsupplier.com/",
+    "actual_url": "https://www.batualamsupplier.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_68252a072d11391d85c58e1fe87bb2c51d8bea121a97464af264fcb079716747",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-2",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/batu-alam-supplier-detail-2.png",
+    "source_original_sha256": "357af4beb91e0a48415b2590230d616b8e5362ca452fa5465c926f16f6a584d1",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-2"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-2"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "batu-alam-supplier",
+    "title": "Batu Alam Supplier",
+    "variant": "mobile",
+    "caption": "Tampilan beranda Batu Alam Supplier di perangkat mobile.",
+    "src": "/images/projects/gallery/batu-alam-supplier-mobile.webp",
+    "source_url": "https://www.batualamsupplier.com/",
+    "actual_url": "https://www.batualamsupplier.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_b9393b9e6eb384de24d98516612d9d53770b57f8fe389a41737831b443582fd8",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "mobile-root",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/batu-alam-supplier-mobile.png",
+    "source_original_sha256": "3676093dad846c149b68a8c05ac7062fd172d98c95f3db898f3be97792de91a0",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 844,
+      "width": 390
+    },
+    "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 5000,
+        "step_id": "mobile-root"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "fazmastone",
+    "title": "Fazmastone",
+    "variant": "detail-1",
+    "caption": "Bagian beranda Fazmastone, tampilan desktop pertama.",
+    "src": "/images/projects/gallery/fazmastone-detail-1.webp",
+    "source_url": "https://www.fazmastone.com/",
+    "actual_url": "https://www.fazmastone.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_1cb6691407d962386e347d7dca17c2e4fcdd26e33d61c1df3e561507ee656083",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-1",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/fazmastone-detail-1.png",
+    "source_original_sha256": "6870ccc29b2e70d516ca99ed77d5cd2c7ee1b66d51e6c244333a924c684a5b77",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "fazmastone",
+    "title": "Fazmastone",
+    "variant": "detail-2",
+    "caption": "Bagian beranda Fazmastone, tampilan desktop kedua.",
+    "src": "/images/projects/gallery/fazmastone-detail-2.webp",
+    "source_url": "https://www.fazmastone.com/",
+    "actual_url": "https://www.fazmastone.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_b9b69ac7e20e144bffe6bda4dbcac132d0b64a65a241066d82e25e140c81541f",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-2",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/fazmastone-detail-2.png",
+    "source_original_sha256": "0487c6ae86b559bb853ee871e55e91b72197159e0bbc6f73d0d1d24d48f54c8c",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-later-0"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-later-0"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-later-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-later-1"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-later-2"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-later-2"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-later-3"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-later-3"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-later-4"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-later-4"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-2"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "fazmastone",
+    "title": "Fazmastone",
+    "variant": "mobile",
+    "caption": "Tampilan beranda Fazmastone di perangkat mobile.",
+    "src": "/images/projects/gallery/fazmastone-mobile.webp",
+    "source_url": "https://www.fazmastone.com/",
+    "actual_url": "https://www.fazmastone.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_6fc6f174170446f8bf557df87c590244e36176ed4f96fb918556e2e63dc958a2",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "mobile-root",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/fazmastone-mobile.png",
+    "source_original_sha256": "a331a17e9d3daa05731a2003f537a4e27af4d37214be8874880d28f5668e0b25",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 844,
+      "width": 390
+    },
+    "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 5000,
+        "step_id": "mobile-root"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "cimuning",
+    "title": "Cimuning Digital Hub",
+    "variant": "detail-1",
+    "caption": "Bagian beranda Cimuning Digital Hub, tampilan desktop pertama.",
+    "src": "/images/projects/gallery/cimuning-detail-1.webp",
+    "source_url": "https://cimuning.com/",
+    "actual_url": "https://cimuning.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_a386ba718e6d679e0c222a64274d4ac02c14d8c35facdca2e96c4973483fcb62",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-1",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/cimuning-detail-1.png",
+    "source_original_sha256": "11b8fc0853379c68e5b35a43a7abe4e203400b6481e31b89f7d904dccf9f5afe",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "click",
+        "button": "left",
+        "click_count": 1,
+        "locator": {
+          "kind": "role",
+          "name": "Lewati",
+          "role": "button"
+        },
+        "step_id": "dismiss-overlay"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1500,
+        "step_id": "settle-dismissed"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "cimuning",
+    "title": "Cimuning Digital Hub",
+    "variant": "detail-2",
+    "caption": "Bagian beranda Cimuning Digital Hub, tampilan desktop kedua.",
+    "src": "/images/projects/gallery/cimuning-detail-2.webp",
+    "source_url": "https://cimuning.com/",
+    "actual_url": "https://cimuning.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_a386ba718e6d679e0c222a64274d4ac02c14d8c35facdca2e96c4973483fcb62",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-2",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/cimuning-detail-2.png",
+    "source_original_sha256": "7a6c7eeeebd383bbe4b8aaa16c4147bf1d10c6ceeb73fde2223ef5e8d893184b",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "click",
+        "button": "left",
+        "click_count": 1,
+        "locator": {
+          "kind": "role",
+          "name": "Lewati",
+          "role": "button"
+        },
+        "step_id": "dismiss-overlay"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1500,
+        "step_id": "settle-dismissed"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-2"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-2"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "cimuning",
+    "title": "Cimuning Digital Hub",
+    "variant": "mobile",
+    "caption": "Tampilan beranda Cimuning Digital Hub di perangkat mobile.",
+    "src": "/images/projects/gallery/cimuning-mobile.webp",
+    "source_url": "https://cimuning.com/",
+    "actual_url": "https://cimuning.com/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_ef2bdcc154bae3d389a8f3c2f3d3a646ce64434c11d4d3b35dc448c255ba2dd0",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "mobile-root",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/cimuning-mobile.png",
+    "source_original_sha256": "ee45557b45f5354cf1658ecc746143049dd2d7ef0d855e930e9218b816b46670",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 844,
+      "width": 390
+    },
+    "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4000,
+        "step_id": "settle-mobile"
+      },
+      {
+        "action": "click",
+        "button": "left",
+        "click_count": 1,
+        "locator": {
+          "kind": "role",
+          "name": "Lewati",
+          "role": "button"
+        },
+        "step_id": "dismiss-overlay"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "mobile-root"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "mahameru-baja",
+    "title": "Mahameru Baja Indonesia",
+    "variant": "detail-1",
+    "caption": "Bagian beranda Mahameru Baja Indonesia, tampilan desktop pertama.",
+    "src": "/images/projects/gallery/mahameru-baja-detail-1.webp",
+    "source_url": "https://mahamerubaja.vercel.app/",
+    "actual_url": "https://mahamerubaja.vercel.app/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_c1e795bd20d8183f8f99511295d8c496a890bed6842ce5a11fbe1e32be349f91",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-1",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/mahameru-baja-detail-1.png",
+    "source_original_sha256": "00bb1eef498ec194957b2fd8fb5fe6395c4c5d62f921bae65f89ced3179b1bc5",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "click",
+        "button": "left",
+        "click_count": 1,
+        "locator": {
+          "kind": "role",
+          "name": "Tutup poster",
+          "role": "button"
+        },
+        "step_id": "dismiss-overlay"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1500,
+        "step_id": "settle-dismissed"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "mahameru-baja",
+    "title": "Mahameru Baja Indonesia",
+    "variant": "detail-2",
+    "caption": "Bagian beranda Mahameru Baja Indonesia, tampilan desktop kedua.",
+    "src": "/images/projects/gallery/mahameru-baja-detail-2.webp",
+    "source_url": "https://mahamerubaja.vercel.app/",
+    "actual_url": "https://mahamerubaja.vercel.app/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_c1e795bd20d8183f8f99511295d8c496a890bed6842ce5a11fbe1e32be349f91",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-2",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/mahameru-baja-detail-2.png",
+    "source_original_sha256": "6b9acb4581339b22c7362d0320a04e886011415c9b43cb28145b1af88d7cd017",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "click",
+        "button": "left",
+        "click_count": 1,
+        "locator": {
+          "kind": "role",
+          "name": "Tutup poster",
+          "role": "button"
+        },
+        "step_id": "dismiss-overlay"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1500,
+        "step_id": "settle-dismissed"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-detail-2"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-2"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "mahameru-baja",
+    "title": "Mahameru Baja Indonesia",
+    "variant": "mobile",
+    "caption": "Tampilan beranda Mahameru Baja Indonesia di perangkat mobile.",
+    "src": "/images/projects/gallery/mahameru-baja-mobile.webp",
+    "source_url": "https://mahamerubaja.vercel.app/",
+    "actual_url": "https://mahamerubaja.vercel.app/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_f627b72bf0512a8620f9842d0da9e95add7e1f757f21c80bc004ef9790e4840e",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "mobile-root",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/mahameru-baja-mobile.png",
+    "source_original_sha256": "b9b1944c2739bd569fd198beec252f151fc3d85350cd00dc398385b3dc4f3264",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 844,
+      "width": 390
+    },
+    "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4000,
+        "step_id": "settle-mobile"
+      },
+      {
+        "action": "click",
+        "button": "left",
+        "click_count": 1,
+        "locator": {
+          "kind": "role",
+          "name": "Tutup poster",
+          "role": "button"
+        },
+        "step_id": "dismiss-overlay"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "mobile-root"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "sit-permatahati",
+    "title": "SIT Permata Hati Bekasi",
+    "variant": "detail-1",
+    "caption": "Bagian beranda SIT Permata Hati Bekasi, tampilan desktop pertama.",
+    "src": "/images/projects/gallery/sit-permatahati-detail-1.webp",
+    "source_url": "https://sitpermatahati.up.railway.app/",
+    "actual_url": "https://sitpermatahati.up.railway.app/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_1d68d396919ab2456c2166dcf6ad0df78728b555857263f347af6b6335845b5f",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-1",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/sit-permatahati-detail-1.png",
+    "source_original_sha256": "e63a0a3df14d637b6c1a84b059c335872c35669f642850a69f6688cdfe82c4e2",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-later-0"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-later-0"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-later-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-later-1"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-later-2"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-later-2"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-later-3"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-later-3"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-1"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "sit-permatahati",
+    "title": "SIT Permata Hati Bekasi",
+    "variant": "detail-2",
+    "caption": "Bagian beranda SIT Permata Hati Bekasi, tampilan desktop kedua.",
+    "src": "/images/projects/gallery/sit-permatahati-detail-2.webp",
+    "source_url": "https://sitpermatahati.up.railway.app/",
+    "actual_url": "https://sitpermatahati.up.railway.app/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_b314bfe2592ba1e40c192f1cc14866b3ce2ac227f7898dde1d5f1e1d8c3c5440",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "detail-2",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/sit-permatahati-detail-2.png",
+    "source_original_sha256": "f71a367cab1954e7af0010bcc558cfa6e0d924328aeb503c655247411a8cdaf9",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 4500,
+        "step_id": "settle-landing"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-profile-0"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-profile-0"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-profile-1"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-profile-1"
+      },
+      {
+        "action": "press",
+        "key": "PageDown",
+        "locator": {
+          "kind": "css",
+          "selector": "body"
+        },
+        "step_id": "scroll-profile-2"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1000,
+        "step_id": "settle-profile-2"
+      },
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 1800,
+        "step_id": "detail-2"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  },
+  {
+    "slug": "sit-permatahati",
+    "title": "SIT Permata Hati Bekasi",
+    "variant": "mobile",
+    "caption": "Tampilan beranda SIT Permata Hati Bekasi di perangkat mobile.",
+    "src": "/images/projects/gallery/sit-permatahati-mobile.webp",
+    "source_url": "https://sitpermatahati.up.railway.app/",
+    "actual_url": "https://sitpermatahati.up.railway.app/",
+    "asset_type": "actual-public-website-screenshot",
+    "generated": false,
+    "captured_date": "2026-10-23",
+    "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+    "evidence_id": "ev_9971aeb5228474f22d2795c5f4535fd3890f598c12c02b85c469f09bef068de5",
+    "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+    "evidence_step": "mobile-root",
+    "source_original": "docs/evidence/project-gallery-2026-10-23/sit-permatahati-mobile.png",
+    "source_original_sha256": "4ccb4505ef3ed4c52bebd524c3b862c2dccdb10ce8bd44485de6e80310a4dd03",
+    "viewport": {
+      "device_scale_factor": 1,
+      "height": 844,
+      "width": 390
+    },
+    "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+    "actions": [
+      {
+        "action": "wait_for_timeout",
+        "duration_ms": 5000,
+        "step_id": "mobile-root"
+      }
+    ],
+    "transformations": [
+      "PNG screenshot converted to WebP; unchanged viewport composition"
+    ],
+    "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+    "limitations": [
+      "Public page only. No authentication, private dashboards, or form submission.",
+      "Fixed settling wait is not proof every remote asset loaded.",
+      "Technology stack and third-party asset licensing were not independently verified."
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+Sourced actual public website screenshot. Origin: https://www.fazmastone.com/. Captured by REA controlled browser scenario on 2026-10-23; viewport 390x844; evidence ev_6fc6f174170446f8bf557df87c590244e36176ed4f96fb918556e2e63dc958a2, step mobile-root. Tampilan beranda Fazmastone di perangkat mobile. PNG converted to WebP with unchanged viewport composition. Not AI-generated.

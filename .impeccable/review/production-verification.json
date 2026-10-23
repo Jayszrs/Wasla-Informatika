@@ -1,0 +1,21 @@
+{
+  "url": "https://waslainformatika.vercel.app",
+  "checkedAt": "2026-10-23T03:13:47.947Z",
+  "checks": [
+    "HTTP 200 /",
+    "HTTP 200 /portofolio",
+    "HTTP 200 /layanan",
+    "HTTP 200 /kontak",
+    "HTTP 200 /tentang-kami",
+    "HTTP 200 /insights",
+    "HTTP 200 /privasi",
+    "Seven published real projects, no public concepts",
+    "Four real WhatsApp contacts",
+    "Production CMS administrator login",
+    "CMS media persists in Vercel Blob and downloads successfully",
+    "Browser form saves and displays the correct WhatsApp handoff without sending externally",
+    "CMS dashboard renders after login",
+    "Private contact record persists with recipient routing",
+    "Public desktop/mobile render without overflow or browser errors"
+  ]
+}

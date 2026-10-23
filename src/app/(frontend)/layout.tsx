@@ -11,6 +11,7 @@ import { teamContacts } from '@/lib/contacts'
 import { WhatsAppIcon } from '@/components/contact-cards'
 import { mediaSource } from '@/lib/media'
 import { siteURL } from '@/lib/seo'
+import { HeroEnhancement } from '@/components/motion'
 import './globals.css'
 
 const poppins = localFont({ src: [
@@ -30,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: settings.seoDescription || settings.description,
     openGraph: { type: 'website', locale: 'id_ID', siteName: 'Wasla Informatika', images: ['/opengraph-image'] },
     twitter: { card: 'summary_large_image' }, robots: { index: true, follow: true },
-    icons: { icon: favicon ? mediaSource(favicon) : '/images/brand/favicon.png', apple: '/images/brand/favicon.png' },
+    icons: { icon: favicon ? mediaSource(favicon) : '/images/brand/favicon-navy.png', apple: '/images/brand/favicon-navy.png' },
   }
 }
 export default async function Layout({ children }: { children: React.ReactNode }) {
@@ -44,9 +45,10 @@ export default async function Layout({ children }: { children: React.ReactNode }
     }).replace(/</g, '\\u003c') }}/>
     <a className="skip-link" href="#main">Langsung ke konten</a>
     <NavigationBar settings={settings} navigation={nav}/>
+    <HeroEnhancement/>
     <main id="main">{children}</main>
     <footer className="site-footer"><SectionWave variant="light-dark"/><div className="wrap">
-      <div className="footer-top"><div className="footer-statement"><Link className="footer-brand" href="/" aria-label="Wasla Informatika"><Image src="/images/brand/wasla-emblem.webp" width={56} height={56} alt=""/><strong>{settings.name}</strong></Link><p>{settings.description}</p></div>
+      <div className="footer-top"><div className="footer-statement"><Link className="footer-brand" href="/" aria-label="Wasla Informatika"><Image src="/images/brand/wasla-emblem-navy.webp" width={56} height={56} alt=""/><strong>{settings.name}</strong></Link><p>{settings.description}</p></div>
         <div className="footer-contact">{contacts.map(person => <a href={person.href} key={person.id} target="_blank" rel="noopener noreferrer">{person.name}<Arrow diagonal/></a>)}{settings.email && <a href={`mailto:${settings.email}`}>{settings.email}</a>}{settings.address && <address>{settings.address}</address>}{settings.socials?.filter(s => validPublicLink(s.url)).map(s => <a key={s.id || s.url} href={s.url} rel="noopener noreferrer">{s.label}<Arrow diagonal/></a>)}</div>
       </div>
       <a href="#top" className="back-top" aria-label="Kembali ke atas"><Arrow diagonal/></a>

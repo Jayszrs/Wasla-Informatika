@@ -1,0 +1,40 @@
+{
+  "slug": "batu-alam-supplier",
+  "title": "Batu Alam Supplier",
+  "variant": "mobile",
+  "caption": "Tampilan beranda Batu Alam Supplier di perangkat mobile.",
+  "src": "/images/projects/gallery/batu-alam-supplier-mobile.webp",
+  "source_url": "https://www.batualamsupplier.com/",
+  "actual_url": "https://www.batualamsupplier.com/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_b9393b9e6eb384de24d98516612d9d53770b57f8fe389a41737831b443582fd8",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "mobile-root",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/batu-alam-supplier-mobile.png",
+  "source_original_sha256": "3676093dad846c149b68a8c05ac7062fd172d98c95f3db898f3be97792de91a0",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 844,
+    "width": 390
+  },
+  "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 5000,
+      "step_id": "mobile-root"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

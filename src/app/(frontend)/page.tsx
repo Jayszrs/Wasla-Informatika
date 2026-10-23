@@ -4,9 +4,8 @@ import { Arrow } from '@/components/icons'
 import { SectionWave, ServiceArt } from '@/components/artwork'
 import { ButtonLink, MediaImage, ProjectCard } from '@/components/ui'
 import { ContactForm } from '@/components/contact-form'
-import { HeroEnhancement } from '@/components/motion'
 import { pageMeta } from '@/lib/seo'
-import { ContactCards } from '@/components/contact-cards'
+import { DivisionStructure } from '@/components/division-structure'
 import { TechnologyLogos } from '@/components/technology-logos'
 import { teamContacts } from '@/lib/contacts'
 
@@ -27,7 +26,6 @@ export default async function Home() {
     : typeof heroImage === 'object' && /konsep/i.test(`${heroImage?.caption || ''} ${heroImage?.alt || ''}`) ? 'Konsep eksplorasi' : null
 
   return <>
-    <HeroEnhancement/>
     <section className="hero">
       <div className="hero-backdrop" data-hero-art><MediaImage media={heroImage} className="hero-stage-image" priority sizes="100vw"/></div>
       <div className="wrap hero-main"><div className="hero-copy">
@@ -52,7 +50,7 @@ export default async function Home() {
     <section className="services-section" id="layanan"><div className="wrap">
       <div className="section-heading centered"><h2>Layanan kami</h2><p>Solusi digital yang disusun sesuai kebutuhan, dengan perhatian pada desain, teknologi, dan kemudahan penggunaan.</p></div>
       <div className="service-cards">{selectedServices.map((s, i) => <article className="service-card" key={s.id} data-reveal>
-        <Link className="service-picture" href={`/layanan/${s.slug}`} aria-label={`Lihat layanan ${s.title}`}>{s.illustration ? <MediaImage media={s.illustration}/> : <ServiceArt variant={i}/>}</Link>
+        <Link className="service-picture" data-art-scene data-depth=".1" href={`/layanan/${s.slug}`} aria-label={`Lihat layanan ${s.title}`}><span className="motion-surface" data-art-surface>{s.illustration ? <MediaImage media={s.illustration}/> : <ServiceArt variant={i}/>}</span></Link>
         <h3><Link href={`/layanan/${s.slug}`}>{s.title}</Link></h3><p>{s.excerpt}</p>
         <ButtonLink href={`/layanan/${s.slug}`} variant="button-outline-light">Pelajari layanan</ButtonLink>
       </article>)}</div>
@@ -68,9 +66,9 @@ export default async function Home() {
       </div>
     </section>
 
-    <section className="technology-section wrap"><div className="section-heading centered"><h2>Teknologi kami</h2><p>Perangkat yang kami gunakan untuk merancang, membangun, dan mengelola produk digital.</p></div><TechnologyLogos/></section>
+    <section className="technology-section wrap"><div className="section-heading centered"><h2>Teknologi kami</h2><p>Pilihan teknologi untuk kebutuhan website, aplikasi, dan integrasi. Sentuh logo untuk mengenal perangkatnya.</p></div><TechnologyLogos/></section>
 
-    <section className="consultation-section" id="konsultasi"><div className="wrap"><div className="contact-heading"><h2>Orang yang tepat.<br/>Percakapan yang berarti.</h2><p>Pilih divisi yang ingin Anda hubungi. Keempat kontak terhubung langsung ke WhatsApp masing-masing.</p></div><ContactCards contacts={contacts}/><div className="consultation-grid"><div className="consultation-info"><h2>Ceritakan project Anda.</h2><p>Sampaikan tujuan bisnis dan kebutuhan Anda. Pilih rekan diskusi, siapkan ringkasan, lalu lanjutkan percakapan melalui WhatsApp.</p><p>Lingkup, jadwal, dan biaya dibahas bersama sesuai kebutuhan project.</p>{settings.email && <a className="text-link" href={`mailto:${settings.email}`}>{settings.email}<Arrow diagonal/></a>}</div><ContactForm services={services.docs.map(s => s.title)} contacts={contacts}/></div></div></section>
+    <section className="consultation-section" id="konsultasi"><div className="wrap"><DivisionStructure contacts={contacts}/><div className="consultation-grid"><div className="consultation-info"><h2>Ceritakan project Anda.</h2><p>Sampaikan tujuan bisnis dan kebutuhan Anda. Pilih rekan diskusi, siapkan ringkasan, lalu lanjutkan percakapan melalui WhatsApp.</p><p>Lingkup, jadwal, dan biaya dibahas bersama sesuai kebutuhan project.</p>{settings.email && <a className="text-link" href={`mailto:${settings.email}`}>{settings.email}<Arrow diagonal/></a>}</div><ContactForm services={services.docs.map(s => s.title)} contacts={contacts}/></div></div></section>
 
     {!!testimonials.docs.length && <section className="testimonials-section wrap"><div className="section-heading centered"><h2>Cerita kolaborasi</h2><p>Pengalaman yang dibagikan oleh rekan kolaborasi Wasla.</p></div><div className="testimonials-grid">{testimonials.docs.map(t => <figure key={t.id} className="testimony-card"><blockquote>{t.quote}</blockquote><figcaption><strong>{t.clientName}</strong> · {t.company}</figcaption></figure>)}</div></section>}
   </>

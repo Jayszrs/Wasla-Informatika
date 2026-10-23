@@ -1,0 +1,40 @@
+{
+  "slug": "fazmastone",
+  "title": "Fazmastone",
+  "variant": "mobile",
+  "caption": "Tampilan beranda Fazmastone di perangkat mobile.",
+  "src": "/images/projects/gallery/fazmastone-mobile.webp",
+  "source_url": "https://www.fazmastone.com/",
+  "actual_url": "https://www.fazmastone.com/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_6fc6f174170446f8bf557df87c590244e36176ed4f96fb918556e2e63dc958a2",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "mobile-root",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/fazmastone-mobile.png",
+  "source_original_sha256": "a331a17e9d3daa05731a2003f537a4e27af4d37214be8874880d28f5668e0b25",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 844,
+    "width": 390
+  },
+  "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 5000,
+      "step_id": "mobile-root"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

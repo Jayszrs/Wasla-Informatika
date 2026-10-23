@@ -57,7 +57,7 @@ export const Projects = editorial({ slug: 'projects', labels: { singular: 'Proje
   { name: 'isConcept', type: 'checkbox', defaultValue: true, admin: { description: 'Aktifkan untuk demonstrasi; jangan tampilkan sebagai proyek klien.' } },
   { name: 'visual', type: 'select', options: ['commerce', 'platform', 'editorial'], defaultValue: 'commerce' },
   { name: 'technologies', type: 'array', fields: [text('name')] }, image('thumbnail'),
-  { name: 'gallery', type: 'array', fields: [image('image'), text('caption', false)] },
+  { name: 'gallery', label: 'Galeri project', type: 'array', admin: { description: 'Tambahkan beberapa gambar dari Media, atur urutannya, dan isi caption. Semua gambar tampil pada galeri detail dan dapat diperbesar.' }, fields: [image('image'), text('caption', false)] },
   { name: 'externalLink', type: 'text', validate: (v: unknown) => !v || typeof v === 'string' && /^https:\/\//.test(v) || 'Gunakan URL HTTPS.' },
   { name: 'featured', type: 'checkbox', defaultValue: false }, order, seo,
 ] })

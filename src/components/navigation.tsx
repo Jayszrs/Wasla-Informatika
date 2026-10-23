@@ -24,7 +24,7 @@ export function NavigationBar({ settings, navigation }: { settings: SiteSetting;
   const lightHeader = !onHome || scrolled
   const whiteLogo = typeof settings.logoWhite === 'object' ? settings.logoWhite : null
   const navyLogo = typeof settings.logoNavy === 'object' ? settings.logoNavy : null
-  const logo = lightHeader ? navyLogo || whiteLogo : whiteLogo
+  const logo = lightHeader ? navyLogo || whiteLogo : whiteLogo || navyLogo
   const close = () => { if (menu.current) menu.current.open = false }
   useEffect(() => {
     const reset = () => {

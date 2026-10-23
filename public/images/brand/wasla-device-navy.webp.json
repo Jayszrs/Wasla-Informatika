@@ -1,0 +1,7 @@
+{
+  "source": "Imagegen edit of Wasla phone mockup to navy emblem.",
+  "prompt": "Edit this transparent Wasla smartphone mockup. Preserve the entire exact phone geometry, perspective, white screen, black titanium frame, transparent background, framing, and the existing navy 'wasla' / 'informatika' typography. Replace ONLY the multicolored emblem on the screen with the supplied second-reference deep navy monochrome emblem, matching the same screen perspective and original position/scale. Remove all cyan, magenta and green colors from the symbol. The new symbol should be navy with restrained dimensional highlights, set on the white phone display, not on a new floating card. No other changes; no extra text, objects or background. Keep alpha transparency outside the phone.\n",
+  "original": "C:/Users/jaela/.codex/generated_images/01a161d8-4b90-7ed0-8690-4abd7d24eeb3/exec-7744fcad-55d7-4724-b9ec-72a6e7098159.png",
+  "date": "2026-10-23",
+  "transformations": "Resize/encode only; alpha preserved."
+}

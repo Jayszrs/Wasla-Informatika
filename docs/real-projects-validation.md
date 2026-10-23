@@ -12,14 +12,14 @@ Pemeriksaan visual kedua mengonfirmasi logo warna pada perangkat, objek layanan 
 
 ## Penyimpanan
 
-Adapter Vercel Blob dan migrasi `20261023_022943_vercel_media_storage` ditambahkan. Migrasi berhasil diterapkan pada PostgreSQL lokal. Lokal tetap memakai folder media; runtime Vercel memakai Blob apabila token tersedia. Validasi signature upload dipertahankan, dengan batas server 4 MB di Vercel. Integrasi Blob produksi belum diuji end-to-end sebelum database produksi tersedia.
+Adapter Vercel Blob dan migrasi `20261023_022943_vercel_media_storage` ditambahkan. Migrasi berhasil diterapkan pada PostgreSQL lokal dan Neon produksi. Lokal tetap memakai folder media; runtime Vercel memakai Blob. Validasi signature upload dipertahankan, dengan batas server 4 MB di Vercel. Pengujian produksi mengonfirmasi upload, keberadaan objek melalui Blob HEAD, pembacaan ulang record Media dan download melalui endpoint CMS.
 
-## Status rilis saat catatan dibuat
+## Status rilis
 
 Akun CLI telah diverifikasi sebagai `jaelanisuryasaputra10@gmail.com`, scope `jae-f2e1`. Setelah pemilik membuat deployment manual, checkout diarahkan ke project `waslainformatika` (`prj_y57AtYGyBMYsK9a8b7auDps05t54`), domain terdaftar `waslainformatika.vercel.app`. Project awal `wasla-informatika` tidak dihapus.
 
 Deployment GitHub manual mengambil commit lama `792f4e5` dan gagal karena `PAYLOAD_SECRET` tidak tersedia. Secret produksi baru telah dibuat secara privat dan ditambahkan ke project yang benar; URL situs, TRUST_PROXY dan koneksi Blob juga disiapkan. Rilis terbaru melalui CLI dipentaskan tanpa memindahkan domain produksi.
 
-Deployment terbaru `dpl_31hVHF5dfRAUT9nBw296paXcabFN` selesai dengan status READY di `https://waslainformatika-9hmknyecx-jae-f2e1.vercel.app` (pentahapan, belum promosi domain kanonis). Pemeriksaan HTTP berautentikasi Vercel mengembalikan 200 untuk aset statis `/images/technology/php.svg` dan 500 untuk `/`. Log runtime mengonfirmasi `cannot connect to Postgres`, `ECONNREFUSED 127.0.0.1:5432`; environment produksi memang belum mempunyai `DATABASE_URL`.
+Pentahapan awal `dpl_31hVHF5dfRAUT9nBw296paXcabFN` berhasil dibangun, tetapi `/` mengembalikan 500 karena `DATABASE_URL` belum tersedia. Setelah pemilik menerima persyaratan, Neon Free dipasang, keempat migrasi diterapkan dan konten/admin/media diinisialisasi. Rilis pengganti `dpl_HNfWgp5EA2zvQabGogcWLncYE3XM` lulus pemeriksaan pentahapan dan dipromosikan ke `https://waslainformatika.vercel.app`.
 
-Vercel mengembalikan `integration_terms_acceptance_required` untuk Neon; penerimaan persyaratan harus dilakukan pemilik akun. Build yang berhasil belum membuktikan website/CMS produksi berfungsi. Migrasi, bootstrap admin, pengisian media/konten, pengujian runtime produksi dan promosi domain masih bergantung pada database tersebut. Kredensial lokal tidak digunakan ulang sebagai kredensial produksi. Review visual independen berstatus **ship** pada lingkup perubahan tampilan lokal, bukan verifikasi produksi; lihat [laporan review](visual-review-real-projects.md).
+Pada domain publik, halaman, tujuh project, empat kontak, login/dashboard admin, upload/download Blob, formulir browser, ringkasan WhatsApp dan persistensi pesan privat berhasil diuji. Desktop/mobile tidak menunjukkan overflow atau browser error; gambar telah ditunggu selesai sebelum capture. Fixture pesan dan media sementara dibersihkan. Kredensial lokal tidak digunakan ulang sebagai kredensial produksi. Detail rilis ada di [production-verification.md](production-verification.md). Review visual independen berstatus **ship** pada lingkup perubahan tampilan lokal; lihat [laporan review](visual-review-real-projects.md).

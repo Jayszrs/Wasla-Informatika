@@ -139,7 +139,7 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
 export function ServiceRow({ service, index }: { service: Service; index: number }) {
   return (
     <article className="service-row our-service-item">
-      <div className="service-row-image">{service.image && typeof service.image === 'object' ? <MediaImage media={service.image} sizes="(max-width: 767px) 100vw, 50vw" /> : <ServiceArt variant={index} />}</div>
+      <div className="service-row-image" data-art-scene data-depth=".12"><div className="motion-surface" data-art-surface>{service.image && typeof service.image === 'object' ? <MediaImage media={service.image} sizes="(max-width: 767px) 100vw, 50vw" /> : <ServiceArt variant={index} />}</div></div>
       <div className="our-service-content">
         <h3 className="our-service-title">{service.title}</h3>
         <p className="our-service-desc">{service.excerpt}</p>
@@ -168,7 +168,7 @@ export function CTA({ title = 'Langkah berikutnya, kita mulai bersama.' }: { tit
 
 export function Process() {
   return (
-    <section className="process-section wrap">
+    <section className="process-section"><div className="wrap">
       <div className="section-heading text-center">
         <h2>Dari percakapan,<br />menjadi kenyataan.</h2>
         <p>Proses yang terbuka, dengan arah dan keputusan yang kita pahami bersama.</p>
@@ -187,7 +187,7 @@ export function Process() {
           </li>
         ))}
       </ol>
-    </section>
+    </div></section>
   )
 }
 

@@ -1,0 +1,40 @@
+{
+  "slug": "sit-permatahati",
+  "title": "SIT Permata Hati Bekasi",
+  "variant": "mobile",
+  "caption": "Tampilan beranda SIT Permata Hati Bekasi di perangkat mobile.",
+  "src": "/images/projects/gallery/sit-permatahati-mobile.webp",
+  "source_url": "https://sitpermatahati.up.railway.app/",
+  "actual_url": "https://sitpermatahati.up.railway.app/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_9971aeb5228474f22d2795c5f4535fd3890f598c12c02b85c469f09bef068de5",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "mobile-root",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/sit-permatahati-mobile.png",
+  "source_original_sha256": "4ccb4505ef3ed4c52bebd524c3b862c2dccdb10ce8bd44485de6e80310a4dd03",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 844,
+    "width": 390
+  },
+  "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 5000,
+      "step_id": "mobile-root"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}
