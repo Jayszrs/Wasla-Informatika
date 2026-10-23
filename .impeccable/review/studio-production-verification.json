@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "url": "https://waslainformatika.vercel.app",
+  "checkedAt": "2026-10-23T05:09:02.517Z",
+  "checks": [
+    "Seven public routes render without overflow",
+    "Seven real projects and preserved galleries",
+    "Scheduler and consultation messages remain private",
+    "Existing production administrator signs in to custom Studio",
+    "New CMS image persists in Blob and downloads as WebP",
+    "Scheduler creates, saves and changes status in production",
+    "Custom dashboard and calendar render after authentication",
+    "Contact form saves privately and offers the correct WhatsApp link without sending",
+    "Desktop and mobile public/admin renders without overflow"
+  ]
+}

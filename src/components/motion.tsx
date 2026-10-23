@@ -38,7 +38,7 @@ export function HeroEnhancement() {
     }
     const draw = () => {
       frame = 0
-      const enabled = !reduce.matches && wide.matches
+      const enabled = !reduce.matches && wide.matches && fine.matches
       art?.style.setProperty('--parallax', enabled ? `${Math.min(window.scrollY * .12, 72)}px` : '0px')
       if (feature) {
         const rect = feature.getBoundingClientRect()

@@ -1,4 +1,4 @@
-import type { Team } from '@/payload-types'
+import type { Team } from '@/lib/content-types'
 
 export type ContactPerson = { id: string; name: string; role: string; href: string; phone: string }
 

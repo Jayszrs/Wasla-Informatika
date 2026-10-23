@@ -2,6 +2,18 @@
 
 Situs publik: **https://waslainformatika.vercel.app**. CMS: **https://waslainformatika.vercel.app/admin**.
 
+## Rilis refinement terbaru
+
+Deployment `dpl_2KvdJMGDipWxCqczTtHVoSyzsHio` dibangun dalam 56 detik, target production/READY, diuji pada URL pentahapan dan dipromosikan ke domain publik. Pembaruan: lambang navy dan favicon bulat, mockup navy, footer dekoratif opacity 0.14, perspektif objek layanan mengikuti pointer/scroll dengan fallback statis pada touch/reduced motion, 24 teknologi dengan warna saat hover/fokus, struktur divisi, latar konsultasi putih, proses selebar layar, serta 21 screenshot galeri nyata dari REA.
+
+Ketujuh project produksi mempunyai tiga tambahan gambar galeri dengan alt dan caption. CMS tetap mendukung upload, penambahan baris dan pengurutan, tanpa batas tiga gambar. Pembesaran galeri mendukung kontrol next/previous, panah keyboard, Escape dan pengembalian fokus. Semua gambar berasal dari halaman publik, tanpa akses dashboard privat atau data siswa.
+
+Delapan tes browser, empat tes unit, build dan lint berhasil. Setelah koreksi fallback pointer, kedua tes refinement berhasil dijalankan kembali, termasuk tablet landscape 1024 px dengan pointer coarse. Capture akhir mencakup 36 kombinasi rute/ukuran, tanpa overflow/gambar rusak/page error. [Review independen](visual-review-motion.md) memberikan ship setelah kedua finding dinilai resolved. [Rincian perubahan dan sumber](refinement-20261023.md) menyimpan batas interpretasi, provenance dan dokumentasi primer.
+
+Pemeriksaan pentahapan final mengonfirmasi 24 logo, warna fokus, empat divisi, putihnya konsultasi, redupnya footer, favicon navy, seluruh galeri CMS, next/Escape, pointer perspective, reduced motion dan viewport mobile. Bukti domain publik berada di `.impeccable/review/refinement-production-verification.json`. Pengujian CMS/storage/contact lengkap juga berhasil pada deployment refinement sebelum koreksi satu kondisi pointer; koreksi tidak mengubah backend.
+
+Riwayat bootstrap dan rilis pertama di bawah dipertahankan untuk operasi; ID rilis aktif adalah ID refinement di atas. Source tetap diunggah melalui CLI; tidak ada push GitHub yang diklaim.
+
 ## Rilis
 
 - Akun terverifikasi: `jaelanisuryasaputra10@gmail.com`, scope `jae-f2e1`.
@@ -40,3 +52,5 @@ Manifest mesin: `.impeccable/review/production-verification.json`. Capture: `pro
 Kredensial admin tersimpan privat pada `.local/production-admin-credentials.txt`; tidak dimasukkan ke Git, source deployment atau laporan ini. Media memakai Vercel Blob dan tetap dapat diganti dari CMS. Upload server dibatasi 4 MB di Vercel dan mempertahankan pemeriksaan signature.
 
 Pemindaian log setelah promosi menemukan dua warning driver PostgreSQL yang dicatat Vercel pada level error mengenai arti `sslmode=require` di versi driver mendatang. Pesannya bukan kegagalan koneksi; pemeriksaan HTTP, database dan file di atas berhasil. Tidak ada klaim pemantauan jangka panjang, skor Lighthouse, pengiriman SMTP atau pesan WhatsApp otomatis.
+
+Post-promotion log check for the final deployment: no HTTP 5xx request logs found within the checked 10-minute window. This is a scoped release check, not continuous monitoring.

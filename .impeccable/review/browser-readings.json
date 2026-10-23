@@ -356,7 +356,7 @@
       "route": "/",
       "overflow": false,
       "h1": {
-        "size": "36px",
+        "size": "35px",
         "family": "poppins, \"poppins Fallback\", sans-serif"
       },
       "artTransform": "none",

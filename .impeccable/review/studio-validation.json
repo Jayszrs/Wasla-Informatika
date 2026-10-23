@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-23T05:02:47.702Z",
+  "local": {
+    "build": "pass",
+    "typecheck": "pass",
+    "lint": {
+      "errors": 0,
+      "warnings": 8,
+      "notes": "Native editor images and full navigation for auth transitions."
+    },
+    "unitTests": 4,
+    "browserTests": 9,
+    "adminViewportChecks": 24,
+    "publicViewportChecks": 36,
+    "overflow": 0,
+    "browserErrors": 0
+  },
+  "stage": {
+    "success": true,
+    "url": "https://waslainformatika-nehon1bg1-jae-f2e1.vercel.app",
+    "checkedAt": "2026-10-23T04:59:24.777Z",
+    "checks": [
+      "Seven public routes render without overflow",
+      "Seven real projects and preserved galleries",
+      "Scheduler and consultation messages remain private",
+      "Existing production administrator signs in to custom Studio",
+      "New CMS image persists in Blob and downloads as WebP",
+      "Scheduler creates, saves and changes status in production",
+      "Custom dashboard and calendar render after authentication",
+      "Contact form saves privately and offers the correct WhatsApp link without sending",
+      "Desktop and mobile public/admin renders without overflow"
+    ]
+  },
+  "dependencyAudit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "domain": {
+    "name": "wasla.my.id",
+    "attached": true,
+    "dnsReady": false,
+    "reason": "Registrar session expired before nameserver change could be saved."
+  }
+}

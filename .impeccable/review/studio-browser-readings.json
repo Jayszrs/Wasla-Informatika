@@ -1,0 +1,125 @@
+{
+  "results": [
+    {
+      "name": "overview",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "scheduler",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "projects",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "editor",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "media",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "settings",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "overview",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "scheduler",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "projects",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "editor",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "media",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "settings",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "name": "overview",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "scheduler",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "projects",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "editor",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "media",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "settings",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "overview",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "scheduler",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "projects",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "editor",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "media",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "settings",
+      "width": 390,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

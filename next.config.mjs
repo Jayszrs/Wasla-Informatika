@@ -1,6 +1,4 @@
-import { withPayload } from '@payloadcms/next/withPayload'
-
-export default withPayload({
+const nextConfig = {
   output: 'standalone',
   outputFileTracingRoot: process.cwd(),
   turbopack: { root: process.cwd() },
@@ -16,4 +14,6 @@ export default withPayload({
       ...(process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_SITE_URL?.startsWith('https://') ? [{ key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains' }] : []),
     ] }]
   },
-})
+}
+
+export default nextConfig

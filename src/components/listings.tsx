@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import type { Project, Post } from '@/payload-types'
+import type { Project, Post } from '@/lib/content-types'
 import { ProjectCard, PostCard } from './ui'
 
 export function ProjectListing({ projects }: { projects: Project[] }) {

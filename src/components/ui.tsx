@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import type { Media, Project, Post, Service, Team } from '@/payload-types'
-import { RichText } from '@payloadcms/richtext-lexical/react'
+import type { Media, Project, Post, Service, Team } from '@/lib/content-types'
+import { RichText } from './studio-richtext'
 import { Arrow, Plus } from './icons'
-import { ConceptVisual, SectionWave, ServiceArt } from './artwork'
+import { ConceptVisual, SectionWave } from './artwork'
+import { ServiceScene } from './service-scene'
 import { mediaSource } from '@/lib/media'
 import { teamContacts } from '@/lib/contacts'
 import { ContactCards } from './contact-cards'
@@ -12,7 +13,6 @@ export function ButtonLink({
   href,
   children,
   variant = '',
-  arrow = false,
 }: {
   href: string
   children: React.ReactNode
@@ -22,7 +22,6 @@ export function ButtonLink({
   return (
     <Link className={`button btn ${variant}`} href={href}>
       <span>{children}</span>
-      {arrow && <Arrow diagonal />}
     </Link>
   )
 }
@@ -31,7 +30,6 @@ export function TextLink({ href, children }: { href: string; children: React.Rea
   return (
     <Link className="text-link" href={href}>
       <span>{children}</span>
-      <Arrow diagonal />
     </Link>
   )
 }
@@ -90,10 +88,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <Link className="project-image ft-work-media" href={`/portofolio/${project.slug}`} aria-label={`Lihat ${project.title}`}>
         <ProjectImage project={project} />
         {project.isConcept && <span className="concept-tag">Konsep Eksplorasi</span>}
-        <span className="circle-arrow">
-          <Arrow diagonal />
-        </span>
-        <div className="project-overlay" aria-hidden="true"><span>{project.category}</span><strong>{project.title}</strong><span className="project-view">Lihat project<Arrow diagonal/></span></div>
+        <div className="project-overlay" aria-hidden="true"><span>{project.category}</span><strong>{project.title}</strong><span className="project-view">Lihat project</span></div>
       </Link>
       <div className="project-caption">
         <h3>
@@ -101,7 +96,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </h3>
         <span>{project.category}</span>
       </div>
-      {project.externalLink?.startsWith('https://') && <a className="project-live" href={project.externalLink} target="_blank" rel="noopener noreferrer" aria-label={`Buka website ${project.title}`}>Kunjungi website<Arrow diagonal/></a>}
+      {project.externalLink?.startsWith('https://') && <a className="project-live" href={project.externalLink} target="_blank" rel="noopener noreferrer" aria-label={`Buka website ${project.title}`}>Kunjungi website</a>}
     </article>
   )
 }
@@ -139,7 +134,7 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
 export function ServiceRow({ service, index }: { service: Service; index: number }) {
   return (
     <article className="service-row our-service-item">
-      <div className="service-row-image" data-art-scene data-depth=".12"><div className="motion-surface" data-art-surface>{service.image && typeof service.image === 'object' ? <MediaImage media={service.image} sizes="(max-width: 767px) 100vw, 50vw" /> : <ServiceArt variant={index} />}</div></div>
+      <div className="service-row-image"><ServiceScene variant={index}/></div>
       <div className="our-service-content">
         <h3 className="our-service-title">{service.title}</h3>
         <p className="our-service-desc">{service.excerpt}</p>

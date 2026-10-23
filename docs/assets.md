@@ -1,5 +1,7 @@
 # Aset Wasla — pembaruan 23 Oktober 2026
 
+Penyempurnaan terbaru menggunakan `wasla-emblem-navy.webp`, `favicon-navy.png`, dan `wasla-device-navy.webp` menggantikan versi warna pada tampilan publik. Versi lama tetap menjadi arsip sumber, bukan identitas aktif. Prompt dan sidecar disimpan di `docs/assets/navy-*-20261023-prompt.txt` serta direktori brand. Tambahan 21 screenshot REA di `public/images/projects/gallery/` telah diimpor ke galeri CMS; [manifest dan laporan](evidence/project-gallery-2026-10-23.md) mencatat sumber asli. Untuk menambah gambar: Media → upload, Project → Galeri project → tambah baris/pilih gambar/caption → urutkan → publish. Seed `scripts/seed-gallery-refresh.ts` mempertahankan pilihan galeri yang ada dan menambahkan relasi yang belum ada; jalankan sebagai migrasi konten yang disengaja.
+
 ## Aset yang sekarang ditampilkan
 
 Tujuh project menggunakan screenshot website publik asli yang diberikan pemilik, bukan gambar website hasil generasi. Sumber, tanggal, metode capture dan batas pengamatan ada di [laporan bukti](evidence/real-projects-2026-10-23.md). REA digunakan untuk enam website; Ngaji Yuk menggunakan fallback Playwright setelah navigasi REA gagal. Screenshot Batu Alam Supplier memang dimulai dari bagian Client Testimonial pada website aslinya.

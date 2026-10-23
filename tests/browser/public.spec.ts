@@ -70,7 +70,6 @@ test('responsive, keyboard, reduced motion and visual captures', async ({ page, 
     await page.evaluate(() => document.fonts.ready)
     const dimensions = await page.evaluate(() => ({ w: innerWidth, sw: document.documentElement.scrollWidth }))
     expect(dimensions.sw, `overflow at ${width}`).toBeLessThanOrEqual(dimensions.w)
-    if (width === 1440 || width === 390) await page.screenshot({ path: `.impeccable/review/${width === 1440 ? 'desktop' : 'mobile'}.png`, fullPage: true })
     if (width <= 768) {
       const summary = page.locator('.mobile-menu summary')
       await summary.click(); await expect(page.locator('.mobile-menu')).toHaveAttribute('open', '')

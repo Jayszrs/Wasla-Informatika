@@ -1,51 +1,42 @@
-# Deployment dan operasi
+# Deployment dan operasi Wasla Studio
 
-## Vercel — target aktif 23 Oktober 2026
+Target aktif: akun jaelanisuryasaputra10@gmail.com, scope `jae-f2e1`, project `waslainformatika` (`prj_y57AtYGyBMYsK9a8b7auDps05t54`). Project lama `wasla-informatika` bukan target rilis. Public URL saat ini https://waslainformatika.vercel.app, CMS `/admin`. Domain tujuan `wasla.my.id` sudah ditambahkan tetapi DNS belum selesai; lihat [status domain](domain-wasla-my-id.md).
 
-Akun: `jaelanisuryasaputra10@gmail.com`; scope: `jae-f2e1`; project manual pemilik: `waslainformatika`, ID `prj_y57AtYGyBMYsK9a8b7auDps05t54`; domain: `https://waslainformatika.vercel.app`. Checkout lokal sudah terhubung ke project tersebut. Project awal `wasla-informatika` bukan tujuan rilis aktif. Gunakan konfigurasi CLI terisolasi `.local/vercel-account-10` dan selalu periksa project sebelum mutasi.
+## Rilis custom CMS 23 Oktober 2026
 
-Build command project telah disetel ke `npm run build` agar menggunakan Webpack seperti build yang diuji. Runtime Node 24.x. `PAYLOAD_SECRET` produksi baru, `NEXT_PUBLIC_SITE_URL`, `TRUST_PROXY` dan koneksi Blob telah ditambahkan. Jangan menyalin kredensial admin lokal ke produksi. Rahasia bootstrap produksi disimpan privat di `.local/`, diabaikan Git dan `.vercelignore`.
+Deployment pentahapan `dpl_H6DSFHPgaHYd5Eq8cwqxUKek7qWH`: https://waslainformatika-nehon1bg1-jae-f2e1.vercel.app. Build Vercel berhasil dalam 54 detik. Ini menggantikan seluruh dependensi dan UI Payload dengan Wasla Studio. Status promosi dan verifikasi alamat utama dicatat pada [production-verification.md](production-verification.md).
 
-Blob store `wasla-media` di `sin1` menyediakan media persisten melalui `@payloadcms/storage-vercel-blob`. Token hanya di server. Upload maksimum 4 MB di Vercel; pemeriksaan signature server dipertahankan. Penyimpanan lokal tetap memakai `media/` untuk pengembangan. Untuk proses bootstrap yang dijalankan di komputer, aktifkan `USE_VERCEL_BLOB=true` dan gunakan env produksi yang ditarik ke file di `.local/`, bukan menimpa `.env` lokal.
+Rilis sebelumnya `dpl_2KvdJMGDipWxCqczTtHVoSyzsHio` memakai Payload dan menjadi riwayat pemulihan. Saat migrasi, snapshot privat dibuat untuk semua koleksi/global, hash akun disalin, dan tabel `studio_*` baru dibuat. ID media/project tetap. Tabel lama tidak dihapus. Pemeriksaan cutover mengambil lagi data lama sebelum promosi dan hanya mengaplikasikan record yang lebih baru; data baru Studio tidak ditimpa.
 
-Persetujuan Neon telah diterima pemilik. Database `wasla-postgres` pada paket Free (`free_v3`), resource `store_RGsYjg8PpJD52kGh`, berhasil dihubungkan ke project. Keempat migrasi terdaftar telah diterapkan; admin produksi, konten awal, media dan konten nyata telah diinisialisasi. Jangan menaruh seed pada startup atau build rutin. `seed:real` menerapkan pilihan konten pemilik dan dapat menimpa pilihan field pada record terkait jika dijalankan lagi. Kredensial CMS tersedia secara privat di `.local/production-admin-credentials.txt`.
+## Konfigurasi
 
-Rilis `dpl_HNfWgp5EA2zvQabGogcWLncYE3XM` dibangun dalam 57 detik, diuji pada URL pentahapan, lalu dipromosikan ke domain kanonis. Halaman publik, tujuh project, empat kontak, login admin, upload/download Blob dan persistensi pesan privat berhasil diperiksa. Deployment manual pertama dari commit GitHub lama gagal karena `PAYLOAD_SECRET` kosong; error runtime berikutnya berasal dari `DATABASE_URL` yang belum tersedia. Keduanya telah diperbaiki. Perubahan source dirilis lewat unggahan CLI dari checkout lokal; tidak ada klaim sinkronisasi branch GitHub. Bukti akhir berada di [production-verification.md](production-verification.md).
+- Node.js 24; Next.js standalone, build `npm run build` memakai Webpack.
+- `DATABASE_URL`: pooled Neon untuk runtime. `DATABASE_URL_UNPOOLED`: koneksi langsung untuk migrasi/operasi administratif.
+- `STUDIO_SECRET`: rahasia acak untuk HMAC pembatas formulir. Lingkungan produksi lama tetap dapat memakai `PAYLOAD_SECRET` sebagai fallback nama variabel; tidak ada runtime CMS Payload. Session Studio berupa token acak yang di-hash, bukan JWT Payload.
+- `NEXT_PUBLIC_SITE_URL`: alamat HTTPS kanonis. Saat DNS wasla.my.id dan HTTPS telah valid, ganti menjadi https://wasla.my.id dan deploy ulang.
+- `BLOB_READ_WRITE_TOKEN`: hanya server. Unggahan baru menggunakan SDK `@vercel/blob`; decoder gambar memvalidasi dan menormalisasi WebP. Batas 4 MB di Vercel. File lama tetap dapat diunduh dari `/api/media/file/...`.
+- `TRUST_PROXY=true` pada Vercel. Jangan menyalin kredensial admin lokal ke produksi.
 
-## Target
+Database Neon `wasla-postgres` Free dan Blob `wasla-media` dipertahankan. Tidak ada seed pada build/startup. `npm run db:migrate` menyiapkan tabel Studio secara idempoten dan menginisialisasi baseline publik hanya pada instalasi baru. Akun pertama memerlukan email/password bootstrap di environment yang diabaikan Git. Instalasi aktif mempertahankan akun lama.
 
-Pada Windows, hentikan proses `npm start` sebelum menjalankan build baru. Server standalone memuat DLL Sharp/libvips dari direktori output; build tidak dapat menggantinya selama proses lama masih berjalan. Setelah build berhasil, jalankan kembali `npm start`.
-Node.js 24 LTS dengan Next.js standalone atau host Node yang mendukung Payload. Pengembangan memakai PostgreSQL lokal; produksi Vercel memakai Neon melalui TLS dan Vercel Blob untuk media persisten. Bagian Docker/S3 di bawah merupakan alternatif hosting mandiri. Situs produksi aktif pada domain yang dicatat di atas.
+## Rilis melalui CLI
 
-## Rahasia dan konfigurasi
-`DATABASE_URL` (role aplikasi dengan akses hanya database Wasla), `PAYLOAD_SECRET` acak minimal 32 byte, `NEXT_PUBLIC_SITE_URL` URL HTTPS kanonis. Jangan gunakan secret build contoh atau akun bootstrap lokal. Rahasia SMTP/S3 disimpan pada secret manager host, bukan Git, client bundle atau argumen shell.
-
-S3: `S3_BUCKET`, `S3_REGION`, `S3_ENDPOINT`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, dan `S3_PUBLIC_URL`. Aktifkan semuanya bersama. Akses key terbatas pada bucket/prefix Wasla; public URL hanya untuk aset yang memang akan dipublikasikan. Sertakan domain gambar pada konfigurasi runtime/build. Jika S3 tidak aktif, mount `/app/media` sebagai volume persisten dan tetapkan `MEDIA_DIR=/app/media`; filesystem ephemeral tidak memadai. Helper lokal menormalkan MEDIA_DIR ke folder proyek sebelum server standalone mengubah working directory, sehingga upload dev dan produksi lokal menggunakan lokasi yang sama.
-
-SMTP opsional: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`, `CONTACT_NOTIFY_EMAIL`. Tanpa SMTP pengiriman email dinonaktifkan, termasuk reset password; gunakan pemulihan administratif melalui lingkungan server. Notifikasi konsultasi hanya menyebut adanya pesan baru, bukan email/isi pribadi. Uji pengiriman pada penyedia pemilik sebelum produksi.
-
-## Rilis
-1. Cadangkan database/media dan uji pemulihan.
-2. `npm ci`; `npm run generate:types`; `npm run generate:importmap`; `npm run typecheck`; tes relevan; `npm run build`.
-3. Dengan kredensial rilis, jalankan `npm run db:migrate` satu kali dari checkout/image migrator yang memiliki source, config, dan dependensi. Container standalone runtime hanya melayani aplikasi; migrasi bukan dijalankan otomatis tiap replica.
-4. Pada instalasi baru, isi bootstrap admin milik pemilik dan jalankan `npm run seed`. Hapus variabel bootstrap dari runtime setelah akun dibuat.
-5. `npm start` atau build Dockerfile dan jalankan container dengan env/volume yang sesuai. Reverse proxy meneruskan HTTPS; cookies produksi memakai secure dan SameSite Lax. Bind runtime ke jaringan privat di belakang proxy.
-6. Uji login, edit/publish/preview, upload, formulir, database persistence, sitemap dan image optimization di staging.
-
-`npm start` menyalin aset publik/static ke build standalone dan menjalankan server hasil build. Untuk Docker, berikan URL publik pada waktu build juga, karena domain image optimization dan variabel NEXT_PUBLIC dibekukan oleh Next saat build:
+Konfigurasi login akun tujuan disimpan secara terisolasi pada `.local/vercel-account-10`. Periksa project/scope sebelum mutasi. Contoh:
 
 ```sh
-docker build --build-arg NEXT_PUBLIC_SITE_URL=https://example.com --build-arg S3_PUBLIC_URL=https://assets.example.com -t wasla .
+vercel deploy --prod --skip-domain --yes --archive=tgz --scope jae-f2e1 --global-config .local/vercel-account-10
+# Setelah staged runtime dan visual review berhasil:
+vercel promote DEPLOYMENT_URL --yes --scope jae-f2e1 --global-config .local/vercel-account-10
 ```
 
-Domain contoh harus diganti dengan domain milik pemilik; jangan masukkan secret melalui build args. Runtime tetap menerima DATABASE_URL, PAYLOAD_SECRET, dan kredensial penyedia melalui secret manager.
+Periksa halaman, login akun pemilik, draft/publish, upload/download Blob, privasi pesan/jadwal, scheduler, formulir dan mobile. Fixture pemeriksaan dibersihkan berdasarkan ID atau pencocokan email persis; jangan menghapus semua hasil query yang filternya tidak didukung.
 
-`push:false` berlaku di semua lingkungan. Perubahan schema dibuat dengan `payload migrate:create`, ditinjau dan dikomit. Jangan gunakan db push pada produksi. Rollback: redeploy versi aplikasi yang kompatibel; tinjau down migration dan backup sebelum mengubah data. Jangan menjalankan down otomatis.
+Source dirilis dari checkout lokal melalui CLI. Tidak ada push GitHub baru yang diklaim. Sebelum mengandalkan autodeploy Git, sinkronkan perubahan source yang telah ditinjau. `.local`, `.env*`, `.vercel`, file media lokal dan hasil tes diabaikan dari unggahan deploy.
 
-## Pembatasan permintaan dan privasi
-Formulir memakai counter PostgreSQL dengan UPSERT atomik, 5 percobaan per 15 menit, termasuk input invalid. Default `TRUST_PROXY=false` mengelompokkan permintaan langsung dalam satu bucket sehingga header palsu tidak dapat memecah limit. Di produksi, atur `TRUST_PROXY=true` hanya bila proxy tepercaya menghapus header kiriman klien dan menetapkan X-Forwarded-For sendiri. Tambahkan limit login/API di reverse proxy; Payload membatasi percobaan login per akun. Kunci limit berupa HMAC, bukan IP mentah. Bersihkan record limit kedaluwarsa secara berkala; tetapkan jadwal retensi pesan bersama pemilik sebelum rilis.
+## Pemulihan dan lokal
 
-Formulir memerlukan Origin sesuai domain kanonis, JSON, batas body 16KiB, honeypot, persetujuan, validasi Zod dan layanan terbit yang valid. Simpan ke database sebelum memberikan sukses. Data kontak tidak dicatat dalam log. Penyedia harus memakai TLS pada koneksi eksternal dan backup terenkripsi sesuai kebutuhan operasional.
+Kredensial produksi berada pada `.local/production-admin-credentials.txt`; jangan menyalinnya ke dokumentasi publik. Backup/migrasi privat berada di `.local/`. Login lama berlaku; cookie sesi Payload tidak dipakai oleh Studio sehingga staf perlu masuk kembali sekali.
 
-## Batas verifikasi
-Docker tidak tersedia sebagai executable pada host pengujian ini; native PostgreSQL 18.4 digunakan untuk tes. Build image Docker, endpoint S3 dan SMTP belum diuji pada akun nyata. Tidak ada skor Lighthouse/Core Web Vitals yang diklaim. Audit dependensi dan hasil tes dicatat di docs/validation.md; dependensi upstream dengan advisory terbuka perlu ditinjau sebelum rilis publik.
+Pemulihan deployment lama tetap mungkin karena tabel Payload tidak dihapus. Konten yang dibuat setelah pindah ke Studio tidak otomatis tersalin kembali ke tabel lama; backup dan rencanakan sinkronisasi sebelum memilih rollback. Jangan menjalankan seed lama terhadap database aktif.
+
+Pada Windows, hentikan `npm start` sebelum build karena DLL Sharp dapat terkunci. Setelah `npm run build` berhasil, `npm start` menyalin public/static ke standalone dan memulai server. Jalankan tes browser setelah server siap menerima HTTP.

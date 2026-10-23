@@ -1,7 +1,7 @@
 export const technologies = [
   ['php', 'PHP', 'https://www.php.net/'], ['nextdotjs', 'Next.js', 'https://nextjs.org/'],
   ['react', 'React', 'https://react.dev/'], ['typescript', 'TypeScript', 'https://www.typescriptlang.org/'],
-  ['postgresql', 'PostgreSQL', 'https://www.postgresql.org/'], ['payloadcms', 'Payload CMS', 'https://payloadcms.com/'],
+  ['postgresql', 'PostgreSQL', 'https://www.postgresql.org/'], ['threedotjs', 'Three.js', 'https://threejs.org/'],
   ['javascript', 'JavaScript', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'], ['tailwindcss', 'Tailwind CSS', 'https://tailwindcss.com/'],
   ['laravel', 'Laravel', 'https://laravel.com/'], ['nodedotjs', 'Node.js', 'https://nodejs.org/'],
   ['mysql', 'MySQL', 'https://www.mysql.com/'], ['mongodb', 'MongoDB', 'https://www.mongodb.com/'],

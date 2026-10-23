@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-23T02:56:52.776005+00:00",
+  "generatedAt": "2026-10-23T05:06:16.679179+00:00",
   "title": "Design System: Wasla Informatika",
   "extensions": {
     "colorMeta": {
@@ -8,74 +8,575 @@
         "role": "primary",
         "displayName": "Wasla Navy",
         "tonalRamp": [
-          "#030e1d",
-          "#071a33",
-          "#173551"
+          "oklch(15% 0.0552 256.09)",
+          "oklch(26% 0.0552 256.09)",
+          "oklch(38% 0.0552 256.09)",
+          "oklch(49% 0.0552 256.09)",
+          "oklch(61% 0.0552 256.09)",
+          "oklch(72% 0.0552 256.09)",
+          "oklch(84% 0.0552 256.09)",
+          "oklch(95% 0.0552 256.09)"
         ]
       },
       "navy-deep": {
         "role": "primary",
-        "displayName": "Deep Navy"
+        "displayName": "Deep Navy",
+        "tonalRamp": [
+          "oklch(15% 0.0370 253.15)",
+          "oklch(26% 0.0370 253.15)",
+          "oklch(38% 0.0370 253.15)",
+          "oklch(49% 0.0370 253.15)",
+          "oklch(61% 0.0370 253.15)",
+          "oklch(72% 0.0370 253.15)",
+          "oklch(84% 0.0370 253.15)",
+          "oklch(95% 0.0370 253.15)"
+        ]
       },
       "royal": {
         "role": "primary",
-        "displayName": "Royal Hover"
+        "displayName": "Royal Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0617 248.88)",
+          "oklch(26% 0.0617 248.88)",
+          "oklch(38% 0.0617 248.88)",
+          "oklch(49% 0.0617 248.88)",
+          "oklch(61% 0.0617 248.88)",
+          "oklch(72% 0.0617 248.88)",
+          "oklch(84% 0.0617 248.88)",
+          "oklch(95% 0.0617 248.88)"
+        ]
       },
       "white": {
         "role": "neutral",
-        "displayName": "White"
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(38% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(72% 0.0000 0.00)",
+          "oklch(84% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
+        ]
       },
       "ice": {
         "role": "neutral",
-        "displayName": "Consultation Ice"
+        "displayName": "Contextual Ice",
+        "tonalRamp": [
+          "oklch(15% 0.0029 264.54)",
+          "oklch(26% 0.0029 264.54)",
+          "oklch(38% 0.0029 264.54)",
+          "oklch(49% 0.0029 264.54)",
+          "oklch(61% 0.0029 264.54)",
+          "oklch(72% 0.0029 264.54)",
+          "oklch(84% 0.0029 264.54)",
+          "oklch(95% 0.0029 264.54)"
+        ]
       },
       "line": {
         "role": "neutral",
-        "displayName": "Divider"
+        "displayName": "Divider",
+        "tonalRamp": [
+          "oklch(15% 0.0098 252.82)",
+          "oklch(26% 0.0098 252.82)",
+          "oklch(38% 0.0098 252.82)",
+          "oklch(49% 0.0098 252.82)",
+          "oklch(61% 0.0098 252.82)",
+          "oklch(72% 0.0098 252.82)",
+          "oklch(84% 0.0098 252.82)",
+          "oklch(95% 0.0098 252.82)"
+        ]
       },
       "slate": {
         "role": "neutral",
-        "displayName": "Slate Text"
+        "displayName": "Slate Text",
+        "tonalRamp": [
+          "oklch(15% 0.0314 255.20)",
+          "oklch(26% 0.0314 255.20)",
+          "oklch(38% 0.0314 255.20)",
+          "oklch(49% 0.0314 255.20)",
+          "oklch(61% 0.0314 255.20)",
+          "oklch(72% 0.0314 255.20)",
+          "oklch(84% 0.0314 255.20)",
+          "oklch(95% 0.0314 255.20)"
+        ]
       },
       "light": {
         "role": "neutral",
-        "displayName": "Light Text"
+        "displayName": "Light Text",
+        "tonalRamp": [
+          "oklch(15% 0.0217 252.52)",
+          "oklch(26% 0.0217 252.52)",
+          "oklch(38% 0.0217 252.52)",
+          "oklch(49% 0.0217 252.52)",
+          "oklch(61% 0.0217 252.52)",
+          "oklch(72% 0.0217 252.52)",
+          "oklch(84% 0.0217 252.52)",
+          "oklch(95% 0.0217 252.52)"
+        ]
       },
       "blue": {
         "role": "primary",
-        "displayName": "Focus Blue"
+        "displayName": "Focus Blue",
+        "tonalRamp": [
+          "oklch(15% 0.2081 262.19)",
+          "oklch(26% 0.2081 262.19)",
+          "oklch(38% 0.2081 262.19)",
+          "oklch(49% 0.2081 262.19)",
+          "oklch(61% 0.2081 262.19)",
+          "oklch(72% 0.2081 262.19)",
+          "oklch(84% 0.2081 262.19)",
+          "oklch(95% 0.2081 262.19)"
+        ]
       },
       "field-line": {
         "role": "neutral",
-        "displayName": "Field Border"
+        "displayName": "Field Border",
+        "tonalRamp": [
+          "oklch(15% 0.0164 253.92)",
+          "oklch(26% 0.0164 253.92)",
+          "oklch(38% 0.0164 253.92)",
+          "oklch(49% 0.0164 253.92)",
+          "oklch(61% 0.0164 253.92)",
+          "oklch(72% 0.0164 253.92)",
+          "oklch(84% 0.0164 253.92)",
+          "oklch(95% 0.0164 253.92)"
+        ]
       },
       "menu-bar": {
         "role": "primary",
-        "displayName": "Menu Top Band"
+        "displayName": "Menu Top Band",
+        "tonalRamp": [
+          "oklch(15% 0.0411 254.82)",
+          "oklch(26% 0.0411 254.82)",
+          "oklch(38% 0.0411 254.82)",
+          "oklch(49% 0.0411 254.82)",
+          "oklch(61% 0.0411 254.82)",
+          "oklch(72% 0.0411 254.82)",
+          "oklch(84% 0.0411 254.82)",
+          "oklch(95% 0.0411 254.82)"
+        ]
       },
       "button-white-hover": {
         "role": "neutral",
-        "displayName": "White Action Hover"
+        "displayName": "White Action Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0218 250.22)",
+          "oklch(26% 0.0218 250.22)",
+          "oklch(38% 0.0218 250.22)",
+          "oklch(49% 0.0218 250.22)",
+          "oklch(61% 0.0218 250.22)",
+          "oklch(72% 0.0218 250.22)",
+          "oklch(84% 0.0218 250.22)",
+          "oklch(95% 0.0218 250.22)"
+        ]
       },
       "footer-line": {
         "role": "neutral",
-        "displayName": "Footer Divider"
+        "displayName": "Footer Divider",
+        "tonalRamp": [
+          "oklch(15% 0.0367 254.94)",
+          "oklch(26% 0.0367 254.94)",
+          "oklch(38% 0.0367 254.94)",
+          "oklch(49% 0.0367 254.94)",
+          "oklch(61% 0.0367 254.94)",
+          "oklch(72% 0.0367 254.94)",
+          "oklch(84% 0.0367 254.94)",
+          "oklch(95% 0.0367 254.94)"
+        ]
       },
       "error": {
         "role": "neutral",
-        "displayName": "Field Error"
+        "displayName": "Field Error",
+        "tonalRamp": [
+          "oklch(15% 0.1664 26.27)",
+          "oklch(26% 0.1664 26.27)",
+          "oklch(38% 0.1664 26.27)",
+          "oklch(49% 0.1664 26.27)",
+          "oklch(61% 0.1664 26.27)",
+          "oklch(72% 0.1664 26.27)",
+          "oklch(84% 0.1664 26.27)",
+          "oklch(95% 0.1664 26.27)"
+        ]
       },
       "error-text": {
         "role": "neutral",
-        "displayName": "Error Feedback Text"
+        "displayName": "Error Feedback Text",
+        "tonalRamp": [
+          "oklch(15% 0.1438 25.85)",
+          "oklch(26% 0.1438 25.85)",
+          "oklch(38% 0.1438 25.85)",
+          "oklch(49% 0.1438 25.85)",
+          "oklch(61% 0.1438 25.85)",
+          "oklch(72% 0.1438 25.85)",
+          "oklch(84% 0.1438 25.85)",
+          "oklch(95% 0.1438 25.85)"
+        ]
       },
       "error-bg": {
         "role": "neutral",
-        "displayName": "Error Feedback Ground"
+        "displayName": "Error Feedback Ground",
+        "tonalRamp": [
+          "oklch(15% 0.0168 31.08)",
+          "oklch(26% 0.0168 31.08)",
+          "oklch(38% 0.0168 31.08)",
+          "oklch(49% 0.0168 31.08)",
+          "oklch(61% 0.0168 31.08)",
+          "oklch(72% 0.0168 31.08)",
+          "oklch(84% 0.0168 31.08)",
+          "oklch(95% 0.0168 31.08)"
+        ]
       },
       "success-bg": {
         "role": "neutral",
-        "displayName": "Saved Feedback Ground"
+        "displayName": "Saved Feedback Ground",
+        "tonalRamp": [
+          "oklch(15% 0.0150 164.72)",
+          "oklch(26% 0.0150 164.72)",
+          "oklch(38% 0.0150 164.72)",
+          "oklch(49% 0.0150 164.72)",
+          "oklch(61% 0.0150 164.72)",
+          "oklch(72% 0.0150 164.72)",
+          "oklch(84% 0.0150 164.72)",
+          "oklch(95% 0.0150 164.72)"
+        ]
+      },
+      "gallery-overlay": {
+        "role": "primary",
+        "displayName": "Gallery Navy Overlay",
+        "tonalRamp": [
+          "oklch(15% 0.0370 253.15)",
+          "oklch(26% 0.0370 253.15)",
+          "oklch(38% 0.0370 253.15)",
+          "oklch(49% 0.0370 253.15)",
+          "oklch(61% 0.0370 253.15)",
+          "oklch(72% 0.0370 253.15)",
+          "oklch(84% 0.0370 253.15)",
+          "oklch(95% 0.0370 253.15)"
+        ]
+      },
+      "process-line": {
+        "role": "neutral",
+        "displayName": "Process Divider",
+        "tonalRamp": [
+          "oklch(15% 0.0479 259.96)",
+          "oklch(26% 0.0479 259.96)",
+          "oklch(38% 0.0479 259.96)",
+          "oklch(49% 0.0479 259.96)",
+          "oklch(61% 0.0479 259.96)",
+          "oklch(72% 0.0479 259.96)",
+          "oklch(84% 0.0479 259.96)",
+          "oklch(95% 0.0479 259.96)"
+        ]
+      },
+      "gallery-control-line": {
+        "role": "neutral",
+        "displayName": "Gallery Control Border",
+        "tonalRamp": [
+          "oklch(15% 0.0392 252.46)",
+          "oklch(26% 0.0392 252.46)",
+          "oklch(38% 0.0392 252.46)",
+          "oklch(49% 0.0392 252.46)",
+          "oklch(61% 0.0392 252.46)",
+          "oklch(72% 0.0392 252.46)",
+          "oklch(84% 0.0392 252.46)",
+          "oklch(95% 0.0392 252.46)"
+        ]
+      },
+      "studio-ground": {
+        "displayName": "Studio Ground",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0045 258.32)",
+          "oklch(26% 0.0045 258.32)",
+          "oklch(38% 0.0045 258.32)",
+          "oklch(49% 0.0045 258.32)",
+          "oklch(61% 0.0045 258.32)",
+          "oklch(72% 0.0045 258.32)",
+          "oklch(84% 0.0045 258.32)",
+          "oklch(95% 0.0045 258.32)"
+        ]
+      },
+      "studio-muted": {
+        "displayName": "Studio Muted",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0327 251.70)",
+          "oklch(26% 0.0327 251.70)",
+          "oklch(38% 0.0327 251.70)",
+          "oklch(49% 0.0327 251.70)",
+          "oklch(61% 0.0327 251.70)",
+          "oklch(72% 0.0327 251.70)",
+          "oklch(84% 0.0327 251.70)",
+          "oklch(95% 0.0327 251.70)"
+        ]
+      },
+      "studio-line": {
+        "displayName": "Studio Line",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0115 252.09)",
+          "oklch(26% 0.0115 252.09)",
+          "oklch(38% 0.0115 252.09)",
+          "oklch(49% 0.0115 252.09)",
+          "oklch(61% 0.0115 252.09)",
+          "oklch(72% 0.0115 252.09)",
+          "oklch(84% 0.0115 252.09)",
+          "oklch(95% 0.0115 252.09)"
+        ]
+      },
+      "studio-blue": {
+        "displayName": "Studio Blue",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.1736 260.84)",
+          "oklch(26% 0.1736 260.84)",
+          "oklch(38% 0.1736 260.84)",
+          "oklch(49% 0.1736 260.84)",
+          "oklch(61% 0.1736 260.84)",
+          "oklch(72% 0.1736 260.84)",
+          "oklch(84% 0.1736 260.84)",
+          "oklch(95% 0.1736 260.84)"
+        ]
+      },
+      "studio-focus": {
+        "displayName": "Studio Focus",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.1598 259.44)",
+          "oklch(26% 0.1598 259.44)",
+          "oklch(38% 0.1598 259.44)",
+          "oklch(49% 0.1598 259.44)",
+          "oklch(61% 0.1598 259.44)",
+          "oklch(72% 0.1598 259.44)",
+          "oklch(84% 0.1598 259.44)",
+          "oklch(95% 0.1598 259.44)"
+        ]
+      },
+      "division-front": {
+        "displayName": "Division Front",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0086 247.92)",
+          "oklch(26% 0.0086 247.92)",
+          "oklch(38% 0.0086 247.92)",
+          "oklch(49% 0.0086 247.92)",
+          "oklch(61% 0.0086 247.92)",
+          "oklch(72% 0.0086 247.92)",
+          "oklch(84% 0.0086 247.92)",
+          "oklch(95% 0.0086 247.92)"
+        ]
+      },
+      "division-initials": {
+        "displayName": "Navy Initials",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0814 253.21)",
+          "oklch(26% 0.0814 253.21)",
+          "oklch(38% 0.0814 253.21)",
+          "oklch(49% 0.0814 253.21)",
+          "oklch(61% 0.0814 253.21)",
+          "oklch(72% 0.0814 253.21)",
+          "oklch(84% 0.0814 253.21)",
+          "oklch(95% 0.0814 253.21)"
+        ]
+      },
+      "action": {
+        "displayName": "Action",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.1868 261.80)",
+          "oklch(26% 0.1868 261.80)",
+          "oklch(38% 0.1868 261.80)",
+          "oklch(49% 0.1868 261.80)",
+          "oklch(61% 0.1868 261.80)",
+          "oklch(72% 0.1868 261.80)",
+          "oklch(84% 0.1868 261.80)",
+          "oklch(95% 0.1868 261.80)"
+        ]
+      },
+      "division-portrait": {
+        "displayName": "Division Portrait",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0132 251.56)",
+          "oklch(26% 0.0132 251.56)",
+          "oklch(38% 0.0132 251.56)",
+          "oklch(49% 0.0132 251.56)",
+          "oklch(61% 0.0132 251.56)",
+          "oklch(72% 0.0132 251.56)",
+          "oklch(84% 0.0132 251.56)",
+          "oklch(95% 0.0132 251.56)"
+        ]
+      },
+      "studio-red": {
+        "displayName": "Studio Red",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.1587 21.01)",
+          "oklch(26% 0.1587 21.01)",
+          "oklch(38% 0.1587 21.01)",
+          "oklch(49% 0.1587 21.01)",
+          "oklch(61% 0.1587 21.01)",
+          "oklch(72% 0.1587 21.01)",
+          "oklch(84% 0.1587 21.01)",
+          "oklch(95% 0.1587 21.01)"
+        ]
+      },
+      "studio-field-line": {
+        "displayName": "Studio Field Line",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0193 255.54)",
+          "oklch(26% 0.0193 255.54)",
+          "oklch(38% 0.0193 255.54)",
+          "oklch(49% 0.0193 255.54)",
+          "oklch(61% 0.0193 255.54)",
+          "oklch(72% 0.0193 255.54)",
+          "oklch(84% 0.0193 255.54)",
+          "oklch(95% 0.0193 255.54)"
+        ]
+      },
+      "studio-primary-hover": {
+        "displayName": "Studio Primary Hover",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0727 254.19)",
+          "oklch(26% 0.0727 254.19)",
+          "oklch(38% 0.0727 254.19)",
+          "oklch(49% 0.0727 254.19)",
+          "oklch(61% 0.0727 254.19)",
+          "oklch(72% 0.0727 254.19)",
+          "oklch(84% 0.0727 254.19)",
+          "oklch(95% 0.0727 254.19)"
+        ]
+      },
+      "studio-secondary-hover": {
+        "displayName": "Studio Secondary Hover",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0097 252.81)",
+          "oklch(26% 0.0097 252.81)",
+          "oklch(38% 0.0097 252.81)",
+          "oklch(49% 0.0097 252.81)",
+          "oklch(61% 0.0097 252.81)",
+          "oklch(72% 0.0097 252.81)",
+          "oklch(84% 0.0097 252.81)",
+          "oklch(95% 0.0097 252.81)"
+        ]
+      },
+      "studio-status-neutral-bg": {
+        "displayName": "Studio Status Neutral Bg",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0063 255.48)",
+          "oklch(26% 0.0063 255.48)",
+          "oklch(38% 0.0063 255.48)",
+          "oklch(49% 0.0063 255.48)",
+          "oklch(61% 0.0063 255.48)",
+          "oklch(72% 0.0063 255.48)",
+          "oklch(84% 0.0063 255.48)",
+          "oklch(95% 0.0063 255.48)"
+        ]
+      },
+      "studio-status-neutral-text": {
+        "displayName": "Studio Status Neutral Text",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0352 256.10)",
+          "oklch(26% 0.0352 256.10)",
+          "oklch(38% 0.0352 256.10)",
+          "oklch(49% 0.0352 256.10)",
+          "oklch(61% 0.0352 256.10)",
+          "oklch(72% 0.0352 256.10)",
+          "oklch(84% 0.0352 256.10)",
+          "oklch(95% 0.0352 256.10)"
+        ]
+      },
+      "studio-status-green-bg": {
+        "displayName": "Studio Status Green Bg",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0166 156.90)",
+          "oklch(26% 0.0166 156.90)",
+          "oklch(38% 0.0166 156.90)",
+          "oklch(49% 0.0166 156.90)",
+          "oklch(61% 0.0166 156.90)",
+          "oklch(72% 0.0166 156.90)",
+          "oklch(84% 0.0166 156.90)",
+          "oklch(95% 0.0166 156.90)"
+        ]
+      },
+      "studio-status-green-text": {
+        "displayName": "Studio Status Green Text",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0675 156.89)",
+          "oklch(26% 0.0675 156.89)",
+          "oklch(38% 0.0675 156.89)",
+          "oklch(49% 0.0675 156.89)",
+          "oklch(61% 0.0675 156.89)",
+          "oklch(72% 0.0675 156.89)",
+          "oklch(84% 0.0675 156.89)",
+          "oklch(95% 0.0675 156.89)"
+        ]
+      },
+      "studio-status-blue-bg": {
+        "displayName": "Studio Status Blue Bg",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0191 263.01)",
+          "oklch(26% 0.0191 263.01)",
+          "oklch(38% 0.0191 263.01)",
+          "oklch(49% 0.0191 263.01)",
+          "oklch(61% 0.0191 263.01)",
+          "oklch(72% 0.0191 263.01)",
+          "oklch(84% 0.0191 263.01)",
+          "oklch(95% 0.0191 263.01)"
+        ]
+      },
+      "studio-status-blue-text": {
+        "displayName": "Studio Status Blue Text",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.1278 260.43)",
+          "oklch(26% 0.1278 260.43)",
+          "oklch(38% 0.1278 260.43)",
+          "oklch(49% 0.1278 260.43)",
+          "oklch(61% 0.1278 260.43)",
+          "oklch(72% 0.1278 260.43)",
+          "oklch(84% 0.1278 260.43)",
+          "oklch(95% 0.1278 260.43)"
+        ]
+      },
+      "studio-status-amber-bg": {
+        "displayName": "Studio Status Amber Bg",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0356 83.78)",
+          "oklch(26% 0.0356 83.78)",
+          "oklch(38% 0.0356 83.78)",
+          "oklch(49% 0.0356 83.78)",
+          "oklch(61% 0.0356 83.78)",
+          "oklch(72% 0.0356 83.78)",
+          "oklch(84% 0.0356 83.78)",
+          "oklch(95% 0.0356 83.78)"
+        ]
+      },
+      "studio-status-amber-text": {
+        "displayName": "Studio Status Amber Text",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0910 78.24)",
+          "oklch(26% 0.0910 78.24)",
+          "oklch(38% 0.0910 78.24)",
+          "oklch(49% 0.0910 78.24)",
+          "oklch(61% 0.0910 78.24)",
+          "oklch(72% 0.0910 78.24)",
+          "oklch(84% 0.0910 78.24)",
+          "oklch(95% 0.0910 78.24)"
+        ]
       }
     },
     "typographyMeta": {
@@ -121,23 +622,41 @@
       },
       "footer-signature": {
         "displayName": "Final Wasla Signature",
-        "purpose": "Owner-requested huge final footer wordmark below navigation/copyright; fluid within wrapper."
+        "purpose": "Decorative final lowercase wasla; left-aligned, .08 opacity, no subtitle."
       },
-      "footer-subtitle": {
-        "displayName": "Final Informatika Subtitle",
-        "purpose": "Widely tracked secondary identity line below the final signature."
+      "studio-heading": {
+        "displayName": "Studio Heading",
+        "purpose": "Operational page titles; 24px narrow."
+      },
+      "studio-body": {
+        "displayName": "Studio Body",
+        "purpose": "Workspace body and readable task context."
+      },
+      "studio-action": {
+        "displayName": "Studio Action",
+        "purpose": "Save, publish and operational navigation."
       }
     },
     "shadows": [
       {
-        "name": "header",
+        "name": "public-header",
         "value": "0 2px 10px #071a3310",
-        "purpose": "Scrolled/internal White header separation."
+        "purpose": "Scrolled public header."
       },
       {
         "name": "floating-contact",
         "value": "0 3px 14px #071a3326",
-        "purpose": "Fixed consultation/contact destination."
+        "purpose": "Public contact directory control."
+      },
+      {
+        "name": "studio-panel",
+        "value": "0 5px 22px #071a3306",
+        "purpose": "Overview operational panel separation."
+      },
+      {
+        "name": "studio-toast",
+        "value": "0 4px 18px #071a3310",
+        "purpose": "Sticky saved feedback."
       }
     ],
     "motion": [
@@ -177,14 +696,24 @@
         "purpose": "Action background/border/icon feedback."
       },
       {
-        "name": "static-fallback",
-        "value": "width<=900px or prefers-reduced-motion",
-        "purpose": "Hero/feature/reveals static; reduced motion removes animation and smooth scrolling."
+        "name": "technology-color",
+        "value": "filter grayscale(1) brightness(.15) to none over 300ms; translateY(-4px) over 350ms",
+        "purpose": "Official brand-color feedback on hover and focus-visible; reduced motion removes lift but retains color."
       },
       {
-        "name": "service-object-hover",
-        "value": "650ms; translateY(-8px) rotateY(-5deg)",
-        "purpose": "Contained transparent service image feedback; reduced-motion removes transform."
+        "name": "service-geometry",
+        "value": "Three.js; demand render; fine-pointer scroll progress clamped -1..1, targetX=-.1+progress*.25; y=progress*.16",
+        "purpose": "Actual geometry, lights and materials. Drag/arrow keys rotate; Home resets. Coarse touch activation required; reduced motion stops automatic orientation."
+      },
+      {
+        "name": "division-flip",
+        "value": "perspective(1200px);rotateY(180deg);650ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Semantic click/Enter/Space flips; inactive face inert; focus transfers; reduced motion removes transition."
+      },
+      {
+        "name": "studio-state",
+        "value": "180ms controls;220ms sidebar",
+        "purpose": "Readable operational feedback, disabled entirely for reduced motion."
       }
     ],
     "breakpoints": [
@@ -211,8 +740,51 @@
       {
         "name": "container-laptop-max",
         "value": "1199px"
+      },
+      {
+        "name": "division-single-max",
+        "value": "420px"
+      },
+      {
+        "name": "studio-wide-min",
+        "value": "1500px"
       }
-    ]
+    ],
+    "accessibility": {
+      "footerSignature": "Decorative only: opacity .08 and aria-hidden=true; readable brand/navigation/team/copyright remain elsewhere. No final subtitle.",
+      "gallery": "Native dialog, visible close/previous/next, ArrowLeft/ArrowRight cyclic navigation, Escape close, focus return, body scroll lock and polite index/caption. No-JS anchors open original files.",
+      "divisionStructure": "Semantic front button and independent back-face WhatsApp/return controls; inactive face inert/aria-hidden; focus transfers on flip; actual photos or initials.",
+      "technology": "Official destination anchors with visible captions, empty decorative logo alt and accessible link name; color revealed on keyboard focus as well as hover.",
+      "serviceGeometry": "Arrow keys rotate, Home resets, explicit touch activation preserves scrolling; reduced motion stops automatic orientation.",
+      "studio": "Staff-only sessions and roles; explicit dirty, pending, saved, empty and error states; 3px focus outline with 3px offset."
+    },
+    "layoutRules": {
+      "technologyGrid": "24 marks; 8 columns desktop, 6 at <=1199px, 4 at <=767px; 52px marks / 42px narrow.",
+      "projectGallery": "CMS array has no three-item limit; seed has 21 added real captures, 3 per project (2 desktop and 1 mobile). Original thumbnails remain separate. First image full row, remainder 2 columns, 1 column narrow; 45px/30px gaps.",
+      "whiteSurfaces": "Consultation, About principles and public CTA surfaces use White.",
+      "processSection": "Full-width Deep Navy outer section, inner .wrap; 85px vertical padding and 4 steps / 2 at <=991px.",
+      "divisionCards": "4 columns desktop, 2 at <=991px, 1 centered <=320px wide at <=420px; 24px corners.",
+      "footer": "Straight Deep Navy region, 3 information columns; <=767px two columns with company spanning; final left signature opacity .08.",
+      "studio": "238px fixed sidebar, 210px <=1199px, 250px overlay <=991px; 1510px maximum main; single-column editor with save first <=767px; calendar keeps 7 columns and full-text agenda."
+    },
+    "evidence": {
+      "sources": [
+        ".impeccable/studio-direction.md",
+        "docs/wasla-studio.md",
+        "docs/domain-wasla-my-id.md",
+        "src/app/(frontend)/globals.css",
+        "src/app/(frontend)/layout.tsx",
+        "src/app/(studio)/studio.css",
+        "src/components/studio-workspace.tsx",
+        "src/components/service-scene.tsx",
+        "src/components/division-structure.tsx"
+      ],
+      "review": "docs/visual-review-studio.md owns the fresh visual verdict; documenter does not invent a review outcome.",
+      "detector": "Current .impeccable/review/detector-studio.json has an empty result; not rerun by documenter.",
+      "validation": "Root reports nine browser tests and 24 admin plus 36 public captures passing with no observed overflow/errors. Documentation-only refresh parses YAML/JSON and resolves token references.",
+      "release": "Stage READY at https://waslainformatika-nehon1bg1-jae-f2e1.vercel.app passed runtime verification. Primary-domain promotion pending visual review; wasla.my.id attached but DNS incomplete, current NS remain TTM Host.",
+      "history": "Earlier refinement review, raster perspective, right emblem, coordinator tree, .14 footer and Payload release are superseded historical evidence."
+    }
   },
   "components": [
     {
@@ -247,29 +819,6 @@
       "css": ".ds-nav{display:flex;align-items:center;gap:30px;padding:20px;background:var(--navy-deep,#030e1d)}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--light,#c5d0dd);font:500 11px/1.7 var(--font-poppins,Poppins),sans-serif;text-transform:uppercase;letter-spacing:.025em;text-decoration:none}.ds-nav a:hover,.ds-nav a[aria-current]{color:var(--white,#fff)}.ds-nav a:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}"
     },
     {
-      "name": "Concept Disclosure",
-      "kind": "chip",
-      "refersTo": "concept-tag",
-      "description": "Persistent factual label for any future concept; current seven real projects are not concepts.",
-      "html": "<span class=\"ds-concept\">Konsep Eksplorasi</span>",
-      "css": ".ds-concept{display:inline-block;padding:5px 10px;border-radius:3px;background:var(--white,#fff);color:var(--navy,#071a33);font:400 9px/1.5 var(--font-poppins,Poppins),sans-serif}"
-    },
-    {
-      "name": "Internal Page Masthead",
-      "kind": "custom",
-      "description": "Full Navy centered route introduction with a layered wave into White; short route title.",
-      "html": "<section class=\"ds-masthead\"><div class=\"ds-intro\"><h1>Layanan</h1><p>Solusi digital sesuai kebutuhan bisnis Anda.</p></div><svg class=\"ds-wave\" viewBox=\"0 0 1440 110\" preserveAspectRatio=\"none\" fill=\"none\" aria-hidden=\"true\"><path d=\"M0 10C250 10 260 100 580 64S1050 0 1440 45V110H0Z\" fill=\"#29405a\" opacity=\".45\"/><path d=\"M0 75C370-20 570 15 850 60s440 18 590-30v80H0Z\" fill=\"#63758a\" opacity=\".24\"/><path d=\"M0 65C300 150 550 85 790 45s445-48 650 8v57H0Z\" fill=\"currentColor\"/></svg></section>",
-      "css": ".ds-masthead{background:var(--navy-deep,#030e1d);color:var(--white,#fff);text-align:center;margin-bottom:85px;font-family:var(--font-poppins,Poppins),sans-serif}.ds-intro{max-width:1140px;margin:auto;padding:145px 15px 60px}.ds-intro h1{margin:0 auto;font-size:54px;font-weight:600;line-height:1.3;letter-spacing:-.025em}.ds-intro p{max-width:650px;margin:8px auto 0;color:var(--light,#c5d0dd);font-size:13px;line-height:1.7}.ds-wave{color:var(--white,#fff);display:block;width:100%;height:140px}@media(max-width:767px){.ds-masthead{margin-bottom:55px}.ds-intro{padding:112px 15px 35px}.ds-intro h1{font-size:42px}.ds-intro p{font-size:13px;margin-top:8px}.ds-wave{height:40px}}"
-    },
-    {
-      "name": "Portfolio Text Filters",
-      "kind": "custom",
-      "refersTo": "portfolio-filter",
-      "description": "Centered unboxed portfolio category buttons; article filters retain capsules. The accessible count occupies no visual gallery space.",
-      "html": "<div class=\"ds-filters\" aria-label=\"Filter kategori portofolio\"><button aria-pressed=\"true\">Semua</button><button aria-pressed=\"false\">Website</button><button aria-pressed=\"false\">Aplikasi</button></div><p class=\"ds-count\" role=\"status\">7 project ditampilkan</p>",
-      "css": ".ds-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;margin-bottom:14px}.ds-filters button{min-height:44px;padding:6px 0;border:0;border-radius:0;background:transparent;color:var(--slate,#5b6879);font:600 20px/1.7 var(--font-poppins,Poppins),sans-serif;cursor:pointer}.ds-filters button:hover,.ds-filters button[aria-pressed=true]{background:transparent;color:var(--navy,#071a33)}.ds-filters button[aria-pressed=true]{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}.ds-filters button:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}.ds-count{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}@media(max-width:767px){.ds-filters{gap:4px 20px}.ds-filters button{font-size:18px}}"
-    },
-    {
       "name": "Curved WhatsApp Contact",
       "kind": "card",
       "refersTo": "contact-card",
@@ -278,50 +827,80 @@
       "css": ".ds-person{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:30px 34px;border:1px solid var(--line,#dce1e7);border-radius:65px 25px 65px 25px;background:var(--white,#fff);color:var(--navy,#071a33);font-family:var(--font-poppins,Poppins),sans-serif;text-decoration:none;transition:background .25s,color .25s,border-color .25s}.ds-person h3{margin:0 0 6px;font-size:21px;font-weight:600;line-height:1.4;letter-spacing:-.025em}.ds-person p{margin:0 0 12px;font-size:12px;color:var(--slate,#5b6879)}.ds-person div>span{font-size:13px;font-variant-numeric:tabular-nums}.ds-person-action{display:grid;gap:9px;justify-items:center;font-size:10px;flex-shrink:0}.ds-person:hover{background:var(--navy,#071a33);color:var(--white,#fff);border-color:var(--navy,#071a33)}.ds-person:hover p{color:var(--light,#c5d0dd)}.ds-person:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}@media(max-width:767px){.ds-person{padding:26px;gap:15px;border-radius:50px 22px 50px 22px}.ds-person h3{font-size:20px}.ds-person-action svg{width:34px;height:34px}}@media(prefers-reduced-motion:reduce){.ds-person{transition-duration:.01ms}}"
     },
     {
+      "name": "Official Technology Link",
+      "kind": "custom",
+      "refersTo": "technology-link",
+      "description": "One of 24 official technology destinations; grayscale at rest, source brand color on hover/focus.",
+      "html": "<a class=\"ds-tech\" href=\"https://www.php.net/\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"Kenali PHP\"><svg class=\"ds-tech-mark\" aria-hidden=\"true\" fill=\"#777BB4\" role=\"img\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><title>PHP</title><path d=\"M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z\"/></svg><span>PHP</span></a>",
+      "css": ".ds-tech{display:grid;justify-items:center;gap:18px;padding:22px 6px;border-radius:16px;text-decoration:none;font-family:var(--font-poppins,Poppins),sans-serif}.ds-tech-mark{width:52px;height:52px;filter:grayscale(1) brightness(.15);transition:filter .3s,transform .35s cubic-bezier(.16,1,.3,1)}.ds-tech:hover .ds-tech-mark,.ds-tech:focus-visible .ds-tech-mark{filter:none;transform:translateY(-4px)}.ds-tech span{font-size:12px;color:var(--slate,#5b6879)}.ds-tech:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-tech:hover .ds-tech-mark,.ds-tech:focus-visible .ds-tech-mark{transform:none;transition:none}}"
+    },
+    {
       "name": "Final Footer Signature",
       "kind": "custom",
       "refersTo": "footer-wordmark",
-      "description": "Huge final lowercase identity follows footer information and metadata, as explicitly requested by the owner.",
-      "html": "<div class=\"ds-footer-ground\"><div class=\"ds-footer-signature\" aria-label=\"Wasla Informatika\">wasla<span>informatika</span></div></div>",
-      "css": ".ds-footer-ground{background:var(--navy-deep,#030e1d);color:var(--white,#fff);padding-inline:15px}.ds-footer-signature{max-width:1110px;margin-inline:auto;padding-block:20px 30px;text-align:center;font-family:var(--font-poppins,Poppins),sans-serif;font-size:clamp(100px,26vw,370px);font-weight:600;line-height:.9;letter-spacing:-.04em}.ds-footer-signature>span{display:block;font-size:clamp(12px,1.5vw,21px);line-height:1.5;letter-spacing:.35em;font-weight:400;margin-top:25px}"
+      "description": "Decorative final lowercase wordmark, after readable footer metadata; .08 opacity, no subtitle.",
+      "html": "<div class=\"ds-footer\"><div class=\"ds-signature\" aria-hidden=\"true\">wasla</div></div>",
+      "css": ".ds-footer{background:var(--navy-deep,#030e1d);color:#fff;padding:20px 15px 0}.ds-signature{font-family:var(--font-poppins,Poppins),sans-serif;font-size:clamp(100px,18vw,230px);font-weight:600;line-height:.85;letter-spacing:-.04em;opacity:.08;text-align:left;max-height:190px;overflow:hidden;user-select:none}@media(max-width:767px){.ds-signature{font-size:26vw;max-height:130px}}"
+    },
+    {
+      "name": "Division Flip Card",
+      "kind": "card",
+      "refersTo": "division-card",
+      "description": "Current front-face visual sample; application owns click flip, inert faces, focus transfer and supplied photo/initials selection.",
+      "html": "<button class=\"ds-person\" type=\"button\" aria-label=\"Kenali Amat Suroso, Project Manager\"><span class=\"ds-initials\" aria-hidden=\"true\">AS</span><span class=\"ds-info\"><small>Project Manager</small><strong>Amat Suroso</strong><span>Kenali divisi</span></span></button>",
+      "css": ".ds-person{width:240px;min-height:370px;border:0;padding:0;overflow:hidden;border-radius:24px;background:#edf2f7;color:var(--navy,#071a33);text-align:left;font-family:var(--font-poppins,Poppins),sans-serif;cursor:pointer}.ds-initials{height:220px;display:grid;place-items:center;background:#e6edf5;color:#173b63;font-size:85px;font-weight:600;letter-spacing:-.04em;transition:transform .3s}.ds-info{padding:23px 22px;display:grid;gap:7px}.ds-info small,.ds-info>span{font-size:10px;color:#52647c}.ds-info strong{font-size:16px;line-height:1.45}.ds-person:hover .ds-initials{transform:translateY(-5px)}.ds-person:focus-visible{outline:3px solid #397bff;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-initials{transition:none}.ds-person:hover .ds-initials{transform:none}}"
+    },
+    {
+      "name": "Studio Primary Action",
+      "kind": "button",
+      "refersTo": "studio-primary",
+      "description": "Explicit operational save/publish action; pending state belongs to the application.",
+      "html": "<button class=\"ds-studio-primary\" type=\"button\">Simpan perubahan</button>",
+      "css": ".ds-studio-primary{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:11px 17px;border:0;border-radius:8px;background:var(--s-navy,#071a33);color:#fff;font-family:var(--studio-font,Poppins),sans-serif;font-size:12px;font-weight:500;line-height:1.5;cursor:pointer;transition:background .18s}.ds-studio-primary:hover{background:#1e3c60}.ds-studio-primary:focus-visible{outline:3px solid #3d79d9;outline-offset:3px}.ds-studio-primary:disabled{opacity:.5;cursor:not-allowed}"
+    },
+    {
+      "name": "Studio Field and Status",
+      "kind": "input",
+      "refersTo": "studio-field",
+      "description": "Operational field with text-labelled status; blue/green/amber are contextual status colors.",
+      "html": "<label class=\"ds-studio-field\">Nama pekerjaan<input placeholder=\"Nama pekerjaan\"/><span class=\"ds-status\">Dikerjakan</span></label>",
+      "css": ".ds-studio-field{display:grid;gap:7px;max-width:350px;font-family:var(--studio-font,Poppins),sans-serif;font-size:11px;font-weight:500;color:var(--s-navy,#071a33)}.ds-studio-field input{font:inherit;font-size:12px;font-weight:400;border:1px solid #cbd4e0;border-radius:8px;background:#fff;color:inherit;padding:10px 12px;min-width:0;transition:border-color .18s}.ds-studio-field input:hover{border-color:#596879}.ds-studio-field input:focus{border-color:#245fc7}.ds-studio-field input:focus-visible{outline:3px solid #3d79d9;outline-offset:3px}.ds-status{justify-self:start;border-radius:5px;padding:4px 9px;font-size:10px;background:#e7eefb;color:#214b93}"
     }
   ],
   "narrative": {
     "northStar": "A familiar software-house experience, with Wasla's own work and voice.",
-    "overview": "Preserve the Vodjo-led conventional centered grid, full-height photograph, compact Poppins hierarchy, navy/white fields and authored wave cadence. The latest owner-approved corrections extend this existing world with seven real screenshot projects, unboxed transparent dimensional service objects, eight actual monochrome technology marks, restored colorful identity, four curved contacts and an oversized final wasla signature. Code-first implementation has an independent ship verdict for the captured local correction scope; production remains separate.",
+    "overview": "The public site keeps the owner's established software-house composition: photographic opening, centered grid, Poppins hierarchy, real project screenshots, navy/white fields and capsule actions. The latest approved contract replaces service-image tilt with actual Three.js geometry and the connected division diagram with click-to-flip people cards. The header has the left wordmark and static ID marker; the right emblem is removed. The footer is a seamless straight navy region with readable company/navigation/team information and a low-opacity final signature. Public CTA surfaces are White.\n\nWasla Studio is the Operate surface of this identity: concrete tasks, readable forms, predictable navigation, real counts and honest empty states. It is a custom dashboard and internal scheduler, with no Payload runtime. Latest owner direction in `.impeccable/studio-direction.md` supersedes historic canon. This source-extracted record refreshes the existing design system; no new comp or invented photography is claimed.",
     "keyCharacteristics": [
-      "Photographic hero with left proposition and right-weighted workstation",
-      "1140px outer/1110px inner centered grid",
-      "Self-hosted Poppins 300/400/500/600/700",
-      "Seven real screenshot projects; seventh spans desktop row",
-      "Transparent unboxed 3D service objects on navy/white",
-      "Eight actual technology marks and colorful owner emblem",
-      "Four curved contacts with private-save then explicit WhatsApp handoff",
-      "Huge final lowercase wasla signature",
-      "ENERGY 3 / RHYTHM 2 / MOTION 2"
+      "Photographic public opening and seven real screenshot projects.",
+      "Actual unboxed Three.js service objects with deliberate interaction.",
+      "Navy initials or supplied CMS photos in semantic flip cards.",
+      "Left header wordmark, White CTAs and a straight navy footer.",
+      "Custom Studio Operate workspace with real data and explicit save states."
     ],
     "rules": [
       {
         "name": "The Evidence Rule",
-        "body": "Technology marks describe studio capability, not clients or project stacks. Publish supplied facts and verified real screenshot work; do not invent outcomes.",
+        "body": "Technology marks describe studio capabilities, not client relationships or displayed project stacks. Publish only supplied company facts and eligible proof.",
         "section": "colors"
       },
       {
-        "name": "The Latest Owner Direction Rule",
-        "body": "The huge final footer and alternating curved contact corners are intentional and supersede earlier compact-footer and generic-radius defaults.",
-        "section": "typography"
+        "name": "The Deliberate Motion Rule",
+        "body": "Automatic movement must stop for reduced motion; touch scrolling remains available until the visitor explicitly activates object rotation.",
+        "section": "elevation"
       }
     ],
     "dos": [
-      "Do retain pinned proportions, Poppins, waves and navy/white.",
-      "Do preserve seven real projects, transparent objects, actual marks, colorful emblem, curved contacts and final huge signature.",
-      "Do retain CMS control, visible focus and private persistence before explicit WhatsApp handoff.",
-      "Do keep narrow/reduced-motion views static and readable."
+      "Do preserve Wasla navy/white, Poppins, the photographic opening and original project covers.",
+      "Do keep Three.js geometry, explicit touch activation, keyboard rotation and reduced-motion behavior.",
+      "Do use supplied photos or honest initials, manual gallery uploads and independent WhatsApp links.",
+      "Do keep Studio forms readable, mobile save controls first and calendar details available in the agenda.",
+      "Do preserve published content until an explicit publish action, role restrictions and private data boundaries."
     ],
     "donts": [
-      "Do not restore obsolete four-concept, boxed-service, technology-text or compact-footer guidance.",
-      "Do not invent project stacks, outcomes, endorsements, staff or contact details.",
-      "Do not treat documentation or local review as production certification."
+      "Don't restore Payload runtime, the right header emblem, the connected tree diagram or raster-only service tilt.",
+      "Don't introduce footer waves/seams, gray public CTA blocks, decorative link arrows or fabricated portraits.",
+      "Don't invent client work, metrics, schedules, automatic reminders or project stacks.",
+      "Don't treat staged runtime verification, local captures or documentation as completed production promotion or DNS."
     ]
   }
 }

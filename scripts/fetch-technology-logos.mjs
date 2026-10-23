@@ -1,5 +1,5 @@
 import { mkdir, writeFile } from 'node:fs/promises'
-const slugs = ['php', 'nextdotjs', 'react', 'typescript', 'postgresql', 'payloadcms', 'javascript', 'tailwindcss', 'laravel', 'nodedotjs', 'mysql', 'mongodb', 'redis', 'docker', 'git', 'github', 'figma', 'wordpress', 'python', 'go', 'vuedotjs', 'nuxt', 'nginx', 'bootstrap']
+const slugs = ['php', 'nextdotjs', 'react', 'typescript', 'postgresql', 'threedotjs', 'javascript', 'tailwindcss', 'laravel', 'nodedotjs', 'mysql', 'mongodb', 'redis', 'docker', 'git', 'github', 'figma', 'wordpress', 'python', 'go', 'vuedotjs', 'nuxt', 'nginx', 'bootstrap']
 const metadataURL = 'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/data/simple-icons.json'
 const metadataResponse = await fetch(metadataURL)
 if (!metadataResponse.ok) throw new Error('Unable to retrieve official icon colors')

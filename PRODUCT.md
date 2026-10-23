@@ -5,27 +5,33 @@
 web
 
 ## Stack
-User-specified Next.js App Router, TypeScript, Tailwind CSS, Payload CMS and PostgreSQL.
+Next.js App Router, TypeScript, Tailwind CSS, custom Wasla Studio CMS, Neon PostgreSQL and Vercel Blob. Public service objects use Three.js. There are no runtime Payload dependencies; existing content, media, IDs, legacy account access and original database tables are preserved through separate studio_* storage.
 
 ## Users
-Indonesian businesses evaluating a technology partner. Editors maintain services, projects, articles and company details. Administrators manage staff access.
+Indonesian businesses evaluating a technology partner. Editors maintain services, projects, articles, media and company details, follow up on private consultation messages and plan project work. Administrators additionally manage staff access and deletion.
 
 ## Product Purpose
-Explain the studio's capabilities, make work discoverable, and turn an identified business need into a consultation request.
+Explain Wasla's capabilities, make actual work discoverable and turn a business need into a consultation request. Give staff a private workspace for publishing and internal scheduling.
 
 ## Capabilities and Constraints
-All public copy in Indonesian. Published content only for anonymous visitors. Contact messages private. No public administrator registration. No fabricated client work, staff, testimonials, metrics, prices or guarantees. Project demonstrations are explicitly labelled concepts.
+Public copy is Indonesian; anonymous visitors see published content only. Contact messages and schedules are private. No public administrator registration. Existing staff credentials remain usable through legacy-hash verification at first login, then migration to scrypt; eight-hour HttpOnly sessions preserve admin/editor roles. Only admin manages users and deletion.
+
+Wasla Studio replaces Payload rather than reskinning it. Overview uses real counts, closest deadlines, new messages and recent projects with honest empty states. Content has explicit save/draft/publish/unpublish, staff-only draft preview, up to 20 revisions and conflict detection. Article rich text uses a Markdown-based textarea with documented formatting syntax; legacy rich text stays intact until edited. Gallery management is manual: add rows, choose or upload images with required alt text, enter captions, order and save/publish. Uploads are validated images stored through Blob; no invented images or automatic screenshot generation is implied.
+
+Scheduler manages assignee, date-only WIB start/deadline, status and optional client/project/notes. Calendar supports month controls, status filtering, day selection and agenda; editing reschedules work. It is private planning without automatic reminders, calendar synchronization or automatic WhatsApp sends. Contact persists privately before presenting a separate explicit WhatsApp action.
+
+No fabricated client work, staff, portraits, testimonials, metrics, prices, guarantees or schedules. Seven owner-supplied completed websites and four supplied people/phone destinations are the current evidence. Old project demonstrations remain private drafts; technology marks do not substantiate a displayed project's stack.
 
 ## Brand Commitments
-Wasla Informatika; navy and white; premium editorial typography; precise, restrained motion. Preserve the supplied original logo geometry when the original asset becomes available.
-
-Latest user correction: closely follow Vodjo's `.com` visual structure and proportions, with Wasla branding and original truthful content. The conventional photographic hero, Poppins typography, dense portfolio grid, three service columns, wave transitions and scroll header take precedence over the previous mixed-reference editorial composition. Add deliberate parallax while retaining static mobile/reduced-motion behavior.
+Wasla navy/white, self-hosted Poppins, photographic public opening, real website screenshots and restrained accessible motion. Existing Vodjo-led public proportions remain, with the latest owner corrections taking precedence: actual Three.js service meshes; semantic click-to-flip division cards with supplied photos or initials; left wordmark and ID marker with right emblem removed; White public CTAs; seamless straight professional navy footer with a low-opacity decorative final wordmark. Circular navy favicon and branded illustrative device remain. Studio is an Operate surface: readable forms, concrete tasks, predictable navigation, true counts and honest empty states.
 
 ## Evidence on Hand
-Three public reference sites and the user's phase briefs. On 23 October the owner supplied the original colored emblem, seven completed website links and four named WhatsApp contacts with divisions. Those replace the temporary concept projects and text-only branding. Capture real public website screenshots, preserve the supplied emblem's recognizable form, and keep all media editable in CMS. No private student information, invented project stacks, metrics or testimonials.
+Owner artwork, seven completed website links, four named WhatsApp contacts, real project covers and 21 additional gallery captures. Source contract: `.impeccable/studio-direction.md`; current editor/access/data facts: `docs/wasla-studio.md`. Two batched visual looks, nine browser tests and 24 admin plus 36 public captures passed without observed overflow/errors in the current validation scope. Emulated touch coverage does not claim every physical device.
 
 ## Product Principles
-Immediate access to the service proposition and contact action. Honest evidence. Maintainable content. Accessible interaction. Motion never blocks use.
+Immediate access to the proposition and contact. Honest evidence. Maintainable owner-controlled content. Clear publication state and staff permissions. Private consultation/scheduling data. Keyboard and touch access; motion never blocks use.
 
 ## Open Decisions
-Code-first workflow remains approved. Latest owner direction: actual seven projects; unboxed transparent 3D service objects; actual technology logos including PHP and Next.js; four rounded WhatsApp contact cards; large final footer wordmark following the owner's Jayszrs footer placement; colored emblem in the top-right header, favicon and device. Public navigation labels are Project and Artikel. Production is deployed under verified account jaelanisuryasaputra10@gmail.com (supersedes the prior email), project waslainformatika in scope jae-f2e1, at https://waslainformatika.vercel.app. Owner terms acceptance, Neon Free provisioning, all four database migrations, content/admin bootstrap and Blob initialization are complete. The staged deployment passed runtime checks before promotion; the public domain passed page, CMS login, upload/download, private contact persistence, WhatsApp handoff and desktop/mobile checks. Current operational evidence is in docs/production-verification.md. The independent visual ship verdict retains its local screenshot scope.
+Code-first implementation is approved; no approved visual comp is claimed. Stage READY at https://waslainformatika-nehon1bg1-jae-f2e1.vercel.app passed runtime verification. Promotion to the primary production domain is pending visual review; this record does not certify that promotion. Vercel project remains waslainformatika in scope jae-f2e1. The custom domain wasla.my.id is attached, but DNS is incomplete: registrar session expired before nameserver save and the current nameservers remain TTM Host. `docs/domain-wasla-my-id.md` owns the next steps and HTTPS verification requirement.
+
+Historical context: earlier production/refinement records describe a Payload CMS, raster service perspective, right header emblem, connected coordinator diagram and larger centered footer signature. Those describe earlier releases, superseded by the explicit 23 October Studio contract. Prior project/gallery provenance and public deployment evidence remain historical evidence, not current operational certification.

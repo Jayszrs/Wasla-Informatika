@@ -1,15 +1,12 @@
 'use client'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useRef, useState, useEffect } from 'react'
-import type { Navigation, SiteSetting } from '@/payload-types'
+import type { Navigation, SiteSetting } from '@/lib/content-types'
 import { validPublicLink } from '@/lib/validation'
 import { Arrow } from './icons'
-import { LinkProgress } from './link-progress'
-import { mediaSource } from '@/lib/media'
 
-export function NavigationBar({ settings, navigation }: { settings: SiteSetting; navigation: Navigation }) {
+export function NavigationBar({ navigation }: { settings: SiteSetting; navigation: Navigation }) {
   const pathname = usePathname()
   const menu = useRef<HTMLDetailsElement>(null)
   const [scrolled, setScrolled] = useState(false)
@@ -21,10 +18,6 @@ export function NavigationBar({ settings, navigation }: { settings: SiteSetting;
     return () => window.removeEventListener('scroll', update)
   }, [])
   const links = navigation.links?.filter(l => l.enabled && validPublicLink(l.href)).sort((a, b) => (a.order || 0) - (b.order || 0)) || []
-  const lightHeader = !onHome || scrolled
-  const whiteLogo = typeof settings.logoWhite === 'object' ? settings.logoWhite : null
-  const navyLogo = typeof settings.logoNavy === 'object' ? settings.logoNavy : null
-  const logo = lightHeader ? navyLogo || whiteLogo : whiteLogo || navyLogo
   const close = () => { if (menu.current) menu.current.open = false }
   useEffect(() => {
     const reset = () => {
@@ -48,12 +41,10 @@ export function NavigationBar({ settings, navigation }: { settings: SiteSetting;
           {links.map(l => (
             <Link key={l.id || l.href} href={l.href} aria-current={pathname.startsWith(l.href) ? 'page' : undefined}>
               <span>{l.label}</span>
-              <LinkProgress />
             </Link>
           ))}
           {!links.some(l => l.href === '/kontak') && <Link href="/kontak">Kontak</Link>}
         </nav>
-        <Link className="header-emblem" href="/" aria-label="Logo Wasla Informatika"><Image src={logo?.url ? mediaSource(logo.url) : '/images/brand/wasla-emblem.webp'} width={48} height={48} alt="Logo Wasla Informatika"/></Link>
         <span className="header-language" aria-label="Bahasa Indonesia">ID</span>
         <details
           ref={menu}

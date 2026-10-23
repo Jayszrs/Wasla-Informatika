@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Link from 'next/link'
-import Image from 'next/image'
 import { getNavigation, getSettings, getTeam } from '@/lib/cms'
 import { NavigationBar } from '@/components/navigation'
-import { Arrow } from '@/components/icons'
-import { SectionWave } from '@/components/artwork'
 import { validPublicLink } from '@/lib/validation'
 import { teamContacts } from '@/lib/contacts'
 import { WhatsAppIcon } from '@/components/contact-cards'
@@ -47,13 +44,13 @@ export default async function Layout({ children }: { children: React.ReactNode }
     <NavigationBar settings={settings} navigation={nav}/>
     <HeroEnhancement/>
     <main id="main">{children}</main>
-    <footer className="site-footer"><SectionWave variant="light-dark"/><div className="wrap">
-      <div className="footer-top"><div className="footer-statement"><Link className="footer-brand" href="/" aria-label="Wasla Informatika"><Image src="/images/brand/wasla-emblem-navy.webp" width={56} height={56} alt=""/><strong>{settings.name}</strong></Link><p>{settings.description}</p></div>
-        <div className="footer-contact">{contacts.map(person => <a href={person.href} key={person.id} target="_blank" rel="noopener noreferrer">{person.name}<Arrow diagonal/></a>)}{settings.email && <a href={`mailto:${settings.email}`}>{settings.email}</a>}{settings.address && <address>{settings.address}</address>}{settings.socials?.filter(s => validPublicLink(s.url)).map(s => <a key={s.id || s.url} href={s.url} rel="noopener noreferrer">{s.label}<Arrow diagonal/></a>)}</div>
+    <footer className="site-footer"><div className="wrap">
+      <div className="footer-top"><div className="footer-statement"><Link className="footer-wordmark" href="/" aria-label="Wasla Informatika">wasla<span>informatika</span></Link><p>{settings.description}</p>{settings.email && <a className="footer-email" href={`mailto:${settings.email}`}>{settings.email}</a>}{settings.address && <address>{settings.address}</address>}</div>
+        <nav className="footer-explore" aria-label="Navigasi footer"><h2>Jelajahi Wasla</h2><Link href="/">Beranda</Link>{publicLinks.map(l => <Link key={l.id || l.href} href={l.href}>{l.label}</Link>)}{!publicLinks.some(l => l.href === '/kontak') && <Link href="/kontak">Kontak</Link>}</nav>
+        <div className="footer-contact"><h2>Bicara dengan tim</h2>{contacts.map(person => <a href={person.href} key={person.id} target="_blank" rel="noopener noreferrer"><strong>{person.name}</strong><span>{person.role}</span></a>)}{settings.socials?.filter(s => validPublicLink(s.url)).map(s => <a key={s.id || s.url} href={s.url} rel="noopener noreferrer">{s.label}</a>)}</div>
       </div>
-      <a href="#top" className="back-top" aria-label="Kembali ke atas"><Arrow diagonal/></a>
-      <div className="footer-bottom"><nav aria-label="Navigasi footer"><Link href="/">Beranda</Link>{publicLinks.map(l => <Link key={l.id || l.href} href={l.href}>{l.label}</Link>)}<Link href="/kontak">Kontak</Link><Link href="/privasi">Privasi</Link></nav><span>© {new Date().getFullYear()} Wasla Informatika</span></div>
-      <div className="footer-signature" aria-hidden="true">wasla<span>informatika</span></div>
+      <div className="footer-bottom"><span>© {new Date().getFullYear()} Wasla Informatika</span><div><Link href="/privasi">Privasi</Link><a href="#top">Kembali ke atas</a></div></div>
+      <div className="footer-signature" aria-hidden="true">wasla</div>
     </div></footer>
     <Link className="floating-contact" href="/kontak#tim-kontak" aria-label="Pilih kontak WhatsApp"><WhatsAppIcon size={32}/></Link>
   </body></html>

@@ -2,105 +2,127 @@ import 'dotenv/config'
 import { randomBytes } from 'node:crypto'
 import { test, expect, request as requestFactory } from '@playwright/test'
 import sharp from 'sharp'
-import { mkdir } from 'node:fs/promises'
 
-test('CMS login, roles, drafts, publishing, media, settings and private submissions', async ({ page, context }) => {
-  test.setTimeout(240_000)
+test('custom Studio: retained login, access rules, images, drafts, publish and scheduler', async ({ page, context }) => {
+  test.setTimeout(240000)
   const baseURL = process.env.TEST_BASE_URL || 'http://localhost:3000'
   await context.setExtraHTTPHeaders({ Origin: baseURL })
-  const request = page.request
   await page.goto('/admin/login')
-  await page.locator('input[name="email"]').fill(process.env.BOOTSTRAP_ADMIN_EMAIL!)
-  await page.locator('input[name="password"]').fill(process.env.BOOTSTRAP_ADMIN_PASSWORD!)
-  await page.getByRole('button', { name: 'Login', exact: true }).click()
-  await expect(page.getByText('Pengaturan Website', { exact: true }).first()).toBeVisible()
-  await mkdir('.impeccable/review', { recursive: true })
-  await page.screenshot({ path: '.impeccable/review/admin.png', fullPage: true })
-  const unique = randomBytes(6).toString('hex')
-  let editorId: number | undefined
-  let projectId: number | undefined
-  let mediaId: number | undefined
-  let heroMediaId: number | undefined
-  let previousHero: number | null = null
-  let heroChanged = false
-  const publicClient = await requestFactory.newContext({ baseURL })
-  const editorClient = await requestFactory.newContext({ baseURL, extraHTTPHeaders: { Origin: baseURL } })
+  await page.getByLabel('Email', { exact: true }).fill(process.env.BOOTSTRAP_ADMIN_EMAIL!)
+  await page.getByLabel('Password', { exact: true }).fill(process.env.BOOTSTRAP_ADMIN_PASSWORD!)
+  await page.getByRole('button', { name: 'Masuk ke Studio', exact: true }).click()
+  await expect(page.getByRole('heading', { name: 'Ringkasan studio' })).toBeVisible()
+  await expect(page.getByRole('navigation', { name: 'Navigasi Studio' })).toBeVisible()
+  const request = page.request, unique = randomBytes(5).toString('hex')
+  const anonymous = await requestFactory.newContext({ baseURL })
+  const editor = await requestFactory.newContext({ baseURL, extraHTTPHeaders: { Origin: baseURL } })
+  let editorId: number | undefined, projectId: number | undefined, mediaId: number | undefined, scheduleId: number | undefined
   try {
-    const editorEmail = `qa-${unique}@example.invalid`
-    const editorPassword = randomBytes(24).toString('base64url')
-    const editorResponse = await request.post('/api/users', { data: { name: 'Akun QA lokal', email: editorEmail, password: editorPassword, role: 'editor' } })
-    expect(editorResponse.status()).toBe(201)
-    editorId = (await editorResponse.json()).doc.id
-    const editorLogin = await editorClient.post('/api/users/login', { data: { email: editorEmail, password: editorPassword } })
-    expect(editorLogin.ok()).toBe(true)
-    const escalate = await editorClient.patch(`/api/users/${editorId}`, { data: { role: 'admin' } })
-    expect(escalate.ok()).toBe(true)
-    expect((await escalate.json()).doc.role).toBe('editor')
-    const blockedUser = await editorClient.post('/api/users', { data: { name: 'Blocked', email: `blocked-${unique}@example.invalid`, password: editorPassword, role: 'admin' } })
-    expect(blockedUser.status()).toBe(403)
-    const png = await sharp({ create: { width: 100, height: 70, channels: 3, background: '#071a33' } }).png().toBuffer()
-    const upload = await editorClient.post('/api/media', { multipart: { _payload: JSON.stringify({ alt: 'Gambar pengujian lokal, bukan aset klien' }), file: { name: `qa-${unique}.png`, mimeType: 'image/png', buffer: png } } })
+    expect((await anonymous.get('/api/schedules')).status()).toBe(401)
+    expect((await anonymous.get('/api/contact-submissions')).status()).toBe(401)
+    expect((await anonymous.post('/api/projects', { data: {} })).status()).toBe(403)
+    const user = await request.post('/api/users', { data: { name: 'QA editor', email: `qa-${unique}@example.invalid`, password: `Test-${randomBytes(20).toString('hex')}`, role: 'editor' } })
+    expect(user.status()).toBe(201)
+    editorId = Number((await user.json()).doc.id)
+    const password = `Qa-${randomBytes(24).toString('hex')}`
+    await request.patch(`/api/users/${editorId}`, { data: { name: 'QA editor', email: `qa-${unique}@example.invalid`, password, role: 'editor' } })
+    expect((await editor.post('/api/users/login', { data: { email: `qa-${unique}@example.invalid`, password } })).status()).toBe(200)
+    expect((await editor.patch(`/api/users/${editorId}`, { data: { role: 'admin' } })).status()).toBe(403)
+    const png = await sharp({ create: { width: 120, height: 80, channels: 3, background: '#071a33' } }).png().toBuffer()
+    const upload = await editor.post('/api/media', { multipart: { alt: 'QA gambar pengujian', file: { name: `qa-${unique}.png`, mimeType: 'image/png', buffer: png } } })
     expect(upload.status()).toBe(201)
-    const media = (await upload.json()).doc
-    mediaId = media.id
-    expect(media.alt).toContain('pengujian')
-    const file = await publicClient.get(media.url)
-    expect(file.status()).toBe(200)
-    const invalidFile = await editorClient.post('/api/media', { multipart: { _payload: JSON.stringify({ alt: 'Invalid' }), file: { name: 'invalid.png', mimeType: 'image/png', buffer: Buffer.from('<script>invalid</script>') } } })
-    expect(invalidFile.status()).toBeGreaterThanOrEqual(400)
-    const created = await editorClient.post('/api/projects?draft=true', { data: {
-      title: 'Konsep pengujian lokal', slug: `qa-${unique}`, category: 'QA', excerpt: 'Demonstrasi lifecycle CMS lokal.',
-      challenge: 'Memastikan draft tidak terbuka untuk publik.', solution: 'Izin akses sisi server.', thumbnail: mediaId, isConcept: true, _status: 'draft',
-    } })
-    expect(created.status()).toBe(201)
-    projectId = (await created.json()).doc.id
-    let anonymous = await publicClient.get(`/api/projects?where[slug][equals]=qa-${unique}&draft=true`)
-    expect((await anonymous.json()).docs).toHaveLength(0)
+    const media = (await upload.json()).doc; mediaId = Number(media.id)
+    expect((await anonymous.get(media.url)).status()).toBe(200)
+    const bad = await editor.post('/api/media', { multipart: { alt: 'QA invalid', file: { name: 'bad.png', mimeType: 'image/png', buffer: Buffer.from('<script>bad</script>') } } })
+    expect(bad.status()).toBe(400)
+    const created = await editor.post('/api/projects', { data: { title: 'QA project lifecycle', slug: `qa-${unique}`, category: 'QA', excerpt: 'Pengujian CMS, bukan project klien.', challenge: 'Draft harus privat.', solution: 'Publikasi tervalidasi.', thumbnail: mediaId, gallery: [{ image: mediaId, caption: 'QA galeri' }], isConcept: true, _status: 'draft' } })
+    expect(created.status()).toBe(201); projectId = Number((await created.json()).doc.id)
+    expect((await (await anonymous.get(`/api/projects?where[slug][equals]=qa-${unique}&draft=true`)).json()).docs).toHaveLength(0)
     await page.goto(`/preview?collection=projects&id=${projectId}`)
-    await expect(page.locator('h1')).toContainText('Konsep pengujian lokal')
+    await expect(page.locator('h1')).toContainText('QA project lifecycle')
     await expect(page.locator('meta[name=robots]')).toHaveAttribute('content', /noindex/)
-    const published = await editorClient.patch(`/api/projects/${projectId}`, { data: { _status: 'published' } })
-    expect(published.ok()).toBe(true)
-    anonymous = await publicClient.get(`/api/projects?where[slug][equals]=qa-${unique}`)
-    expect((await anonymous.json()).docs).toHaveLength(1)
-    await page.goto(`/portofolio/qa-${unique}`)
-    await expect(page.locator('.detail-visual img')).toHaveAttribute('alt', 'Gambar pengujian lokal, bukan aset klien')
-    await expect(page.locator('.detail-visual img')).toBeVisible()
-    const draftUpdate = await editorClient.patch(`/api/projects/${projectId}?draft=true`, { data: { title: 'Draft perubahan privat', _status: 'draft' } })
-    expect(draftUpdate.ok()).toBe(true)
-    anonymous = await publicClient.get(`/api/projects?where[slug][equals]=qa-${unique}&draft=true`)
-    const visible = (await anonymous.json()).docs
-    expect(visible.length === 0 || visible.every((d: { title: string }) => d.title !== 'Draft perubahan privat')).toBe(true)
-    const noDelete = await editorClient.delete(`/api/projects/${projectId}`)
-    expect(noDelete.status()).toBe(403)
-    const privateContacts = await request.get('/api/contact-submissions')
-    expect(privateContacts.ok()).toBe(true)
-    const settingsResponse = await request.get('/api/globals/site-settings')
-    expect(settingsResponse.ok()).toBe(true)
-    const settings = await settingsResponse.json()
-    previousHero = typeof settings.heroImage === 'object' ? settings.heroImage?.id || null : settings.heroImage || null
-    const heroAlt = 'Gambar hero pengujian lokal'
-    const heroUpload = await request.post('/api/media', { multipart: { _payload: JSON.stringify({ alt: heroAlt }), file: { name: `qa-hero-${unique}.png`, mimeType: 'image/png', buffer: png } } })
-    expect(heroUpload.status()).toBe(201)
-    heroMediaId = (await heroUpload.json()).doc.id
-    const replaceHero = await request.post('/api/globals/site-settings', { data: { heroImage: heroMediaId } })
-    expect(replaceHero.ok()).toBe(true)
-    heroChanged = true
-    await page.goto('/')
-    await expect(page.locator('.hero-stage-image')).toHaveAttribute('alt', heroAlt)
-    await expect(page.locator('.hero-stage-image')).toBeVisible()
-    await expect(page.locator('.hero-concept-label')).toHaveCount(0)
-    const restoreHero = await request.post('/api/globals/site-settings', { data: { heroImage: previousHero } })
-    expect(restoreHero.ok()).toBe(true)
-    heroChanged = false
-    await page.goto('/admin/collections/services')
-    await expect(page.getByRole('link', { name: 'Website Development', exact: true }).first()).toBeVisible()
+    const published = await editor.patch(`/api/projects/${projectId}`, { data: { _status: 'published' } }); expect(published.status()).toBe(200)
+    expect((await (await anonymous.get(`/api/projects?where[slug][equals]=qa-${unique}`)).json()).docs).toHaveLength(1)
+    const stale = await editor.patch(`/api/projects/${projectId}`, { data: { revision: 1, title: 'Stale edit' } }); expect(stale.status()).toBe(409)
+    await editor.patch(`/api/projects/${projectId}`, { data: { title: 'QA private draft', _status: 'draft' } })
+    const visible = (await (await anonymous.get(`/api/projects?where[slug][equals]=qa-${unique}`)).json()).docs
+    expect(visible[0].title).toBe('QA project lifecycle')
+    expect((await editor.delete(`/api/projects/${projectId}`)).status()).toBe(403)
+    expect((await request.delete(`/api/media/${mediaId}`)).status()).toBe(409)
+    const history = await request.get(`/api/projects/${projectId}/revisions`); expect((await history.json()).docs.length).toBeGreaterThan(1)
+    await page.goto('/admin/schedules/new')
+    await page.getByLabel('Nama pekerjaan *', { exact: true }).fill(`QA scheduler ${unique}`)
+    await page.getByLabel('Penanggung jawab *', { exact: true }).selectOption({ label: 'Jaelani Surya Saputra' })
+    const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Jakarta', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date())
+    await page.getByLabel('Tanggal mulai *', { exact: true }).fill(today)
+    await page.getByLabel('Tenggat *', { exact: true }).fill(today)
+    await page.getByLabel('Catatan pekerjaan', { exact: true }).fill('Pengujian jadwal tersimpan, bukan pekerjaan klien.')
+    await page.getByRole('button', { name: 'Simpan perubahan', exact: true }).click()
+    await expect(page).toHaveURL(/\/admin\/schedules\/\d+$/)
+    scheduleId = Number(page.url().split('/').pop())
+    expect((await (await request.get(`/api/schedules/${scheduleId}`)).json()).title).toBe(`QA scheduler ${unique}`)
+    const invalidDates = await request.patch(`/api/schedules/${scheduleId}`, { data: { dueDate: '2001-01-01' } }); expect(invalidDates.status()).toBe(400)
+    await page.getByLabel('Status pekerjaan *', { exact: true }).selectOption('ditinjau')
+    await page.getByRole('button', { name: 'Simpan perubahan', exact: true }).click()
+    await expect.poll(async () => (await (await request.get(`/api/schedules/${scheduleId}`)).json()).status).toBe('ditinjau')
+    await page.goto('/admin/schedules')
+    await expect(page.locator('.studio-schedule-row')).toContainText(`QA scheduler ${unique}`)
+    await page.getByRole('button', { name: 'Bulan berikutnya' }).click()
+    await page.getByRole('button', { name: 'Hari ini', exact: true }).click()
+    await expect(page.locator('.studio-schedule-row')).toContainText(`QA scheduler ${unique}`)
+    await request.post(`/api/projects/${projectId}/unpublish`)
+    expect((await (await anonymous.get(`/api/projects?where[slug][equals]=qa-${unique}`)).json()).docs).toHaveLength(0)
   } finally {
-    if (heroChanged) await request.post('/api/globals/site-settings', { data: { heroImage: previousHero } })
+    if (scheduleId) await request.delete(`/api/schedules/${scheduleId}`)
     if (projectId) await request.delete(`/api/projects/${projectId}`)
     if (mediaId) await request.delete(`/api/media/${mediaId}`)
-    if (heroMediaId) await request.delete(`/api/media/${heroMediaId}`)
     if (editorId) await request.delete(`/api/users/${editorId}`)
-    await editorClient.dispose(); await publicClient.dispose()
+    await anonymous.dispose(); await editor.dispose()
+  }
+})
+
+
+test('project editor uploads and persists a gallery image without leaving the form', async ({ page, context }) => {
+  test.setTimeout(90000)
+  const baseURL = process.env.TEST_BASE_URL || 'http://localhost:3000'
+  await context.setExtraHTTPHeaders({ Origin: baseURL })
+  const login = await page.request.post('/api/users/login', { data: { email: process.env.BOOTSTRAP_ADMIN_EMAIL, password: process.env.BOOTSTRAP_ADMIN_PASSWORD } }); expect(login.status()).toBe(200)
+  let projectId: number | undefined, mediaId: number | undefined
+  try {
+    await page.goto('/admin/projects/new')
+    const unique = randomBytes(5).toString('hex')
+    await page.getByLabel('Judul *', { exact: true }).fill('QA galeri dari form')
+    await page.getByLabel('Alamat halaman (slug) *', { exact: true }).fill(`qa-gallery-${unique}`)
+    await page.getByLabel('Kategori *', { exact: true }).fill('QA')
+    await page.getByLabel('Ringkasan *', { exact: true }).fill('Pengujian unggah dari form project.')
+    await page.getByLabel('Kebutuhan project *', { exact: true }).fill('Simpan gambar dalam galeri.')
+    await page.getByLabel('Pendekatan solusi *', { exact: true }).fill('Unggah langsung dan simpan draft.')
+    await page.getByLabel('Project konsep', { exact: true }).check()
+    const gallery = page.getByRole('group', { name: 'Galeri project', exact: true })
+    await gallery.getByRole('button', { name: 'Tambah baris', exact: true }).click()
+    await gallery.locator('summary').click()
+    await gallery.getByLabel('Deskripsi gambar', { exact: true }).fill('QA unggahan dari galeri')
+    const png = await sharp({ create: { width: 200, height: 120, channels: 3, background: '#173551' } }).png().toBuffer()
+    await gallery.locator('input[type=file]').setInputFiles({ name: 'qa-gallery.png', mimeType: 'image/png', buffer: png })
+    await gallery.getByRole('button', { name: 'Unggah & gunakan gambar' }).click()
+    await expect(gallery.locator('.studio-media-field img')).toBeVisible()
+    mediaId = Number(await gallery.getByLabel('Gambar *', { exact: true }).inputValue())
+    expect(mediaId).toBeGreaterThan(0)
+    await gallery.getByLabel('Keterangan', { exact: true }).fill('Keterangan gambar pengujian.')
+    await page.getByRole('button', { name: 'Simpan perubahan', exact: true }).click()
+    await expect(page).toHaveURL(/\/admin\/projects\/\d+$/)
+    projectId = Number(page.url().split('/').pop())
+    const record = await (await page.request.get(`/api/projects/${projectId}?depth=0`)).json()
+    expect(record.gallery[0].image).toBe(mediaId)
+    expect(record.gallery[0].caption).toBe('Keterangan gambar pengujian.')
+    await page.setViewportSize({ width: 390, height: 844 })
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+    await page.getByRole('button', { name: 'Buka navigasi', exact: true }).click()
+    await expect(page.getByRole('navigation', { name: 'Navigasi Studio' })).toBeVisible()
+    await page.keyboard.press('Escape')
+    await expect(page.getByRole('button', { name: 'Buka navigasi' })).toHaveAttribute('aria-expanded', 'false')
+  } finally {
+    if (projectId) await page.request.delete(`/api/projects/${projectId}`)
+    if (mediaId) await page.request.delete(`/api/media/${mediaId}`)
   }
 })

@@ -1,51 +1,37 @@
-# Wasla UI/UX specification: final local correction scope
+# Wasla UI/UX specification: custom Studio and public refinement
 
-The final implementation retains [the Vodjo-led direction](vodjo-direction.md) and applies the owner's latest precise corrections: seven real websites, unboxed transparent 3D services, actual technology logos, restored colorful identity, four curved contacts, recipient selection and a huge last footer wordmark. [DESIGN.md](../DESIGN.md) owns current design tokens; [design-system.md](design-system.md) explains their application. Workflow is code-first with browser evidence; no approved Figma comp or comp gate is claimed.
+The latest approved owner direction replaces Payload with a custom navy/white Studio, actual rendered service geometry, responsive internal planning and manual content editing. Public visual continuity remains binding: Poppins, photographic hero, navy/white and real project screenshots. Current tokens are in [DESIGN.md](../DESIGN.md); application rules are in [design-system.md](design-system.md); scope is in [.impeccable/studio-direction.md](../.impeccable/studio-direction.md). No approved comp, new portraits or invented schedules are claimed.
 
-## Homepage journey
+## Public journey and routes
 
-Full-height photographic hero and consultation action -> layered wave -> seven real screenshot projects -> wave -> three navy service columns with transparent 3D objects -> wave -> branded illustrative device and expertise/process -> eight monochrome technology marks -> Ice contact directory and private consultation form -> eligible real testimonials only -> wave and footer information -> navigation/copyright -> huge final wasla with informatika below.
+Homepage: photographic proposition/action, real project gallery, three service scenes, navy-branded illustrative device and expertise, 24 official technology links, White people/consultation area, eligible testimonials and straight navy footer. Existing waves between selected sections remain; footer has no wave/seam. Header keeps left wordmark and ID marker, with right emblem removed. Public CTA surfaces are White; decorative text-link arrows/underlines are removed. The final footer signature is left-aligned lowercase wasla at opacity .08 with no subtitle, aria-hidden after readable brand/navigation/team/copyright/privacy/back-to-top.
 
-Workstation imagery is illustrative, not a claim about Wasla's office. Projects are actual public screenshots supplied by the owner, not generated site mockups. Featured home records are capped at eight; the current seven are Catatan Mengaji — SD Bani Saleh, IPNU Kota Bekasi, Batu Alam Supplier, Fazma Stone, Cimuning — E-Katalog, Mahameru Baja Indonesia and SIT Permata Hati Bekasi. Old concepts are private drafts. Do not invent project stack, metrics, testimonials, results or staff details. [Screenshot evidence](evidence/real-projects-2026-10-23.md) records permitted sources and observed limits.
-
-The colorful emblem is top-right in the header, used by favicon and the branded device; it is a raster restoration, not a bit-exact original. The technology strip shows PHP, Next.js, React, TypeScript, PostgreSQL, Payload CMS, JavaScript and Tailwind CSS actual marks. It describes studio capability, not the stack or endorsement of individual projects. The huge footer follows the owner's Jayszrs bottom-placement request while retaining Wasla navy/white and Poppins.
-
-## Routes and content
-
-| Route | Purpose |
+| Route | Current purpose |
 | --- | --- |
-| / | proposition, seven real projects, services, expertise/process, technology and direct consultation |
-| /tentang-kami | Navy masthead, CMS feature image/copy, principles/process, real team and CTA |
-| /layanan | Navy masthead, alternating transparent service-object/copy bands, detail links and native FAQ |
-| /layanan/[slug] | published scope, deliverables, authored visual, content/process and contact |
-| /portofolio | public label Project; real screenshot gallery, centered text category filters and accessible result/empty feedback |
-| /portofolio/[slug] | truthful project context, challenge/solution, actual external website, optional substantiated details/gallery |
-| /insights and /insights/[slug] | public label Artikel; published discovery and semantic reading |
-| /kontak | Navy masthead, four curved contact cards and private form with recipient/service selection |
-| /privasi | contact-data purpose and explicit private-save/WhatsApp handoff explanation |
-| /admin | authenticated Payload editing and administrator-controlled staff access |
+| / | proposition, seven real covers, actual service geometry, expertise, technologies, people and consultation |
+| /tentang-kami | masthead, CMS image/copy, White principles, full-width navy process, actual team and CTA |
+| /layanan and /layanan/[slug] | alternating geometry/copy bands and published service detail |
+| /portofolio and /portofolio/[slug] | public label Project, filters, truthful work context, external site and manual CMS gallery |
+| /insights and /insights/[slug] | public label Artikel, published discovery and semantic reading |
+| /kontak | four curved contact cards and private form with recipient/service selection |
+| /privasi | consultation data purpose and explicit WhatsApp handoff |
+| /admin | custom Wasla Studio dashboard and staff-only content operations |
+| /admin/schedules | private project calendar and agenda |
+| /preview | session-protected draft preview |
 
-Project/Artikel labels retain existing URLs. Missing or draft details are unavailable anonymously; public queries enforce publishing access. Testimonials require eligible approved content. Contact submissions stay private and there is no public administrator registration.
+Missing/draft public details are unavailable anonymously. Old concept projects remain private drafts. Current seven completed websites are Catatan Mengaji - SD Bani Saleh, IPNU Kota Bekasi, Batu Alam Supplier, Fazma Stone, Cimuning - E-Katalog, Mahameru Baja Indonesia and SIT Permata Hati Bekasi. Screenshot provenance is in [real-project evidence](evidence/real-projects-2026-10-23.md) and [gallery evidence](evidence/project-gallery-2026-10-23.md). Do not infer stacks, traffic or results. Hero workstation is illustrative, not a claimed office photograph.
 
-## Layout, focus and responsive behavior
+## Public interaction and responsive behavior
 
-Centered 1140px outer/1110px inner wrapper has 15px gutters. At 1199/991/767px caps become 960/750/570px; at 575px wrapper is fluid. Hero is 100svh with 700px minimum, 680px narrow. Hero type 50px becomes 45/39/36px at 991/767/575px; compact copy is 13px and body 14px. All use self-hosted Poppins. Full token and contextual type values are in DESIGN.md.
+Wrapper is 1140px outer/1110px inner with 15px gutters, capping at 960/750/570px at 1199/991/767px, fluid below 575px. Header is 82px initially, 64px after scroll, 86px initial mobile. At 991px native details navigation fills the screen; enhancement makes background inert, locks scroll, wraps Tab and closes on Escape, route or desktop resize with appropriate focus restoration. Static ID describes language. Public focus is 3px Blue with 5px offset; skip-to-main remains.
 
-Fixed header is 82px initial desktop, 64px after 80px scroll, and 86px initial mobile. Initial light text sits over dark hero/PageIntro, switching to White surface after scroll. At or below 991px the native details menu fills the screen; enhancement makes main/footer inert and hidden, locks background scroll, wraps Tab and closes on Escape with focus restoration, route selection or desktop resize. Static ID identifies language. Right-side emblem is 46px desktop/36px mobile. Global focus is 3px Blue with 5px offset; skip-to-main is available.
+Home projects use two columns/2px seams, seventh spans the row at ratio 2.3; below 767px all are one column at 16:9. Desktop overlays respond to hover/focus; narrow home titles remain visible and catalog titles appear once below the image. Portfolio filters use aria-pressed and accessible result/empty feedback; article filters remain capsules. Galleries retain original thumbnails separately, contain-sized screenshot rows, visible captions and full-viewport native-dialog enlargement. Previous/next, arrow keys, Escape, scroll lock, focus return and direct-file fallback remain available.
 
-Home projects use two columns/2px seams, with the odd seventh spanning the row at aspect ratio 2.3. Below 767px all stack at 16:9. Desktop overlays respond to hover/focus; narrow home titles remain visible while catalog titles appear once outside the image. Portfolio text filters use aria-pressed, 44px minimum height, 20px type/18px narrow, no border/radius, Slate inactive/Navy active and an underline. Count remains announced but visually clipped; empty feedback remains visible. Article filters retain capsules.
+Service scenes are real Three.js meshes with materials, environment, lights and shadows. Raster is only loading/WebGL fallback. Fine-pointer movement/scroll produces bounded orientation, drag and arrow keys rotate and Home resets. Touch starts with scrolling available and explicit Putar objek/Selesai memutar toggles. Reduced motion disables automatic orientation, retaining deliberate controls. Render on demand and dispose offscreen resources; no endless autoplay. Home height is 300px, 250px at 991px and 310px at 767px. Catalog height becomes 430/370/340/300px at desktop/1199/767/420px.
 
-Home services are three columns, one below 767px; transparent contained objects occupy 270px, 265px narrow, without enclosing panels. Technology uses eight columns, four at or below 1199px, with 52px marks/42px below 767px and visible captions. Contact cards use two columns/22px gaps, one column/16px below 767px. Their alternating radii are 65px 25px 65px 25px desktop and 50px 22px 50px 22px narrow. Dedicated Contact form fields remain one column; home fields use two until narrow. The floating directory link hides where contact cards are present. Footer information stacks narrow; the huge final wordmark scales with the viewport inside the wrapper.
+Homepage people use four cards, two columns below 991px and one centered column below 420px. Project Manager sorts first. Each front is a semantic button with actual Team photo or navy initials, name and role; click/Enter/Space opens biography/WhatsApp/return face. Inactive face is inert/aria-hidden; focus moves to WhatsApp and returns to the front. Flip transition is removed for reduced motion. Contact/About retain curved contact cards. No artificial coordinator tree or invented portraits remain.
 
-## Internal pages and service media
-
-PageIntro is centered White 54px H1 on Deep Navy, 42px below 767px, with 13px Light subtitle. Desktop content padding 145px/60px, wave 140px and following margin 85px become 112px/35px, 40px and 55px narrow. About pairs featureImage left/copy right, stacking image first.
-
-Service catalog extends to 1440px and alternates equal image/copy bands, gap 30px and spacing 65px. The media region has minimum 360px height, 30px horizontal padding and contained 390px images. Copy maximum is 555px; titles 36px/excerpts 13px. Below 767px image leads with 300px height/minimum 280px region, gap 25px, spacing 45px, title 28px and copy gutters 15px. Both homepage and catalog use transparent objects, replacing the former 2:1 cover panels. FAQ remains a native disclosure.
-
-CMS service illustration controls home; image controls catalog. Site Settings controls heroImage, featureImage, logoWhite, logoNavy and favicon. Projects own thumbnail/gallery and articles own image. Team owns names/roles/WhatsApp socials. Technology marks and footer emblem are packaged source assets. Uploads accept PNG/JPEG/WebP/AVIF; local maximum is 8 MB, Vercel server upload maximum is 4 MB with signature checks. [assets.md](assets.md) records provenance and replacement guidance. seed:real applies the explicit real-content migration and should not run as routine startup.
-
-## Contact flow and exact recipients
+## Contacts and private persistence
 
 | Name | Role | Direct destination |
 | --- | --- | --- |
@@ -54,14 +40,32 @@ CMS service illustration controls home; image controls catalog. Site Settings co
 | Alhafiz | Web Developer | https://wa.me/6289697505769 |
 | Laksa | Full Stack Engineering | https://wa.me/6289643092842 |
 
-Cards show the corresponding +62 phone and link directly to that person. Only valid wa.me Team URLs qualify. Form recipient defaults to Project Manager when available, otherwise the first qualifying record. Service query preselection is supported on Contact. Required fields are name/email, service or undecided choice, 20-5000-character need and consent; company/phone are optional, honeypot hidden. Visible labels, optional markers, inline errors, pending, connection failure and saved success remain distinct. Fields are White with 2px corners, minimum 46px and 11px 12px padding; textarea minimum is 128px. Recoverable errors preserve values and first server error receives focus.
+Team records drive qualifying valid wa.me destinations. Form defaults to Project Manager when available. Name/email, service or undecided option, 20-5000-character need and consent are required; company/phone optional. Origin/input/rate checks precede private PostgreSQL persistence. Recipient name/role is saved with the message. Success appears after persistence and exposes an explicit Lanjut ke WhatsApp action; the website never automatically sends the external message. Errors preserve values; pending, connection failure and saved success differ. No-script guidance points to direct contacts. No price, response deadline or guarantee is fabricated.
 
-POST /api/contact validates origin, JSON content type, request size, input, published service, chosen recipient and a database-backed rate limit before saving privately through Payload/PostgreSQL. Selected recipient name/role is prefixed to the persisted message. Success follows persistence; optional SMTP notification failure does not discard the saved record. Recipient-specific URL encoding includes supplied summary fields. After a successful save the visitor sees **Lanjut ke WhatsApp [name]** and must click it to open WhatsApp; no external message is automatically sent. No-script guidance directs visitors to the contact cards. No fabricated response deadline, price or guarantee appears.
+## Studio overview and navigation
 
-## Motion and final evidence
+Custom Wasla Studio has no Payload runtime. Desktop left wordmark/navigation, concise heading, closest real deadlines/new messages, database counts and recently updated projects support daily operations. Empty states explain the next action without fabricated activity. Navigation exposes content, media, messages, scheduler and authorized settings. User management/deletion is admin-only. Current roles/session/data rules are in [wasla-studio.md](wasla-studio.md).
 
-SSR content is visible. Eligible desktop normal-motion enhancement uses a skippable first-session 900ms backdrop clip, hero parallax capped at 72px, feature +/-28px and once-only below-fold 650ms reveals. Project hover scales 1.025; service hover lifts 8px/rotates Y -5 degrees. At or below 900px enhancements are static. Reduced motion removes animations, transforms and smooth scrolling. No-JS keeps content visible and native links/disclosures usable; JSON form submission needs JavaScript.
+Desktop sidebar is 238px, 210px at 1199px. Topbar is sticky at 78px; main caps at 1510px with 42px horizontal padding, 26px at 1199px. At 991px sidebar becomes a 250px overlay with scrim, shell offset disappears, topbar becomes 68px. At 767px main padding is 26px 18px 40px, overview stacks and table rows reflow to content/action pairs. Media library is four columns, three at 1199px and two narrow. Poppins body is 13px/1.65, H1 28px/1.35 and 24px narrow. Panels are White on Studio Ground; status text accompanies neutral/blue/green/amber fills. Keyboard focus is 3px Studio Focus with 3px offset.
 
-[Independent finish review](visual-review-real-projects.md) returned **ship**, with no material fixes, for the supplied final local screenshots and sampled implementation. This documenter checked desktop.png, mobile.png, services-1440-viewport.png and contact-390.png against final source. [Local validation](real-projects-validation.md) records successful build, TypeScript, ESLint, four unit tests, six browser tests and 36 route/width checks. Those results were read, not rerun here. The existing detector's 91 token/radius findings are advisory against the previous canon; this token refresh does not rerun the detector or claim a detector score/accessibility certification.
+## Editor and media operations
 
-Production uses authenticated account jaelanisuryasaputra10@gmail.com and project waslainformatika. Owner terms acceptance, Neon Free provisioning, migrations, admin/content/media bootstrap and staging runtime checks are complete. The tested deployment was promoted to https://waslainformatika.vercel.app. [Deployment operations](deployment.md) and [production verification](production-verification.md) own operational evidence; the independent visual ship verdict concerns the captured correction scope.
+Desktop editor uses flexible content plus sticky 270px save rail, 235px at 1199px. Below 767px it becomes one column with save controls before the form. Explicit dirty/pending/saved/error states, visible labels and inline validation remain. Draft edits preserve the live published version until explicit publish. Unpublish removes the public version without deleting draft/gallery. Staff-only draft preview and up to 20 revisions allow review; loading a revision creates a draft for review/save, not an automatic publish. Concurrent-tab revision conflict requires reloading current content.
+
+Article rich text is a Markdown-based textarea with documented headings, paragraphs, bold, italic, lists and links. It is not a WYSIWYG toolbar; legacy rich text is kept until edited. Gallery editing is manual: add a row, choose Media or expand inline upload, provide alt text, upload and use the image, enter caption, move with Naik/Turun and save/publish. No gallery automation or seed/capture occurs during normal editing. Existing three additional captures per project are initial migration data, not a maximum.
+
+Media upload accepts PNG/JPEG/WebP/AVIF up to 4 MB in production, validates decoded image data and stores WebP via server-side Blob access. Alt text is required. Token stays server-side. Existing media/IDs/references and original database tables are preserved in the migration to independent studio_* tables; Neon and Blob remain services. Admin/editor can manage content, media, schedules and message follow-up; only admin manages users and deletion. Legacy login verifies existing hashes then migrates to scrypt. HttpOnly sessions expire after eight hours. Private messages/schedules and draft preview require staff session.
+
+## Private project scheduler
+
+Calendar has month previous/next, today, status filter, date buttons and agenda. Creating work requires name, Team assignee, start and deadline; client, project ID and notes are optional. Due cannot precede start. Statuses are direncanakan, dikerjakan, ditinjau and selesai. Dates are WIB date-only. Edit reschedules; admin can delete.
+
+Desktop seven-column cells are at least 110px; narrow cells 66px show compact status marks, while agenda retains full title/date/assignee/status. Selected dates use aria-pressed and a blue inset boundary; current date has a navy marker. Empty month/day explains creating work. The scheduler is internal planning only: no automatic reminders, external calendar sync or automatic WhatsApp sends. Do not seed fictitious jobs to fill the calendar.
+
+## Verification and historical scope
+
+Current source and workflow were checked against Studio/public styles, frontend layout, workspace editor, service scenes and division cards. Nine browser tests pass; 24 admin and 36 public captures show no observed overflow/errors. Chrome touch emulation does not represent every physical device. Fresh review: [visual-review-studio.md](visual-review-studio.md).
+
+Stage READY at https://waslainformatika-nehon1bg1-jae-f2e1.vercel.app passed runtime verification; primary-domain promotion awaits visual review. Domain wasla.my.id is attached, but registrar session expiry prevented saving nameservers and current nameservers remain TTM Host. [Deployment](deployment.md) and [domain status](domain-wasla-my-id.md) own the next verification steps. Do not claim production promotion, DNS or HTTPS completion from local captures or this spec.
+
+Historical [motion review](visual-review-motion.md) and [refinement record](refinement-20261023.md) document the earlier Payload, raster-perspective, right-emblem, coordinator-tree and .14 centered-footer release. Those remain historical evidence, superseded by the owner's current contract.
