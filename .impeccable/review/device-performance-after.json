@@ -1,0 +1,40 @@
+{
+  "phase": "after",
+  "base": "http://localhost:3000",
+  "checkedAt": "2026-10-23T14:55:23.415Z",
+  "profile": {
+    "viewport": "390x844",
+    "cache": "disabled; fresh browser context each run",
+    "cpuSlowdown": 4,
+    "latencyMs": 80,
+    "downloadBytesPerSecond": 500000,
+    "uploadBytesPerSecond": 125000
+  },
+  "runs": [
+    {
+      "lcpMs": 2240,
+      "domContentLoadedMs": 3313,
+      "jsTransferBytes": 187332,
+      "webglCanvases": 0,
+      "overflow": false
+    },
+    {
+      "lcpMs": 1648,
+      "domContentLoadedMs": 2452,
+      "jsTransferBytes": 187332,
+      "webglCanvases": 0,
+      "overflow": false
+    },
+    {
+      "lcpMs": 1464,
+      "domContentLoadedMs": 2320,
+      "jsTransferBytes": 187332,
+      "webglCanvases": 0,
+      "overflow": false
+    }
+  ],
+  "median": {
+    "lcpMs": 1648,
+    "jsTransferBytes": 187332
+  }
+}

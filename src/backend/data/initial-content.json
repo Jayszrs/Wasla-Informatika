@@ -2741,7 +2741,7 @@
         "id": 4,
         "name": "Laksa",
         "role": "Full Stack Engineering",
-        "biography": "Hubungi Laksa untuk berdiskusi dengan divisi Full Stack Engineering Wasla Informatika.",
+        "biography": "Rekan diskusi untuk antarmuka aplikasi, backend, dan integrasi data dalam satu alur pengembangan.",
         "photo": 9004,
         "order": 3,
         "socials": [
@@ -2758,7 +2758,7 @@
         "id": 3,
         "name": "Al Hafiz",
         "role": "Web Developer",
-        "biography": "Hubungi Al Hafiz untuk berdiskusi dengan divisi Web Developer Wasla Informatika.",
+        "biography": "Rekan diskusi untuk pengembangan website, antarmuka yang responsif, dan pengelolaan konten web.",
         "photo": 9003,
         "order": 2,
         "socials": [
@@ -2775,7 +2775,7 @@
         "id": 2,
         "name": "Ahmad Suroso",
         "role": "Project Manager",
-        "biography": "Hubungi Ahmad Suroso untuk berdiskusi dengan divisi Project Manager Wasla Informatika.",
+        "biography": "Rekan diskusi untuk kebutuhan dan ruang lingkup project, koordinasi tim, serta rencana pengerjaan.",
         "photo": 9001,
         "order": 1,
         "socials": [
@@ -2792,7 +2792,7 @@
         "id": 1,
         "name": "Jaelani Surya Saputra",
         "role": "Software Engineering",
-        "biography": "Hubungi Jaelani Surya Saputra untuk berdiskusi dengan divisi Software Engineering Wasla Informatika.",
+        "biography": "Rekan diskusi untuk logika aplikasi, struktur perangkat lunak, dan pengembangan solusi sesuai kebutuhan project.",
         "photo": 9002,
         "order": 0,
         "socials": [

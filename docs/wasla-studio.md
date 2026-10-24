@@ -16,6 +16,10 @@ Buka **Pengaturan website → Paket website**. Setiap baris memuat nama, slug un
 
 Tombol paket membuka formulir berisi pilihan layanan dan ringkasan paket. Pengunjung masih meninjau, melengkapi identitas dan menyetujui penggunaan data sebelum mengirim. Fitur, jadwal, domain, hosting dan dukungan dibahas dalam penawaran.
 
+## Foto dan bio tim
+
+Buka **Tim & divisi**, pilih anggota, lalu isi **Tentang anggota** untuk bio dan gunakan **Foto profil → Unggah gambar** untuk mengganti foto. Simpan agar beranda dan Tentang diperbarui. Klik kartu menampilkan bio; klik lagi pada kartu mengembalikan profil. Tombol kembali terpisah sudah dihapus, sedangkan tautan WhatsApp tetap menjadi tindakan tersendiri. Keyboard memakai Enter/Space pada kartu, lalu Tab ke WhatsApp saat sisi bio terbuka. Tinggi kartu mengikuti isi bio.
+
 ## Scheduler project
 
 Tambah nama pekerjaan, penanggung jawab dari tim, tanggal mulai dan tenggat. Klien, ID project dan catatan opsional. Status: direncanakan, dikerjakan, ditinjau, selesai. Tenggat tidak dapat mendahului tanggal mulai. Kalender menampilkan rentang pekerjaan; pilih tanggal untuk agenda, gunakan filter status dan tombol bulan. Edit jadwal untuk menjadwal ulang. Administrator dapat menghapus jadwal.

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import type { Media, Project } from '@/shared/content-types'
 import { mediaSource } from '@/shared/media'
+import { DeviceScene } from './device-scene'
 
 type Screen = { src: string; alt: string; width: number; height: number }
 export function DeviceFrame({ image, device = 'laptop', priority = false }: { image: Screen; device?: 'laptop' | 'tablet' | 'phone'; priority?: boolean }) {
@@ -13,5 +14,16 @@ export function ProjectMockup({ project, priority = false }: { project: Project;
   const cover = typeof project.thumbnail === 'object' && project.thumbnail?.url ? project.thumbnail : null
   if (!cover) return null
   const mobile = project.gallery?.map(item => item.image).find((image): image is Media => typeof image === 'object' && !!image?.url && !!image.width && !!image.height && image.width / image.height < .8)
-  return <div className={`project-device-stage ${mobile ? 'has-mobile' : ''}`}><DeviceFrame image={screen(cover, `Tampilan desktop website ${project.title}`)} priority={priority}/>{mobile && <DeviceFrame device="phone" image={screen(mobile, `Tampilan mobile website ${project.title}`)}/>}</div>
+  const desktopScreen = screen(cover, `Tampilan desktop website ${project.title}`)
+  const mobileScreen = mobile ? screen(mobile, `Tampilan mobile website ${project.title}`) : undefined
+  return <DeviceScene spec={{ device: 'laptop', screen: desktopScreen, mobile: mobileScreen }} className={`project-device-stage ${mobile ? 'has-mobile' : ''}`}><DeviceFrame image={desktopScreen} priority={priority}/>{mobileScreen && <DeviceFrame device="phone" image={mobileScreen}/>}</DeviceScene>
+}
+
+export function GalleryDevice({ image, device }: { image: Screen; device: 'laptop' | 'tablet' | 'phone' }) {
+  return <DeviceScene spec={{ device, screen: image }} className={`gallery-device-stage ${device === 'phone' ? 'is-portrait' : ''}`}><DeviceFrame image={image} device={device}/></DeviceScene>
+}
+
+export function BrandPhone() {
+  const image = { src: '/images/brand/favicon-navy.png', alt: 'Wasla Informatika pada layar ponsel', width: 512, height: 512 }
+  return <DeviceScene className="brand-phone-stage" spec={{ device: 'phone', screen: image, brand: true }}><div className="brand-phone-fallback"><Image src={image.src} alt={image.alt} width={160} height={160}/><strong>wasla<span>informatika</span></strong></div></DeviceScene>
 }

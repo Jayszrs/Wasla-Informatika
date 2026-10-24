@@ -48,6 +48,8 @@ npm start
 
 Gambar divalidasi dan dikonversi menjadi WebP. Batas produksi 4 MB per gambar; lokal 8 MB. Di Vercel gambar baru disimpan di Blob, bukan filesystem sementara. Media yang masih digunakan tidak dapat dihapus.
 
+Mockup project dan galeri memakai model laptop/HP/tablet dengan screenshot CMS sebagai tekstur; bagian keahlian memakai HP 3D beridentitas Wasla. Runtime dimuat saat terlihat dan dilepas setelah keluar layar. Foto tim memakai ukuran gambar responsif. Hasil pengukuran arrival lokal dan batasnya dicatat pada [laporan performa perangkat](docs/device-performance.md).
+
 ## Verifikasi
 
 ```sh

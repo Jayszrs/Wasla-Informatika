@@ -1,0 +1,67 @@
+import 'dotenv/config'
+import { test, expect } from '@playwright/test'
+
+test('real textured devices load below the hero, react to movement and release offscreen renderers', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.emulateMedia({ reducedMotion: 'no-preference' })
+  await page.goto('/')
+  await expect(page.locator('.device3d-canvas')).toHaveCount(0)
+  const project = page.locator('.project-device-stage').first()
+  await project.scrollIntoViewIfNeeded()
+  const canvas = project.locator('canvas[data-rendered3d=true]')
+  await expect(canvas).toBeVisible({ timeout: 30000 })
+  await expect(canvas).toHaveAttribute('data-textured-screens', '2')
+  const before = await canvas.getAttribute('data-rotation')
+  await project.hover({ position: { x: 70, y: 70 } })
+  await expect.poll(() => canvas.getAttribute('data-rotation')).not.toBe(before)
+  expect(await page.locator('.device3d-canvas').count()).toBeLessThanOrEqual(4)
+  const phone = page.locator('.brand-phone-stage')
+  await phone.scrollIntoViewIfNeeded()
+  await expect(phone.locator('canvas[data-device3d=phone]')).toBeVisible({ timeout: 30000 })
+  await expect(project.locator('canvas')).toHaveCount(0)
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await expect.poll(() => phone.locator('canvas').getAttribute('data-rotation')).toBe('-0.110,-0.180')
+  await phone.hover({ position: { x: 70, y: 70 } })
+  expect(await phone.locator('canvas').getAttribute('data-rotation')).toBe('-0.110,-0.180')
+  await page.goto('/portofolio/catatan-mengaji-bani-saleh')
+  for (const stage of await page.locator('.gallery-device-stage').all()) {
+    await stage.scrollIntoViewIfNeeded()
+    await expect(stage.locator('canvas[data-rendered3d=true]')).toBeVisible({ timeout: 30000 })
+  }
+  await page.getByRole('link', { name: /^Perbesar gambar 1:/ }).click()
+  await expect(page.getByRole('dialog')).toBeVisible()
+  await page.keyboard.press('Escape')
+})
+
+test('same whole-card toggle works both ways and CMS bio/photo remain editable without clipping', async ({ page, context }) => {
+  const base = process.env.TEST_BASE_URL || 'http://localhost:3000'
+  await context.setExtraHTTPHeaders({ Origin: base })
+  const login = await page.request.post('/api/users/login', { data: { email: process.env.BOOTSTRAP_ADMIN_EMAIL, password: process.env.BOOTSTRAP_ADMIN_PASSWORD } })
+  expect(login.status()).toBe(200)
+  const members = (await (await page.request.get('/api/team?depth=0')).json()).docs
+  const member = members.find((person: { role: string }) => person.role === 'Project Manager')
+  const biography = 'Bio uji pengelolaan konten. '.repeat(18)
+  try {
+    const saved = await page.request.patch(`/api/team/${member.id}`, { data: { biography, photo: typeof member.photo === 'object' ? member.photo.id : member.photo, revision: member.revision } })
+    expect(saved.status()).toBe(200)
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/')
+    const card = page.locator('.division-flip-card').first(), toggle = card.locator('.division-card-toggle')
+    await toggle.click()
+    await expect(card).toHaveClass(/is-flipped/)
+    await expect(card.locator('.division-back p')).toHaveText(biography.trim())
+    expect(await card.locator('.division-back p').evaluate(el => el.scrollHeight <= el.clientHeight + 1)).toBe(true)
+    const link = card.getByRole('link', { name: 'Hubungi via WhatsApp' })
+    await link.scrollIntoViewIfNeeded()
+    expect(await link.evaluate(el => { const r=el.getBoundingClientRect(); return document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.closest('a')===el })).toBe(true)
+    await toggle.click()
+    await expect(card).not.toHaveClass(/is-flipped/)
+    await toggle.focus(); await page.keyboard.press('Enter'); await page.keyboard.press('Space')
+    await expect(card).not.toHaveClass(/is-flipped/)
+    await expect(card.locator('.division-back button')).toHaveCount(0)
+  } finally {
+    const latest = await (await page.request.get(`/api/team/${member.id}?depth=0`)).json()
+    const restored = await page.request.patch(`/api/team/${member.id}`, { data: { biography: member.biography, photo: typeof member.photo === 'object' ? member.photo.id : member.photo, revision: latest.revision } })
+    expect(restored.status()).toBe(200)
+  }
+})

@@ -10,6 +10,7 @@ import { pageMeta } from '@/frontend/lib/seo'
 import { DivisionStructure } from '@/frontend/components/division-structure'
 import { TechnologyLogos } from '@/frontend/components/technology-logos'
 import { teamContacts } from '@/shared/contacts'
+import { BrandPhone } from '@/frontend/components/device-mockup'
 
 export async function generateMetadata() {
   const s = await getSettings()
@@ -63,7 +64,7 @@ export default async function Home() {
     <WebsitePackages packages={settings.websitePackages}/>
 
     <section className="agency-feature wrap">
-      <div className="agency-feature-visual" data-parallax-feature><MediaImage media={settings.featureImage} className="agency-device-image"/><span className="illustration-note">Visual ilustrasi perangkat</span></div>
+      <div className="agency-feature-visual"><BrandPhone/></div>
       <div className="agency-feature-copy">
         <article><div className="feature-label"><span className="descriptor-icon"><Arrow diagonal/></span><h2>Keahlian kami</h2></div><div><h3>Desain yang terarah.<br/>Teknologi yang tepat guna.</h3><p>Website responsif, aplikasi web, e-commerce, desain UI/UX, pengelolaan konten, integrasi sistem, dan solusi IT. Kami menyatukan disiplin tersebut untuk membantu Anda membangun pengalaman digital yang berguna.</p></div></article>
         <article><div className="feature-label"><span className="descriptor-icon"><Arrow diagonal/></span><h2>Proses kami</h2></div><div><h3>Memahami kebutuhan,<br/>sebelum membangun solusi.</h3><p>Kita mulai dari tujuan bisnis dan pengguna, kemudian menyusun prioritas, merancang pengalaman, serta mengembangkan dan menguji secara bertahap. Setiap langkah dibahas bersama agar hasilnya mudah digunakan dan dikelola.</p><Link className="text-link" href="/tentang-kami">Kenali cara kami bekerja<Arrow diagonal/></Link></div></article>

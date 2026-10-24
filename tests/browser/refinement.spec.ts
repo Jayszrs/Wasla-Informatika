@@ -33,7 +33,7 @@ test('flip cards, plain public links, white CTA, technologies and project galler
   await trigger.focus(); await page.keyboard.press('Enter')
   await expect(card).toHaveClass(/is-flipped/)
   await expect(card.getByRole('link', { name: 'Hubungi via WhatsApp' })).toHaveAttribute('href', /^https:\/\/wa\.me\/62/)
-  await card.getByRole('button', { name: /^Kembali ke kartu/ }).click()
+  await card.getByRole('button', { name: /^Kembali ke profil/ }).click()
   await expect(card).not.toHaveClass(/is-flipped/)
   expect(await page.locator('.consultation-section').evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgb(255, 255, 255)')
   await page.goto('/portofolio')
