@@ -1,0 +1,21 @@
+{
+  "asset_type": "sourced-client-brand-mark",
+  "generated": false,
+  "source_url": "https://ngajiyuk.sdilbanisalehsetu.com/assets/images/logo.png",
+  "source_website": "https://ngajiyuk.sdilbanisalehsetu.com/",
+  "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+  "observed_at": "2026-10-25T16:18:48.626Z",
+  "input_dimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "output_dimensions": {
+    "width": 160,
+    "height": 160
+  },
+  "transformations": [
+    "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+  ],
+  "sha256": "b40178038be91906f5465e831de0850643e53fc4315192171f6585240f920cdb",
+  "bytes": 4924
+}

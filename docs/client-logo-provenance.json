@@ -1,0 +1,141 @@
+[
+  {
+    "id": "bani-saleh",
+    "path": "public/images/clients/bani-saleh.webp",
+    "asset_type": "sourced-client-brand-mark",
+    "generated": false,
+    "source_url": "https://ngajiyuk.sdilbanisalehsetu.com/assets/images/logo.png",
+    "source_website": "https://ngajiyuk.sdilbanisalehsetu.com/",
+    "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+    "observed_at": "2026-10-25T16:18:48.626Z",
+    "input_dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "output_dimensions": {
+      "width": 160,
+      "height": 160
+    },
+    "transformations": [
+      "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+    ],
+    "sha256": "b40178038be91906f5465e831de0850643e53fc4315192171f6585240f920cdb",
+    "bytes": 4924
+  },
+  {
+    "id": "ipnu-kota-bekasi",
+    "path": "public/images/clients/ipnu-kota-bekasi.webp",
+    "asset_type": "sourced-client-brand-mark",
+    "generated": false,
+    "source_url": "https://ipnubekasi.my.id/assets/logo-ipnu-ippnu-6sAIfPUn.png",
+    "source_website": "https://ipnubekasi.my.id/",
+    "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+    "observed_at": "2026-10-25T16:18:48.661Z",
+    "input_dimensions": {
+      "width": 744,
+      "height": 335
+    },
+    "output_dimensions": {
+      "width": 256,
+      "height": 115
+    },
+    "transformations": [
+      "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+    ],
+    "sha256": "716bc085d9ea9180c60ce0204c5b1d4e4b4d95e199e802d531fd9f1b62d8b3f2",
+    "bytes": 14016
+  },
+  {
+    "id": "fazma-stone",
+    "path": "public/images/clients/fazma-stone.webp",
+    "asset_type": "sourced-client-brand-mark",
+    "generated": false,
+    "source_url": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop/Y4LP6Z6M8GixaDgG/logo-fazmastone-hitam-Awv81WO8Raf2yKOZ.png",
+    "source_website": "https://www.fazmastone.com/",
+    "also_used_by": "https://www.batualamsupplier.com/images/fazmastone.avif",
+    "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+    "observed_at": "2026-10-25T16:18:48.683Z",
+    "input_dimensions": {
+      "width": 375,
+      "height": 375
+    },
+    "output_dimensions": {
+      "width": 160,
+      "height": 160
+    },
+    "transformations": [
+      "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+    ],
+    "sha256": "7e564e608b099edbe89b60a877de6d83e3001caa59c439d4c1c26a033b92cad3",
+    "bytes": 4114
+  },
+  {
+    "id": "cimuning",
+    "path": "public/images/clients/cimuning.webp",
+    "asset_type": "sourced-client-brand-mark",
+    "generated": false,
+    "source_url": "https://cimuning.com/assets/brand/logo-cimuning.png",
+    "source_website": "https://cimuning.com/",
+    "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+    "observed_at": "2026-10-25T16:18:48.711Z",
+    "input_dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "output_dimensions": {
+      "width": 160,
+      "height": 160
+    },
+    "transformations": [
+      "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+    ],
+    "sha256": "abb6f31f88a008d15faaebab9edc0d4677bb0a0b90d3655dc62557bd5133bf2d",
+    "bytes": 5534
+  },
+  {
+    "id": "mahameru-baja",
+    "path": "public/images/clients/mahameru-baja.webp",
+    "asset_type": "sourced-client-brand-mark",
+    "generated": false,
+    "source_url": "https://mahamerubaja.vercel.app/images/brand/mbi-laser.png",
+    "source_website": "https://mahamerubaja.vercel.app/",
+    "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+    "observed_at": "2026-10-25T16:18:48.798Z",
+    "input_dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "output_dimensions": {
+      "width": 160,
+      "height": 160
+    },
+    "transformations": [
+      "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+    ],
+    "sha256": "9bbd040ea47734104962f16d26afefe5a828e2ab08aead56983b403c4cc74603",
+    "bytes": 20604
+  },
+  {
+    "id": "sit-permata-hati",
+    "path": "public/images/clients/sit-permata-hati.webp",
+    "asset_type": "sourced-client-brand-mark",
+    "generated": false,
+    "source_url": "https://sitpermatahati.up.railway.app/frontend/assets/images/logo-sit-round.optimized.webp?v=1791794096",
+    "source_website": "https://sitpermatahati.up.railway.app/",
+    "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+    "observed_at": "2026-10-25T16:18:48.854Z",
+    "input_dimensions": {
+      "width": 1270,
+      "height": 1239
+    },
+    "output_dimensions": {
+      "width": 164,
+      "height": 160
+    },
+    "transformations": [
+      "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+    ],
+    "sha256": "ec810c1f7d4c2b7f19d2591ce525108ef648394e657416823da827c430af1950",
+    "bytes": 14710
+  }
+]

@@ -9,8 +9,10 @@ import { mediaSource } from '@/shared/media'
 import { teamContacts } from '@/shared/contacts'
 import { DivisionStructure } from './division-structure'
 import { ProjectMockup } from './device-mockup'
+import { withTranslation } from '@/frontend/lib/localize-tree'
+import type { Locale } from '@/shared/i18n'
 
-export function ButtonLink({
+function ButtonLinkBase({
   href,
   children,
   variant = '',
@@ -27,7 +29,7 @@ export function ButtonLink({
   )
 }
 
-export function TextLink({ href, children }: { href: string; children: React.ReactNode }) {
+function TextLinkBase({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Link className="text-link" href={href}>
       <span>{children}</span>
@@ -35,7 +37,7 @@ export function TextLink({ href, children }: { href: string; children: React.Rea
   )
 }
 
-export function PageIntro({ title, copy, children }: { title: string; copy: string; children?: React.ReactNode }) {
+function PageIntroBase({ title, copy, children }: { title: string; copy: string; children?: React.ReactNode }) {
   return (
     <section className="page-intro">
       <div className="wrap page-intro-content">
@@ -50,15 +52,15 @@ export function PageIntro({ title, copy, children }: { title: string; copy: stri
   )
 }
 
-export function Content({ data }: { data?: Service['content'] | null }) {
+function ContentBase({ data, locale }: { data?: Service['content'] | null; locale?: Locale }) {
   return data ? (
     <div className="prose">
-      <RichText data={data} />
+      <RichText data={data} locale={locale}/>
     </div>
   ) : null
 }
 
-export function MediaImage({ media, className = '', priority = false, sizes = '(max-width: 768px) 100vw, 65vw' }: { media?: number | Media | null; className?: string; priority?: boolean; sizes?: string }) {
+function MediaImageBase({ media, className = '', priority = false, sizes = '(max-width: 768px) 100vw, 65vw' }: { media?: number | Media | null; className?: string; priority?: boolean; sizes?: string }) {
   if (!media || typeof media !== 'object' || !media.url) return null
   return (
     <Image
@@ -73,9 +75,9 @@ export function MediaImage({ media, className = '', priority = false, sizes = '(
   )
 }
 
-export function ProjectImage({ project }: { project: Project }) {
+function ProjectImageBase({ project, locale }: { project: Project; locale?: Locale }) {
   return project.thumbnail && typeof project.thumbnail === 'object' && project.thumbnail.url ? (
-    <ProjectMockup project={project} />
+    <ProjectMockup project={project} locale={locale}/>
   ) : project.isConcept ? (
     <ConceptVisual variant={project.visual} />
   ) : (
@@ -83,11 +85,11 @@ export function ProjectImage({ project }: { project: Project }) {
   )
 }
 
-export function ProjectCard({ project }: { project: Project }) {
+function ProjectCardBase({ project, locale }: { project: Project; locale?: Locale }) {
   return (
     <article className="project-card ft-work-item">
       <Link className="project-image ft-work-media" href={`/portofolio/${project.slug}`} aria-label={`Lihat ${project.title}`}>
-        <ProjectImage project={project} />
+        <ProjectImage project={project} locale={locale}/>
         {project.isConcept && <span className="concept-tag">Konsep Eksplorasi</span>}
         <div className="project-overlay" aria-hidden="true"><span>{project.category}</span><strong>{project.title}</strong><span className="project-view">Lihat project</span></div>
       </Link>
@@ -102,7 +104,7 @@ export function ProjectCard({ project }: { project: Project }) {
   )
 }
 
-export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
+function PostCardBase({ post, index = 0, locale = 'id' }: { post: Post; index?: number; locale?: Locale }) {
   return (
     <article className="post-card">
       <Link href={`/insights/${post.slug}`} className={`post-image post-art-${index % 3}`} aria-label={`Baca ${post.title}`}>
@@ -117,7 +119,7 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
         </span>
       </Link>
       <p className="post-meta">
-        {new Date(post.publishedAt).toLocaleDateString('id-ID', {
+        {new Date(post.publishedAt).toLocaleDateString(locale === 'en' ? 'en-GB' : 'id-ID', {
           day: 'numeric',
           month: 'long',
           year: 'numeric',
@@ -132,7 +134,7 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
   )
 }
 
-export function ServiceRow({ service }: { service: Service; index?: number }) {
+function ServiceRowBase({ service }: { service: Service; index?: number }) {
   return (
     <article className="service-row our-service-item">
       <div className="service-row-image"><ServiceScene service={service.slug}/></div>
@@ -145,7 +147,7 @@ export function ServiceRow({ service }: { service: Service; index?: number }) {
   )
 }
 
-export function CTA({ title = 'Langkah berikutnya, kita mulai bersama.' }: { title?: string }) {
+function CTABase({ title = 'Langkah berikutnya, kita mulai bersama.' }: { title?: string }) {
   return (
     <section className="final-cta">
       <div className="wrap">
@@ -162,7 +164,7 @@ export function CTA({ title = 'Langkah berikutnya, kita mulai bersama.' }: { tit
   )
 }
 
-export function Process() {
+function ProcessBase() {
   return (
     <section className="process-section"><div className="wrap">
       <div className="section-heading text-center">
@@ -187,11 +189,11 @@ export function Process() {
   )
 }
 
-export function TeamSection({ members, showAboutLink = true }: { members: Team[]; showAboutLink?: boolean }) {
+function TeamSectionBase({ members, showAboutLink = true }: { members: Team[]; showAboutLink?: boolean }) {
   return <section className="team-section wrap"><DivisionStructure contacts={teamContacts(members)} members={members}/>{showAboutLink && <TextLink href="/tentang-kami">Mengenal Wasla</TextLink>}</section>
 }
 
-export function FAQSection({ items }: { items: { id: number; question: string; answer: string }[] }) {
+function FAQSectionBase({ items }: { items: { id: number; question: string; answer: string }[] }) {
   return (
     <section className="faq-section wrap">
       <div>
@@ -215,3 +217,17 @@ export function FAQSection({ items }: { items: { id: number; question: string; a
     </section>
   )
 }
+
+export const ButtonLink = withTranslation(ButtonLinkBase)
+export const TextLink = withTranslation(TextLinkBase)
+export const PageIntro = withTranslation(PageIntroBase)
+export const Content = withTranslation(ContentBase)
+export const MediaImage = withTranslation(MediaImageBase)
+export const ProjectImage = withTranslation(ProjectImageBase)
+export const ProjectCard = withTranslation(ProjectCardBase)
+export const PostCard = withTranslation(PostCardBase)
+export const ServiceRow = withTranslation(ServiceRowBase)
+export const CTA = withTranslation(CTABase)
+export const Process = withTranslation(ProcessBase)
+export const TeamSection = withTranslation(TeamSectionBase)
+export const FAQSection = withTranslation(FAQSectionBase)

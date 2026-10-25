@@ -1,5 +1,7 @@
 import { Fragment, type ReactNode } from 'react'
 import { validPublicLink } from '@/shared/validation'
+import type { Locale } from '@/shared/i18n'
+import { localizeTree } from '@/frontend/lib/localize-tree'
 type Node = { type?: string; text?: string; format?: number | string; tag?: string; url?: string; fields?: { url?: string }; children?: Node[]; listType?: string }
 function render(node: Node, index: number): ReactNode {
   const children = node.children?.map(render)
@@ -21,4 +23,4 @@ function render(node: Node, index: number): ReactNode {
   if (node.type === 'paragraph') return <p key={index}>{children}</p>
   return <Fragment key={index}>{children}</Fragment>
 }
-export function RichText({ data }: { data: unknown }) { const root = (data as { root?: Node })?.root; return root ? <>{root.children?.map(render)}</> : null }
+export function RichText({ data, locale = 'id' }: { data: unknown; locale?: Locale }) { const root = (data as { root?: Node })?.root; return root ? localizeTree(<>{root.children?.map(render)}</>, locale) : null }

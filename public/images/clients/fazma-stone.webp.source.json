@@ -1,0 +1,22 @@
+{
+  "asset_type": "sourced-client-brand-mark",
+  "generated": false,
+  "source_url": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop/Y4LP6Z6M8GixaDgG/logo-fazmastone-hitam-Awv81WO8Raf2yKOZ.png",
+  "source_website": "https://www.fazmastone.com/",
+  "also_used_by": "https://www.batualamsupplier.com/images/fazmastone.avif",
+  "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+  "observed_at": "2026-10-25T16:18:48.683Z",
+  "input_dimensions": {
+    "width": 375,
+    "height": 375
+  },
+  "output_dimensions": {
+    "width": 160,
+    "height": 160
+  },
+  "transformations": [
+    "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+  ],
+  "sha256": "7e564e608b099edbe89b60a877de6d83e3001caa59c439d4c1c26a033b92cad3",
+  "bytes": 4114
+}

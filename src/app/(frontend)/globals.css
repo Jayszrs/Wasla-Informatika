@@ -763,11 +763,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 @media (max-width: 991px) {.agency-feature-copy h2 { font-size: 22px; } }
 @media (prefers-reduced-motion: reduce) { .device3d-canvas, .device3d-stage > .device-frame, .device3d-stage > .brand-phone-fallback { transition: none; } }
 
-.package-decks {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 64px;
-}
 .homepage-projects { gap: 48px 32px; }
 .homepage-projects .project-caption { display: flex; }
 .project-links {
@@ -790,7 +785,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 }
 .project-links a:hover { color: var(--slate); }
 @media(max-width:767px) {
-  .package-decks { grid-template-columns: 1fr; gap: 52px; }
   .homepage-projects { gap: 36px 20px; }
   .homepage-projects .project-caption h3 { font-size: 16px; }
   .project-caption { flex-wrap: wrap; }

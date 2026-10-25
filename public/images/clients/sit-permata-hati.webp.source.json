@@ -1,0 +1,21 @@
+{
+  "asset_type": "sourced-client-brand-mark",
+  "generated": false,
+  "source_url": "https://sitpermatahati.up.railway.app/frontend/assets/images/logo-sit-round.optimized.webp?v=1791794096",
+  "source_website": "https://sitpermatahati.up.railway.app/",
+  "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+  "observed_at": "2026-10-25T16:18:48.854Z",
+  "input_dimensions": {
+    "width": 1270,
+    "height": 1239
+  },
+  "output_dimensions": {
+    "width": 164,
+    "height": 160
+  },
+  "transformations": [
+    "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+  ],
+  "sha256": "ec810c1f7d4c2b7f19d2591ce525108ef648394e657416823da827c430af1950",
+  "bytes": 14710
+}

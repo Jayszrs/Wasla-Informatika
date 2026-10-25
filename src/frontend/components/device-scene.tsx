@@ -1,5 +1,7 @@
 'use client'
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useId, useRef, type ReactNode } from 'react'
+import { useLocale } from './locale-provider'
+import styles from './device-scene.module.css'
 
 export type DeviceScreen = { src: string; alt: string; width: number; height: number }
 export type DeviceKind = 'laptop' | 'tablet' | 'phone'
@@ -8,6 +10,9 @@ export type DeviceSceneController = { dispose(): void; setVisible(visible: boole
 
 export function DeviceScene({ spec, className, children }: { spec: DeviceSceneSpec; className: string; children: ReactNode }) {
   const host = useRef<HTMLDivElement>(null)
+  const locale = useLocale()
+  const hintId = useId()
+  const hint = locale === 'en' ? 'Drag to rotate ? arrow keys ? Home to reset' : 'Geser untuk memutar ? tombol panah ? Home untuk reset'
   const serialized = JSON.stringify(spec)
   useEffect(() => {
     const spec = JSON.parse(serialized) as DeviceSceneSpec
@@ -50,5 +55,5 @@ export function DeviceScene({ spec, className, children }: { spec: DeviceSceneSp
     prewarm.observe(element); observer.observe(element)
     return () => { disposed = true; clearTimeout(retry); if (idle !== undefined) window.cancelIdleCallback(idle); controller?.dispose(); observer.disconnect(); prewarm.disconnect() }
   }, [serialized])
-  return <div ref={host} className={`${className} device3d-stage`} data-device-kind={spec.device}>{children}</div>
+  return <div ref={host} className={`${className} device3d-stage ${styles.interactive}`} data-device-kind={spec.device} role="group" aria-label={locale === 'en' ? 'Interactive 3D device preview' : 'Pratinjau perangkat 3D interaktif'} aria-describedby={hintId}>{children}<span className={styles.hint} id={hintId} aria-hidden="true">{hint}</span></div>
 }

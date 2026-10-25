@@ -1,0 +1,8 @@
+﻿.interactive[data-device-ready='true'] { cursor: grab; touch-action: pan-y; }
+.interactive[data-device-dragging='true'] { cursor: grabbing; }
+.interactive:focus-visible { outline: 2px solid #1f4a76; outline-offset: 5px; border-radius: 12px; }
+.hint { position: absolute; bottom: 9px; left: 50%; transform: translateX(-50%); z-index: 2; max-width: calc(100% - 24px); width: max-content; padding: 5px 9px; border-radius: 6px; background: rgb(255 255 255 / .95); color: #3e526a; font-size: 10px; line-height: 1.5; text-align: center; pointer-events: none; opacity: 0; transition: opacity .18s ease-out; }
+.interactive[data-device-ready='true']:hover .hint, .interactive:focus-visible .hint, a:focus-visible > .interactive .hint { opacity: 1; }
+.interactive[data-device-dragging='true'] .hint { opacity: 0; }
+@media (hover: none), (pointer: coarse) { .hint { display: none; }.interactive[data-device-ready='true'] { cursor: auto; } }
+@media (prefers-reduced-motion: reduce) { .hint { transition: none; } }

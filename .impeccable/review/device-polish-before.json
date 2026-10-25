@@ -1,0 +1,49 @@
+{
+  "phase": "before",
+  "base": "http://localhost:3007",
+  "checkedAt": "2026-10-25T16:08:11.739Z",
+  "results": [
+    {
+      "name": "laptop",
+      "width": 1440,
+      "rotation": "-0.128,-0.180",
+      "detail": null,
+      "overflow": false
+    },
+    {
+      "name": "tablet",
+      "width": 1440,
+      "rotation": "-0.110,-0.180",
+      "detail": null,
+      "overflow": false
+    },
+    {
+      "name": "phone",
+      "width": 1440,
+      "rotation": "-0.110,-0.180",
+      "detail": null,
+      "overflow": false
+    },
+    {
+      "name": "laptop",
+      "width": 390,
+      "rotation": "-0.110,-0.180",
+      "detail": null,
+      "overflow": false
+    },
+    {
+      "name": "tablet",
+      "width": 390,
+      "rotation": "-0.110,-0.180",
+      "detail": null,
+      "overflow": false
+    },
+    {
+      "name": "phone",
+      "width": 390,
+      "rotation": "-0.131,-0.180",
+      "detail": null,
+      "overflow": false
+    }
+  ]
+}

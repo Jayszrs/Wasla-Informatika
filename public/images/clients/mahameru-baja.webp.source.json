@@ -1,0 +1,21 @@
+{
+  "asset_type": "sourced-client-brand-mark",
+  "generated": false,
+  "source_url": "https://mahamerubaja.vercel.app/images/brand/mbi-laser.png",
+  "source_website": "https://mahamerubaja.vercel.app/",
+  "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+  "observed_at": "2026-10-25T16:18:48.798Z",
+  "input_dimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "output_dimensions": {
+    "width": 160,
+    "height": 160
+  },
+  "transformations": [
+    "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+  ],
+  "sha256": "9bbd040ea47734104962f16d26afefe5a828e2ab08aead56983b403c4cc74603",
+  "bytes": 20604
+}

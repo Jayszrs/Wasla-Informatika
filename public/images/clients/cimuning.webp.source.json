@@ -1,0 +1,21 @@
+{
+  "asset_type": "sourced-client-brand-mark",
+  "generated": false,
+  "source_url": "https://cimuning.com/assets/brand/logo-cimuning.png",
+  "source_website": "https://cimuning.com/",
+  "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+  "observed_at": "2026-10-25T16:18:48.711Z",
+  "input_dimensions": {
+    "width": 512,
+    "height": 512
+  },
+  "output_dimensions": {
+    "width": 160,
+    "height": 160
+  },
+  "transformations": [
+    "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+  ],
+  "sha256": "abb6f31f88a008d15faaebab9edc0d4677bb0a0b90d3655dc62557bd5133bf2d",
+  "bytes": 5534
+}

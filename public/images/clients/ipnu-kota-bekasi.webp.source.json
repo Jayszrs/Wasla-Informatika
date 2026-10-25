@@ -1,0 +1,21 @@
+{
+  "asset_type": "sourced-client-brand-mark",
+  "generated": false,
+  "source_url": "https://ipnubekasi.my.id/assets/logo-ipnu-ippnu-6sAIfPUn.png",
+  "source_website": "https://ipnubekasi.my.id/",
+  "permission_basis": "The website owner requested logos from their existing portfolio websites for the homepage project-work section.",
+  "observed_at": "2026-10-25T16:18:48.661Z",
+  "input_dimensions": {
+    "width": 744,
+    "height": 335
+  },
+  "output_dimensions": {
+    "width": 256,
+    "height": 115
+  },
+  "transformations": [
+    "Aspect-preserving downscale to fit 256x160; WebP encoding; brand artwork unchanged."
+  ],
+  "sha256": "716bc085d9ea9180c60ce0204c5b1d4e4b4d95e199e802d531fd9f1b62d8b3f2",
+  "bytes": 14016
+}

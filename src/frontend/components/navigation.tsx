@@ -5,12 +5,16 @@ import { useRef, useState, useEffect } from 'react'
 import type { Navigation, SiteSetting } from '@/shared/content-types'
 import { validPublicLink } from '@/shared/validation'
 import { Arrow } from './icons'
+import { Translation, useLocale } from './locale-provider'
+import { localizedPath, withoutLocale } from '@/shared/i18n'
 
 export function NavigationBar({ navigation }: { settings: SiteSetting; navigation: Navigation }) {
   const pathname = usePathname()
+  const locale = useLocale()
+  const plainPath = withoutLocale(pathname)
   const menu = useRef<HTMLDetailsElement>(null)
   const [scrolled, setScrolled] = useState(false)
-  const onHome = pathname === '/'
+  const onHome = plainPath === '/'
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 80)
     update()
@@ -32,20 +36,23 @@ export function NavigationBar({ navigation }: { settings: SiteSetting; navigatio
   }, [pathname])
 
   return (
-    <header className={`site-header ${onHome ? 'header-home' : 'header-inner-page'} ${scrolled ? 'header-scrolled' : ''}`}>
+    <Translation><header className={`site-header ${onHome ? 'header-home' : 'header-inner-page'} ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="header-inner wrap">
         <Link className="brand" href="/" onClick={close} aria-label="Wasla Informatika, beranda">
           <span>wasla<span className="brand-sub">informatika</span><span className="brand-period">.</span></span>
         </Link>
         <nav className="desktop-nav" aria-label="Navigasi utama">
           {links.map(l => (
-            <Link key={l.id || l.href} href={l.href} aria-current={pathname.startsWith(l.href) ? 'page' : undefined}>
+            <Link key={l.id || l.href} href={l.href} aria-current={plainPath.startsWith(l.href) ? 'page' : undefined}>
               <span>{l.label}</span>
             </Link>
           ))}
           {!links.some(l => l.href === '/kontak') && <Link href="/kontak">Kontak</Link>}
         </nav>
-        <span className="header-language" aria-label="Bahasa Indonesia">ID</span>
+        <a className="header-language" href={localizedPath(plainPath, locale === 'id' ? 'en' : 'id')} hrefLang={locale === 'id' ? 'en' : 'id'} lang={locale === 'id' ? 'en' : 'id'} aria-label={locale === 'id' ? 'Switch to English' : 'Beralih ke Bahasa Indonesia'} onClick={event => {
+          const target = localizedPath(window.location.pathname + window.location.search + window.location.hash, locale === 'id' ? 'en' : 'id')
+          event.currentTarget.href = target
+        }}>{locale === 'id' ? 'EN' : 'ID'}</a>
         <details
           ref={menu}
           className="mobile-menu"
@@ -76,7 +83,7 @@ export function NavigationBar({ navigation }: { settings: SiteSetting; navigatio
           <nav aria-label="Navigasi mobile">
             <span className="menu-wordmark" aria-hidden="true">wasla<span>informatika</span></span>
             {links.map(l => (
-              <Link key={l.id || l.href} onClick={close} href={l.href} aria-current={pathname.startsWith(l.href) ? 'page' : undefined}>
+              <Link key={l.id || l.href} onClick={close} href={l.href} aria-current={plainPath.startsWith(l.href) ? 'page' : undefined}>
                 {l.label}
               </Link>
             ))}
@@ -86,6 +93,6 @@ export function NavigationBar({ navigation }: { settings: SiteSetting; navigatio
           </nav>
         </details>
       </div>
-    </header>
+    </header></Translation>
   )
 }
