@@ -30,6 +30,9 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: { type: 'website', locale: 'id_ID', siteName: 'Wasla Informatika', images: ['/opengraph-image'] },
     twitter: { card: 'summary_large_image' }, robots: { index: true, follow: true },
     icons: { icon: favicon ? mediaSource(favicon) : '/images/brand/favicon-navy.png', apple: '/images/brand/favicon-navy.png' },
+    verification: {
+      google: 'google344ce5cab166309d',
+    },
   }
 }
 export default async function Layout({ children }: { children: React.ReactNode }) {
