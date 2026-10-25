@@ -3,6 +3,40 @@ import assert from 'node:assert/strict'
 import { contactSchema, validPublicLink, validWhatsApp } from '../src/shared/validation'
 import { whatsappMessage } from '../src/shared/contacts'
 import { databaseConnectionString } from '../src/backend/database-connection'
+import { publicBlobSource, mediaSource } from '../src/shared/media'
+import { expand, findMediaByFilename } from '../src/backend/content'
+import { pool } from '../src/backend/database'
+
+test('media CDN sources only allow credential-free HTTPS Vercel Blob origins', () => {
+  assert.equal(publicBlobSource('https://store.public.blob.vercel-storage.com/studio/photo.webp'), 'https://store.public.blob.vercel-storage.com/studio/photo.webp')
+  for (const source of [null, '/api/media/file/photo.webp', 'http://store.public.blob.vercel-storage.com/a', 'https://store.public.blob.vercel-storage.com.evil.invalid/a', 'https://user:pass@store.public.blob.vercel-storage.com/a', 'javascript:alert(1)']) assert.equal(publicBlobSource(source), undefined)
+  assert.equal(mediaSource('https://wasla.my.id/api/media/file/photo.webp'), '/api/media/file/photo.webp')
+  assert.equal(mediaSource('https://store.public.blob.vercel-storage.com/a'), 'https://store.public.blob.vercel-storage.com/a')
+})
+
+test('media expansion reads only referenced IDs, skips text-only content, and parameterizes filename lookup', async () => {
+  const originalQuery = pool.query
+  const queries: { sql: string; values: unknown[] }[] = []
+  pool.query = (async (sql: string, values: unknown[]) => {
+    queries.push({ sql, values })
+    return { rows: [{ id: '12', data: { filename: 'photo.webp', alt: 'Portrait', url: '/api/media/file/photo.webp' } }] }
+  }) as typeof pool.query
+  try {
+    const plain = { title: 'Text only', socials: [{ label: 'Website' }] }
+    assert.deepEqual(await expand(plain), plain)
+    assert.equal(queries.length, 0)
+    const expanded = await expand({ photo: 12, gallery: [{ image: 12 }, { image: 99 }], order: 77 })
+    assert.equal(queries.length, 1)
+    assert.match(queries[0].sql, /id=ANY\(\$1::bigint\[\]\)/)
+    assert.deepEqual(queries[0].values, [[12, 99]])
+    assert.equal((expanded.photo as unknown as { id: number }).id, 12)
+    assert.equal(expanded.gallery[1].image, null)
+    assert.equal(expanded.order, 77)
+    await findMediaByFilename("photo.webp' OR true--")
+    assert.deepEqual(queries[1].values, ["photo.webp' OR true--"])
+    assert.doesNotMatch(queries[1].sql, /OR true/)
+  } finally { pool.query = originalQuery }
+})
 
 test('database TLS mode is explicit without weakening certificate verification', () => {
   for (const mode of ['prefer', 'require', 'verify-ca', 'verify-full']) assert.equal(new URL(databaseConnectionString(`postgresql://user:password@db.example.invalid/db?sslmode=${mode}`)!).searchParams.get('sslmode'), 'verify-full')

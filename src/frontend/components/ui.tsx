@@ -97,7 +97,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </h3>
         <span>{project.category}</span>
       </div>
-      {project.externalLink?.startsWith('https://') && <a className="project-live" href={project.externalLink} target="_blank" rel="noopener noreferrer" aria-label={`Buka website ${project.title}`}>Kunjungi website</a>}
+      <div className="project-links"><Link href={`/portofolio/${project.slug}`}>Lihat project</Link>{project.externalLink?.startsWith('https://') && <a className="project-live" href={project.externalLink} target="_blank" rel="noopener noreferrer" aria-label={`Buka website ${project.title}`}>Kunjungi website</a>}</div>
     </article>
   )
 }

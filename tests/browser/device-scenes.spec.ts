@@ -1,7 +1,17 @@
 import 'dotenv/config'
 import { test, expect } from '@playwright/test'
 
-test('real textured devices load below the hero, react to movement and release offscreen renderers', async ({ page }) => {
+test('real textured devices share one GPU context and retain the same frame across scrolling', async ({ page }) => {
+  await page.addInitScript(() => {
+    const original = HTMLCanvasElement.prototype.getContext
+    const contexts = new Set<RenderingContext>()
+    HTMLCanvasElement.prototype.getContext = function (this: HTMLCanvasElement, ...args: Parameters<typeof original>) {
+      const context = original.apply(this, args)
+      if (context && /webgl/.test(args[0])) contexts.add(context)
+      Reflect.set(window, '__webglContexts', contexts.size)
+      return context
+    } as typeof original
+  })
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.emulateMedia({ reducedMotion: 'no-preference' })
   await page.goto('/')
@@ -17,14 +27,18 @@ test('real textured devices load below the hero, react to movement and release o
   const before = await canvas.getAttribute('data-rotation')
   await project.hover({ position: { x: 70, y: 70 } })
   await expect.poll(() => canvas.getAttribute('data-rotation')).not.toBe(before)
-  expect(await page.locator('.device3d-canvas').count()).toBeLessThanOrEqual(4)
+  expect(await page.evaluate(() => Reflect.get(window, '__webglContexts'))).toBe(1)
+  const originalCanvas = await canvas.elementHandle()
+  if (!originalCanvas) throw Error('Rendered device canvas unavailable')
   const phone = page.locator('.brand-phone-stage')
   await phone.scrollIntoViewIfNeeded()
   await expect(phone.locator('canvas[data-device3d=phone]')).toBeVisible({ timeout: 30000 })
-  await expect(project.locator('canvas')).toHaveCount(0)
-  await expect(project).toHaveAttribute('data-device-poster', 'true')
+  await expect(canvas).toBeAttached()
+  await expect(project).toHaveAttribute('data-device-ready', 'true')
   await project.scrollIntoViewIfNeeded()
-  await expect(project.locator('.device3d-poster')).toBeVisible()
+  await expect(project.locator('.device3d-poster')).toHaveCount(0)
+  expect(await canvas.evaluate((element, original) => element === original, originalCanvas)).toBe(true)
+  expect(await page.evaluate(() => Reflect.get(window, '__webglContexts'))).toBe(1)
   await expect(project.locator('canvas[data-rendered3d=true]')).toBeVisible({ timeout: 30000 })
   await phone.scrollIntoViewIfNeeded()
   await expect(phone.locator('canvas[data-rendered3d=true]')).toBeVisible({ timeout: 30000 })
@@ -37,6 +51,7 @@ test('real textured devices load below the hero, react to movement and release o
     await stage.scrollIntoViewIfNeeded()
     await expect(stage.locator('canvas[data-rendered3d=true]')).toBeVisible({ timeout: 30000 })
   }
+  expect(await page.evaluate(() => Reflect.get(window, '__webglContexts'))).toBe(1)
   await page.getByRole('link', { name: /^Perbesar gambar 1:/ }).click()
   await expect(page.getByRole('dialog')).toBeVisible()
   await page.keyboard.press('Escape')

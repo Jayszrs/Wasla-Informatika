@@ -1,0 +1,243 @@
+{
+  "results": [
+    {
+      "file": ".impeccable/review/stacked-packages-front-1440.png",
+      "selector": ".website-packages",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-packages-back-1440.png",
+      "selector": ".website-packages",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-project-links-1440.png",
+      "selector": ".project-card:first-child",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-brand-phone-1440.png",
+      "selector": ".agency-feature",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-service-1440.png",
+      "selector": ".service-row:first-child",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-detail-1440.png",
+      "selector": ".detail-visual",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-gallery-dialog-1440.png",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-packages-front-390.png",
+      "selector": ".website-packages",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-packages-back-390.png",
+      "selector": ".website-packages",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-project-links-390.png",
+      "selector": ".project-card:first-child",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-brand-phone-390.png",
+      "selector": ".agency-feature",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-service-390.png",
+      "selector": ".service-row:first-child",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-detail-390.png",
+      "selector": ".detail-visual",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-gallery-dialog-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-packages-front-736.png",
+      "selector": ".website-packages",
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-packages-back-736.png",
+      "selector": ".website-packages",
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-project-links-736.png",
+      "selector": ".project-card:first-child",
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-brand-phone-736.png",
+      "selector": ".agency-feature",
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-service-736.png",
+      "selector": ".service-row:first-child",
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-packages-front-1024.png",
+      "selector": ".website-packages",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-packages-back-1024.png",
+      "selector": ".website-packages",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-project-links-1024.png",
+      "selector": ".project-card:first-child",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-brand-phone-1024.png",
+      "selector": ".agency-feature",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "file": ".impeccable/review/stacked-service-1024.png",
+      "selector": ".service-row:first-child",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "overflow": false,
+      "broken": 0
+    }
+  ],
+  "errors": []
+}

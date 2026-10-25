@@ -3,11 +3,12 @@ import { randomUUID } from 'node:crypto'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import sharp from 'sharp'
-import { put, head, del } from '@vercel/blob'
+import { put, del } from '@vercel/blob'
 import { cookies } from 'next/headers'
 import { pool } from './database'
 import { currentUser, createSession, hashPassword, verifyPassword, sameOrigin, sessionCookie, tokenHash } from './auth'
 import { listDocuments, saveDocument, getGlobal } from './content'
+import { publicMediaFile, invalidatePublicContent } from './public-content'
 import { studioSchema, editorialCollections, contentCollections } from '../shared/studio-schema'
 import { validateDocument } from './content-validation'
 const json = (data: unknown, status = 200) => Response.json(data, { status, headers: { 'Cache-Control': 'no-store' } })
@@ -53,19 +54,15 @@ async function upload(request: Request, actor: string) {
     const directory = path.resolve(process.env.MEDIA_DIR || 'media'); await fs.mkdir(directory, { recursive: true }); await fs.writeFile(path.join(directory, filename), buffer.data)
   }
   const doc = await saveDocument('media', { alt, caption: String(form.get('caption') || ''), filename, mimeType: 'image/webp', filesize: buffer.data.length, width: buffer.info.width, height: buffer.info.height, url: `/api/media/file/${filename}`, ...(blobURL ? { blobURL } : {}) }, actor)
+  invalidatePublicContent('media')
   return json({ doc }, 201)
 }
 async function mediaFile(filename: string) {
   if (!/^[a-zA-Z0-9._-]+$/.test(filename)) return json({ error: 'Gambar tidak ditemukan.' }, 404)
-  const media = (await listDocuments('media', true, false)).find(d => d.filename === filename || (d.sizes as { card?: { filename?: string } })?.card?.filename === filename)
-  if (!media) return json({ error: 'Gambar tidak ditemukan.' }, 404)
-  if (process.env.BLOB_READ_WRITE_TOKEN && (process.env.VERCEL === '1' || process.env.USE_VERCEL_BLOB === 'true')) {
-    const url = typeof media.blobURL === 'string' ? media.blobURL : (await head([media.prefix, filename].filter(Boolean).join('/'))).url
-    if (!/^https:\/\/[a-zA-Z0-9-]+\.public\.blob\.vercel-storage\.com\//.test(url)) throw new Error('Invalid media origin')
-    const response = await fetch(url)
-    if (!response.ok) return json({ error: 'Gambar belum tersedia.' }, 404)
-    return new Response(response.body, { headers: { 'Content-Type': response.headers.get('content-type') || 'image/webp', 'Cache-Control': 'public,max-age=86400,immutable', 'X-Content-Type-Options': 'nosniff' } })
-  }
+  const resolved = await publicMediaFile(filename)
+  if (!resolved) return json({ error: 'Gambar tidak ditemukan.' }, 404)
+  const { media, source } = resolved
+  if (source) return new Response(null, { status: 307, headers: { Location: source, 'Cache-Control': 'public,max-age=300', 'X-Content-Type-Options': 'nosniff' } })
   const buffer = await fs.readFile(path.join(path.resolve(process.env.MEDIA_DIR || 'media'), filename))
   return new Response(buffer, { headers: { 'Content-Type': String(media.mimeType || 'image/webp'), 'Cache-Control': 'public,max-age=86400,immutable', 'X-Content-Type-Options': 'nosniff' } })
 }
@@ -75,6 +72,7 @@ export async function studioAPI(request: Request, segments: string[]) {
     if (!['GET', 'HEAD'].includes(method) && !sameOrigin(request)) return json({ error: 'Asal permintaan tidak diizinkan.' }, 403)
     const [collection, action, extra] = segments
     if (collection === 'users' && action === 'login' && method === 'POST') return await login(request)
+    if (collection === 'media' && action === 'file' && extra && method === 'GET') return await mediaFile(extra)
     const user = await currentUser()
     if (collection === 'users' && action === 'me' && method === 'GET') return user ? json({ user }) : json({ error: 'Silakan masuk.' }, 401)
     if (collection === 'users' && action === 'logout' && method === 'POST') {
@@ -82,7 +80,6 @@ export async function studioAPI(request: Request, segments: string[]) {
       if (token) await pool.query(`DELETE FROM studio_sessions WHERE hash=$1`, [tokenHash(token)])
       jar.delete(sessionCookie); return json({ success: true })
     }
-    if (collection === 'media' && action === 'file' && extra && method === 'GET') return await mediaFile(extra)
     if (collection === 'globals' && ['site-settings', 'navigation'].includes(action)) {
       if (method === 'GET') return json(await getGlobal(action as 'site-settings', !user || new URL(request.url).searchParams.get('depth') !== '0'))
       if (!user) return json({ error: 'Silakan masuk.' }, 401)
@@ -90,6 +87,7 @@ export async function studioAPI(request: Request, segments: string[]) {
       const body = JSON.parse(Buffer.from(await readBody(request, 512000)).toString())
       const parsed = validateDocument(action, body, true); if (parsed.error) return json({ error: parsed.error }, 400)
       const result = await pool.query(`UPDATE studio_globals SET data=data||$2::jsonb,revision=revision+1,updated_at=now() WHERE slug=$1 AND ($3::integer IS NULL OR revision=$3) RETURNING data,revision`, [action, parsed.data, body.revision || null])
+      if (result.rowCount) invalidatePublicContent(action)
       return result.rowCount ? json({ ...result.rows[0].data, revision: result.rows[0].revision }) : json({ error: 'Konten telah diubah. Muat ulang sebelum menyimpan.' }, 409)
     }
     if (!studioSchema[collection] || studioSchema[collection].global) return json({ error: 'Halaman tidak ditemukan.' }, 404)
@@ -124,7 +122,7 @@ export async function studioAPI(request: Request, segments: string[]) {
     }
     if (!user) return json({ error: 'Silakan masuk.' }, 401)
     if (id && extra === 'unpublish' && method === 'POST' && editorialCollections.includes(collection)) {
-      await pool.query(`UPDATE studio_documents SET published=NULL,data=jsonb_set(data,'{_status}','"draft"'),revision=revision+1,updated_at=now() WHERE collection=$1 AND id=$2`, [collection, id]); return json({ success: true })
+      await pool.query(`UPDATE studio_documents SET published=NULL,data=jsonb_set(data,'{_status}','"draft"'),revision=revision+1,updated_at=now() WHERE collection=$1 AND id=$2`, [collection, id]); invalidatePublicContent(collection); return json({ success: true })
     }
     if (method === 'DELETE') {
       if (user.role !== 'admin') return json({ error: 'Hanya administrator yang dapat menghapus konten.' }, 403)
@@ -139,7 +137,7 @@ export async function studioAPI(request: Request, segments: string[]) {
         const media = (await listDocuments('media', true, false)).find(d => d.id === id)
         if (media?.blobURL && process.env.BLOB_READ_WRITE_TOKEN) await del(String(media.blobURL))
       }
-      await pool.query(`DELETE FROM studio_documents WHERE collection=$1 AND id=$2`, [collection, id]); return json({ success: true })
+      await pool.query(`DELETE FROM studio_documents WHERE collection=$1 AND id=$2`, [collection, id]); invalidatePublicContent(collection); return json({ success: true })
     }
     if (collection === 'media' && method === 'POST' && !id) return await upload(request, user.email)
     if (!['POST', 'PATCH'].includes(method) || method === 'PATCH' && !id) return json({ error: 'Metode tidak didukung.' }, 405)
@@ -151,6 +149,7 @@ export async function studioAPI(request: Request, segments: string[]) {
     const parsed = validateDocument(collection, candidate)
     if (parsed.error) return json({ error: parsed.error }, 400)
     const doc = await saveDocument(collection, collection === 'contact-submissions' ? { status: parsed.data?.status } : parsed.data!, user.email, id, body.revision)
+    invalidatePublicContent(collection)
     return json({ doc }, id ? 200 : 201)
   } catch (error) {
     const message = error instanceof Error ? error.message : ''

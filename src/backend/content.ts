@@ -1,13 +1,26 @@
 import type { Media, Project, Service, Post, Team, Faq, Testimonial, ContactSubmission, SiteSetting, Navigation } from '@/shared/content-types'
 import { pool } from './database'
 import { editorialCollections } from '../shared/studio-schema'
+import { publicBlobSource } from '@/shared/media'
 export type ContentMap = { media: Media; projects: Project; services: Service; posts: Post; team: Team; faqs: Faq; testimonials: Testimonial; 'contact-submissions': ContactSubmission }
 export type Doc = Record<string, unknown> & { id: number; revision?: number; updatedAt?: string; createdAt?: string }
 type Row = { id: string; data: Record<string, unknown>; published: Record<string, unknown> | null; revision: number; updated_at: Date; created_at: Date }
 const mediaFields = new Set(['image', 'thumbnail', 'illustration', 'photo', 'heroImage', 'featureImage', 'favicon', 'logoWhite', 'logoNavy'])
 export async function expand<T>(value: T): Promise<T> {
-  const media = await pool.query<Row>(`SELECT * FROM studio_documents WHERE collection='media'`)
-  const map = new Map(media.rows.map(row => [Number(row.id), { ...row.data, id: Number(row.id) }]))
+  const ids = new Set<number>()
+  function collect(input: unknown, key = '') {
+    if (mediaFields.has(key) && typeof input === 'number') ids.add(input)
+    else if (Array.isArray(input)) input.forEach(item => collect(item))
+    else if (input && typeof input === 'object') Object.entries(input).forEach(([k, v]) => collect(v, k))
+  }
+  collect(value)
+  if (!ids.size) return value
+  const media = await pool.query<Pick<Row, 'id' | 'data'>>(`SELECT id,data FROM studio_documents WHERE collection='media' AND id=ANY($1::bigint[])`, [[...ids]])
+  const useBlob = process.env.VERCEL === '1' || process.env.USE_VERCEL_BLOB === 'true'
+  const map = new Map(media.rows.map(row => {
+    const source = useBlob ? publicBlobSource(row.data.blobURL) : undefined
+    return [Number(row.id), { ...row.data, ...(source ? { url: source } : {}), id: Number(row.id) }]
+  }))
   function walk(input: unknown, key = ''): unknown {
     if (mediaFields.has(key) && typeof input === 'number') return map.get(input) || null
     if (Array.isArray(input)) return input.map(item => walk(item))
@@ -15,6 +28,11 @@ export async function expand<T>(value: T): Promise<T> {
     return input
   }
   return walk(value) as T
+}
+export async function findMediaByFilename(filename: string): Promise<Doc | null> {
+  const result = await pool.query<Pick<Row, 'id' | 'data'>>(`SELECT id,data FROM studio_documents WHERE collection='media' AND (data->>'filename'=$1 OR data->'sizes'->'card'->>'filename'=$1) LIMIT 1`, [filename])
+  const row = result.rows[0]
+  return row ? { ...row.data, id: Number(row.id) } : null
 }
 export async function listDocuments(collection: string, staff = false, resolve = true): Promise<Doc[]> {
   const editorial = editorialCollections.includes(collection)

@@ -1,0 +1,165 @@
+[
+  {
+    "arrivalMs": 3342,
+    "errors": [],
+    "longTasks": [
+      163,
+      857,
+      166,
+      71,
+      50,
+      53,
+      718,
+      98,
+      453,
+      567,
+      157,
+      53,
+      370,
+      592,
+      189,
+      134,
+      137,
+      54,
+      187,
+      62,
+      420
+    ],
+    "contexts": 5,
+    "lost": 0,
+    "resources": 110,
+    "bytes": 1324022,
+    "images": [
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fipnubekasi.webp&w=640&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fipnubekasi-mobile.webp&w=256&q=75"
+      },
+      {
+        "ready": true,
+        "url": "data:image/webp;base64,UklGRpghAABXRUJQVlA4WAoAAAAwAAAAZwEA4AAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fbatu-alam-supplier.webp&w=640&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fbatu-alam-supplier-mobile.webp&w=256&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Ffazmastone.webp&w=640&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Ffazmastone-mobile.webp&w=256&q=75"
+      },
+      {
+        "ready": true,
+        "url": "data:image/webp;base64,UklGRkQZAABXRUJQVlA4WAoAAAAwAAAAZwEA4AAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fcimuning.webp&w=640&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fcimuning-mobile.webp&w=256&q=75"
+      },
+      {
+        "ready": true,
+        "url": "data:image/webp;base64,UklGRlweAABXRUJQVlA4WAoAAAAwAAAAZwEA4AAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "ready": true,
+        "url": "data:image/webp;base64,UklGRt4bAABXRUJQVlA4WAoAAAAwAAAAZwEA4AAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "arrivalMs": 3061,
+    "errors": [],
+    "longTasks": [
+      76,
+      338,
+      66,
+      232,
+      218,
+      282,
+      78,
+      83,
+      93,
+      584,
+      250,
+      57,
+      129,
+      81,
+      67,
+      70,
+      287,
+      113,
+      284,
+      117
+    ],
+    "contexts": 9,
+    "lost": 0,
+    "resources": 116,
+    "bytes": 1422260,
+    "images": [
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fipnubekasi.webp&w=640&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fipnubekasi-mobile.webp&w=256&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fbatu-alam-supplier.webp&w=640&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fbatu-alam-supplier-mobile.webp&w=256&q=75"
+      },
+      {
+        "ready": true,
+        "url": "data:image/webp;base64,UklGRoIVAABXRUJQVlA4WAoAAAAwAAAAZwEA4AAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Ffazmastone.webp&w=640&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Ffazmastone-mobile.webp&w=256&q=75"
+      },
+      {
+        "ready": true,
+        "url": "data:image/webp;base64,UklGRkQZAABXRUJQVlA4WAoAAAAwAAAAZwEA4AAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fcimuning.webp&w=640&q=75"
+      },
+      {
+        "ready": true,
+        "url": "http://localhost:3000/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fcimuning-mobile.webp&w=256&q=75"
+      },
+      {
+        "ready": true,
+        "url": "data:image/webp;base64,UklGRlweAABXRUJQVlA4WAoAAAAwAAAAZwEA4AAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      {
+        "ready": true,
+        "url": "data:image/webp;base64,UklGRt4bAABXRUJQVlA4WAoAAAAwAAAAZwEA4AAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    ],
+    "overflow": false
+  }
+]

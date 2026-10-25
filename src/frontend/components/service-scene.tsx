@@ -12,28 +12,27 @@ export function ServiceScene({ service, variant = 0, dark = false }: { service?:
   useEffect(() => {
     if (!host.current) return
     const element: HTMLDivElement = host.current
-    let cancelled = false, generation = 0, teardown: (() => void) | undefined
+    let cancelled = false, visible = false, creating = false, generation = 0, teardown: (() => void) | undefined, resume: (() => void) | undefined
     async function create() {
+      if (creating || teardown || cancelled) return
+      creating = true
       const current = ++generation
+      let abortCreate: (() => void) | undefined
       try {
-        const [T, { RoundedBoxGeometry }, { RoomEnvironment }] = await Promise.all([import('three'), import('three/addons/geometries/RoundedBoxGeometry.js'), import('three/addons/environments/RoomEnvironment.js')])
+        const [T, { RoundedBoxGeometry }, { createSceneSurface, reducedMotionPreference }] = await Promise.all([import('three'), import('three/addons/geometries/RoundedBoxGeometry.js'), import('../lib/scene-surface')])
         if (cancelled || current !== generation) return
-        const renderer = new T.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' })
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); renderer.setClearColor(0, 0)
-        renderer.shadowMap.enabled = true; renderer.shadowMap.type = T.PCFSoftShadowMap
-        renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.3
+        const surface = createSceneSurface()
         const scene = new T.Scene(), camera = new T.PerspectiveCamera(34, 1, .1, 40)
         camera.position.set(0, .35, 8); camera.lookAt(0, 0, 0)
-        const pmrem = new T.PMREMGenerator(renderer), room = new RoomEnvironment()
-        const environment = pmrem.fromScene(room, .04); scene.environment = environment.texture; room.dispose(); pmrem.dispose()
         const model = new T.Group(); scene.add(model)
-        const ivory = new T.MeshStandardMaterial({ color: '#edf1f4', roughness: .27, metalness: .3 }), navy = new T.MeshStandardMaterial({ color: '#0b2545', roughness: .26, metalness: .42 }), blue = new T.MeshStandardMaterial({ color: '#9fbdd9', roughness: .3, metalness: .25 }), silver = new T.MeshStandardMaterial({ color: '#a9b9c9', roughness: .2, metalness: .75 })
-        const light = new T.DirectionalLight('#ffffff', 4); light.position.set(-3, 5, 5); light.castShadow = true; light.shadow.mapSize.set(512, 512); scene.add(light); scene.add(new T.AmbientLight('#b9cce0', .8))
+        abortCreate = () => { scene.traverse(object => { if (object instanceof T.Mesh) { object.geometry.dispose(); const materials = Array.isArray(object.material) ? object.material : [object.material]; materials.forEach(material => material.dispose()) } }); surface.dispose(); delete element.dataset.ready }
+        const ivory = new T.MeshStandardMaterial({ color: '#edf1f4', roughness: .27, metalness: .3 }), navy = new T.MeshStandardMaterial({ color: '#0b2545', roughness: .26, metalness: .42 }), blue = new T.MeshStandardMaterial({ color: '#9fbdd9', roughness: .3, metalness: .25 }), silver = new T.MeshStandardMaterial({ color: '#a9b9c9', roughness: .3, metalness: .5 })
+        const light = new T.DirectionalLight('#ffffff', 4); light.position.set(-3, 5, 5); scene.add(light); scene.add(new T.HemisphereLight('#ffffff', '#60758a', 2.4))
         const rim = new T.DirectionalLight('#b9d4f4', 3); rim.position.set(4, 1, -2); scene.add(rim)
         function box(parent: import('three').Group, size: [number, number, number], position: [number, number, number], material = ivory, radius = .08) {
-          const mesh = new T.Mesh(new RoundedBoxGeometry(...size, 3, radius), material); mesh.position.set(...position); mesh.castShadow = true; mesh.receiveShadow = true; parent.add(mesh); return mesh
+          const mesh = new T.Mesh(new RoundedBoxGeometry(...size, 2, radius), material); mesh.position.set(...position); parent.add(mesh); return mesh
         }
-        function ball(parent: import('three').Group, radius: number, position: [number, number, number], material = blue) { const mesh = new T.Mesh(new T.SphereGeometry(radius, 24, 16), material); mesh.position.set(...position); mesh.castShadow = true; parent.add(mesh); return mesh }
+        function ball(parent: import('three').Group, radius: number, position: [number, number, number], material = blue) { const mesh = new T.Mesh(new T.SphereGeometry(radius, 24, 16), material); mesh.position.set(...position); parent.add(mesh); return mesh }
         function cylinder(parent: import('three').Group, radius: number, depth: number, position: [number, number, number], material = ivory, facing = false) {
           const mesh = new T.Mesh(new T.CylinderGeometry(radius, radius, depth, 40), material)
           if (facing) mesh.rotation.x = Math.PI / 2
@@ -151,34 +150,40 @@ export function ServiceScene({ service, variant = 0, dark = false }: { service?:
           cylinder(pen, .12, 1.88, [0, 0, 0], navy); cylinder(pen, .125, .26, [0, .64, 0], silver)
           const tip = new T.Mesh(new T.ConeGeometry(.12, .37, 24), silver); tip.rotation.z = Math.PI; tip.position.y = -1.12; pen.add(tip)
         }
-        light.shadow.normalBias = .03; light.shadow.radius = 3
-        const canvas = renderer.domElement; canvas.setAttribute('role', 'img'); canvas.setAttribute('aria-label', `${serviceVisualLabels[visual]}. Gunakan tombol panah untuk memutar saat area ini difokuskan.`); canvas.tabIndex = 0; canvas.dataset.rendered3d = 'true'; canvas.dataset.serviceVisual = visual; element.appendChild(canvas); element.dataset.ready = 'true'
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)'), fine = window.matchMedia('(hover:hover) and (pointer:fine)')
+        const canvas = surface.canvas; canvas.setAttribute('role', 'img'); canvas.setAttribute('aria-label', `${serviceVisualLabels[visual]}. Gunakan tombol panah untuk memutar saat area ini difokuskan.`); canvas.tabIndex = 0; canvas.dataset.serviceVisual = visual; element.appendChild(canvas)
+        const reduce = reducedMotionPreference(), fine = window.matchMedia('(hover:hover) and (pointer:fine)')
         let frame = 0, rotationX = -.1, rotationY = -.35, targetX = rotationX, targetY = rotationY, drag: { x: number; y: number } | null = null, frames = 0
         function draw() {
-          frame = 0; if (cancelled) return
+          frame = 0; if (cancelled || !visible || document.hidden) return
           rotationX += (targetX - rotationX) * (reduce.matches ? 1 : .15); rotationY += (targetY - rotationY) * (reduce.matches ? 1 : .15)
-          model.rotation.set(rotationX, rotationY, 0); renderer.render(scene, camera)
-          if (++frames < 70 && (Math.abs(targetX - rotationX) > .001 || Math.abs(targetY - rotationY) > .001)) frame = requestAnimationFrame(draw)
+          model.rotation.set(rotationX, rotationY, 0); if (!surface.render(scene, camera, 1.3)) return; canvas.dataset.rendered3d = 'true'; canvas.dataset.rotation = `${rotationX.toFixed(3)},${rotationY.toFixed(3)}`; element.dataset.ready = 'true'
+          if (++frames < 45 && (Math.abs(targetX - rotationX) > .001 || Math.abs(targetY - rotationY) > .001)) frame = requestAnimationFrame(draw)
         }
-        function render() { frames = 0; if (!frame) frame = requestAnimationFrame(draw) }
-        function resize() { const rect = element.getBoundingClientRect(); renderer.setSize(rect.width, rect.height); camera.aspect = rect.width / rect.height; camera.position.z = camera.aspect < .95 ? 9.3 : 8; camera.updateProjectionMatrix(); render() }
-        function scroll() { if (reduce.matches || !fine.matches || drag) return; const rect = element.getBoundingClientRect(); const progress = Math.max(-1, Math.min(1, (innerHeight / 2 - rect.top - rect.height / 2) / innerHeight)); targetX = -.1 + progress * .25; model.position.y = progress * .16; render() }
+        function render() { frames = 0; if (!frame && visible && !document.hidden) frame = requestAnimationFrame(draw) }
+        function resize() { const rect = element.getBoundingClientRect(); surface.resize(rect.width, rect.height); camera.aspect = rect.width / rect.height; camera.position.z = camera.aspect < .95 ? 9.3 : 8; camera.updateProjectionMatrix(); render() }
+        function scroll() { if (!visible || reduce.matches || !fine.matches || drag) return; const rect = element.getBoundingClientRect(); const progress = Math.max(-1, Math.min(1, (innerHeight / 2 - rect.top - rect.height / 2) / innerHeight)); targetX = -.1 + progress * .25; model.position.y = progress * .16; render() }
         function pointerdown(event: PointerEvent) { if (!fine.matches && !active.current) return; drag = { x: event.clientX, y: event.clientY }; canvas.setPointerCapture(event.pointerId); canvas.focus({ preventScroll: true }) }
         function pointermove(event: PointerEvent) {
-          if (drag) { targetY += (event.clientX - drag.x) * .012; targetX = Math.max(-.7, Math.min(.7, targetX + (event.clientY - drag.y) * .008)); drag = { x: event.clientX, y: event.clientY }; render() }
+          if (drag) { targetY = Math.max(-.9, Math.min(.65, targetY + (event.clientX - drag.x) * .008)); targetX = Math.max(-.7, Math.min(.7, targetX + (event.clientY - drag.y) * .008)); drag = { x: event.clientX, y: event.clientY }; render() }
           else if (fine.matches && !reduce.matches) { const rect = canvas.getBoundingClientRect(); targetY = -.35 + ((event.clientX - rect.left) / rect.width - .5) * .3; render() }
         }
         function pointerup() { drag = null }
-        function key(event: KeyboardEvent) { if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home'].includes(event.key)) return; event.preventDefault(); if (event.key === 'Home') { targetX = -.1; targetY = -.35 } else if (event.key === 'ArrowLeft') targetY -= .15; else if (event.key === 'ArrowRight') targetY += .15; else if (event.key === 'ArrowUp') targetX -= .12; else targetX += .12; render() }
+        function key(event: KeyboardEvent) { if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home'].includes(event.key)) return; event.preventDefault(); if (event.key === 'Home') { targetX = -.1; targetY = -.35 } else if (event.key === 'ArrowLeft') targetY -= .15; else if (event.key === 'ArrowRight') targetY += .15; else if (event.key === 'ArrowUp') targetX -= .12; else targetX += .12; targetX = Math.max(-.6, Math.min(.6, targetX)); targetY = Math.max(-.9, Math.min(.65, targetY)); render() }
+        function visibilityChange() { if (document.hidden) { cancelAnimationFrame(frame); frame = 0 } else render() }
+        resume = () => { if (visible) resize(); else { cancelAnimationFrame(frame); frame = 0 } }
+        surface.onRestore(render)
+        document.addEventListener('visibilitychange', visibilityChange)
         const observer = new ResizeObserver(resize); observer.observe(element); resize()
         canvas.addEventListener('pointerdown', pointerdown); canvas.addEventListener('pointermove', pointermove); canvas.addEventListener('pointerup', pointerup); canvas.addEventListener('pointercancel', pointerup); canvas.addEventListener('keydown', key); window.addEventListener('scroll', scroll, { passive: true })
-        teardown = () => { cancelAnimationFrame(frame); observer.disconnect(); window.removeEventListener('scroll', scroll); canvas.removeEventListener('pointerdown', pointerdown); canvas.removeEventListener('pointermove', pointermove); canvas.removeEventListener('pointerup', pointerup); canvas.removeEventListener('pointercancel', pointerup); canvas.removeEventListener('keydown', key); scene.traverse(object => { if (object instanceof T.Mesh) { object.geometry.dispose(); const materials = Array.isArray(object.material) ? object.material : [object.material]; materials.forEach(m => m.dispose()) } }); environment.dispose(); renderer.dispose(); renderer.forceContextLoss(); canvas.remove(); delete element.dataset.ready }
-      } catch { if (!cancelled && current === generation) setFailed(true) }
+        teardown = () => { document.removeEventListener('visibilitychange', visibilityChange); cancelAnimationFrame(frame); observer.disconnect(); window.removeEventListener('scroll', scroll); canvas.removeEventListener('pointerdown', pointerdown); canvas.removeEventListener('pointermove', pointermove); canvas.removeEventListener('pointerup', pointerup); canvas.removeEventListener('pointercancel', pointerup); canvas.removeEventListener('keydown', key); scene.traverse(object => { if (object instanceof T.Mesh) { object.geometry.dispose(); const materials = Array.isArray(object.material) ? object.material : [object.material]; materials.forEach(m => m.dispose()) } }); surface.dispose(); delete element.dataset.ready }
+        abortCreate = undefined
+      } catch { abortCreate?.(); if (!cancelled && current === generation) setFailed(true) }
+      finally { creating = false }
     }
     const visibility = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) { if (!teardown) void create() }
-      else { generation++; teardown?.(); teardown = undefined }
+      visible = entries[0].isIntersecting
+      if (visible && !teardown) void create()
+      resume?.()
     }, { rootMargin: '120px' })
     visibility.observe(element)
     return () => { cancelled = true; generation++; visibility.disconnect(); teardown?.() }

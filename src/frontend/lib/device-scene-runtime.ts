@@ -1,27 +1,11 @@
 import * as T from 'three'
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
-import type { DeviceSceneSpec, DeviceScreen } from '../components/device-scene'
+import { createSceneSurface, reducedMotionPreference } from './scene-surface'
+import type { DeviceSceneController, DeviceSceneSpec, DeviceScreen } from '../components/device-scene'
 
-const MAX_RENDERERS = 4
-let renderers = 0
 let sceneSequence = 0
-const waiting = new Set<() => void>()
-async function reserve(alive: () => boolean) {
-  while (renderers >= MAX_RENDERERS) {
-    if (!alive()) return false
-    await new Promise<void>(resolve => {
-      const timer = setTimeout(done, 250)
-      function done() { clearTimeout(timer); waiting.delete(done); resolve() }
-      waiting.add(done)
-    })
-  }
-  if (!alive()) return false
-  renderers++
-  return true
-}
-function release() { renderers--; waiting.forEach(wake => wake()) }
 
-export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSpec, alive: () => boolean): Promise<(() => void) | undefined> {
+export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSpec, alive: () => boolean): Promise<DeviceSceneController | undefined> {
   const fallbacks = [...host.querySelectorAll<HTMLImageElement>('.device-frame img, .brand-phone-fallback img')]
   const screens = [spec.screen, ...(spec.mobile ? [spec.mobile] : [])]
   const sources = await Promise.all(screens.map(async (screen, index) => {
@@ -34,26 +18,22 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
     return source
   }))
   if (!alive()) return
-  if (!await reserve(alive)) return
-  let renderer: T.WebGLRenderer | undefined, frame = 0, stopped = false
+  let surface: ReturnType<typeof createSceneSurface> | undefined, frame = 0, stopped = false, visible = true
   const resources: { dispose(): void }[] = []
   const cleanups: (() => void)[] = []
   const cleanup = () => {
     if (stopped) return
     stopped = true; cancelAnimationFrame(frame)
-    const ownsHost = renderer && host.dataset.deviceOwner === renderer.domElement.dataset.deviceOwner
+    const ownsHost = surface && host.dataset.deviceOwner === surface.canvas.dataset.deviceOwner
     cleanups.forEach(fn => fn()); resources.forEach(item => item.dispose())
-    if (renderer) { renderer.dispose(); renderer.forceContextLoss(); renderer.domElement.remove() }
+    surface?.dispose()
     if (ownsHost) {
       delete host.dataset.deviceReady; delete host.dataset.deviceState
       delete host.dataset.deviceOwner
     }
-    release()
   }
   try {
-    renderer = new T.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' })
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 1.25)); renderer.setClearColor(0, 0)
-    renderer.outputColorSpace = T.SRGBColorSpace; renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.15
+    surface = createSceneSurface()
     const scene = new T.Scene(), model = new T.Group()
     scene.add(model)
     scene.add(new T.HemisphereLight('#ffffff', '#60758a', 3.4))
@@ -89,7 +69,7 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
         context.font = `600 ${Math.round(width * .13)}px ${font}`; context.fillText('wasla', width / 2, height * .68)
         context.font = `400 ${Math.round(width * .04)}px ${font}`; context.fillText('informatika', width / 2, height * .72)
       } else context.drawImage(source, (source.naturalWidth - cropWidth) / 2, 0, cropWidth, cropHeight, 0, 0, width, height)
-      const map = new T.CanvasTexture(canvas); map.colorSpace = T.SRGBColorSpace; map.anisotropy = Math.min(4, renderer!.capabilities.getMaxAnisotropy()); resources.push(map)
+      const map = new T.CanvasTexture(canvas); map.colorSpace = T.SRGBColorSpace; map.anisotropy = surface!.anisotropy; resources.push(map)
       const material = new T.MeshBasicMaterial({ map, toneMapped: false }); resources.push(material)
       return material
     }
@@ -135,47 +115,41 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
     model.position.sub(center)
     const stage = new T.Group(); stage.add(model); scene.add(stage); scene.remove(model)
     const camera = new T.PerspectiveCamera(33, 1, .1, 100)
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)'), fine = matchMedia('(hover:hover) and (pointer:fine)')
+    const reduced = reducedMotionPreference(), fine = matchMedia('(hover:hover) and (pointer:fine)')
     let currentX = -.11, currentY = -.18, targetX = currentX, targetY = currentY, drawn = 0
-    const canvas = renderer.domElement
+    const canvas = surface.canvas
     canvas.dataset.deviceOwner = String(++sceneSequence); host.dataset.deviceOwner = canvas.dataset.deviceOwner
     canvas.className = 'device3d-canvas'; canvas.setAttribute('aria-hidden', 'true'); canvas.dataset.device3d = spec.device; canvas.dataset.texturedScreens = spec.mobile ? '2' : '1'
     canvas.dataset.textureSourceSizes = sources.map(source => `${source.naturalWidth}x${source.naturalHeight}`).join(',')
     host.append(canvas)
-    let poster = host.querySelector<HTMLImageElement>('.device3d-poster')
-    if (!poster) { poster = document.createElement('img'); poster.className = 'device3d-poster'; poster.alt = ''; poster.setAttribute('aria-hidden', 'true'); host.append(poster) }
-    const contextLost = (event: Event) => { event.preventDefault(); cleanup() }
-    canvas.addEventListener('webglcontextlost', contextLost)
-    cleanups.push(() => canvas.removeEventListener('webglcontextlost', contextLost))
     function draw() {
-      frame = 0; if (stopped || !alive()) return
+      frame = 0; if (stopped || !alive() || !visible || document.hidden) return
+      if (reduced.matches) { targetX = -.11; targetY = -.18 }
       const speed = reduced.matches ? 1 : .2
       currentX += (targetX - currentX) * speed; currentY += (targetY - currentY) * speed
-      stage.rotation.set(currentX, currentY, 0); renderer!.render(scene, camera)
+      stage.rotation.set(currentX, currentY, 0); if (!surface!.render(scene, camera)) return
       canvas.dataset.rendered3d = 'true'; canvas.dataset.rotation = `${currentX.toFixed(3)},${currentY.toFixed(3)}`
       host.dataset.deviceReady = 'true'
       if (++drawn < 45 && (Math.abs(targetX - currentX) > .001 || Math.abs(targetY - currentY) > .001)) frame = requestAnimationFrame(draw)
-      else {
-        try { poster!.src = canvas.toDataURL('image/webp', .85); host.dataset.devicePoster = 'true' } catch { /* Original screenshots remain the no-WebGL fallback. */ }
-      }
+
     }
-    function render() { drawn = 0; if (!frame) frame = requestAnimationFrame(draw) }
+    function render() { drawn = 0; if (!frame && visible && !document.hidden) frame = requestAnimationFrame(draw) }
     function resize() {
       const rect = host.getBoundingClientRect(); if (!rect.width || !rect.height) return
-      renderer!.setSize(rect.width, rect.height); camera.aspect = rect.width / rect.height
+      surface!.resize(rect.width, rect.height); camera.aspect = rect.width / rect.height
       const size = bounds.getSize(new T.Vector3()), tangent = Math.tan(T.MathUtils.degToRad(camera.fov / 2))
       camera.position.set(0, .1, Math.max(size.y / (2 * tangent), size.x / (2 * tangent * camera.aspect)) * 1.18 + size.z)
       camera.lookAt(0, 0, 0); camera.updateProjectionMatrix(); render()
     }
     function pointer(event: PointerEvent) {
-      if (!fine.matches || reduced.matches) return
+      if (!visible || !fine.matches || reduced.matches) return
       const rect = host.getBoundingClientRect()
       targetY = -.18 + ((event.clientX - rect.left) / rect.width - .5) * .38
       targetX = -.11 + ((event.clientY - rect.top) / rect.height - .5) * .17; render()
     }
     function reset() { targetX = -.11; targetY = -.18; render() }
     function scroll() {
-      if (!fine.matches || reduced.matches) return
+      if (!visible || !fine.matches || reduced.matches) return
       const rect = host.getBoundingClientRect()
       targetX = -.11 + Math.max(-1, Math.min(1, (innerHeight / 2 - rect.top - rect.height / 2) / innerHeight)) * .12; render()
     }
@@ -186,8 +160,9 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
     pointerSurface.addEventListener('focusin', reset); window.addEventListener('scroll', scroll, { passive: true }); document.addEventListener('visibilitychange', visibility)
     reduced.addEventListener('change', reset)
     cleanups.push(() => { observer.disconnect(); pointerSurface.removeEventListener('pointermove', pointer as EventListener); pointerSurface.removeEventListener('pointerleave', reset); pointerSurface.removeEventListener('focusin', reset); window.removeEventListener('scroll', scroll); document.removeEventListener('visibilitychange', visibility); reduced.removeEventListener('change', reset) })
+    surface.onRestore(render)
     resize()
-    return cleanup
+    return { dispose: cleanup, setVisible(value) { visible = value; if (value) render(); else { cancelAnimationFrame(frame); frame = 0 } } }
   } catch {
     cleanup()
     return undefined

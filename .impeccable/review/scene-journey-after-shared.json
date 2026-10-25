@@ -1,0 +1,70 @@
+{
+  "phase": "after-shared",
+  "base": "http://localhost:3000",
+  "checkedAt": "2026-10-25T07:59:28.068Z",
+  "profile": {
+    "viewport": "1440x900",
+    "cpuSlowdown": 4,
+    "cache": "fresh context, shared HTTP cache within journey",
+    "passes": 2,
+    "description": "Up to seven device/service stages visited, footer, return to first; no forced eager image loading"
+  },
+  "results": [
+    {
+      "route": "/",
+      "count": 7,
+      "initial": {
+        "contexts": 1,
+        "losses": 0,
+        "longTasks": 7,
+        "longTaskMs": 1321,
+        "encodedFrames": 0
+      },
+      "contexts": 1,
+      "losses": 0,
+      "longTasks": 9,
+      "longTaskMs": 1424,
+      "encodedFrames": 0,
+      "sameFirstCanvas": true,
+      "paintedCanvases": 7
+    },
+    {
+      "route": "/layanan",
+      "count": 13,
+      "initial": {
+        "contexts": 1,
+        "losses": 0,
+        "longTasks": 4,
+        "longTaskMs": 293,
+        "encodedFrames": 0
+      },
+      "contexts": 1,
+      "losses": 0,
+      "longTasks": 5,
+      "longTaskMs": 344,
+      "encodedFrames": 0,
+      "sameFirstCanvas": true,
+      "paintedCanvases": 8
+    },
+    {
+      "route": "/portofolio/catatan-mengaji-bani-saleh",
+      "count": 3,
+      "initial": {
+        "contexts": 1,
+        "losses": 0,
+        "longTasks": 2,
+        "longTaskMs": 188,
+        "encodedFrames": 0
+      },
+      "contexts": 1,
+      "losses": 0,
+      "longTasks": 2,
+      "longTaskMs": 188,
+      "encodedFrames": 0,
+      "sameFirstCanvas": true,
+      "paintedCanvases": 4
+    }
+  ],
+  "errors": [],
+  "failures": []
+}
