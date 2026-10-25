@@ -8,16 +8,36 @@ let sceneSequence = 0
 export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSpec, alive: () => boolean): Promise<DeviceSceneController | undefined> {
   const fallbacks = [...host.querySelectorAll<HTMLImageElement>('.device-frame img, .brand-phone-fallback img')]
   const screens = [spec.screen, ...(spec.mobile ? [spec.mobile] : [])]
+  const decode = (image: HTMLImageElement) => new Promise<void>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new DOMException('Image decoding timed out', 'TimeoutError')), 10_000)
+    image.decode().then(() => { clearTimeout(timer); resolve() }, error => { clearTimeout(timer); reject(error) })
+  })
   const sources = await Promise.all(screens.map(async (screen, index) => {
     const fallback = fallbacks[index]
-    // A srcset image reports density-corrected dimensions; decode its selected
-    // bitmap without srcset so drawImage crops in the bitmap's own pixel space.
-    const source = new Image(); source.crossOrigin = 'anonymous'; source.decoding = 'async'
-    source.src = fallback?.currentSrc || screen.src
-    await source.decode()
-    return source
+    let failure: unknown
+    for (let attempt = 0; attempt < 2 && alive(); attempt++) {
+      try {
+        // Wait for Next Image's selected responsive URL. Its lazy currentSrc can
+        // initially be empty; the raw media redirect may not permit CORS.
+        if (fallback) { fallback.loading = 'eager'; await decode(fallback) }
+        if (!alive()) return null
+        // Decode the selected bitmap independently: srcset naturalWidth is
+        // density-corrected and must not be used for pixel-space texture crops.
+        const source = new Image(); source.crossOrigin = 'anonymous'; source.decoding = 'async'
+        source.src = fallback?.currentSrc || fallback?.src || screen.src
+        await decode(source)
+        return source
+      } catch (error) {
+        failure = error
+        if (!attempt && alive()) await new Promise(resolve => setTimeout(resolve, 150))
+      }
+    }
+    if (!alive()) return null
+    throw failure
   }))
-  if (!alive()) return
+
+  if (!alive() || sources.some(source => !source)) return
+  const bitmaps = sources as HTMLImageElement[]
   let surface: ReturnType<typeof createSceneSurface> | undefined, frame = 0, stopped = false, visible = true
   const resources: { dispose(): void }[] = []
   const cleanups: (() => void)[] = []
@@ -48,7 +68,7 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
       const mesh = new T.Mesh(geometry, material); mesh.position.set(...position); parent.add(mesh); return mesh
     }
     async function texture(screen: DeviceScreen, ratio: number, index: number) {
-      const source = sources[index]
+      const source = bitmaps[index]
       if (!alive()) return null
       const maximum = innerWidth < 768 ? 1024 : 1536
       const width = Math.floor(Math.min(spec.brand ? 720 : source.naturalWidth, maximum, maximum * ratio))
@@ -120,7 +140,7 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
     const canvas = surface.canvas
     canvas.dataset.deviceOwner = String(++sceneSequence); host.dataset.deviceOwner = canvas.dataset.deviceOwner
     canvas.className = 'device3d-canvas'; canvas.setAttribute('aria-hidden', 'true'); canvas.dataset.device3d = spec.device; canvas.dataset.texturedScreens = spec.mobile ? '2' : '1'
-    canvas.dataset.textureSourceSizes = sources.map(source => `${source.naturalWidth}x${source.naturalHeight}`).join(',')
+    canvas.dataset.textureSourceSizes = bitmaps.map(source => `${source.naturalWidth}x${source.naturalHeight}`).join(',')
     host.append(canvas)
     function draw() {
       frame = 0; if (stopped || !alive() || !visible || document.hidden) return
@@ -163,8 +183,8 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
     surface.onRestore(render)
     resize()
     return { dispose: cleanup, setVisible(value) { visible = value; if (value) render(); else { cancelAnimationFrame(frame); frame = 0 } } }
-  } catch {
+  } catch (error) {
     cleanup()
-    return undefined
+    throw error
   }
 }

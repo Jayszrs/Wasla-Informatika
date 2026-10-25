@@ -2,7 +2,17 @@
 
 Website aktif: **https://wasla.my.id**. CMS: **https://wasla.my.id/admin**. Akun administrator lama tetap dapat digunakan.
 
-## Rilis aktif 25 Oktober 2026
+## Rilis aktif 25 Oktober 2026, malam
+
+Deployment `dpl_CJVQh6p3MVgQPzKM4TLevBvzoqYW` sudah dipromosikan dan dikonfirmasi READY pada https://wasla.my.id. Verifikasi publik selesai 25 Oktober 2026 pukul 22.20 WIB; alur Studio/kontak selesai 22.21 WIB. Tujuh project menampilkan perangkat 3D bertekstur, tiga profil LinkedIn tersedia pada kedua sisi kartu, paket tanpa lapisan folder dan seluruh harga tetap sesuai CMS.
+
+Login administrator, upload/download WebP di Blob, scheduler, privasi pesan/jadwal, formulir kontak dan render admin/publik desktop-mobile lulus. Fixture dibersihkan dengan ID yang dibuat alat verifikasi; tidak ada pesan WhatsApp dikirim. Formulir menggunakan pool TLS utama. Pemeriksaan socket produksi menunjukkan `verify-full`, terenkripsi, sertifikat authorized dan TLS 1.3.
+
+Lokal: 18 tes browser dan tujuh tes unit lulus, build/TypeScript lulus. Lint tanpa error dengan enam warning Studio yang sudah ada; lint file perubahan terakhir bersih. Capture terbaru mencakup 24 bagian publik, delapan sisi kartu tim dan dua halaman paket utuh pada lebar yang relevan; tidak ada overflow/gambar rusak/page error teramati. Review independen menemukan hanya dokumentasi lama, lalu menilai perbaikannya resolved dan maintenance tanpa regresi material.
+
+Manifest aktif: `.impeccable/review/stacked-production-verification.json`, `studio-stacked-production-verification.json`, `clean-cards-browser-results.json`, `stacked-browser-readings.json`, `stacked-team-captures.json`. Bukti sumber gambar dingin ada di `cold-device-sources-local.json` dan `cold-device-sources-stage.json`; REA di `clean-cards-rea-evidence.json`. [Delivery gate](quality-gate-clean-cards-20261025.md), [review](visual-review-clean-cards.md) dan [performa](scroll-performance-20261025.md) menyatakan lingkupnya; bukan jaminan kecepatan universal atau pemantauan log menyeluruh.
+
+## Riwayat 25 Oktober 2026, pagi
 
 Deployment `dpl_5yZHwfwQdAtuk5i8DGiXGfSYvt4s`, production/READY, build 39 detik, sudah dipromosikan. Verifikasi pada https://wasla.my.id mencakup tujuh rute publik, tujuh project bertekstur 3D, empat foto ber-alpha, 13 layanan, paket, login admin, upload/download Blob, kalender scheduler, privasi pesan/jadwal dan formulir konsultasi. Fixture produksi yang dibuat alat verifikasi dibersihkan dengan ID persis. Tidak ada WhatsApp eksternal dikirim.
 

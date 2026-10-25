@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-10-25T14:55:52.766Z",
+  "base": "https://waslainformatika-bf96oq9t8-jae-f2e1.vercel.app",
+  "scenario": "All seven project hard navigations with fallback.currentSrc forced empty; optimized fallback.src must supply independently decoded real mesh textures",
+  "results": [
+    {
+      "slug": "catatan-mengaji-bani-saleh",
+      "ready": "true",
+      "error": null,
+      "painted": true,
+      "bitmapSizes": "1440x1000,390x844"
+    },
+    {
+      "slug": "ipnu-kota-bekasi",
+      "ready": "true",
+      "error": null,
+      "painted": true,
+      "bitmapSizes": "1440x1000,390x844"
+    },
+    {
+      "slug": "batu-alam-supplier",
+      "ready": "true",
+      "error": null,
+      "painted": true,
+      "bitmapSizes": "1440x1000,390x844"
+    },
+    {
+      "slug": "fazma-stone",
+      "ready": "true",
+      "error": null,
+      "painted": true,
+      "bitmapSizes": "1440x1000,390x844"
+    },
+    {
+      "slug": "cimuning-e-katalog",
+      "ready": "true",
+      "error": null,
+      "painted": true,
+      "bitmapSizes": "1440x1000,390x844"
+    },
+    {
+      "slug": "mahameru-baja-indonesia",
+      "ready": "true",
+      "error": null,
+      "painted": true,
+      "bitmapSizes": "1440x1000,390x844"
+    },
+    {
+      "slug": "sit-permata-hati-bekasi",
+      "ready": "true",
+      "error": null,
+      "painted": true,
+      "bitmapSizes": "1440x1000,390x844"
+    }
+  ],
+  "errors": [],
+  "failures": []
+}

@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "url": "https://wasla.my.id",
+  "checkedAt": "2026-10-25T15:21:24.210Z",
+  "checks": [
+    "Seven public routes render without overflow",
+    "Seven real projects and preserved galleries",
+    "Scheduler and consultation messages remain private",
+    "Existing production administrator signs in to custom Studio",
+    "New CMS image persists in Blob and downloads as WebP",
+    "Scheduler creates, saves and changes status in production",
+    "Custom dashboard and calendar render after authentication",
+    "Contact form saves privately and offers the correct WhatsApp link without sending",
+    "Desktop and mobile public/admin renders without overflow"
+  ]
+}

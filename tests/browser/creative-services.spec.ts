@@ -26,7 +26,7 @@ test('creative services are published, have matching 3D objects, and reach consu
 test('real team portraits and real desktop/mobile project screens remain editable CMS media', async ({ page, request }) => {
   const team = (await (await request.get('/api/team')).json()).docs
   expect(team).toHaveLength(4)
-  expect(team.map((member: { name: string }) => member.name)).toEqual(expect.arrayContaining(['Ahmad Suroso', 'Jaelani Surya Saputra', 'Al Hafiz', 'Laksa']))
+  expect(team.map((member: { name: string }) => member.name)).toEqual(expect.arrayContaining(['Ahmad Suroso', 'Jaelani Surya Saputra', 'Al Hafiz Taufikur Rohman', 'Muhammad Lakchamana']))
   expect(team.every((member: { photo?: { id: number; width: number } }) => member.photo?.id && member.photo.width >= 800)).toBe(true)
   await page.goto('/')
   const portraits = page.locator('.division-portrait > img')

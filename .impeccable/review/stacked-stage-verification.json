@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "url": "https://waslainformatika-c7v8joxj0-jae-f2e1.vercel.app",
+  "checkedAt": "2026-10-25T15:14:52.301Z",
+  "deploymentId": "dpl_CJVQh6p3MVgQPzKM4TLevBvzoqYW",
+  "checks": [
+    "All six prices, two category decks, flip details, consultation and native scrolling work",
+    "Rejected folder-like rear layers are absent",
+    "Three owner-provided LinkedIn profiles are present on both team card faces",
+    "Thirteen published services including photography, video and creative editing",
+    "Four CMS portraits download with high-resolution transparent alpha",
+    "New service meshes match their identity and consultation preselects the correct service",
+    "All seven real project pages render actual textured 3D desktop/mobile devices and retain gallery media",
+    "Whole-card flip reverses without a return button, CMS biography is visible and expertise phone is real 3D",
+    "Web Analytics and Speed Insights scripts are served successfully by Vercel",
+    "Mobile service text uses consistent 15px gutters with no horizontal overflow"
+  ],
+  "scriptChecks": [
+    {
+      "kind": "analytics",
+      "path": "/8084b8c15584d0a7/script.js",
+      "status": 200
+    },
+    {
+      "kind": "speed-insights",
+      "path": "/78d7c6a2c1bd61f5/script.js",
+      "status": 200
+    }
+  ],
+  "errors": []
+}

@@ -2,7 +2,13 @@
 
 Target aktif: akun jaelanisuryasaputra10@gmail.com, scope `jae-f2e1`, project `waslainformatika` (`prj_y57AtYGyBMYsK9a8b7auDps05t54`). Project lama `wasla-informatika` bukan target rilis. Website aktif https://wasla.my.id, CMS https://wasla.my.id/admin. DNS dan HTTPS sudah terverifikasi; lihat [bukti domain](domain-wasla-my-id.md). Alamat vercel.app tetap tersedia sebagai alias.
 
-## Rilis aktif 25 Oktober 2026
+## Rilis aktif 25 Oktober 2026, malam
+
+Deployment `dpl_CJVQh6p3MVgQPzKM4TLevBvzoqYW` (https://waslainformatika-c7v8joxj0-jae-f2e1.vercel.app) sudah dipromosikan ke https://wasla.my.id dan berstatus READY. Paket memakai dua kelompok kartu bersih yang dapat dibalik, tanpa lapisan belakang seperti folder. Tiga nama lengkap dan LinkedIn tersimpan di CMS. Renderer 3D dibagi, kanvas dipertahankan saat scroll, sumber tekstur dingin menunggu gambar teroptimasi, dan galeri pulih setelah kegagalan gambar.
+
+Formulir kontak kini memakai pool database utama yang menormalkan TLS ke `verify-full`. Alur produksi publik, admin, Blob, scheduler dan kontak lulus kembali. Query error pada jendela deployment terbaru tidak mengembalikan record; ini bukan klaim menghapus seluruh log historis. Bukti terbaru ada di [verifikasi produksi](production-verification.md), [laporan delivery gate](quality-gate-clean-cards-20261025.md), [performa scroll](scroll-performance-20261025.md) dan [log](runtime-logs-20261025.md).
+
+## Riwayat 25 Oktober 2026, pagi
 
 Deployment `dpl_5yZHwfwQdAtuk5i8DGiXGfSYvt4s` (https://waslainformatika-6wshy0zpq-jae-f2e1.vercel.app), build 39 detik, dipromosikan ke https://wasla.my.id setelah verifikasi staged dan review framing. Domain utama kemudian lulus pengujian perangkat/layanan dan alur Studio. Rilis ini menghapus bidang abu-abu perangkat, menstabilkan kemunculan project, menambahkan tiga paket kreatif CMS, memakai enam kartu navy tanpa bidang navy luar, serta menempatkan signature wasla informatika sejajar. Mode TLS database sekarang dibuat eksplisit `verify-full` tanpa mematikan pemeriksaan sertifikat. Lihat [verifikasi produksi](production-verification.md) dan [catatan log](runtime-logs-20261025.md).
 

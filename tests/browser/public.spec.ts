@@ -193,7 +193,7 @@ test('seven real project destinations and four WhatsApp recipient summaries', as
   }
   const contacts = [
     ['Jaelani Surya Saputra', 'https://wa.me/6281318533055'], ['Ahmad Suroso', 'https://wa.me/6281310154447'],
-    ['Al Hafiz', 'https://wa.me/6289697505769'], ['Laksa', 'https://wa.me/6289643092842'],
+    ['Al Hafiz Taufikur Rohman', 'https://wa.me/6289697505769'], ['Muhammad Lakchamana', 'https://wa.me/6289643092842'],
   ]
   const admin = await requestFactory.newContext({ baseURL: process.env.TEST_BASE_URL || 'http://localhost:3000', extraHTTPHeaders: { Origin: 'http://localhost:3000' } })
   try {

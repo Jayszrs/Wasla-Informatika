@@ -28,6 +28,21 @@ The approach follows the official [Three.js multiple-scenes guide, offscreen ren
 
 ## Verification and REA boundary
 
-TypeScript and targeted ESLint passed for the runtime and device browser test. The service keyboard/pointer test passed. The retained-canvas test initially caught a reduced-motion preference-change regression; a shared-query/fixed-angle correction was applied and requires the final rebuilt test result below.
+TypeScript and targeted ESLint passed for the runtime and device browser test. The service keyboard/pointer test passed. The retained-canvas test initially caught a reduced-motion preference-change regression; a shared-query/fixed-angle correction was applied. On the final rebuilt localhost:3007 server, the retained-canvas/reduced-motion/gallery test and cold-source recovery test both passed (2/2, 16.2 seconds).
 
 A fresh REA controlled replay was requested for first device → End → Home → retained device. The MCP call returned a tool-boundary failure instead of an Evidence record, and the REA namespace then became unavailable in this agent session. No fresh Evidence ID was produced; older REA captures are not presented as evidence for this release. The explicit Playwright journey reports above remain the current runtime observations. This report makes no deployment claim.
+
+
+## Cold screenshot source regression
+
+A later staged hard-navigation check intermittently left the sixth and seventh project scenes in fallback, even though the visible screenshot images eventually loaded. A warm instrumented replay rendered all seven; this was not sufficient to dismiss the cold failure.
+
+The actual failing boundary was reproduced by forcing a device fallback image's `currentSrc` to be empty. The runtime then selected the raw `/api/media/file/mahameru-baja-mobile-1.webp` and desktop media endpoints. Their public Blob redirects responded without `Access-Control-Allow-Origin` for the staged origin. Independent texture images use `crossOrigin="anonymous"`, so Chrome reported CORS failures followed by `EncodingError: The source image cannot be decoded.` Normal same-origin Next Image optimized URLs rendered correctly. This observation distinguishes the failure from GPU context exhaustion.
+
+Texture acquisition now promotes only the near-viewport fallback image to eager loading, waits for its decode/selection, then independently decodes its optimized `currentSrc` (or optimized `src`). Independent bitmap decoding is retained because responsive HTML image `naturalWidth` is density-corrected and previously caused incorrect texture crops. A decode has a ten-second bound and one short retry; mounting also has one bounded retry. An abandoned offscreen lazy import does not consume a failure attempt. Error names are exposed as a non-sensitive diagnostic attribute and cleared on successful recovery.
+
+The added browser regression forces empty selected sources and refuses raw media texture URLs. It also injects one transient independent-image decode error and requires the final textured device to render with the actual independently decoded bitmap dimensions. This checks recovery without depending on a warm CDN cache. The rebuilt regression passed on localhost:3007. A separate forced-empty-currentSrc verification then hard-navigated all seven projects, confirming actual rendered/non-empty canvases, no device error attributes, desktop bitmap 1440x1000 and mobile bitmap 390x844, no console/page errors and no HTTP failures. Evidence: `.impeccable/review/cold-device-sources-local.json`, checked 2026-10-25T14:46:06Z; runner `.local/verify-cold-device-sources.mjs`. These checks ran against a production build locally, not the subsequent staged deployment. The timing pair above predates this cold-source correction and is not presented as a new benchmark of that correction.
+
+## Final controlled REA replay
+
+The root session retried REA successfully after the child tool-boundary failure. Evidence `ev_23b32ad623f6a748500816080eed453a14a8b4d7194526d1f51fc83320d07aef` is retained in `.impeccable/review/clean-cards-rea-evidence.json`: local project-detail ready, End, settle, Home, visible rendered canvas; all declared actions completed and the owned browser process terminated. The capture establishes those declared runtime observations; canvas identity and WebGL counts come from the separate Playwright tests, not this URL-only REA capture.

@@ -1,0 +1,42 @@
+[
+  {
+    "file": ".impeccable/review/stacked-team-front-1440.png",
+    "width": 1440,
+    "side": "front"
+  },
+  {
+    "file": ".impeccable/review/stacked-team-back-1440.png",
+    "width": 1440,
+    "side": "back"
+  },
+  {
+    "file": ".impeccable/review/stacked-team-front-390.png",
+    "width": 390,
+    "side": "front"
+  },
+  {
+    "file": ".impeccable/review/stacked-team-back-390.png",
+    "width": 390,
+    "side": "back"
+  },
+  {
+    "file": ".impeccable/review/stacked-team-front-736.png",
+    "width": 736,
+    "side": "front"
+  },
+  {
+    "file": ".impeccable/review/stacked-team-back-736.png",
+    "width": 736,
+    "side": "back"
+  },
+  {
+    "file": ".impeccable/review/stacked-team-front-1024.png",
+    "width": 1024,
+    "side": "front"
+  },
+  {
+    "file": ".impeccable/review/stacked-team-back-1024.png",
+    "width": 1024,
+    "side": "back"
+  }
+]

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-25T06:35:03.953868+00:00",
+  "generatedAt": "2026-10-25T14:55:55.984066+00:00",
   "title": "Design System: Wasla Informatika",
   "extensions": {
     "colorMeta": {
@@ -579,8 +579,18 @@
         ]
       },
       "package-surface": {
-        "displayName": "Transparent Package Scope",
-        "role": "neutral"
+        "displayName": "Package Scope Face",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.055 252)",
+          "oklch(26% 0.055 252)",
+          "oklch(38% 0.055 252)",
+          "oklch(49% 0.055 252)",
+          "oklch(61% 0.055 252)",
+          "oklch(72% 0.055 252)",
+          "oklch(84% 0.055 252)",
+          "oklch(95% 0.055 252)"
+        ]
       },
       "package-copy": {
         "displayName": "Package Copy",
@@ -611,7 +621,7 @@
         ]
       },
       "package-action-hover": {
-        "displayName": "Pale Package Action Hover",
+        "displayName": "Royal Package Action Hover",
         "role": "primary",
         "tonalRamp": [
           "oklch(15% 0.0208 248.05)",
@@ -688,11 +698,11 @@
       },
       "package-title": {
         "displayName": "Package Name",
-        "purpose": "Upright package card name; 22px/1.4, 21px below 767px."
+        "purpose": "Selected package name on both card faces;23px/1.4."
       },
       "package-price": {
         "displayName": "Package Price",
-        "purpose": "Visible rupiah amount, optional starting-price label/unit and explicit package/CMS scope; desktop clamp with responsive overrides."
+        "purpose": "Selected rupiah rate,clamp(29px,3vw,38px)/1.2;34px below767px, optional starting-price label/unit."
       }
     },
     "shadows": [
@@ -718,13 +728,8 @@
       },
       {
         "name": "package-ambient",
-        "value": "0 10px 28px rgb(7 27 53 / .10)",
-        "purpose": "Soft downward elevation beneath independent Navy package cards directly on White."
-      },
-      {
-        "name": "package-interactive",
-        "value": "0 12px 32px rgb(7 27 53 / .16)",
-        "purpose": "Package focus-within and eligible hover feedback; soft downward Navy elevation on White."
+        "value": "0 10px 24px -18px rgb(7 27 53 / .3)",
+        "purpose": "Restrained depth beneath compact two-sided package cards; no rear pseudo-card strips."
       }
     ],
     "motion": [
@@ -776,7 +781,7 @@
       {
         "name": "division-flip",
         "value": "perspective(1200px);rotateY(180deg);650ms cubic-bezier(.16,1,.3,1)",
-        "purpose": "One invisible native full-card button toggles both ways; separate WhatsApp link; inactive face inert/aria-hidden; no visible return control; reduced motion removes transition."
+        "purpose": "One invisible native full-card button toggles both ways; independent back-face WhatsApp/both-face LinkedIn links; inactive face inert/aria-hidden; reduced motion removes transition."
       },
       {
         "name": "studio-state",
@@ -785,8 +790,13 @@
       },
       {
         "name": "physical-device",
-        "value": "on-demand; initial rotation -0.11,-0.18; fine-pointer bounds .17/.38; bounded scroll .12; pixel ratio <=1.25",
-        "purpose": "Prewarm only the runtime module within rootMargin140px; a separate rootMargin0px observer gates actual scene mounting and renderer allocation on true viewport intersection and idle scheduling. Prewarm never reserves a renderer. Decode screen sources concurrently before reserving one of at most four renderers. Textures1536px desktop/1024px narrow,instanced keys,no HDR/real-time shadows. Demand rendering;350ms exit grace then GPU disposal retaining last settled WebP poster. Generation/owner IDs protect newer mounts. Reduced motion removes automatic orientation;touch scroll remains native."
+        "value": "on-demand;initial rotation -0.11,-0.18;fine-pointer bounds .17/.38;bounded scroll .12;display ratio <=1.25",
+        "purpose": "Device and service scenes share one lazy GPU renderer copied to independent 2D canvases. Offscreen/hidden work pauses, retaining models, textures and frames; actual unmount disposes resources, and the last client releases the shared renderer after 1s. No encoded posters or renderer pool. Runtime prewarm uses 300px; idle-scheduled mounting uses 100px. Near-viewport DOM image decode precedes independent selected optimized-bitmap decode, avoiding density-corrected crop dimensions; 10s bound and bounded retries. Textures cap at 1536px desktop / 1024px narrow, with instanced keys and no HDR or real-time shadows. Shared reduced-motion query removes automatic device orientation; native touch scrolling remains."
+      },
+      {
+        "name": "package-flip",
+        "value": "perspective(1600px);center transform-origin;rotateY(180deg);420ms cubic-bezier(.2,.75,.2,1)",
+        "purpose": "Short centered price/scope swivel; selection resets to price; reduced motion switches immediately; no rear strips."
       }
     ],
     "breakpoints": [
@@ -826,23 +836,23 @@
     "accessibility": {
       "footerSignature": "Decorative aria-hidden group pairs wasla informatika on one baseline with matching semibold lettering and .08 opacity on both words; no clipping/height cap. Readable functional company identity remains separate.",
       "gallery": "Native dialog, visible close/previous/next, ArrowLeft/ArrowRight cyclic navigation, Escape close, focus return, body scroll lock and polite index/caption. No-JS anchors open original files.",
-      "divisionStructure": "One invisible full-card native button toggles both directions with click/Enter/Space and aria-expanded/aria-controls; inactive face inert/aria-hidden; separate back-face WhatsApp link; no visible return button; biography grows unclipped; supplied photos or honest initials.",
+      "divisionStructure": "Native full-card button toggles click/Enter/Space with aria-expanded/aria-controls; inactive face inert/aria-hidden; independent back-face WhatsApp/both-face LinkedIn; full supplied names, unclipped biography, CMS photos/honest initials. Existing team.socials rows own profile URLs; no new field.",
       "technology": "Official destination anchors with visible captions, empty decorative logo alt and accessible link name; color revealed on keyboard focus as well as hover.",
       "serviceGeometry": "Arrow keys rotate, Home resets, explicit touch activation preserves scrolling; reduced motion stops automatic orientation.",
       "studio": "Staff-only sessions and roles; explicit dirty, pending, saved, empty and error states; 3px focus outline with 3px offset.",
       "publicScrolling": "Public html/body page scrollbar is visually hidden; wheel, keyboard and touch scroll natively. Public route-group stylesheet does not hide Studio/internal overflow controls.",
-      "websitePackages": "Visible amounts, optional Mulai dari and units, plus package/CMS scope in independent Navy cards with White named actions; contextual service and editable message preserve private-save/explicit-WhatsApp flow; starting-price flag/unit are CMS-editable.",
-      "deviceGeometry": "Original-image SSR fallbacks preserve useful media while async WebGL loads or fails. Last settled WebP posters bridge offscreen GPU disposal/re-entry without changing device silhouette. Fine-pointer/scroll movement is bounded, touch scrolling remains native and reduced motion removes automatic orientation. Semantic project/gallery actions still expose original screenshots."
+      "websitePackages": "Six names/rates stay visible in two category tablists. Roving Tab stop, arrow cycling and Home/End select; selection resets price face. Native toggle aria-pressed, inactive faces inert/aria-hidden; separate consultation link outside overlay. Reduced motion switches immediately; contextual editable consultation and private-save/explicit-WhatsApp remain.",
+      "deviceGeometry": "Original-image SSR fallback remains until actual textured frame. Independent display canvases retain output/models offscreen without encoded posters. Bounded movement/native touch/shared reduced-motion query preserve access. Project links expose detail/configured website; gallery offers optimized image, loading/error feedback and original-file fallback."
     },
     "layoutRules": {
       "technologyGrid": "24 marks; 8 columns desktop, 6 at <=1199px, 4 at <=767px; 52px marks / 42px narrow.",
-      "projectGallery": "Actual textured Three.js device meshes on project cards/detail and every gallery image; original CMS cover in laptop, optional genuine portrait in phone, gallery portraits in phones and nonportraits in laptop/tablet. Real-image CSS frames remain SSR/loading/WebGL fallbacks. Enlargement exposes originals; no three-item editor limit. Transparent stages have no gray enclosing rectangles or stage shadow; the homepage grid has no reveal/hydration hide.",
+      "projectGallery": "Actual textured Three.js device meshes on project cards/detail and every gallery image; original CMS cover in laptop, optional genuine portrait in phone, gallery portraits in phones and nonportraits in laptop/tablet. Real-image CSS frames remain SSR/loading/WebGL fallbacks. Enlargement exposes originals; no three-item editor limit. Transparent stages have no gray enclosing rectangles or stage shadow; the homepage grid has no reveal/hydration hide. Visible project captions/internal detail/configured external links;homepage gap48px 32px,36px 20px <=767px.",
       "whiteSurfaces": "Consultation, About principles and public CTA surfaces use White.",
       "processSection": "Full-width Deep Navy outer section, inner .wrap; 85px vertical padding and 4 steps / 2 at <=991px.",
       "divisionCards": "4 columns desktop, 2 at <=991px, 1 centered <=320px wide at <=420px; 24px corners; grid faces share content-driven height, biography unclipped. Minimum 370px desktop,390px <=991px,370px <=767px,400px <=420px.",
       "footer": "Four desktop information columns, two at <=991px; company/contacts span the grid <=767px. Signature parent opacity1,max-height none,overflow visible; both words share baseline,.22em gap,clamp(27px,7.7vw,112px),600 weight,.88 leading,-.04em tracking and .08 opacity.",
       "studio": "238px fixed sidebar, 210px <=1199px, 250px overlay <=991px; 1510px maximum main; single-column editor with save first <=767px; calendar keeps 7 columns and full-text agenda.",
-      "websitePackages": "Six independent upright Navy cards directly on White. Transparent square stage8px 0; card32px 26px,gap26px. <=1199px card28px 20px,gap22px; <=991px centered column max560px,gap30px,card30px; <=767px card27px 22px. Name,amount/optional starting label/unit/package scope,White action,unboxed description/scope. Desktop price min-height145px,removed <=991px.",
+      "websitePackages": "Two category columns with 64px gap on White; one column with 52px gap at <=767px. Three visible rate tabs per category, minimum 64px rows. Selected two-sided card shares content-driven faces, minimum 290px, padding 30px and gap 24px; <=767px padding is 27px 25px. Category grid rows auto auto 1fr auto align desktop card/action baselines. Separate Navy consultation action has minimum 48px height; no rear pseudo-card strips.",
       "brandPhone": "Physical textured Wasla phone in homepage expertise; 480px reserved stage,390px <=767px; branded image/text fallback."
     },
     "evidence": {
@@ -873,14 +883,26 @@
         "src/frontend/components/project-gallery.tsx",
         "src/app/(frontend)/page.tsx",
         ".impeccable/transparent-devices-refinement.md",
-        "docs/creative-package-pricing.md"
+        "docs/creative-package-pricing.md",
+        ".impeccable/stacked-packages-performance.md",
+        "src/frontend/components/package-deck.tsx",
+        "src/frontend/components/package-deck.module.css",
+        "src/frontend/lib/scene-surface.ts",
+        "src/shared/contacts.ts",
+        "src/backend/public-content.ts",
+        "docs/scroll-performance-20261025.md",
+        ".impeccable/review/cold-device-sources-local.json"
       ],
-      "review": "Source-based documentation merge. Current full visual review is docs/visual-review-transparent-devices.md; current performance/release evidence belongs to docs/device-performance.md and docs/production-verification.md with their machine artifact paths. Documenter ran no browser/server. Prior device-depth two-fix review is historical; expertise kicker/stale-evidence prose findings are reconciled.",
-      "detector": "Current detector artifact: .impeccable/review/detector-transparent.json. It is a mechanical signal and does not replace the fresh full visual review.",
-      "validation": "Documentation checks passed: YAML/JSON structure, eight canonical sections, supported token/component properties, metadata/component/token references, narrative parity and diff whitespace. Current app/build/browser/performance/release results belong to their separate reports; no universal speed or production certification is inferred.",
+      "review": "Source-based merge of latest owner package/team correction/shared3D runtime. Current scroll/cold-source evidence: docs/scroll-performance-20261025.md and .impeccable/review/cold-device-sources-local.json(local production build;7/7 forced-empty-currentSrc actual3D,no reported errors). Cold-source check is not a new benchmark. Documenter ran no browser/server; fresh finish review and later REA retry are separate. Earlier reports remain scoped to their release.",
+      "detector": "Earlier transparent-device detector artifact: .impeccable/review/detector-transparent.json. Historical mechanical signal; it does not replace the fresh latest finish review.",
+      "validation": "Documentation checks passed for YAML/JSON structure, eight canonical sections, supported component properties, token/metadata/component references, narrative parity and diff whitespace. Runtime/browser/performance/release results belong to separate reports; no universal speed or deployment certification is inferred.",
       "release": "DNS and HTTPS work at https://wasla.my.id. PRODUCT.md records the current release state; docs/production-verification.md and docs/domain-wasla-my-id.md own operational evidence. No new deployment or analytics certification is made here.",
-      "history": "Latest transparent-devices correction overrides gray device fields, White cards in enclosing Navy and small stacked subtitle from earlier device-depth/package-card refinements. Those prior refinements still preserve physical devices, whole-card two-way flipping and original content/identity facts where not superseded.",
+      "history": "Evening stacked-packages-performance.md correction supersedes six tall cards/rear strips. Shared renderer supersedes four-renderer pool/offscreen WebP encoding. Transparent devices/straight footer/whole-card biography/approved identity remain.",
       "browserManifest": ".impeccable/review/transparent-browser-readings.json"
+    },
+    "publicContent": {
+      "cache": "Published public content uses300s cache invalidated immediately after CMS writes; staff/private/draft reads uncached.",
+      "media": "Targeted filename/ID lookup and trusted Blob URLs/redirects; no repeated full-media scan/body proxy."
     }
   },
   "components": [
@@ -943,9 +965,9 @@
       "name": "Division Flip Card",
       "kind": "card",
       "refersTo": "division-card",
-      "description": "Front-face visual sample only; application uses a single invisible full-card native button to toggle both ways, separate WhatsApp link, inert inactive face and flexible biography-driven height.",
-      "html": "<button class=\"ds-person\" type=\"button\" aria-label=\"Kenali Ahmad Suroso, Project Manager\"><span class=\"ds-initials\" aria-hidden=\"true\">AS</span><span class=\"ds-info\"><small>Project Manager</small><strong>Ahmad Suroso</strong><span>Kenali divisi</span></span></button>",
-      "css": ".ds-person{width:240px;min-height:370px;height:auto;border:0;padding:0;overflow:hidden;border-radius:24px;background:#edf2f7;color:var(--navy,#071a33);text-align:left;font-family:var(--font-poppins,Poppins),sans-serif;cursor:pointer}.ds-initials{height:220px;display:grid;place-items:center;background:#e6edf5;color:#173b63;font-size:85px;font-weight:600;letter-spacing:-.04em;transition:transform .3s}.ds-info{padding:23px 22px;display:grid;gap:7px}.ds-info small,.ds-info>span{font-size:10px;color:#52647c}.ds-info strong{font-size:16px;line-height:1.45}.ds-person:hover .ds-initials{transform:translateY(-5px)}.ds-person:focus-visible{outline:3px solid #397bff;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-initials{transition:none}.ds-person:hover .ds-initials{transform:none}}"
+      "description": "Native whole-card biography toggle with independent supplied LinkedIn on both faces/back-face WhatsApp; static front preview uses honest initials.",
+      "html": "<article class=\"ds-person\"><button class=\"ds-person-toggle\" type=\"button\" aria-expanded=\"false\" aria-label=\"Kenali Jaelani Surya Saputra, Developer\"></button><span class=\"ds-initials\" aria-hidden=\"true\">JS</span><span class=\"ds-info\"><small>Developer</small><strong>Jaelani Surya Saputra</strong><span class=\"ds-person-links\"><span>Profil &amp; kontak</span><a href=\"https://www.linkedin.com/in/jayszrs/\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"LinkedIn Jaelani Surya Saputra\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M6 9h3v10H6V9Zm1.5-4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM11 9h3v1.4c.7-1.1 1.6-1.6 2.8-1.6 2.4 0 3.2 1.6 3.2 4V19h-3v-5.5c0-1.3-.3-2.1-1.4-2.1-1.2 0-1.6.9-1.6 2.1V19h-3V9Z\"/></svg>LinkedIn</a></span></span></article>",
+      "css": ".ds-person{position:relative;width:260px;min-height:370px;border-radius:24px;overflow:hidden;background:#edf2f7;color:var(--navy,#071a33);font-family:var(--font-poppins,Poppins),sans-serif}.ds-person-toggle{position:absolute;inset:0;z-index:1;width:100%;height:100%;border:0;border-radius:24px;background:transparent;cursor:pointer}.ds-initials{height:220px;display:grid;place-items:center;background:#e6edf5;color:#173b63;font-size:85px;font-weight:600;letter-spacing:-.04em}.ds-info{padding:23px 22px;display:grid;gap:7px}.ds-info small,.ds-person-links>span{font-size:10px;color:#52647c}.ds-info strong{font-size:16px;line-height:1.45}.ds-person-links{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.ds-person-links a{display:inline-flex;align-items:center;gap:7px;min-height:44px;position:relative;z-index:3;font-size:11px;color:var(--navy,#071a33);text-decoration:none}.ds-person-links a:hover{color:var(--action,#245fd1)}.ds-person-toggle:focus-visible,.ds-person-links a:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}"
     },
     {
       "name": "Studio Primary Action",
@@ -964,17 +986,17 @@
       "css": ".ds-studio-field{display:grid;gap:7px;max-width:350px;font-family:var(--studio-font,Poppins),sans-serif;font-size:11px;font-weight:500;color:var(--s-navy,#071a33)}.ds-studio-field input{font:inherit;font-size:12px;font-weight:400;border:1px solid #cbd4e0;border-radius:8px;background:#fff;color:inherit;padding:10px 12px;min-width:0;transition:border-color .18s}.ds-studio-field input:hover{border-color:#596879}.ds-studio-field input:focus{border-color:#245fc7}.ds-studio-field input:focus-visible{outline:3px solid #3d79d9;outline-offset:3px}.ds-status{justify-self:start;border-radius:5px;padding:4px 9px;font-size:10px;background:#e7eefb;color:#214b93}"
     },
     {
-      "name": "Upright Service Package Card",
+      "name": "Two-sided Service Package Card",
       "kind": "card",
       "refersTo": "package-row",
-      "description": "CMS-owned independent Navy card on White, with amount, optional starting-price unit, White consultation action and unboxed editable scope.",
-      "html": "<div class=\"ds-package-stage\"><article class=\"ds-package\"><h3>Landing Page</h3><div class=\"ds-package-price\"><strong>Rp5.000.000</strong><span>Tanpa CMS</span></div><a class=\"ds-package-action\" href=\"/kontak?layanan=Website+Development&amp;paket=landing-page\" aria-label=\"Konsultasi paket Landing Page\">Bahas paket ini</a><div class=\"ds-package-scope\"><h4>Cakupan paket</h4><p>Halaman penawaran untuk memperkenalkan layanan, produk, atau kampanye Anda.</p><p>Tanpa CMS</p></div></article></div>",
-      "css": ".ds-package-stage{padding:8px 0;background:#fff}.ds-package{display:flex;flex-direction:column;gap:25px;max-width:340px;padding:32px 26px;border:0;border-radius:16px;background:var(--navy,#071a33);color:#fff;font-family:var(--font-poppins,Poppins),sans-serif;box-shadow:0 10px 28px rgb(7 27 53 / .10);transition:transform .25s cubic-bezier(.16,1,.3,1)}.ds-package h3{min-height:64px;font-size:22px;font-weight:600;line-height:1.4;letter-spacing:-.025em;margin:0}.ds-package-price{display:flex;flex-direction:column;gap:10px;min-height:145px}.ds-package-price strong{font-size:clamp(27px,2.35vw,36px);font-weight:600;line-height:1.7;letter-spacing:-.035em;white-space:nowrap}.ds-package-price span{font-size:11px;line-height:1.7;color:#c5d0dd;min-height:34px;max-width:26ch}.ds-package-action{display:flex;align-items:center;justify-content:center;min-height:46px;padding:10px 26px;border:1px solid var(--navy,#071a33);border-radius:30px;background:#fff;color:var(--navy,#071a33);font-size:12px;font-weight:600;line-height:1.5;text-decoration:none;white-space:nowrap;transition:background .25s,color .25s}.ds-package-action:hover{background:#dae6f2;color:var(--navy,#071a33)}.ds-package:focus-within{box-shadow:0 12px 32px rgb(7 27 53 / .16)}.ds-package-action:focus-visible{outline:3px solid var(--blue,#397bff);outline-offset:5px}.ds-package-scope{margin-top:2px;padding:8px 0 0;border-radius:0;background:transparent;flex:1}.ds-package-scope h4{font-size:13px;margin:0 0 15px;font-weight:600}.ds-package-scope p{font-size:12px;color:#c5d0dd;line-height:1.8;margin:0}.ds-package-scope p+p{margin-top:16px;color:#fff}@media(hover:hover) and (prefers-reduced-motion:no-preference){.ds-package:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgb(7 27 53 / .16)}}@media(max-width:1199px){.ds-package{padding:28px 20px;gap:24px}.ds-package-price strong{font-size:25px}}@media(max-width:991px){.ds-package{padding:30px;max-width:560px}.ds-package h3,.ds-package-price{min-height:0}.ds-package-price strong{font-size:36px}.ds-package-price span{min-height:0;max-width:none}}@media(max-width:767px){.ds-package{padding:27px 22px;gap:22px}.ds-package h3{font-size:21px}.ds-package-price strong{font-size:32px}}"
+      "description": "Selected CMS package with visible category rates above, compact Navy price/scope faces and independent Navy consultation. Static front preview.",
+      "html": "<section class=\"ds-deck\"><h3>Website &amp; aplikasi</h3><div class=\"ds-choices\" role=\"tablist\" aria-label=\"Pilihan paket Website &amp; aplikasi\"><button role=\"tab\" aria-selected=\"true\" type=\"button\">Landing Page<strong>Rp5.000.000</strong></button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\" type=\"button\">Web Application<strong>Rp8.000.000</strong></button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\" type=\"button\">Company Profile + CMS<strong>Rp10.000.000</strong></button></div><article class=\"ds-package\"><h4>Landing Page</h4><div class=\"ds-amount\"><strong>Rp5.000.000</strong><span>Tanpa CMS</span></div><p>Lihat cakupan paket</p><button class=\"ds-flip\" type=\"button\" aria-label=\"Lihat cakupan Landing Page\" aria-pressed=\"false\"></button></article><a class=\"ds-package-action\" href=\"/kontak?layanan=Website+Development&amp;paket=landing-page\">Bahas paket Landing Page</a></section>",
+      "css": ".ds-deck{max-width:520px;background:#fff;color:var(--navy,#071a33);font-family:var(--font-poppins,Poppins),sans-serif}.ds-deck h3{font-size:21px;font-weight:600;margin:0 0 22px}.ds-choices{display:grid;margin-bottom:30px}.ds-choices button{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:64px;padding:12px 0;background:none;border:0;border-bottom:1px solid var(--line,#dce1e7);font:inherit;font-size:12px;text-align:left;color:var(--slate,#5b6879);cursor:pointer}.ds-choices strong{font-size:12px;font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}.ds-choices [aria-selected=true]{color:var(--navy,#071a33);font-weight:600;border-bottom-color:var(--navy,#071a33)}.ds-choices button:hover{color:var(--navy,#071a33)}.ds-package{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:290px;padding:30px;border-radius:16px;background:var(--navy,#071a33);color:#fff;box-shadow:0 10px 24px -18px rgb(7 27 53 / .3);margin-bottom:20px}.ds-package h4{font-size:23px;font-weight:600;line-height:1.4;letter-spacing:-.025em;max-width:26ch;margin:0}.ds-amount{display:flex;flex-direction:column;gap:10px}.ds-amount strong{font-size:clamp(29px,3vw,38px);line-height:1.2;letter-spacing:-.035em;font-weight:600;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.ds-amount span,.ds-package p{font-size:11px;color:#c5d0dd;margin:0}.ds-flip{position:absolute;inset:0;width:100%;border:0;border-radius:16px;background:none;cursor:pointer}.ds-package-action{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:30px;background:var(--navy,#071a33);color:#fff;font-size:12px;font-weight:500;padding:10px 20px;text-align:center;text-decoration:none}.ds-package-action:hover{background:#173551}.ds-choices button:focus-visible,.ds-flip:focus-visible,.ds-package-action:focus-visible{outline:2px solid var(--blue,#397bff);outline-offset:5px}@media(max-width:767px){.ds-package{padding:27px 25px}.ds-amount strong{font-size:34px}.ds-choices button,.ds-choices strong{font-size:11px}}"
     }
   ],
   "narrative": {
     "northStar": "A familiar software-house experience, with Wasla's own work and voice.",
-    "overview": "The public site keeps the owner's established software-house composition: photographic opening, centered grid, Poppins hierarchy, real project screenshots, navy/white fields and capsule actions. Actual Three.js service geometry and semantic people flip cards remain. The header has the left wordmark and static ID marker. Project/detail/gallery devices sit directly on white through transparent stages, with authentic screenshot textures, real-image fallbacks and retained last-frame posters. Six independent upright Navy service-package cards use White actions directly on the White page. The straight Navy footer retains readable company/contact/service/navigation groups; its decorative `wasla informatika` is large, side by side and equally subdued. The expertise section has a branded 3D phone and direct headings without kickers. Public CTA surfaces are White.\n\nWasla Studio is the Operate surface of this identity: concrete tasks, readable forms, predictable navigation, real counts and honest empty states. It is a custom dashboard and internal scheduler, with no Payload runtime. The latest owner screenshots and `.impeccable/transparent-devices-refinement.md` extend `.impeccable/studio-direction.md` and override gray device fields, an enclosing navy package field and the small stacked footer subtitle in earlier device/card contracts. This source-extracted record refreshes the incumbent system; no new comp or invented photography is claimed.",
+    "overview": "The public site keeps the owner's established software-house composition: photographic opening, centered grid, Poppins hierarchy, real project screenshots, navy/white fields and capsule actions. Actual Three.js service geometry and semantic people flip cards remain. The header has the left wordmark and static ID marker. Project/detail/gallery devices sit directly on white through transparent stages, with authentic screenshot textures, real-image fallbacks and retained display-canvas frames. Two compact Navy category cards present six visible package rates directly on the White page, with independent Navy consultation actions. The straight Navy footer retains readable company/contact/service/navigation groups; its decorative `wasla informatika` is large, side by side and equally subdued. The expertise section has a branded 3D phone and direct headings without kickers. Public CTA surfaces are White.\n\nWasla Studio is the Operate surface of this identity: concrete tasks, readable forms, predictable navigation, real counts and honest empty states. It is a custom dashboard and internal scheduler, with no Payload runtime. The latest owner corrections in `.impeccable/stacked-packages-performance.md` extend `.impeccable/transparent-devices-refinement.md` and `.impeccable/studio-direction.md`: compact two-sided package cards, supplied developer LinkedIn links and shared retained 3D scenes supersede the former six tall cards and encoded posters. Earlier gray device fields, enclosing navy package field and small stacked footer subtitle remain superseded. This source-extracted record refreshes the incumbent system; no new comp or invented photography is claimed.",
     "keyCharacteristics": [
       "Photographic public opening and seven real screenshot projects.",
       "Actual unboxed Three.js service objects with deliberate interaction.",
@@ -982,7 +1004,7 @@
       "Thirteen services with stable slug-based scenes and six homepage choices, including photography, video and graphic/photo editing.",
       "Original CMS screenshots on physical Three.js laptop, tablet and phone meshes, with server-rendered real-image device fallbacks.",
       "Left header wordmark, White CTAs and a straight navy footer.",
-      "Six CMS-owned upright Navy service-package cards directly on White, with explicit amounts, starting-price units where applicable and White actions.",
+      "Six CMS-owned package rates visible in two category selectors on White; selected Navy cards swivel between price and scope, with separate consultation actions.",
       "Custom Studio Operate workspace with real data and explicit save states."
     ],
     "rules": [
@@ -1000,16 +1022,16 @@
     "dos": [
       "Do preserve Wasla navy/white, Poppins, the photographic opening and original project covers.",
       "Do keep Three.js geometry, explicit touch activation, keyboard rotation and reduced-motion behavior.",
-      "Do use provenance-backed retouches of the four supplied photos or honest initials, manual gallery uploads and independent WhatsApp links.",
+      "Do use provenance-backed retouches of the four supplied photos or honest initials, full supplied names, manual gallery uploads and independent WhatsApp/LinkedIn links.",
       "Do preserve original CMS screenshots as device textures and server-rendered image fallbacks, and expose originals in enlargement.",
       "Do keep the decorative wasla informatika signature on one baseline with matching large lettering and .08 opacity on both words, with no height cap; preserve separately readable company identity.",
-      "Do keep amounts, applicable starting-price units and package/CMS scope visible in independent upright Navy cards on White with White actions; preserve native public scrolling and actual footer destinations.",
+      "Do keep all six package rates visible in two category selectors on White, with compact Navy price/scope cards and separate consultation actions; preserve native public scrolling and actual footer destinations.",
       "Do keep Studio forms readable, mobile save controls first and calendar details available in the agenda.",
       "Do preserve published content until an explicit publish action, role restrictions and private data boundaries."
     ],
     "donts": [
       "Don't restore Payload runtime, the right header emblem, the connected tree diagram or raster-only service tilt.",
-      "Don't introduce footer waves/seams, gray device-stage rectangles, an enclosing navy package field, gray public CTA blocks, decorative link arrows or fabricated portraits.",
+      "Don't introduce footer waves/seams, gray device-stage rectangles, an enclosing navy package field, rear package strips, gray public CTA blocks, decorative link arrows or fabricated portraits.",
       "Don't invent client work, metrics, schedules, automatic reminders or project stacks.",
       "Don't treat staged runtime verification, local captures or documentation as completed production promotion or DNS."
     ]

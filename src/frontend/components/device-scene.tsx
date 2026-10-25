@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useEffect, useRef, type ReactNode } from 'react'
 
 export type DeviceScreen = { src: string; alt: string; width: number; height: number }
@@ -13,19 +13,25 @@ export function DeviceScene({ spec, className, children }: { spec: DeviceSceneSp
     const spec = JSON.parse(serialized) as DeviceSceneSpec
     const element = host.current
     if (!element) return
-    let disposed = false, visible = false, loading = false
+    let disposed = false, visible = false, loading = false, attempts = 0
     let controller: DeviceSceneController | undefined
     let idle: number | undefined
+    let retry: ReturnType<typeof setTimeout> | undefined
     async function start() {
-      if (loading || controller || disposed || !visible) return
-      loading = true
+      if (loading || controller || disposed || !visible || attempts >= 2) return
+      loading = true; attempts++
       try {
         const runtime = await import('../lib/device-scene-runtime')
-        if (disposed || !visible) return
+        if (disposed || !visible) { attempts--; return }
         const mounted = await runtime.mountDeviceScene(element!, spec, () => !disposed)
         if (disposed) mounted?.dispose()
-        else { controller = mounted; controller?.setVisible(visible) }
-      } catch { element!.dataset.deviceState = 'fallback' }
+        else { controller = mounted; controller?.setVisible(visible); if (mounted) { delete element!.dataset.deviceError; delete element!.dataset.deviceState } }
+      } catch (error) {
+        if (disposed) return
+        element!.dataset.deviceState = 'fallback'
+        element!.dataset.deviceError = error instanceof Error ? error.name : 'UnknownError'
+        if (attempts < 2) retry = setTimeout(() => { if (visible && !disposed) void start() }, 350)
+      }
       finally { loading = false }
     }
     const observer = new IntersectionObserver(entries => {
@@ -42,7 +48,7 @@ export function DeviceScene({ spec, className, children }: { spec: DeviceSceneSp
       prewarm.disconnect()
     }, { rootMargin: '300px' })
     prewarm.observe(element); observer.observe(element)
-    return () => { disposed = true; if (idle !== undefined) window.cancelIdleCallback(idle); controller?.dispose(); observer.disconnect(); prewarm.disconnect() }
+    return () => { disposed = true; clearTimeout(retry); if (idle !== undefined) window.cancelIdleCallback(idle); controller?.dispose(); observer.disconnect(); prewarm.disconnect() }
   }, [serialized])
   return <div ref={host} className={`${className} device3d-stage`} data-device-kind={spec.device}>{children}</div>
 }

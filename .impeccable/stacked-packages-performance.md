@@ -11,3 +11,7 @@ Cache only published public content for a bounded interval with immediate invali
 Every homepage/project-list card must visibly name its project, expose its internal detail anchor and its configured external website href. Preserve owner photos, flip biographies, admin scheduler, domain, straight footer and inline low-opacity wordmark.
 
 Verification: use supplied recording samples, comparable full scroll journey measurement (not hero-only LCP), CMS draft/publish/unpublish/price invalidation tests, four widths, keyboard/touch/reduced motion, fresh independent finish review, documentation, staged and live deployment verification. Historical reports remain scoped to their release.
+
+## Owner correction � evening continuation
+
+Latest owner screenshot rejects the rear pseudo-card strips as a folder-like appearance. Remove those strips; retain a compact independent two-sided card, centered short swivel and immediate reduced-motion state. Preserve the price index and consultation flow. Add real provided LinkedIn profile links independently clickable on both team faces, stored in existing CMS socials: Jaelani Surya Saputra (jayszrs), Al Hafiz Taufikur Rohman (alhafiztaufikurrohman), Muhammad Lakchamana (lakchamana). These names replace the prior shortened public names; Ahmad Suroso remains unchanged.

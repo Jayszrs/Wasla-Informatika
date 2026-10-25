@@ -1,11 +1,9 @@
 import { createHmac } from 'node:crypto'
-import { Pool } from 'pg'
+import { pool } from '@/backend/database'
 import { cms } from '@/backend/cms'
 import { contactSchema } from '@/shared/validation'
 import { sameOrigin } from '@/backend/auth'
 
-const globals = globalThis as unknown as { contactPool?: Pool }
-const pool = globals.contactPool ||= new Pool({ connectionString: process.env.DATABASE_URL, max: 3, connectionTimeoutMillis: 5000 })
 const json = (data: unknown, status: number, extra: Record<string, string> = {}) => Response.json(data, { status, headers: { 'Cache-Control': 'no-store', ...extra } })
 
 export async function submitConsultation(request: Request) {

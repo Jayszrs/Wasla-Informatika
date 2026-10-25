@@ -30,10 +30,18 @@ export function PackageDeck({ title, plans }: { title: string; plans: WebsitePac
           <div className={styles.front} inert={flipped} aria-hidden={flipped}>
             <h4>{plan.name}</h4>
             <div className={styles.amount}>{plan.startingPrice && <span>Mulai dari</span>}<strong>{formatRupiah(plan.price)}</strong><span>{plan.priceUnit || plan.cms}</span></div>
-            <p>Klik untuk melihat cakupan paket</p>
+            <p>
+              Lihat cakupan paket
+            </p>
           </div>
           <div className={styles.back} inert={!flipped} aria-hidden={!flipped}>
-            <h4>{plan.name}</h4><div><h5>Cakupan paket</h5><p>{plan.description}</p><p className={styles.note}>{plan.cms}</p></div><span>Klik untuk kembali ke harga</span>
+            <h4>{plan.name}</h4>
+            <div>
+              <h5>Cakupan paket</h5>
+              <p>{plan.description}</p>
+              <p className={styles.note}>{plan.cms}</p>
+            </div>
+            <span>Kembali ke harga</span>
           </div>
         </div>
         <button type="button" className={styles.flip} aria-label={`${flipped ? 'Lihat harga' : 'Lihat cakupan'} ${plan.name}`} aria-pressed={flipped} onClick={() => setFlipped(value => !value)}/>

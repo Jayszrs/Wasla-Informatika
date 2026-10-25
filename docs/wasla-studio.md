@@ -18,7 +18,9 @@ Tombol paket membuka formulir berisi pilihan layanan dan ringkasan paket. Pengun
 
 ## Foto dan bio tim
 
-Buka **Tim & divisi**, pilih anggota, lalu isi **Tentang anggota** untuk bio dan gunakan **Foto profil → Unggah gambar** untuk mengganti foto. Simpan agar beranda dan Tentang diperbarui. Klik kartu menampilkan bio; klik lagi pada kartu mengembalikan profil. Tombol kembali terpisah sudah dihapus, sedangkan tautan WhatsApp tetap menjadi tindakan tersendiri. Keyboard memakai Enter/Space pada kartu, lalu Tab ke WhatsApp saat sisi bio terbuka. Tinggi kartu mengikuti isi bio.
+Buka **Tim & divisi**, pilih anggota, lalu isi **Tentang anggota** untuk bio dan gunakan **Foto profil → Unggah gambar** untuk mengganti foto. Simpan agar beranda dan Tentang diperbarui. Klik kartu menampilkan bio; klik lagi pada kartu mengembalikan profil. Tombol kembali terpisah sudah dihapus. Tautan WhatsApp pada sisi bio dan LinkedIn pada kedua sisi tetap menjadi tindakan tersendiri. Keyboard memakai Enter/Space pada kartu, lalu Tab ke tautan yang terlihat. Tinggi kartu mengikuti isi bio.
+
+Untuk profil LinkedIn, gunakan baris **Tautan kontak** yang sudah tersedia: isi **Nama tautan** dengan `LinkedIn` dan **URL HTTPS** dengan profil lengkap. Gunakan nama lengkap Jaelani Surya Saputra (`https://www.linkedin.com/in/jayszrs/`), Al Hafiz Taufikur Rohman (`https://www.linkedin.com/in/alhafiztaufikurrohman/`), dan Muhammad Lakchamana (`https://www.linkedin.com/in/lakchamana/`). Simpan perubahan; tautan tampil terpisah dari area pembalik kartu di beranda dan Tentang. Tidak ada kolom LinkedIn khusus. Pertahankan baris WhatsApp yang ada. Ahmad Suroso tidak diberi tautan LinkedIn tanpa profil yang disediakan pemilik.
 
 ## Scheduler project
 
@@ -38,4 +40,4 @@ CMS menggunakan tabel `studio_documents`, `studio_globals`, `studio_users`, `stu
 
 Antarmuka Studio adalah ruang kerja navy/putih dengan navigasi responsif, pencarian konten, filter status, keadaan kosong yang menjelaskan tindakan berikutnya, form edit, dan kalender. Ringkasan kosong tidak diisi project atau jadwal fiktif. Editor artikel mendukung judul, paragraf, tebal, miring, daftar, dan tautan dengan sintaks yang dijelaskan pada kolom. Rich text lama tetap utuh sampai isi diubah.
 
-Elemen layanan publik memakai Three.js dengan geometri, material, pencahayaan, dan bayangan. Mouse/keyboard dapat memutar model. Di perangkat sentuh, tombol Putar objek mengaktifkan interaksi supaya halaman tetap dapat digulir. Reduced motion menonaktifkan gerak otomatis; gambar cadangan digunakan bila WebGL tidak tersedia. Pengujian sentuh dilakukan lewat emulasi Chrome, bukan seluruh perangkat fisik.
+Elemen layanan publik memakai mesh Three.js dengan geometri dan material nyata, diterangi langsung oleh lampu hemisphere dan directional. Runtime tidak membuat environment map atau peta bayangan real-time untuk setiap objek. Mouse/keyboard dapat memutar model. Di perangkat sentuh, tombol Putar objek mengaktifkan interaksi supaya halaman tetap dapat digulir. Reduced motion menonaktifkan gerak otomatis; gambar cadangan digunakan bila WebGL tidak tersedia. Pengujian sentuh dilakukan lewat emulasi Chrome, bukan seluruh perangkat fisik.

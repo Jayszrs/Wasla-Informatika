@@ -89,3 +89,44 @@ test('same whole-card toggle works both ways and CMS bio/photo remain editable w
     expect(restored.status()).toBe(200)
   }
 })
+
+
+test('cold responsive screenshots and one transient decode failure recover without raw media textures', async ({ page }) => {
+  await page.addInitScript(() => {
+    const selected = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'currentSrc')!
+    Object.defineProperty(HTMLImageElement.prototype, 'currentSrc', {
+      configurable: true,
+      get(this: HTMLImageElement) { return this.closest('.device-frame') ? '' : selected.get!.call(this) },
+    })
+    const decode = HTMLImageElement.prototype.decode
+    const stats = { rawRejected: 0, transientFailures: 0, decoded: [] as string[] }
+    Reflect.set(window, '__coldDeviceSources', stats)
+    HTMLImageElement.prototype.decode = async function () {
+      const independentTexture = !this.isConnected && this.crossOrigin === 'anonymous'
+      if (independentTexture) {
+        if (new URL(this.src).pathname.startsWith('/api/media/file/')) {
+          stats.rawRejected++
+          throw new DOMException('Raw media redirects cannot be used as CORS textures', 'EncodingError')
+        }
+        if (!stats.transientFailures) {
+          stats.transientFailures++
+          throw new DOMException('Transient image decode failure', 'EncodingError')
+        }
+      }
+      await decode.call(this)
+      if (independentTexture) stats.decoded.push(`${this.naturalWidth}x${this.naturalHeight}`)
+    }
+  })
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/portofolio/mahameru-baja-indonesia')
+  const stage = page.locator('.detail-visual .device3d-stage')
+  await stage.scrollIntoViewIfNeeded()
+  const canvas = stage.locator('canvas[data-rendered3d=true]')
+  await expect(canvas).toBeVisible({ timeout: 30000 })
+  await expect(stage).not.toHaveAttribute('data-device-state', 'fallback')
+  const stats = await page.evaluate(() => Reflect.get(window, '__coldDeviceSources') as { rawRejected: number; transientFailures: number; decoded: string[] })
+  expect(stats.rawRejected).toBe(0)
+  expect(stats.transientFailures).toBe(1)
+  expect(stats.decoded).toHaveLength(2)
+  expect((await canvas.getAttribute('data-texture-source-sizes'))!.split(',').sort()).toEqual(stats.decoded.sort())
+})

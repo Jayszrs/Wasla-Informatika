@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { contactSchema, validPublicLink, validWhatsApp } from '../src/shared/validation'
-import { whatsappMessage } from '../src/shared/contacts'
+import { whatsappMessage, linkedinProfile } from '../src/shared/contacts'
 import { databaseConnectionString } from '../src/backend/database-connection'
 import { publicBlobSource, mediaSource } from '../src/shared/media'
 import { expand, findMediaByFilename } from '../src/backend/content'
@@ -62,6 +62,8 @@ test('public links and WhatsApp reject unsafe or invented formats', () => {
   for (const link of ['javascript:alert(1)', '//evil.invalid', '/\\evil.invalid', 'http://insecure.invalid']) assert.equal(validPublicLink(link), false)
   assert.equal(validPublicLink('/layanan/website-development'), true)
   assert.equal(validPublicLink('https://example.invalid'), true)
+  assert.equal(linkedinProfile('https://www.linkedin.com/in/jayszrs/?isSelfProfile=true'), 'https://www.linkedin.com/in/jayszrs/')
+  for (const url of ['javascript:alert(1)', 'https://linkedin.com.evil.invalid/in/jay', 'https://user:password@linkedin.com/in/jay', 'https://www.linkedin.com/company/test', 'http://linkedin.com/in/jay']) assert.equal(linkedinProfile(url), undefined)
   assert.equal(validWhatsApp('6281234567890'), true)
   for (const number of ['', '+6281234567890', '08123456789', 'abc']) assert.equal(validWhatsApp(number), false)
 })
