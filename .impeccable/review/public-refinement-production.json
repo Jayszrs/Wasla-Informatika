@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "url": "https://wasla.my.id",
+  "checkedAt": "2026-10-25T07:03:40.872Z",
+  "deploymentId": "dpl_5yZHwfwQdAtuk5i8DGiXGfSYvt4s",
+  "checks": [
+    "Six live prices, three starting-price labels, correct creative consultation paths and no navy enclosing field",
+    "Live project stages are transparent; project grid remains visible; both footer words share baseline and opacity at desktop/mobile",
+    "Canonical package sitemap and robots remain on wasla.my.id"
+  ]
+}

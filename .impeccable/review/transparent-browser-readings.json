@@ -1,0 +1,481 @@
+{
+  "results": [
+    {
+      "file": ".impeccable/review/transparent-home-viewport-1440.png",
+      "section": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 0,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-project-card-section-1440.png",
+      "section": ".project-card:first-child",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 881,
+        "overflow": false,
+        "deviceCanvases": 4,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-expertise-phone-section-1440.png",
+      "section": ".agency-feature",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 5984,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-team-front-section-1440.png",
+      "section": ".division-structure",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 7369,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-team-back-section-1440.png",
+      "section": ".division-structure",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 7369,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-detail-device-section-1440.png",
+      "section": ".detail-visual",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 277,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-gallery-1-section-1440.png",
+      "section": ".gallery-grid figure:nth-child(1)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 1662,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-gallery-2-section-1440.png",
+      "section": ".gallery-grid figure:nth-child(2)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 2316,
+        "overflow": false,
+        "deviceCanvases": 3,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-gallery-3-section-1440.png",
+      "section": ".gallery-grid figure:nth-child(3)",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 2332,
+        "overflow": false,
+        "deviceCanvases": 3,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-package-cards-section-1440.png",
+      "section": ".website-packages",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 430,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-footer-upper-viewport-1440.png",
+      "section": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 2074,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-footer-bottom-viewport-1440.png",
+      "section": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 2074,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-home-viewport-390.png",
+      "section": null,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 0,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-project-card-section-390.png",
+      "section": ".project-card:first-child",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 738,
+        "overflow": false,
+        "deviceCanvases": 3,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-expertise-phone-section-390.png",
+      "section": ".agency-feature",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 9587,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-team-front-section-390.png",
+      "section": ".division-structure",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 12362,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-team-back-section-390.png",
+      "section": ".division-structure",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 11972,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-detail-device-section-390.png",
+      "section": ".detail-visual",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 0,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-gallery-1-section-390.png",
+      "section": ".gallery-grid figure:nth-child(1)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 1171,
+        "overflow": false,
+        "deviceCanvases": 3,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-gallery-2-section-390.png",
+      "section": ".gallery-grid figure:nth-child(2)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 1302,
+        "overflow": false,
+        "deviceCanvases": 2,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-gallery-3-section-390.png",
+      "section": ".gallery-grid figure:nth-child(3)",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 1991,
+        "overflow": false,
+        "deviceCanvases": 3,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-package-cards-section-390.png",
+      "section": ".website-packages",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 249,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-footer-upper-viewport-390.png",
+      "section": null,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 3857,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-footer-bottom-viewport-390.png",
+      "section": null,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "reading": {
+        "scrollY": 4065,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-home-viewport-736.png",
+      "section": null,
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 0,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-project-card-section-736.png",
+      "section": ".project-card:first-child",
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 802,
+        "overflow": false,
+        "deviceCanvases": 2,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-expertise-phone-section-736.png",
+      "section": ".agency-feature",
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 10376,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-detail-device-section-736.png",
+      "section": ".detail-visual",
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 0,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-package-cards-section-736.png",
+      "section": ".website-packages",
+      "viewport": {
+        "width": 736,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 227,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-home-viewport-1024.png",
+      "section": null,
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 0,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-project-card-section-1024.png",
+      "section": ".project-card:first-child",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 853,
+        "overflow": false,
+        "deviceCanvases": 4,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-expertise-phone-section-1024.png",
+      "section": ".agency-feature",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 5719,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-detail-device-section-1024.png",
+      "section": ".detail-visual",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 176,
+        "overflow": false,
+        "deviceCanvases": 1,
+        "brokenImages": []
+      }
+    },
+    {
+      "file": ".impeccable/review/transparent-package-cards-section-1024.png",
+      "section": ".website-packages",
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "reading": {
+        "scrollY": 430,
+        "overflow": false,
+        "deviceCanvases": 0,
+        "brokenImages": []
+      }
+    }
+  ],
+  "errors": []
+}

@@ -3,8 +3,8 @@ import { WebsitePackages } from '@/frontend/components/website-packages'
 import { PageIntro, CTA } from '@/frontend/components/ui'
 import { pageMeta } from '@/frontend/lib/seo'
 
-export const metadata = pageMeta('Paket Website', 'Landing page Rp5 juta tanpa CMS, web application Rp8 juta, dan company profile dengan CMS Rp10 juta.', '/paket-website')
+export const metadata = pageMeta('Paket Website, Fotografi & Video Editing', 'Pilihan paket website, fotografi wisuda dan wedding, serta video editing Wasla Informatika.', '/paket-website')
 export default async function Page() {
   const settings = await getSettings()
-  return <><PageIntro title="Paket website." copy="Pilihan dasar untuk halaman penawaran, aplikasi web, dan profil bisnis Anda."/><WebsitePackages packages={settings.websitePackages} standalone/><CTA title="Kita mulai dari kebutuhan Anda."/></>
+  return <><PageIntro title="Paket layanan." copy="Website, fotografi, dan video editing untuk bisnis dan momen Anda."/><WebsitePackages packages={settings.websitePackages} standalone/><CTA title="Kita mulai dari kebutuhan Anda."/></>
 }

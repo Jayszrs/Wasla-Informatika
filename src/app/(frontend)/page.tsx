@@ -44,7 +44,7 @@ export default async function Home() {
 
     <section className="works-section wrap" id="featured-works">
       <div className="section-heading centered"><h2>Project pilihan</h2><p>Website dan aplikasi yang telah kami kerjakan untuk pendidikan, organisasi, dan bisnis.</p></div>
-      <div className="project-grid homepage-projects" data-reveal>{featured.map(p => <ProjectCard key={p.id} project={p}/>)}</div>
+      <div className="project-grid homepage-projects">{featured.map(p => <ProjectCard key={p.id} project={p}/>)}</div>
       {!featured.length && <p>Project sedang diperbarui. Mari diskusikan kebutuhan Anda.</p>}
       <div className="section-action"><ButtonLink href="/portofolio" variant="button-outline">Lihat semua project</ButtonLink></div>
     </section>
@@ -66,8 +66,8 @@ export default async function Home() {
     <section className="agency-feature wrap">
       <div className="agency-feature-visual"><BrandPhone/></div>
       <div className="agency-feature-copy">
-        <article><div className="feature-label"><span className="descriptor-icon"><Arrow diagonal/></span><h2>Keahlian kami</h2></div><div><h3>Desain yang terarah.<br/>Teknologi yang tepat guna.</h3><p>Website responsif, aplikasi web, e-commerce, desain UI/UX, pengelolaan konten, integrasi sistem, dan solusi IT. Kami menyatukan disiplin tersebut untuk membantu Anda membangun pengalaman digital yang berguna.</p></div></article>
-        <article><div className="feature-label"><span className="descriptor-icon"><Arrow diagonal/></span><h2>Proses kami</h2></div><div><h3>Memahami kebutuhan,<br/>sebelum membangun solusi.</h3><p>Kita mulai dari tujuan bisnis dan pengguna, kemudian menyusun prioritas, merancang pengalaman, serta mengembangkan dan menguji secara bertahap. Setiap langkah dibahas bersama agar hasilnya mudah digunakan dan dikelola.</p><Link className="text-link" href="/tentang-kami">Kenali cara kami bekerja<Arrow diagonal/></Link></div></article>
+        <article><div><h2>Desain yang terarah.<br/>Teknologi yang tepat guna.</h2><p>Website responsif, aplikasi web, e-commerce, desain UI/UX, pengelolaan konten, integrasi sistem, dan solusi IT. Kami menyatukan disiplin tersebut untuk membantu Anda membangun pengalaman digital yang berguna.</p></div></article>
+        <article><div><h2>Memahami kebutuhan,<br/>sebelum membangun solusi.</h2><p>Kita mulai dari tujuan bisnis dan pengguna, kemudian menyusun prioritas, merancang pengalaman, serta mengembangkan dan menguji secara bertahap. Setiap langkah dibahas bersama agar hasilnya mudah digunakan dan dikelola.</p><Link className="text-link" href="/tentang-kami">Kenali cara kami bekerja</Link></div></article>
       </div>
     </section>
 

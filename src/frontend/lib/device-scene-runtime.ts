@@ -4,6 +4,7 @@ import type { DeviceSceneSpec, DeviceScreen } from '../components/device-scene'
 
 const MAX_RENDERERS = 4
 let renderers = 0
+let sceneSequence = 0
 const waiting = new Set<() => void>()
 async function reserve(alive: () => boolean) {
   while (renderers >= MAX_RENDERERS) {
@@ -21,6 +22,18 @@ async function reserve(alive: () => boolean) {
 function release() { renderers--; waiting.forEach(wake => wake()) }
 
 export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSpec, alive: () => boolean): Promise<(() => void) | undefined> {
+  const fallbacks = [...host.querySelectorAll<HTMLImageElement>('.device-frame img, .brand-phone-fallback img')]
+  const screens = [spec.screen, ...(spec.mobile ? [spec.mobile] : [])]
+  const sources = await Promise.all(screens.map(async (screen, index) => {
+    const fallback = fallbacks[index]
+    // A srcset image reports density-corrected dimensions; decode its selected
+    // bitmap without srcset so drawImage crops in the bitmap's own pixel space.
+    const source = new Image(); source.crossOrigin = 'anonymous'; source.decoding = 'async'
+    source.src = fallback?.currentSrc || screen.src
+    await source.decode()
+    return source
+  }))
+  if (!alive()) return
   if (!await reserve(alive)) return
   let renderer: T.WebGLRenderer | undefined, frame = 0, stopped = false
   const resources: { dispose(): void }[] = []
@@ -28,9 +41,13 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
   const cleanup = () => {
     if (stopped) return
     stopped = true; cancelAnimationFrame(frame)
+    const ownsHost = renderer && host.dataset.deviceOwner === renderer.domElement.dataset.deviceOwner
     cleanups.forEach(fn => fn()); resources.forEach(item => item.dispose())
     if (renderer) { renderer.dispose(); renderer.forceContextLoss(); renderer.domElement.remove() }
-    delete host.dataset.deviceReady; delete host.dataset.deviceState
+    if (ownsHost) {
+      delete host.dataset.deviceReady; delete host.dataset.deviceState
+      delete host.dataset.deviceOwner
+    }
     release()
   }
   try {
@@ -50,13 +67,8 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
       const geometry = new RoundedBoxGeometry(...size, 2, radius); resources.push(geometry)
       const mesh = new T.Mesh(geometry, material); mesh.position.set(...position); parent.add(mesh); return mesh
     }
-    const fallbacks = [...host.querySelectorAll<HTMLImageElement>('img')]
     async function texture(screen: DeviceScreen, ratio: number, index: number) {
-      const fallback = fallbacks[index]
-      if (fallback && !fallback.complete) await fallback.decode().catch(() => {})
-      const source = new Image(); source.crossOrigin = 'anonymous'; source.decoding = 'async'
-      source.src = fallback?.currentSrc || screen.src
-      await source.decode()
+      const source = sources[index]
       if (!alive()) return null
       const maximum = innerWidth < 768 ? 1024 : 1536
       const width = Math.floor(Math.min(spec.brand ? 720 : source.naturalWidth, maximum, maximum * ratio))
@@ -126,8 +138,12 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
     const reduced = matchMedia('(prefers-reduced-motion: reduce)'), fine = matchMedia('(hover:hover) and (pointer:fine)')
     let currentX = -.11, currentY = -.18, targetX = currentX, targetY = currentY, drawn = 0
     const canvas = renderer.domElement
+    canvas.dataset.deviceOwner = String(++sceneSequence); host.dataset.deviceOwner = canvas.dataset.deviceOwner
     canvas.className = 'device3d-canvas'; canvas.setAttribute('aria-hidden', 'true'); canvas.dataset.device3d = spec.device; canvas.dataset.texturedScreens = spec.mobile ? '2' : '1'
+    canvas.dataset.textureSourceSizes = sources.map(source => `${source.naturalWidth}x${source.naturalHeight}`).join(',')
     host.append(canvas)
+    let poster = host.querySelector<HTMLImageElement>('.device3d-poster')
+    if (!poster) { poster = document.createElement('img'); poster.className = 'device3d-poster'; poster.alt = ''; poster.setAttribute('aria-hidden', 'true'); host.append(poster) }
     const contextLost = (event: Event) => { event.preventDefault(); cleanup() }
     canvas.addEventListener('webglcontextlost', contextLost)
     cleanups.push(() => canvas.removeEventListener('webglcontextlost', contextLost))
@@ -139,6 +155,9 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
       canvas.dataset.rendered3d = 'true'; canvas.dataset.rotation = `${currentX.toFixed(3)},${currentY.toFixed(3)}`
       host.dataset.deviceReady = 'true'
       if (++drawn < 45 && (Math.abs(targetX - currentX) > .001 || Math.abs(targetY - currentY) > .001)) frame = requestAnimationFrame(draw)
+      else {
+        try { poster!.src = canvas.toDataURL('image/webp', .85); host.dataset.devicePoster = 'true' } catch { /* Original screenshots remain the no-WebGL fallback. */ }
+      }
     }
     function render() { drawn = 0; if (!frame) frame = requestAnimationFrame(draw) }
     function resize() {

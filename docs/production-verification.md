@@ -2,7 +2,15 @@
 
 Website aktif: **https://wasla.my.id**. CMS: **https://wasla.my.id/admin**. Akun administrator lama tetap dapat digunakan.
 
-## Rilis aktif
+## Rilis aktif 25 Oktober 2026
+
+Deployment `dpl_5yZHwfwQdAtuk5i8DGiXGfSYvt4s`, production/READY, build 39 detik, sudah dipromosikan. Verifikasi pada https://wasla.my.id mencakup tujuh rute publik, tujuh project bertekstur 3D, empat foto ber-alpha, 13 layanan, paket, login admin, upload/download Blob, kalender scheduler, privasi pesan/jadwal dan formulir konsultasi. Fixture produksi yang dibuat alat verifikasi dibersihkan dengan ID persis. Tidak ada WhatsApp eksternal dikirim.
+
+Lokal: 15 tes browser dan 5 tes unit lulus; sesudah koreksi framing, empat tes perangkat/layanan yang terdampak lulus lagi. Build/typecheck lulus. Lint seluruh source menghasilkan nol error dan enam warning admin yang sudah ada; pemeriksaan lint sumber perubahan terakhir juga lulus. 34 capture responsif tidak menemukan overflow, gambar rusak atau page error; 14 capture framing diperbarui dan dinilai resolved. Review UI/UX terakhir mencatat `ship` untuk perbaikan framing, setelah review penuh tidak memiliki material fix lain.
+
+Manifest produksi terbaru: `.impeccable/review/transparent-production-verification.json`, `studio-production-verification.json`, serta `public-refinement-production.json`. Manifest visual: `transparent-browser-readings.json`, `transparent-texture-fix-readings.json`. [Review UI/UX](visual-review-transparent-devices.md), [REA runtime](rea-transparent-devices.md), [performa lokal](device-performance.md), dan [diagnosis log](runtime-logs-20261025.md) mencatat lingkup bukti secara terpisah. Tidak ada klaim universal terhadap semua perangkat atau pemantauan jangka panjang.
+
+## Riwayat rilis 23 Oktober 2026
 
 Deployment `dpl_7pH59fqvSkobj1h4sN7kTJssrZwT`, target production/READY, build 54 detik, telah dipromosikan ke domain publik. Canonical diperiksa sebelum promosi; pengujian lengkap di bawah dijalankan kembali pada domain baru tanpa bypass autentikasi Vercel.
 

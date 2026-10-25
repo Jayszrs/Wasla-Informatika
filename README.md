@@ -42,7 +42,7 @@ npm start
 - Project, layanan, artikel, FAQ, testimoni: draft, terbit, preview privat, riwayat penyimpanan dan pemulihan sebagai draft.
 - Galeri: unggah langsung dari form project atau pilih Media, keterangan dan urutan gambar. Foto profil tim juga dapat diganti dari CMS.
 - Tim, navigasi dan pengaturan website: edit konten asli tanpa mengubah kode.
-- Paket website: harga, nama, deskripsi, cakupan CMS dan layanan tujuan dapat diubah pada Pengaturan website. Pilihan paket masuk ke pesan konsultasi untuk ditinjau pengunjung.
+- Paket layanan: enam pilihan website, fotografi dan video editing. Harga, nama, deskripsi, keterangan, satuan, flag harga mulai dari dan layanan tujuan dapat diubah pada Pengaturan website. Pilihan paket masuk ke pesan konsultasi untuk ditinjau pengunjung.
 - Pesan konsultasi: hanya staf, dengan status baru/dihubungi/selesai.
 - Administrator mengelola pengguna dan penghapusan. Editor mengelola konten/jadwal/pesan tanpa menghapus atau mengubah hak akses.
 

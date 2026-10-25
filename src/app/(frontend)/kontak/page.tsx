@@ -12,7 +12,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ l
   const [services, settings, team, params] = await Promise.all([getServices(), getSettings(), getTeam(), searchParams])
   const contacts = teamContacts(team.docs)
   const plan = (settings.websitePackages ?? websitePackages).find(item => item.slug === params.paket)
-  const packageMessage = plan ? `Saya tertarik dengan paket ${plan.name} (${formatRupiah(plan.price)}; ${plan.cms}). Saya ingin membahas kebutuhan dan rincian pengerjaannya.` : ''
+  const packageMessage = plan ? `Saya tertarik dengan paket ${plan.name} (${plan.startingPrice ? 'mulai dari ' : ''}${formatRupiah(plan.price)}${plan.priceUnit ? ` ${plan.priceUnit}` : ''}; ${plan.cms}). Saya ingin membahas kebutuhan dan rincian pengerjaannya.` : ''
   return <>
     <PageIntro title="Mari terhubung." copy="Empat rekan diskusi. Satu tujuan: mewujudkan project digital Anda."/>
     <section className="wrap contact-directory" id="tim-kontak"><div className="contact-heading"><h2>Kenali rekan diskusi Anda.</h2><p>Pilih divisi sesuai kebutuhan. Setiap kontak membuka WhatsApp langsung ke orang yang Anda pilih.</p></div><ContactCards contacts={contacts}/></section>

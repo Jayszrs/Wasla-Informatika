@@ -43,10 +43,10 @@ colors:
   studio-status-amber-bg: "#fff2d9"
   studio-status-amber-text: "#795614"
   gallery-control-line: "#63758a"
-  footer-subtitle: "#adc0d5"
-  package-surface: "#f1f5f9"
-  package-copy: "#52647c"
-  package-action-hover: "#1c426c"
+  footer-subtitle: "#fff"
+  package-surface: "transparent"
+  package-copy: "#c5d0dd"
+  package-action-hover: "#dae6f2"
 typography:
   display:
     fontFamily: "Poppins, sans-serif"
@@ -105,16 +105,16 @@ typography:
     lineHeight: 1.7
   footer-signature:
     fontFamily: "Poppins, sans-serif"
-    fontSize: "clamp(100px, 18vw, 230px)"
+    fontSize: "clamp(27px, 7.7vw, 112px)"
     fontWeight: 600
     lineHeight: 0.88
     letterSpacing: "-0.04em"
   footer-subtitle:
     fontFamily: "Poppins, sans-serif"
-    fontSize: "clamp(13px, 1.6vw, 20px)"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "0.22em"
+    fontSize: "clamp(27px, 7.7vw, 112px)"
+    fontWeight: 600
+    lineHeight: 0.88
+    letterSpacing: "-0.04em"
   package-title:
     fontFamily: "Poppins, sans-serif"
     fontSize: "22px"
@@ -154,8 +154,8 @@ rounded:
   technology-link: "16px"
   division-card: "24px"
   package-row: "16px"
-  package-stage: "24px"
-  package-scope: "12px"
+  package-stage: "0px"
+  package-scope: "0px"
   studio-control: "8px"
   studio-panel: "12px"
   studio-field-group: "10px"
@@ -253,22 +253,22 @@ components:
     backgroundColor: "transparent"
     textColor: "{colors.navy}"
   package-row:
-    backgroundColor: "{colors.white}"
-    textColor: "{colors.navy}"
+    backgroundColor: "{colors.navy}"
+    textColor: "{colors.white}"
     rounded: "{rounded.package-row}"
     padding: "32px 26px"
   package-stage:
-    backgroundColor: "{colors.navy}"
+    backgroundColor: "transparent"
     rounded: "{rounded.package-stage}"
-    padding: "48px 36px"
+    padding: "8px 0"
   package-scope:
     backgroundColor: "{colors.package-surface}"
     textColor: "{colors.package-copy}"
     rounded: "{rounded.package-scope}"
-    padding: "22px 18px"
+    padding: "8px 0 0"
   package-action:
-    backgroundColor: "{colors.navy}"
-    textColor: "{colors.white}"
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.navy}"
     typography: "{typography.button}"
     rounded: "{rounded.button}"
     padding: "10px 26px"
@@ -308,9 +308,9 @@ components:
 
 **Creative North Star: "A familiar software-house experience, with Wasla's own work and voice."**
 
-The public site keeps the owner's established software-house composition: photographic opening, centered grid, Poppins hierarchy, real project screenshots, navy/white fields and capsule actions. The latest approved contract replaces service-image tilt with actual Three.js geometry and the connected division diagram with click-to-flip people cards. The header has the left wordmark and static ID marker; the right emblem is removed. The footer is a seamless straight navy region with readable company/contact/service/navigation groups and a low-opacity wasla signature with a readable informatika subtitle. Owner-requested upright white website-package cards use a navy field and finite white side glows within this same identity. Physical Three.js project devices carry authentic screenshot textures, with real-image fallbacks and delayed allocation; the expertise section has a branded 3D phone. Public CTA surfaces are White.
+The public site keeps the owner's established software-house composition: photographic opening, centered grid, Poppins hierarchy, real project screenshots, navy/white fields and capsule actions. Actual Three.js service geometry and semantic people flip cards remain. The header has the left wordmark and static ID marker. Project/detail/gallery devices sit directly on white through transparent stages, with authentic screenshot textures, real-image fallbacks and retained last-frame posters. Six independent upright Navy service-package cards use White actions directly on the White page. The straight Navy footer retains readable company/contact/service/navigation groups; its decorative `wasla informatika` is large, side by side and equally subdued. The expertise section has a branded 3D phone and direct headings without kickers. Public CTA surfaces are White.
 
-Wasla Studio is the Operate surface of this identity: concrete tasks, readable forms, predictable navigation, real counts and honest empty states. It is a custom dashboard and internal scheduler, with no Payload runtime. Latest owner directions in `.impeccable/device-depth-refinement.md` and `.impeccable/package-cards-refinement.md` extend `.impeccable/studio-direction.md` and supersede CSS-only devices, visible return controls and horizontal package rows. This source-extracted record refreshes the existing design system; no new comp or invented photography is claimed.
+Wasla Studio is the Operate surface of this identity: concrete tasks, readable forms, predictable navigation, real counts and honest empty states. It is a custom dashboard and internal scheduler, with no Payload runtime. The latest owner screenshots and `.impeccable/transparent-devices-refinement.md` extend `.impeccable/studio-direction.md` and override gray device fields, an enclosing navy package field and the small stacked footer subtitle in earlier device/card contracts. This source-extracted record refreshes the incumbent system; no new comp or invented photography is claimed.
 
 **Key Characteristics:**
 
@@ -320,7 +320,7 @@ Wasla Studio is the Operate surface of this identity: concrete tasks, readable f
 - Thirteen services with stable slug-based scenes and six homepage choices, including photography, video and graphic/photo editing.
 - Original CMS screenshots on physical Three.js laptop, tablet and phone meshes, with server-rendered real-image device fallbacks.
 - Left header wordmark, White CTAs and a straight navy footer.
-- Three equal CMS-owned upright white package cards, explicit price/CMS scope, navy actions and package-only white side glow.
+- Six CMS-owned upright Navy service-package cards directly on White, with explicit amounts, starting-price units where applicable and White actions.
 - Custom Studio Operate workspace with real data and explicit save states.
 
 ## Colors
@@ -331,7 +331,7 @@ Wasla Navy carries text, filled actions and active Studio navigation. Deep Navy 
 
 ### Neutral
 
-White is the public reading/consultation/principles/CTA surface and Studio panels. Ice remains available for contextual media. Public Slate/Light support light/dark copy. Studio Ground separates white work surfaces; Studio Muted, Studio Line and Studio Field Line preserve operational hierarchy. Division Front/Portrait support real photos or Navy Initials. Package Surface gives each card a pale scope field; Package Copy carries scope descriptions. White package cards sit on Navy; Package Action Hover is confined to their solid actions. Status green, blue and amber always accompany text labels rather than carrying meaning alone.
+White is the public reading/consultation/principles/CTA surface and Studio panels. Ice remains available for contextual media, while project/detail/gallery device stages are transparent on White. Public Slate/Light support light/dark copy. Studio Ground separates white work surfaces; Studio Muted, Studio Line and Studio Field Line preserve operational hierarchy. Division Front/Portrait support real photos or Navy Initials. Package Copy uses the existing Light hue on Navy cards; Package Surface is transparent and Package Action Hover is the pale White-action feedback. Status green, blue and amber always accompany text labels rather than carrying meaning alone.
 
 **The Evidence Rule.** Technology marks describe studio capabilities, not client relationships or displayed project stacks. Publish only supplied company facts and eligible proof.
 
@@ -339,31 +339,31 @@ White is the public reading/consultation/principles/CTA surface and Studio panel
 
 Self-hosted Poppins serves every surface. Public layout loads normal 300/400/500/600/700; Studio loads 400/500/600. Both use swap behavior and sans-serif fallback. Frontmatter owns normative role values. Public hero starts at the Display role; latest narrow overrides use 38px at 767px and 35px at 420px. Public sections use 36px headings, decreasing to 30/29px at 767/575px; reading prose is 15px/1.9 with a 72ch maximum and 14px narrow. Desktop navigation is 11px uppercase; mobile navigation is 20px.
 
-Studio H1 uses Studio Heading, falling to 24px below 767px; H2/H3 are 17/15px. Labels are generally 11px, inputs/actions 12px, secondary timestamps/status labels 10px. The login story headline is 46px desktop, 36px at 991px and 30px at 767px. Numeric content counts use tabular numerals. The decorative final signature pairs large lowercase wasla with informatika at the Footer Subtitle role; readable company identity remains in the information area.
+Studio H1 uses Studio Heading, falling to 24px below 767px; H2/H3 are 17/15px. Labels are generally 11px, inputs/actions 12px, secondary timestamps/status labels 10px. The login story headline is 46px desktop, 36px at 991px and 30px at 767px. Numeric content counts use tabular numerals. The decorative final signature gives lowercase wasla and informatika the same large semibold role on one baseline; readable company identity remains in the information area. Expertise uses direct 24px/1.5 h2 headings, 22px at 991px, without kicker labels.
 
 ## Layout
 
 Public wrapper is 1140px including two 15px gutters (1110px inner). Maximums become 960/750/570px at 1199/991/767px, fluid at 575px. Preserve observed section rhythm, generally 55-100px. Header is 82px initially, 64px after scroll, 86px initial mobile, with left wordmark and ID marker only. At 991px and below the full-screen menu replaces desktop navigation. Hero is 100svh with 700px minimum, 680px narrow. Existing waves remain between selected public sections; the footer starts with a straight boundary.
 
-Home project grid uses two columns with 2px gaps; the seventh device tile spans the row at 16:9. Device stages normally use 16:10; detail uses 16:9, becoming 16:11 below 767px. Home service objects occupy 300px height, 250px at 991px and 310px at 767px; catalog scene height is 430/370/340/300px at desktop/1199/767/420px. Services stack below 767px; all catalog copy and actions, including alternating rows, retain 15px horizontal gutters. Scene grid tracks use minmax(0,1fr), zero intrinsic minimums and an absolute SVG fallback so intrinsic artwork cannot enlarge the row. Technology strip retains eight/six/four columns at desktop/1199/767px. Principles and consultation are White; process is a full-width Deep Navy outer section with an inner wrapper.
+Home project grid remains visible without an entrance reveal or hydration hide and uses two columns with 2px gaps; the seventh device tile spans the row at 16:9. Device stages normally use 16:10; detail uses 16:9, becoming 16:11 below 767px. Home service objects occupy 300px height, 250px at 991px and 310px at 767px; catalog scene height is 430/370/340/300px at desktop/1199/767/420px. Services stack below 767px; all catalog copy and actions, including alternating rows, retain 15px horizontal gutters. Scene grid tracks use minmax(0,1fr), zero intrinsic minimums and an absolute SVG fallback so intrinsic artwork cannot enlarge the row. Technology strip retains eight/six/four columns at desktop/1199/767px. Principles and consultation are White; process is a full-width Deep Navy outer section with an inner wrapper.
 
-Division cards use four columns with 21px gaps, two columns at 991px and one centered column up to 320px at 420px. Height is content-driven: stacked grid faces share their tallest content, with minimums of 370px desktop, 390px at 991px, 370px at 767px and 400px at 420px. Biography text preserves line breaks and grows without a maximum height or internal scrolling. Transparent portraits use object-fit:contain and object-position:center bottom. Footer information uses four desktop columns (company, contacts, services and exploration), two at 991px. At 767px company and contacts span the full grid; contacts form two columns while service/exploration groups remain side by side. Footer padding starts at 65px, 55px narrow. The final signature is left-aligned, aria-hidden, with parent opacity 1, max-height:none, overflow:visible and padding 22px 0 38px. Only its wasla child has opacity .08; informatika stays opacity 1 with 17px top margin and Footer Subtitle styling. Narrow name type remains 26vw; bottom padding becomes 30px, with no height cap.
+Division cards use four columns with 21px gaps, two columns at 991px and one centered column up to 320px at 420px. Height is content-driven: stacked grid faces share their tallest content, with minimums of 370px desktop, 390px at 991px, 370px at 767px and 400px at 420px. Biography text preserves line breaks and grows without a maximum height or internal scrolling. Transparent portraits use object-fit:contain and object-position:center bottom. Footer information uses four desktop columns (company, contacts, services and exploration), two at 991px. At 767px company and contacts span the full grid; contacts form two columns while service/exploration groups remain side by side. Footer padding starts at 65px, 55px narrow. The final signature is left-aligned and aria-hidden, with flex baseline alignment, .22em gap, matching Footer Signature/Subtitle roles and .08 opacity on both words. Parent opacity is 1, max-height:none and overflow:visible; padding is 22px 0 38px, with the earlier narrow top padding of 24px retained. Functional company identity remains separately readable.
 
-Website packages use three equal upright cards with 26px gaps within a Navy field. Field padding is 48px 36px; cards use 32px 26px padding and 25px vertical groups. At 1199px field padding becomes 38px 26px, card padding 28px 20px and grid gap 22px. At 991px the grid becomes one centered column capped at 560px, with 30px gaps/card padding and no fixed name/price block heights. At 767px field padding is 34px 22px with 20px corners, cards use 27px 22px, and scope fields 20px 17px. Name, price/CMS scope, full-width action and pale scope field remain in that order. Section padding remains 75px 90px vertical, 55px 65px narrow; standalone removes top padding and the heading stacks at 767px. Public page scrollbars remain visually hidden while native scroll behavior and Studio/internal controls remain intact.
+Service packages use six independent upright Navy cards in a three-column grid with 26px gaps on the White page. The transparent stage has 8px 0 padding and square corners; there is no enclosing colored field. Cards use 32px 26px padding and 25px vertical groups. At 1199px card padding is 28px 20px and grid gap 22px. At 991px the grid becomes one centered column capped at 560px, with 30px gaps/card padding and content-driven name/price blocks; at 767px cards use 27px 22px. Name, price/unit/package scope, full-width White action and unboxed editable scope remain in that order. Scope uses 8px 0 0 padding and no separate background or corners. Desktop price groups have 145px minimum height to align mixed package content, removed at 991px. Section padding remains 75px 90px vertical, 55px 65px narrow; standalone removes top padding and the heading stacks at 767px. Public page scrollbars remain visually hidden while native scroll behavior and Studio/internal controls remain intact.
 
 Studio desktop sidebar is fixed at 238px; the shell offsets by the same width. Topbar is 78px and sticky; main width caps at 1510px with 38px 42px 60px padding. At 1199px sidebar/offset become 210px and main horizontal padding 26px. At 991px sidebar becomes a 250px overlay with scrim, shell loses offset, topbar becomes 68px. Below 767px main padding is 26px 18px 40px, overview stacks, table rows become labelled content/action arrangements, media uses two columns, editor becomes one column and save controls move before the form. Editor desktop uses flexible content plus a 270px sticky save rail (235px at 1199px). Calendar keeps seven columns: compact narrow date cells show status marks while the selected-day agenda supplies full task text. Desktop date cells are at least 110px, narrow 66px.
 
 ## Elevation & Depth
 
-Public content is mostly flat; photography and genuine Three.js meshes/materials/lights provide depth. Service objects have transparent canvases, no enclosing card, and matching geometric SVG icons while loading or when WebGL is unavailable. The model uses rounded boxes, spheres, torus/tubes and physically shaded materials; scenes render on demand and release resources offscreen. Pointer drag/arrow keys rotate the model; Home resets it. Fine-pointer scroll adds bounded orientation. Coarse pointers require Putar objek before drag and Selesai memutar restores scrolling. Reduced motion stops automatic orientation while deliberate controls remain usable. No endless autoplay. Project devices and the branded expertise phone use real rounded-box geometry, shaded navy/silver materials and screen textures. They use hemisphere/directional lights without HDR environment or real-time shadows. DeviceScene waits for viewport intersection and idle scheduling before asynchronously importing its runtime. Four concurrent device renderers, pixel ratio at most 1.25, 1536px desktop/1024px narrow textures and instanced laptop keys bound allocation. Demand rendering settles without an idle loop; offscreen/context-loss cleanup disposes geometry, materials, textures and renderers. Fine-pointer movement and bounded scroll orient devices; reduced motion removes automatic orientation and touch scrolling stays native. Original screenshots remain server-rendered fallbacks until a textured frame renders.
+Public content is mostly flat; photography and genuine Three.js meshes/materials/lights provide depth. Service objects have transparent canvases, no enclosing card, and matching geometric SVG icons while loading or when WebGL is unavailable. The model uses rounded boxes, spheres, torus/tubes and physically shaded materials; scenes render on demand and release resources offscreen. Pointer drag/arrow keys rotate the model; Home resets it. Fine-pointer scroll adds bounded orientation. Coarse pointers require Putar objek before drag and Selesai memutar restores scrolling. Reduced motion stops automatic orientation while deliberate controls remain usable. No endless autoplay. Project devices and the branded expertise phone use real rounded-box geometry, shaded navy/silver materials and screen textures. They use hemisphere/directional lights without HDR environment or real-time shadows. DeviceScene prewarms only its runtime module within a 140px viewport margin. Actual scene mounting and renderer allocation wait for true viewport intersection (0px margin) and idle scheduling; prewarm never reserves a renderer. Screen images decode concurrently before a renderer slot is reserved. Four concurrent device renderers, pixel ratio at most 1.25, 1536px desktop/1024px narrow textures and instanced laptop keys bound allocation. Demand rendering settles without an idle loop; offscreen cleanup waits 350ms, then disposes geometry, materials, textures and renderers while retaining the last settled WebP frame as a lightweight poster; context loss also releases resources. Generation checks and renderer owner IDs keep stale cleanup from resetting a newer scene. Fine-pointer movement and bounded scroll orient devices; reduced motion removes automatic orientation and touch scrolling stays native. Original screenshots remain server-rendered fallbacks until a textured frame renders; the retained poster bridges later offscreen disposal and re-entry without changing the device silhouette.
 
-Studio uses tonal layering with restrained panel shadow `0 5px 22px #071a3306`; sticky toast uses `0 4px 18px #071a3310`. Public scrolled header shadow is `0 2px 10px #071a3310`, floating contact `0 3px 14px #071a3326`. Division flip uses perspective(1200px) and .65s easing, removed for reduced motion. Avoid extending dimensional effects to ordinary form fields. Package cards are the owner-approved exception to mostly flat content: each side has a finite offset white glow (`-10px 8px 28px rgb(255 255 255 / .15), 10px 8px 28px rgb(255 255 255 / .15)`) against Navy. Hover uses 10px vertical offset/32px blur/.23 alpha; focus-within uses .25 alpha. Hover lift is 5px only for hover-capable pointers without reduced motion. This package-only glow is not a general elevation rule.
+Studio uses tonal layering with restrained panel shadow `0 5px 22px #071a3306`; sticky toast uses `0 4px 18px #071a3310`. Public scrolled header shadow is `0 2px 10px #071a3310`, floating contact `0 3px 14px #071a3326`. Division flip uses perspective(1200px) and .65s easing, removed for reduced motion. Avoid extending dimensional effects to ordinary form fields. Navy package cards use a soft downward ambient shadow (`0 10px 28px rgb(7 27 53 / .10)`) directly on White; focus-within and eligible hover use `0 12px 32px rgb(7 27 53 / .16)`. Their former White side glow is superseded. A 5px hover lift remains only for hover-capable pointers without reduced motion. Project/detail/gallery stages have neither a gray field nor a stage shadow; the physical device silhouette supplies depth.
 
 **The Deliberate Motion Rule.** Automatic movement must stop for reduced motion; touch scrolling remains available until the visitor explicitly activates object rotation.
 
 ## Shapes
 
-Public project tile outer edges stay square; laptop, tablet and phone frames supply device-specific inner corners. Capsule actions use Button radius and nearly square fields use Field radius. Contact/About directory cards retain alternating Contact corners; the shared flip cards use Division Card corners. Technology links use their own radius. Upright White package cards retain the incumbent Package Row radius token; the internal legacy row name does not describe their composition. Their Navy field uses Package Stage corners and pale inner scope fields use Package Scope corners. The requested offset side glow belongs only to these cards. Studio controls are gently rounded using Studio Control, panels use Studio Panel, grouped fields use Studio Field Group; these operational shapes are intentionally quieter than public capsule actions. Calendar selected dates receive a visible blue inset boundary. Footer is straight and seamless. Existing section waves remain: their destination-colored 3px pseudo-element covers the bottom raster edge at -1px, without adding a separator or suppressing focus borders.
+Public project tile outer edges stay square and transparent; laptop, tablet and phone frames supply device-specific inner corners. Capsule actions use Button radius and nearly square fields use Field radius. Contact/About directory cards retain alternating Contact corners; shared flip cards use Division Card corners. Technology links use their own radius. Upright Navy package cards retain the incumbent Package Row radius token; the internal legacy row name does not describe their composition. Package Stage and Package Scope are transparent, square and unboxed. Studio controls are gently rounded using Studio Control, panels use Studio Panel, grouped fields use Studio Field Group; these operational shapes are intentionally quieter than public capsule actions. Calendar selected dates receive a visible blue inset boundary. Footer is straight and seamless. Existing section waves remain: their destination-colored 3px pseudo-element covers the bottom raster edge at -1px, without adding a separator or suppressing focus borders.
 
 ## Components
 
@@ -375,9 +375,9 @@ Studio primary/secondary actions have 42px minimum height, Studio Control corner
 
 ### Website packages and footer groups
 
-`src/frontend/components/website-packages.tsx` renders CMS-owned upright cards on the homepage and `/paket-website`; shared defaults/formatting/context links live in `src/shared/website-packages.ts`. Each card has a Package Title, Package Price and visible CMS scope, a full-width solid Navy consultation action, then a pale scope field with editable description and CMS scope. Desktop price follows its clamp; later responsive overrides use 25px at 1199px, 36px at 991px and 32px at 767px. Name is 22px/1.4, 21px narrow. All three have equal standing. Section notes keep features, timing, domain, hosting and support in the proposal; no popularity badge, free hosting/domain or invented inclusion is added. Empty arrays retain an honest update message/contact route inside the Navy field.
+`src/frontend/components/website-packages.tsx` renders CMS-owned upright cards on the homepage and `/paket-website`; shared defaults/formatting/context links live in `src/shared/website-packages.ts`. Each Navy card has a Package Title, Package Price, optional Mulai dari label/unit and visible package/CMS scope, a full-width White consultation action, then an unboxed editable scope description. Desktop price follows its clamp; later responsive overrides use 25px at 1199px, 36px at 991px and 32px at 767px. Name is 22px/1.4, 21px narrow. All six have equal standing. Section notes leave scope, location, revisions, additional costs and timing in the proposal; website domain/hosting/support follow project scope. No popularity badge, free hosting/domain or invented inclusion is added. Empty arrays retain an honest update message/contact route on White.
 
-The owner-approved defaults are Landing Page Rp5.000.000 without CMS; Web Application Rp8.000.000 with management according to project scope; Company Profile + CMS Rp10.000.000 including CMS. The action carries service and package slug into `/kontak`; the current CMS name, price and scope prefill an editable message. Pengaturan website ? Paket website exposes name, slug, price, description, CMS scope and consultation service.
+Website defaults remain Landing Page Rp5.000.000 without CMS; Web Application Rp8.000.000 with management according to project scope; Company Profile + CMS Rp10.000.000 including CMS. Creative choices are Foto Wisuda & Personal starting at Rp750.000 per sesi, Foto Wedding & Acara starting at Rp2.000.000 per acara and Video Editing starting at Rp350.000 per video. `docs/creative-package-pricing.md` records the researched direct-provider comparisons behind these Wasla starting-price choices; they are not market averages. The action carries service and package slug into `/kontak`; current CMS package details prefill an editable message. Pengaturan website / Paket layanan exposes name, slug, amount, description, package/CMS scope, starting-price flag, unit and consultation service.
 
 The shared footer groups company details, Hubungi Kami, Layanan Kami and Jelajahi Wasla. Contacts retain actual names, roles, phone numbers and existing WhatsApp destinations. Service-specific links render only when the matching service is published; catalog/packages links and configured valid navigation/social destinations remain real anchors. The decorative final signature follows copyright, privacy and back-to-top rather than replacing accessible company information.
 
@@ -435,16 +435,16 @@ Published aliases and keyword fallbacks are defined in src/frontend/lib/service-
 - **Do** keep Three.js geometry, explicit touch activation, keyboard rotation and reduced-motion behavior.
 - **Do** use provenance-backed retouches of the four supplied photos or honest initials, manual gallery uploads and independent WhatsApp links.
 - **Do** preserve original CMS screenshots as device textures and server-rendered image fallbacks, and expose originals in enlargement.
-- **Do** keep informatika readable beneath the low-opacity wasla child, with no signature height cap.
-- **Do** keep package price and CMS scope visible together in equal upright cards, confine white side glow to their navy field, preserve native public scrolling and use actual footer destinations.
+- **Do** keep the decorative wasla informatika signature on one baseline with matching large lettering and .08 opacity on both words, with no height cap; preserve separately readable company identity.
+- **Do** keep amounts, applicable starting-price units and package/CMS scope visible in independent upright Navy cards on White with White actions; preserve native public scrolling and actual footer destinations.
 - **Do** keep Studio forms readable, mobile save controls first and calendar details available in the agenda.
 - **Do** preserve published content until an explicit publish action, role restrictions and private data boundaries.
 
 ### Don't:
 
 - **Don't** restore Payload runtime, the right header emblem, the connected tree diagram or raster-only service tilt.
-- **Don't** introduce footer waves/seams, gray public CTA blocks, decorative link arrows or fabricated portraits.
+- **Don't** introduce footer waves/seams, gray device-stage rectangles, an enclosing navy package field, gray public CTA blocks, decorative link arrows or fabricated portraits.
 - **Don't** invent client work, metrics, schedules, automatic reminders or project stacks.
 - **Don't** treat staged runtime verification, local captures or documentation as completed production promotion or DNS.
 
-Historical direction: earlier records describe right emblem, raster perspective, coordinator tree, clipped footer and Payload editing. Those remain historical. `.impeccable/device-depth-refinement.md` and `.impeccable/package-cards-refinement.md` now supersede CSS-only devices, separate flip-return buttons and horizontal package rows, preserving all other approved identity/content facts. This pass reads source only. Earlier creative/package captures and checks do not certify this changed device/card implementation. Fresh parent render captures, declared-profile cold-arrival measurements and production runtime/promotion checks remain pending. Domain and release operational evidence stays in `docs/production-verification.md` and `docs/domain-wasla-my-id.md`; no performance outcome or analytics-delivery certification is made here.
+Historical direction: earlier records describe right emblem, raster perspective, coordinator tree, clipped footer and Payload editing. Those remain historical. `.impeccable/transparent-devices-refinement.md` supersedes the gray device field, enclosing Navy package field/White cards and small stacked subtitle in earlier device/package contracts, preserving all other approved identity/content facts. Current visual, interaction, performance and release results belong to `docs/visual-review-transparent-devices.md`, `docs/device-performance.md` and `docs/production-verification.md`, with their referenced machine artifacts; the current browser capture manifest path is `.impeccable/review/transparent-browser-readings.json`. This design record describes source behavior and does not certify a deployment, analytics delivery or universal speed result. Earlier `docs/visual-review-device-depth.md` records a prior two-fix review; its expertise kicker and stale-evidence prose findings have been reconciled here, and it does not substitute for the fresh full review of the latest screenshots. Domain operational evidence remains in `docs/domain-wasla-my-id.md`.

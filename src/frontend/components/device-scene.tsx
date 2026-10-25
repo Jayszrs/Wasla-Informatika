@@ -14,6 +14,7 @@ export function DeviceScene({ spec, className, children }: { spec: DeviceSceneSp
     if (!element) return
     let disposed = false, visible = false, generation = 0, stop: (() => void) | undefined
     let idle: number | undefined
+    let exitTimer: ReturnType<typeof setTimeout> | undefined
     async function start() {
       const current = ++generation
       try {
@@ -41,11 +42,19 @@ export function DeviceScene({ spec, className, children }: { spec: DeviceSceneSp
       const next = entries[0].isIntersecting
       if (next === visible) return
       visible = next
-      if (visible) schedule()
-      else cancel()
+      if (visible) {
+        clearTimeout(exitTimer); exitTimer = undefined
+        if (!stop) schedule()
+      } else exitTimer = setTimeout(cancel, 350)
     }, { rootMargin: '0px' })
+    const prewarm = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return
+      void import('../lib/device-scene-runtime').catch(() => {})
+      prewarm.disconnect()
+    }, { rootMargin: '140px' })
+    prewarm.observe(element)
     observer.observe(element)
-    return () => { disposed = true; cancel(); observer.disconnect() }
+    return () => { disposed = true; clearTimeout(exitTimer); cancel(); observer.disconnect(); prewarm.disconnect(); element.querySelector('.device3d-poster')?.remove(); delete element.dataset.devicePoster }
   }, [serialized])
   return <div ref={host} className={`${className} device3d-stage`} data-device-kind={spec.device}>{children}</div>
 }

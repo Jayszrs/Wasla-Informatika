@@ -1,7 +1,8 @@
 import { Pool } from 'pg'
 import { attachDatabasePool } from '@vercel/functions'
+import { databaseConnectionString } from './database-connection'
 const shared = globalThis as unknown as { studioPool?: Pool; studioPoolAttached?: boolean }
-export const pool = shared.studioPool ||= new Pool({ connectionString: process.env.DATABASE_URL, max: 3, connectionTimeoutMillis: 8000, idleTimeoutMillis: 10000 })
+export const pool = shared.studioPool ||= new Pool({ connectionString: databaseConnectionString(process.env.DATABASE_URL), max: 3, connectionTimeoutMillis: 8000, idleTimeoutMillis: 10000 })
 if (process.env.VERCEL === '1' && !shared.studioPoolAttached) { attachDatabasePool(pool); shared.studioPoolAttached = true }
 pool.on('error', () => console.error('Database connection interrupted.'))
 export const schemaSQL = `

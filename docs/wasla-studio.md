@@ -10,9 +10,9 @@ Pengganti CMS Payload dengan dashboard khusus Wasla. Pemindahan 23 Oktober 2026 
 4. Simpan sebagai draft untuk meninjau perubahan. Pada project yang telah terbit, draft perubahan tidak menimpa versi publik. Terbitkan untuk mengganti versi publik. Tarik dari website untuk menonaktifkan publikasi.
 5. Preview draft memerlukan sesi staf. Riwayat menyimpan sampai 20 penyimpanan per dokumen; muat sebagai draft lalu tinjau dan simpan. Konten lama sebelum migrasi tidak memiliki riwayat baru secara retroaktif.
 
-## Paket website
+## Paket layanan
 
-Buka **Pengaturan website → Paket website**. Setiap baris memuat nama, slug unik, harga rupiah berupa angka, deskripsi, keterangan CMS, dan layanan tujuan. Baseline yang disetujui pemilik: Landing Page Rp5.000.000 tanpa CMS; Web Application Rp8.000.000; Company Profile + CMS Rp10.000.000. Simpan untuk memperbarui beranda, `/paket-website`, dan isi awal pesan konsultasi. Perubahan harga tidak mengubah field pengaturan lain. Hapus semua baris bila paket sementara tidak ditampilkan; halaman menampilkan ajakan konsultasi yang sesuai.
+Buka **Pengaturan website → Paket layanan**. Setiap baris memuat nama, slug unik, harga rupiah, deskripsi, keterangan paket/CMS, layanan tujuan, pilihan **Harga mulai dari**, dan satuan seperti per sesi atau per video. Harga website tetap Rp5.000.000 tanpa CMS, Rp8.000.000 aplikasi web, dan Rp10.000.000 company profile + CMS. Paket kreatif baru dimulai Rp750.000 untuk wisuda/personal, Rp2.000.000 untuk foto wedding/acara, dan Rp350.000 untuk editing video. Dasar pembanding ada pada [catatan harga](creative-package-pricing.md). Semua nilai dapat diubah. Simpan untuk memperbarui beranda, `/paket-website`, dan isi awal konsultasi. Field pengaturan lain tetap dipertahankan. Hapus seluruh baris bila paket sementara tidak ditampilkan; halaman menampilkan ajakan konsultasi.
 
 Tombol paket membuka formulir berisi pilihan layanan dan ringkasan paket. Pengunjung masih meninjau, melengkapi identitas dan menyetujui penggunaan data sebelum mengirim. Fitur, jadwal, domain, hosting dan dukungan dibahas dalam penawaran.
 

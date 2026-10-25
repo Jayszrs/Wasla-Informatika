@@ -3,10 +3,10 @@ import { test, expect } from '@playwright/test'
 
 test('approved packages reach consultation and native scrolling works without a page scrollbar', async ({ page }) => {
   await page.goto('/paket-website')
-  await expect(page.locator('.package-row')).toHaveCount(3)
-  await expect(page.locator('.package-price strong')).toHaveText([/Rp\s*5\.000\.000/, /Rp\s*8\.000\.000/, /Rp\s*10\.000\.000/])
+  await expect(page.locator('.package-row')).toHaveCount(6)
+  await expect(page.locator('.package-price strong')).toHaveText([/Rp\s*5\.000\.000/, /Rp\s*8\.000\.000/, /Rp\s*10\.000\.000/, /Rp\s*750\.000/, /Rp\s*2\.000\.000/, /Rp\s*350\.000/])
   await expect(page.locator('.package-row').first()).toContainText('Tanpa CMS')
-  for (const [name, service] of [['Landing Page', 'Website Development'], ['Web Application', 'Web Application'], ['Company Profile + CMS', 'Website Development']]) {
+  for (const [name, service] of [['Landing Page', 'Website Development'], ['Web Application', 'Web Application'], ['Company Profile + CMS', 'Website Development'], ['Foto Wisuda & Personal', 'Fotografi & Dokumentasi'], ['Foto Wedding & Acara', 'Fotografi & Dokumentasi'], ['Video Editing', 'Video Editing']]) {
     await page.getByRole('link', { name: `Konsultasi paket ${name}`, exact: true }).click()
     await expect(page.locator('#service')).toHaveValue(service)
     await expect(page.locator('#message')).toHaveValue(new RegExp(name.replace(/[+]/g, '\\+')))
@@ -17,7 +17,7 @@ test('approved packages reach consultation and native scrolling works without a 
   await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(0)
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto('/')
-  await expect(page.locator('.website-packages .package-row')).toHaveCount(3)
+  await expect(page.locator('.website-packages .package-row')).toHaveCount(6)
   expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false)
   await expect(page.getByRole('navigation', { name: 'Layanan footer' }).getByRole('link', { name: 'Fotografi Wedding & Wisuda' })).toHaveAttribute('href', '/layanan/photography')
 })

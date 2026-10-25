@@ -2,9 +2,13 @@
 
 Target aktif: akun jaelanisuryasaputra10@gmail.com, scope `jae-f2e1`, project `waslainformatika` (`prj_y57AtYGyBMYsK9a8b7auDps05t54`). Project lama `wasla-informatika` bukan target rilis. Website aktif https://wasla.my.id, CMS https://wasla.my.id/admin. DNS dan HTTPS sudah terverifikasi; lihat [bukti domain](domain-wasla-my-id.md). Alamat vercel.app tetap tersedia sebagai alias.
 
-## Rilis custom CMS 23 Oktober 2026
+## Rilis aktif 25 Oktober 2026
 
-Deployment aktif `dpl_7pH59fqvSkobj1h4sN7kTJssrZwT`: https://waslainformatika-cu98ktauc-jae-f2e1.vercel.app. Build berhasil dalam 54 detik; canonical domain baru diperiksa sebelum promosi. Rilis sudah dipromosikan dan diuji pada https://wasla.my.id. Seluruh dependensi dan UI Payload diganti Wasla Studio. Rilis Studio awal `dpl_H6DSFHPgaHYd5Eq8cwqxUKek7qWH` juga lulus verifikasi; rilis aktif hanya mengganti environment canonical. Bukti rinci dicatat pada [production-verification.md](production-verification.md).
+Deployment `dpl_5yZHwfwQdAtuk5i8DGiXGfSYvt4s` (https://waslainformatika-6wshy0zpq-jae-f2e1.vercel.app), build 39 detik, dipromosikan ke https://wasla.my.id setelah verifikasi staged dan review framing. Domain utama kemudian lulus pengujian perangkat/layanan dan alur Studio. Rilis ini menghapus bidang abu-abu perangkat, menstabilkan kemunculan project, menambahkan tiga paket kreatif CMS, memakai enam kartu navy tanpa bidang navy luar, serta menempatkan signature wasla informatika sejajar. Mode TLS database sekarang dibuat eksplisit `verify-full` tanpa mematikan pemeriksaan sertifikat. Lihat [verifikasi produksi](production-verification.md) dan [catatan log](runtime-logs-20261025.md).
+
+## Riwayat custom CMS 23 Oktober 2026
+
+Deployment historis `dpl_7pH59fqvSkobj1h4sN7kTJssrZwT`: https://waslainformatika-cu98ktauc-jae-f2e1.vercel.app. Build berhasil dalam 54 detik; canonical domain baru diperiksa sebelum promosi. Rilis ini dahulu dipromosikan dan diuji pada https://wasla.my.id. Seluruh dependensi dan UI Payload diganti Wasla Studio. Rilis Studio awal `dpl_H6DSFHPgaHYd5Eq8cwqxUKek7qWH` juga lulus verifikasi.
 
 Rilis sebelumnya `dpl_2KvdJMGDipWxCqczTtHVoSyzsHio` memakai Payload dan menjadi riwayat pemulihan. Saat migrasi, snapshot privat dibuat untuk semua koleksi/global, hash akun disalin, dan tabel `studio_*` baru dibuat. ID media/project tetap. Tabel lama tidak dihapus. Pemeriksaan cutover mengambil lagi data lama sebelum promosi dan hanya mengaplikasikan record yang lebih baru; data baru Studio tidak ditimpa.
 
