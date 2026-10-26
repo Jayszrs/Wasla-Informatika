@@ -5,5 +5,5 @@ export default defineConfig([
   ...nextVitals,
   ...nextTypescript,
   { rules: { '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }] } },
-  globalIgnores(['.next/**', '.local/**', 'media/**', 'src/payload-types.ts', 'src/migrations/**', 'src/app/(payload)/admin/importMap.js']),
+  globalIgnores(['.next/**', '.local/**', 'media/**', 'wasla-video/**', 'src/payload-types.ts', 'src/migrations/**', 'src/app/(payload)/admin/importMap.js']),
 ])

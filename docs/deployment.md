@@ -2,7 +2,11 @@
 
 Target aktif: akun jaelanisuryasaputra10@gmail.com, scope `jae-f2e1`, project `waslainformatika` (`prj_y57AtYGyBMYsK9a8b7auDps05t54`). Project lama `wasla-informatika` bukan target rilis. Website aktif https://wasla.my.id, CMS https://wasla.my.id/admin. DNS dan HTTPS sudah terverifikasi; lihat [bukti domain](domain-wasla-my-id.md). Alamat vercel.app tetap tersedia sebagai alias.
 
-## Rilis aktif 26 Oktober 2026: SEO Jabodetabek dan favicon
+## Rilis aktif 26 Oktober 2026: rate card referensi pemilik
+
+Deployment `dpl_CStkm6LKKH29oLKLpwaNMMWKuye9` (https://waslainformatika-1qa8himqp-jae-f2e1.vercel.app) sudah dipromosikan ke https://wasla.my.id. Kartu harga putih, tab kategori, checklist CMS, rincian native, dan alur konsultasi terpasang pada beranda serta halaman paket. Build 56 detik; 7 tes staging dan 8 tes produksi baca-saja lolos. Harga produksi tidak diubah. [Temuan REA dan delivery gate](rea-pricing-reference-20261026.md).
+
+## Riwayat 26 Oktober 2026: SEO Jabodetabek dan favicon
 
 Deployment `dpl_9StWpa5bh2pMCxHKCp4vpPkGDjg6` (https://waslainformatika-5h5rtpdtp-jae-f2e1.vercel.app) sudah READY dan dipromosikan ke https://wasla.my.id. Judul/deskripsi, konten layanan website dan IT consultant, panduan `/cara-membuat-website`, data terstruktur, tautan internal, favicon ICO, dan ikon Apple telah dirilis. Sitemap mencatat 32 URL serta tanggal revisi source untuk empat halaman yang diperbarui. Build Vercel selesai dalam 51 detik; tiga tes SEO browser pada domain aktif lolos setelah promosi.
 

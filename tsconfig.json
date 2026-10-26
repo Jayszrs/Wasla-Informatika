@@ -41,6 +41,7 @@
     ".next/standalone",
     ".local",
     "media",
-    "docs"
+    "docs",
+    "wasla-video"
   ]
 }

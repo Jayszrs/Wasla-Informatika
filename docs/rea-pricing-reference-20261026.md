@@ -37,6 +37,8 @@ Pengujian awal tambahan menemukan `/en/paket-website` mengembalikan 404 pada imp
 
 ## Delivery gate
 
+Rilis: `dpl_CStkm6LKKH29oLKLpwaNMMWKuye9`, build Vercel 56 detik, sudah dipromosikan ke `https://wasla.my.id`. Tujuh tes staging lolos sebelum promosi. Delapan tes baca-saja pada domain aktif lolos dalam 35 detik, termasuk seluruh CTA paket dan regresi SEO; pengujian perubahan data CMS tetap hanya lokal. Screenshot hasil produksi tersimpan di `.local/pricing-review/{1440,390}-{website,photography,video}.png`.
+
 Lingkup: rate card beranda dan `/paket-website`, tab kategori, checklist CMS, serta konsultasi paket. Mode Persuade, ENERGY 2 / RHYTHM 2 / MOTION 1 mengikuti brief baru pemilik. Ini menggantikan arah deck/flip paket sebelumnya, dengan identitas situs lain tetap mengikuti `DESIGN.md`.
 
 - **Hard Gate PASS:** kartu putih, harga dan CTA sejajar pada tes desktop; tidak overflow pada keempat viewport; seluruh CTA mencapai layanan yang sesuai; native details dan tab dapat dioperasikan lewat keyboard; semua paket terbaca tanpa JavaScript; tidak ada harga, diskon, testimoni, atau garansi baru yang dibuat-buat.

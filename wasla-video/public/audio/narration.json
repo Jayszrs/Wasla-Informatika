@@ -1,0 +1,52 @@
+[
+  {
+    "scene": 1,
+    "startFrame": 5,
+    "sceneFrames": 150,
+    "durationSeconds": 4.464,
+    "rate": "+0%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Di era digital, kesan pertama bisnis dimulai dari website.",
+    "file": "audio/voice/scene-01.wav"
+  },
+  {
+    "scene": 2,
+    "startFrame": 155,
+    "sceneFrames": 180,
+    "durationSeconds": 5.544,
+    "rate": "+11%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Wasla Informatika, partner website modern, profesional, dan responsif.",
+    "file": "audio/voice/scene-02.wav"
+  },
+  {
+    "scene": 3,
+    "startFrame": 335,
+    "sceneFrames": 210,
+    "durationSeconds": 6.576,
+    "rate": "+6%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Kami melayani company profile, landing page, website bisnis, hingga website custom sesuai kebutuhan.",
+    "file": "audio/voice/scene-03.wav"
+  },
+  {
+    "scene": 4,
+    "startFrame": 545,
+    "sceneFrames": 180,
+    "durationSeconds": 5.568,
+    "rate": "+5%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Dari konsultasi dan desain, sampai pengembangan dan peluncuran, kami siap membantu.",
+    "file": "audio/voice/scene-04.wav"
+  },
+  {
+    "scene": 5,
+    "startFrame": 725,
+    "sceneFrames": 180,
+    "durationSeconds": 5.64,
+    "rate": "+14%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Saatnya wujudkan website untuk bisnismu. Kunjungi wasla titik my titik id sekarang.",
+    "file": "audio/voice/scene-05.wav"
+  }
+]
