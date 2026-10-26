@@ -6,16 +6,13 @@ import { SectionWave } from '@/frontend/components/artwork'
 import { ServiceScene } from '@/frontend/components/service-scene'
 import { ButtonLink, MediaImage, ProjectCard } from '@/frontend/components/ui'
 import { ContactForm } from '@/frontend/components/contact-form'
-import { pageMeta } from '@/frontend/lib/seo'
+import { homeSEO, pageMeta } from '@/frontend/lib/seo'
 import { DivisionStructure } from '@/frontend/components/division-structure'
 import { TechnologyLogos } from '@/frontend/components/technology-logos'
 import { teamContacts } from '@/shared/contacts'
 import { BrandPhone } from '@/frontend/components/device-mockup'
 
-export async function generateMetadata() {
-  const s = await getSettings()
-  return pageMeta('Software House & Solusi Digital', s.seoDescription || s.description, '/')
-}
+export const metadata = pageMeta(homeSEO.title, homeSEO.description, '/')
 
 export default async function Home() {
   const [settings, services, projects, testimonials, team] = await Promise.all([getSettings(), getServices(), getProjects(), getTestimonials(), getTeam()])
@@ -33,7 +30,7 @@ export default async function Home() {
       <div className="hero-backdrop" data-hero-art><MediaImage media={heroImage} className="hero-stage-image" priority sizes="100vw"/></div>
       <div className="wrap hero-main"><div className="hero-copy">
         <h1>{settings.heroTitle}</h1>
-        <div className="hero-descriptor"><span className="descriptor-icon"><Arrow diagonal/></span><strong>Desain. Pengembangan. Solusi IT.</strong></div>
+        <div className="hero-descriptor"><span className="descriptor-icon"><Arrow diagonal/></span><strong>Jasa pembuatan website & IT consultant Jabodetabek.</strong></div>
         <p className="hero-caption">{settings.heroCopy}</p>
         <ButtonLink href="/kontak" variant="button-outline-light">Mulai konsultasi</ButtonLink>
       </div></div>
@@ -66,8 +63,8 @@ export default async function Home() {
     <section className="agency-feature wrap">
       <div className="agency-feature-visual"><BrandPhone/></div>
       <div className="agency-feature-copy">
-        <article><div><h2>Desain yang terarah.<br/>Teknologi yang tepat guna.</h2><p>Website responsif, aplikasi web, e-commerce, desain UI/UX, pengelolaan konten, integrasi sistem, dan solusi IT. Kami menyatukan disiplin tersebut untuk membantu Anda membangun pengalaman digital yang berguna.</p></div></article>
-        <article><div><h2>Memahami kebutuhan,<br/>sebelum membangun solusi.</h2><p>Kita mulai dari tujuan bisnis dan pengguna, kemudian menyusun prioritas, merancang pengalaman, serta mengembangkan dan menguji secara bertahap. Setiap langkah dibahas bersama agar hasilnya mudah digunakan dan dikelola.</p><Link className="text-link" href="/tentang-kami">Kenali cara kami bekerja</Link></div></article>
+        <article><div><h2>Jasa pembuatan website<br/>di Jabodetabek.</h2><p>Wasla Informatika membantu bisnis di Jakarta, Bogor, Depok, Tangerang, dan Bekasi membuat landing page, website company profile, serta aplikasi web. Desain responsif, pengelolaan konten, dan integrasi dibahas sesuai kebutuhan usaha Anda.</p><Link className="text-link" href="/layanan/website-development">Lihat jasa pembuatan website</Link><p>Baru mulai? Baca <Link href="/cara-membuat-website">cara membuat website</Link> untuk menyiapkan tujuan, konten, domain, dan anggaran sebelum memilih paket.</p></div></article>
+        <article><div><h2>IT consultant untuk<br/>keputusan teknologi Anda.</h2><p>Konsultasi IT dimulai dari kebutuhan bisnis dan pengguna. Kita membahas pilihan teknologi, prioritas pengembangan, serta integrasi dengan sistem yang sudah digunakan. Melayani kebutuhan bisnis di Jabodetabek; lingkup dan cara kolaborasi disepakati saat konsultasi.</p><Link className="text-link" href="/layanan/it-consultation">Diskusikan kebutuhan dengan IT consultant</Link></div></article>
       </div>
     </section>
 

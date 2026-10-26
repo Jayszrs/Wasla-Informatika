@@ -17,7 +17,7 @@ test('all public routes, metadata, portfolio filters, FAQ and service conversion
   const errors: string[] = []
   page.on('pageerror', e => errors.push(e.message))
   for (const [path, heading] of [
-    ['/', 'Software House'], ['/layanan', 'Layanan'], ['/layanan/website-development', 'Website Development'],
+    ['/', 'Software House'], ['/layanan', 'Layanan'], ['/layanan/website-development', 'Jasa Pembuatan Website di Jabodetabek'],
     ['/portofolio', 'Project'], ['/portofolio/catatan-mengaji-bani-saleh', 'Catatan Mengaji'],
     ['/insights', 'Artikel'], ['/insights/website-atau-aplikasi-web', 'Website atau aplikasi'],
     ['/tentang-kami', 'Tentang Wasla'], ['/kontak', 'Mari terhubung.'], ['/privasi', 'Informasi Anda,'],

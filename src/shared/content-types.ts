@@ -99,6 +99,7 @@ export interface Project {
   slug: string;
   category: string;
   client?: string | null;
+  clientLogo?: (number | null) | Media;
   excerpt: string;
   challenge: string;
   solution: string;
