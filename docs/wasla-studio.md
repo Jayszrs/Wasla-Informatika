@@ -38,6 +38,8 @@ CMS menggunakan tabel `studio_documents`, `studio_globals`, `studio_users`, `stu
 
 ## Visual dan keterbatasan verifikasi
 
+Kartu harga 26 Oktober 2026 memakai tab kategori dan checklist pada beranda serta `/paket-website`. Di Pengaturan website → Paket layanan, isi **Cakupan paket (checklist)** dengan baris cakupan/hasil pekerjaan yang benar-benar ditawarkan. Nama, harga, ringkasan, CMS, unit tarif, dan layanan konsultasi tetap memakai field sebelumnya. Jika checklist belum diisi, paket bawaan yang ringkasan dan keterangannya masih sama memakai rangkuman faktual dari deskripsi tersebut. Mengubah ringkasan/keterangan menghentikan rangkuman lama; isi checklist untuk detail baru. Daftar kosong menampilkan keterangan paket/CMS saja. Tidak ada migrasi atau penimpaan otomatis terhadap data produksi.
+
 Antarmuka Studio adalah ruang kerja navy/putih dengan navigasi responsif, pencarian konten, filter status, keadaan kosong yang menjelaskan tindakan berikutnya, form edit, dan kalender. Ringkasan kosong tidak diisi project atau jadwal fiktif. Editor artikel mendukung judul, paragraf, tebal, miring, daftar, dan tautan dengan sintaks yang dijelaskan pada kolom. Rich text lama tetap utuh sampai isi diubah.
 
 Elemen layanan publik memakai mesh Three.js dengan geometri dan material nyata, diterangi langsung oleh lampu hemisphere dan directional. Runtime tidak membuat environment map atau peta bayangan real-time untuk setiap objek. Mouse/keyboard dapat memutar model. Di perangkat sentuh, tombol Putar objek mengaktifkan interaksi supaya halaman tetap dapat digulir. Reduced motion menonaktifkan gerak otomatis; gambar cadangan digunakan bila WebGL tidak tersedia. Pengujian sentuh dilakukan lewat emulasi Chrome, bukan seluruh perangkat fisik.

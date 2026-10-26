@@ -6,6 +6,20 @@ import { databaseConnectionString } from '../src/backend/database-connection'
 import { publicBlobSource, mediaSource } from '../src/shared/media'
 import { expand, findMediaByFilename } from '../src/backend/content'
 import { pool } from '../src/backend/database'
+import { websitePackages, packageHighlights } from '../src/shared/website-packages'
+import { validateDocument } from '../src/backend/content-validation'
+
+test('package scope follows CMS edits and never retains stale default inclusions', () => {
+  const original = websitePackages[0]
+  assert.equal(packageHighlights(original).length, 3)
+  assert.deepEqual(packageHighlights({ ...original, description: 'Kebutuhan baru yang ditetapkan editor.' }), [original.cms])
+  const edited = { ...original, features: [{ item: 'Rincian dari editor' }, { item: 'Rincian dari editor' }] }
+  assert.deepEqual(packageHighlights(edited), ['Rincian dari editor'])
+  assert.deepEqual(packageHighlights({ ...original, features: [] }), [original.cms])
+  const result = validateDocument('site-settings', { websitePackages: [edited] }, true)
+  assert.equal(result.error, undefined)
+  assert.match(JSON.stringify(result.data), /Rincian dari editor/)
+})
 
 test('media CDN sources only allow credential-free HTTPS Vercel Blob origins', () => {
   assert.equal(publicBlobSource('https://store.public.blob.vercel-storage.com/studio/photo.webp'), 'https://store.public.blob.vercel-storage.com/studio/photo.webp')
