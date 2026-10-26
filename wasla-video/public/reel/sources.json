@@ -1,0 +1,14 @@
+{
+  "capture_date": "2026-10-27",
+  "provider": "Chrome through Computer Use",
+  "scope": "Public full-page screenshots after ordinary page scrolling; no DOM or style mutation. Mahameru public promotional modal was dismissed using its visible close button.",
+  "permission_basis": "User requests showing their Wasla website portfolio and previously asserts ownership of the listed sites.",
+  "sources": [
+    {"file":"cimuning-full.png","url":"https://cimuning.com/","width":1459,"height":3862,"used":true},
+    {"file":"fazmastone-full.png","url":"https://www.fazmastone.com/","width":1802,"height":10891,"used":true},
+    {"file":"ngajiyuk-full.png","url":"https://ngajiyuk.sdilbanisalehsetu.com/","width":1459,"height":3077,"used":true},
+    {"file":"ipnubekasi-full.png","url":"https://ipnubekasi.my.id/","width":1206,"height":5494,"used":true},
+    {"file":"mahameru-baja-full.png","url":"https://mahamerubaja.vercel.app/","width":1470,"height":16162,"used":false,"reason":"Some lazy sections did not load completely. Use existing verified section screenshots instead."},
+    {"file":"sit-permatahati-full.png","url":"https://sitpermatahati.up.railway.app/","width":2280,"height":12196,"used":false,"reason":"Some lazy sections did not load completely. Use existing verified section screenshots instead."}
+  ]
+}

@@ -1,4 +1,8 @@
-# Wasla Informatika ? portofolio 60 detik
+# Wasla Informatika - proyek video
+
+Versi terbaru: **Scroll Reel 35 detik, tanpa VO**, komposisi `WaslaScrollReel`. File: `output/wasla-scroll-reel-35s.mp4`. Panduan, sumber, dan status musik: [REEL.md](REEL.md). Pemeriksaan: [REEL-QA.md](REEL-QA.md).
+
+## Versi company profile 60 detik sebelumnya
 
 Revisi kedua: video portrait 1080 ? 1920, 30 FPS, 1800 frame, narasi Indonesia, musik dan efek orisinal. File akhir: `output/wasla-informatika-portfolio-60s.mp4`.
 

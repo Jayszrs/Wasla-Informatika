@@ -1,0 +1,101 @@
+{
+  "slug": "sit-permatahati",
+  "title": "SIT Permata Hati Bekasi",
+  "variant": "detail-1",
+  "caption": "Bagian beranda SIT Permata Hati Bekasi, tampilan desktop pertama.",
+  "src": "/images/projects/gallery/sit-permatahati-detail-1.webp",
+  "source_url": "https://sitpermatahati.up.railway.app/",
+  "actual_url": "https://sitpermatahati.up.railway.app/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_1d68d396919ab2456c2166dcf6ad0df78728b555857263f347af6b6335845b5f",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "detail-1",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/sit-permatahati-detail-1.png",
+  "source_original_sha256": "e63a0a3df14d637b6c1a84b059c335872c35669f642850a69f6688cdfe82c4e2",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 1000,
+    "width": 1440
+  },
+  "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 4500,
+      "step_id": "settle-landing"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-later-0"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1000,
+      "step_id": "settle-later-0"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-later-1"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1000,
+      "step_id": "settle-later-1"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-later-2"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1000,
+      "step_id": "settle-later-2"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-later-3"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1000,
+      "step_id": "settle-later-3"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1800,
+      "step_id": "detail-1"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

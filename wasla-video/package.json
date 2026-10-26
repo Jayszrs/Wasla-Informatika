@@ -32,7 +32,9 @@
     "lint": "eslint src && tsc",
     "render": "node scripts/render.mjs",
     "review": "node scripts/review-frames.mjs",
-    "verify": "node scripts/verify.mjs"
+    "verify": "node scripts/verify.mjs",
+    "render:reel": "node scripts/render-reel.mjs",
+    "review:reel": "node scripts/review-reel.mjs"
   },
   "allowScripts": {
     "esbuild": false
