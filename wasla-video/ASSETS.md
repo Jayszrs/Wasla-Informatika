@@ -1,20 +1,34 @@
-# Daftar aset
+# Sumber aset ? revisi portofolio
 
-| Aset | Asal / penggunaan |
-| --- | --- |
-| `public/brand/wasla-emblem-navy.webp` | Logo Wasla milik pengguna dari aset website. Kontur asli dipertahankan. Versi terang dirender dengan grayscale/invert/screen di latar navy. |
-| `public/screens/wasla-desktop.png` | Screenshot aktual homepage https://wasla.my.id melalui Chrome, 26 Oktober 2026. Dipakai pada adegan 1, 2, 4, 5. |
-| `public/screens/wasla-mobile.png` | Screenshot aktual homepage pada viewport 390 × 844 untuk smartphone. |
-| `public/projects/*.webp` | Aset portofolio website pengguna, disimpan sebagai referensi. Tidak muncul di render final. |
-| `src/components/BrowserMockup.tsx` | Ilustrasi HTML/SVG orisinal: perusahaan, produk, bisnis, papan alur kerja. Ditandai sebagai ilustrasi antarmuka di video. |
-| `src/scenes/Scene04Workflow.tsx` | Ikon vektor orisinal untuk konsultasi, desain, pengembangan, peluncuran. |
-| `public/audio/voice/scene-01` sampai `scene-05` | Narasi sintetis Indonesia dari Microsoft Edge TTS melalui edge-tts 7.3.1, suara Ardi. MP3 asli dan WAV normalisasi disimpan. Penggunaan layanan mengikuti ketentuan penyedia; proyek tidak mengklaim lisensi tambahan dari Microsoft. |
-| `public/audio/wasla-original-score.wav` | Musik baru yang disintesis khusus proyek oleh `scripts/prepare_audio.py`, 120 BPM, 48 kHz stereo. Tidak memakai lagu atau rekaman pihak ketiga. |
-| `public/audio/wasla-original-effects.wav` | Whoosh, impact lembut, klik digital yang disintesis khusus proyek. Tidak memakai sampel pihak ketiga. |
-| `public/fonts/sora-latin-700-normal.woff2`, `800` | Sora melalui @fontsource/sora. SIL OFL 1.1 di `public/fonts/LICENSE`. |
-| `public/fonts/plus-jakarta-sans.ttf` | Font lokal website pengguna. SIL OFL 1.1 di `PlusJakartaSans-OFL.txt`. |
-| `public/fonts/Poppins-SemiBold.ttf` | Font lokal website pengguna untuk wordmark. SIL OFL 1.1 di `Poppins-OFL.txt`. |
+## Portofolio nyata
 
-Semua font, screenshot, logo, musik, dan narasi dimuat lokal melalui `staticFile()`. Tidak ada dependensi CDN saat render. Tidak ada statistik klien, testimoni, atau rating fiktif pada ilustrasi.
+| Proyek | Situs | Aset aktif |
+| --- | --- | --- |
+| Cimuning Digital Hub | https://cimuning.com/ | cimuning.webp, cimuning-detail-1.webp, cimuning-mobile-clean.png |
+| Fazma Stone | https://www.fazmastone.com/ | fazmastone.webp, fazmastone-detail-2.webp, fazmastone-mobile.webp |
+| Mahameru Baja Indonesia | https://mahamerubaja.vercel.app/ | mahameru-baja.webp, mahameru-baja-detail-2.webp, mahameru-baja-mobile.webp |
+| Ngaji Yuk! | https://ngajiyuk.sdilbanisalehsetu.com/ | ngajiyuk.webp, ngajiyuk-detail-1.webp, ngajiyuk-mobile.webp |
+| IPNU Kota Bekasi | https://ipnubekasi.my.id/ | ipnubekasi.webp |
+| SIT Permata Hati Bekasi | https://sitpermatahati.up.railway.app/ | sit-permatahati.webp |
 
-Remotion dan dependensi mengikuti lisensi masing-masing di node_modules. Musik, efek, ilustrasi dibuat khusus untuk pekerjaan ini; logo dan materi website tetap milik pemiliknya.
+Semua file berada di `public/projects/`. Screenshot asli dari koleksi portofolio Wasla di repositori, dengan catatan asal `.source.json`. Tangkapan desktop 1440?1000 dan mobile 390?844 dibuat melalui REA pada 23 Oktober 2026. Keanggotaan proyek diambil dari `src/backend/data/initial-content.json` website pengguna. Pengguna menyatakan proyek sebagai portofolio Wasla; ini bukan audit independen kepemilikan.
+
+Cimuning mobile diambil ulang melalui Chrome pada 27 Oktober 2026, viewport 390?844 dan scrollY=0, tanpa banner pemberitahuan. Gambar hasil tangkapan berukuran 375?844 karena strip scrollbar tidak disertakan. Mockup memakai rasio 375:844 tersebut. Tidak ada modifikasi DOM, style, atau isi website. Viewport browser dikembalikan sesudah capture.
+
+## Brand dan grafis
+
+Logo asli pengguna: `public/brand/wasla-emblem-navy.webp`. Versi terang memakai grayscale/invert/screen pada latar navy, menjaga kontur logo asli. Wordmark memakai Poppins SemiBold dari aset website.
+
+Laptop, smartphone, jendela browser, kursor, ikon proses, tipografi dan transisi dibuat sebagai React/CSS/SVG orisinal. Layar laptop mempertahankan rasio screenshot 1440:1000. Smartphone mempertahankan rasio gambar asli; kamera/status dan home indicator berada di luar area screenshot, sehingga konten tidak tertutup.
+
+Screenshot homepage Wasla dan ilustrasi konsep versi terdahulu tetap disimpan, tetapi tidak dipakai dalam komposisi 60 detik aktif.
+
+## Audio dan font
+
+- `public/audio/v2/scene-01` sampai `09`: suara sintetis `id-ID-ArdiNeural`, melalui edge-tts 7.3.1. MP3 sumber dan WAV normalisasi tersimpan. Pemakaian TTS mengikuti ketentuan penyedia; proyek tidak mengklaim lisensi tambahan dari Microsoft.
+- `public/audio/v2/score.wav`: musik elektronik korporat orisinal 120 BPM, disintesis deterministik oleh `scripts/prepare_audio_v2.py`; tidak memakai lagu/rekaman pihak ketiga.
+- `public/audio/v2/effects.wav`: whoosh, impact lembut, dan klik digital disintesis oleh script yang sama; tanpa sampel pihak ketiga.
+- Sora 700/800 dari @fontsource/sora; lisensi SIL OFL ada di `public/fonts/LICENSE`.
+- Plus Jakarta Sans dan Poppins dari aset website pengguna; lisensi SIL OFL ada di `PlusJakartaSans-OFL.txt` dan `Poppins-OFL.txt`.
+
+Aset dimuat lokal menggunakan `staticFile()`. Musik dan ilustrasi dibuat khusus untuk pekerjaan ini. Logo, situs klien, dan elemen pihak ketiga dalam screenshot tetap milik pemilik masing-masing. Remotion dan dependensinya mengikuti lisensi paket masing-masing.

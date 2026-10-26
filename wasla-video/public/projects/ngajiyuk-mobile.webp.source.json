@@ -1,0 +1,40 @@
+{
+  "slug": "ngajiyuk",
+  "title": "Ngaji Yuk!",
+  "variant": "mobile",
+  "caption": "Tampilan beranda Ngaji Yuk! di perangkat mobile.",
+  "src": "/images/projects/gallery/ngajiyuk-mobile.webp",
+  "source_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+  "actual_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_ebacaf8e5e3476f1b7730e3705b8cdd2a18e9a39d8fb8696c0e53294345bbc16",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "mobile-root",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/ngajiyuk-mobile.png",
+  "source_original_sha256": "af1ec7785bcae510c9d6456ad8b3d51ca384ae0e5a6a5a6426b2e4d66580d003",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 844,
+    "width": 390
+  },
+  "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 5000,
+      "step_id": "mobile-root"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "source_original": "docs/evidence/real-projects-2026-10-23/cimuning-clean.png",
+  "source_original_sha256": "035cf61add849096b87a96a68e2c8ab4765bb67d902e349244c12ec317025a1f",
+  "source_url": "https://cimuning.com/",
+  "actual_url": "https://cimuning.com/",
+  "observed_name": "Cimuning Digital Hub",
+  "observed_type": "Direktori UMKM dan katalog produk",
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_9ee59a9cb27b52c81b6d8a676e2e2074e3d6afd5ebced0d91389736ca339a529",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "capture_scope": "Normal public landing, after visible first-visit overlay dismissal.",
+  "actions": [
+    "settle-first-visit",
+    "dismiss-public-first-visit-overlay",
+    "settle-clean-hero"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "attribution": "Website screenshot from https://cimuning.com/; website ownership asserted by the user. This provenance record does not independently verify ownership or third-party asset licenses.",
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged 1440x1000 viewport composition"
+  ],
+  "technology_verified": [],
+  "technology_unverified": [
+    "Framework",
+    "CMS",
+    "Database",
+    "Hosting configuration",
+    "Authentication implementation"
+  ]
+}

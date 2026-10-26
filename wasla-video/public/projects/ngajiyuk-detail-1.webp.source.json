@@ -1,0 +1,54 @@
+{
+  "slug": "ngajiyuk",
+  "title": "Ngaji Yuk!",
+  "variant": "detail-1",
+  "caption": "Bagian beranda Ngaji Yuk!, tampilan desktop pertama.",
+  "src": "/images/projects/gallery/ngajiyuk-detail-1.webp",
+  "source_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+  "actual_url": "https://ngajiyuk.sdilbanisalehsetu.com/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_798eb38d9e20c2379af700db1afec1c106a06287559f4e30dc63e1cf2907cfd4",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "detail-1",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/ngajiyuk-detail-1.png",
+  "source_original_sha256": "73ebb6787e5b04be31be8cf66cd676fb3a550b69544b9489a51fdefd8494dc3a",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 1000,
+    "width": 1440
+  },
+  "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 4500,
+      "step_id": "settle-landing"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-detail-1"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1800,
+      "step_id": "detail-1"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

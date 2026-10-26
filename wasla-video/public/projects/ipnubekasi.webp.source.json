@@ -1,0 +1,35 @@
+{
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "source_original": "docs/evidence/real-projects-2026-10-23/ipnubekasi.png",
+  "source_original_sha256": "bb4bb3031188129176e840c8e14af1717170326eb863079ac7e09742d0ee449d",
+  "source_url": "https://ipnubekasi.my.id/",
+  "actual_url": "https://ipnubekasi.my.id/",
+  "observed_name": "IPNU IPPNU Kota Bekasi",
+  "observed_type": "Portal organisasi dan berita",
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_33d4630526f033824968521c9dac4be5a2b382053207320da15b26923e1f4012",
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 1
+  },
+  "capture_scope": "Normal public landing; no interactions or forms.",
+  "actions": [
+    "settle-public-landing"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "attribution": "Website screenshot from https://ipnubekasi.my.id/; website ownership asserted by the user. This provenance record does not independently verify ownership or third-party asset licenses.",
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged 1440x1000 viewport composition"
+  ],
+  "technology_verified": [],
+  "technology_unverified": [
+    "Framework",
+    "CMS",
+    "Database",
+    "Hosting configuration",
+    "Authentication implementation"
+  ]
+}

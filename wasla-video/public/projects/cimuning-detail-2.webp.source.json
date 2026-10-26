@@ -1,0 +1,84 @@
+{
+  "slug": "cimuning",
+  "title": "Cimuning Digital Hub",
+  "variant": "detail-2",
+  "caption": "Bagian beranda Cimuning Digital Hub, tampilan desktop kedua.",
+  "src": "/images/projects/gallery/cimuning-detail-2.webp",
+  "source_url": "https://cimuning.com/",
+  "actual_url": "https://cimuning.com/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_a386ba718e6d679e0c222a64274d4ac02c14d8c35facdca2e96c4973483fcb62",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "detail-2",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/cimuning-detail-2.png",
+  "source_original_sha256": "7a6c7eeeebd383bbe4b8aaa16c4147bf1d10c6ceeb73fde2223ef5e8d893184b",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 1000,
+    "width": 1440
+  },
+  "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 4500,
+      "step_id": "settle-landing"
+    },
+    {
+      "action": "click",
+      "button": "left",
+      "click_count": 1,
+      "locator": {
+        "kind": "role",
+        "name": "Lewati",
+        "role": "button"
+      },
+      "step_id": "dismiss-overlay"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1500,
+      "step_id": "settle-dismissed"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-detail-1"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1800,
+      "step_id": "detail-1"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-detail-2"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1800,
+      "step_id": "detail-2"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

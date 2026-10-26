@@ -1,0 +1,54 @@
+{
+  "slug": "fazmastone",
+  "title": "Fazmastone",
+  "variant": "detail-1",
+  "caption": "Bagian beranda Fazmastone, tampilan desktop pertama.",
+  "src": "/images/projects/gallery/fazmastone-detail-1.webp",
+  "source_url": "https://www.fazmastone.com/",
+  "actual_url": "https://www.fazmastone.com/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_1cb6691407d962386e347d7dca17c2e4fcdd26e33d61c1df3e561507ee656083",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "detail-1",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/fazmastone-detail-1.png",
+  "source_original_sha256": "6870ccc29b2e70d516ca99ed77d5cd2c7ee1b66d51e6c244333a924c684a5b77",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 1000,
+    "width": 1440
+  },
+  "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 4500,
+      "step_id": "settle-landing"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-detail-1"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1800,
+      "step_id": "detail-1"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

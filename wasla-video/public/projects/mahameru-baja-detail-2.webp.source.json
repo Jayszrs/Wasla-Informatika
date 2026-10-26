@@ -1,0 +1,84 @@
+{
+  "slug": "mahameru-baja",
+  "title": "Mahameru Baja Indonesia",
+  "variant": "detail-2",
+  "caption": "Bagian beranda Mahameru Baja Indonesia, tampilan desktop kedua.",
+  "src": "/images/projects/gallery/mahameru-baja-detail-2.webp",
+  "source_url": "https://mahamerubaja.vercel.app/",
+  "actual_url": "https://mahamerubaja.vercel.app/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_c1e795bd20d8183f8f99511295d8c496a890bed6842ce5a11fbe1e32be349f91",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "detail-2",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/mahameru-baja-detail-2.png",
+  "source_original_sha256": "6b9acb4581339b22c7362d0320a04e886011415c9b43cb28145b1af88d7cd017",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 1000,
+    "width": 1440
+  },
+  "capture_scope": "Public root lower section reached with ordinary PageDown keys. No DOM/style edits.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 4500,
+      "step_id": "settle-landing"
+    },
+    {
+      "action": "click",
+      "button": "left",
+      "click_count": 1,
+      "locator": {
+        "kind": "role",
+        "name": "Tutup poster",
+        "role": "button"
+      },
+      "step_id": "dismiss-overlay"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1500,
+      "step_id": "settle-dismissed"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-detail-1"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1800,
+      "step_id": "detail-1"
+    },
+    {
+      "action": "press",
+      "key": "PageDown",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "step_id": "scroll-detail-2"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1800,
+      "step_id": "detail-2"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

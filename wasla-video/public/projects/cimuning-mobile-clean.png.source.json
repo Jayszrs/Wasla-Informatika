@@ -1,0 +1,13 @@
+{
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "source_url": "https://cimuning.com/",
+  "captured_date": "2026-10-27",
+  "capture_provider": "Chrome through Computer Use",
+  "viewport": {"width":390,"height":844},
+  "image_dimensions": {"width":375,"height":844},
+  "image_note": "Browser viewport screenshot omits the 15px scrollbar strip; the phone viewport uses the image's exact 375:844 ratio.",
+  "capture_scope": "Public homepage at scrollY=0, no first-visit banner; no DOM or style edits.",
+  "actions": ["open public homepage", "set viewport", "select first carousel slide", "scroll to top", "capture viewport", "restore viewport"],
+  "permission_basis": "User authorizes Wasla portfolio video and previously asserts ownership of this website."
+}

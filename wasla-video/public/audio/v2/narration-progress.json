@@ -1,0 +1,101 @@
+[
+  {
+    "scene": 1,
+    "startFrame": 8,
+    "sceneStartFrame": 0,
+    "sceneFrames": 120,
+    "durationSeconds": 3.192,
+    "rate": "+0%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Website adalah wajah digital bisnismu.",
+    "file": "audio/v2/scene-01.wav"
+  },
+  {
+    "scene": 2,
+    "startFrame": 128,
+    "sceneStartFrame": 120,
+    "sceneFrames": 180,
+    "durationSeconds": 5.04,
+    "rate": "+8%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Wasla Informatika. Inilah karya digital untuk kebutuhan nyata.",
+    "file": "audio/v2/scene-02.wav"
+  },
+  {
+    "scene": 3,
+    "startFrame": 308,
+    "sceneStartFrame": 300,
+    "sceneFrames": 240,
+    "durationSeconds": 7.344,
+    "rate": "+8%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Cimuning Digital Hub. E-katalog produk dan profil usaha lokal, yang bisa dijelajahi di desktop maupun ponsel.",
+    "file": "audio/v2/scene-03.wav"
+  },
+  {
+    "scene": 4,
+    "startFrame": 548,
+    "sceneStartFrame": 540,
+    "sceneFrames": 240,
+    "durationSeconds": 7.104,
+    "rate": "+8%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Fazma Stone. Website bisnis batu alam, dengan katalog produk yang membantu pelanggan mengenal beragam pilihan.",
+    "file": "audio/v2/scene-04.wav"
+  },
+  {
+    "scene": 5,
+    "startFrame": 788,
+    "sceneStartFrame": 780,
+    "sceneFrames": 240,
+    "durationSeconds": 7.128,
+    "rate": "+8%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Mahameru Baja Indonesia. Profil perusahaan dan layanan laser cutting, dengan informasi untuk pelanggan.",
+    "file": "audio/v2/scene-05.wav"
+  },
+  {
+    "scene": 6,
+    "startFrame": 1028,
+    "sceneStartFrame": 1020,
+    "sceneFrames": 240,
+    "durationSeconds": 6.336,
+    "rate": "+0%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Ngaji Yuk. Aplikasi web pendidikan untuk pencatatan dan pendampingan belajar mengaji.",
+    "file": "audio/v2/scene-06.wav"
+  },
+  {
+    "scene": 7,
+    "startFrame": 1268,
+    "sceneStartFrame": 1260,
+    "sceneFrames": 120,
+    "durationSeconds": 3.432,
+    "rate": "+8%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Portal organisasi, hingga profil sekolah.",
+    "file": "audio/v2/scene-07.wav"
+  },
+  {
+    "scene": 8,
+    "startFrame": 1388,
+    "sceneStartFrame": 1380,
+    "sceneFrames": 210,
+    "durationSeconds": 4.32,
+    "rate": "+0%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Dari konsultasi sampai peluncuran, Wasla siap membantu.",
+    "file": "audio/v2/scene-08.wav"
+  },
+  {
+    "scene": 9,
+    "startFrame": 1598,
+    "sceneStartFrame": 1590,
+    "sceneFrames": 210,
+    "durationSeconds": 5.712,
+    "rate": "+0%",
+    "voice": "id-ID-ArdiNeural",
+    "text": "Giliran bisnismu. Konsultasi di wasla titik my titik id sekarang.",
+    "file": "audio/v2/scene-09.wav"
+  }
+]

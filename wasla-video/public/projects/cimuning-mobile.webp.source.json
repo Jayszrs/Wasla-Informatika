@@ -1,0 +1,56 @@
+{
+  "slug": "cimuning",
+  "title": "Cimuning Digital Hub",
+  "variant": "mobile",
+  "caption": "Tampilan beranda Cimuning Digital Hub di perangkat mobile.",
+  "src": "/images/projects/gallery/cimuning-mobile.webp",
+  "source_url": "https://cimuning.com/",
+  "actual_url": "https://cimuning.com/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_ef2bdcc154bae3d389a8f3c2f3d3a646ce64434c11d4d3b35dc448c255ba2dd0",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "mobile-root",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/cimuning-mobile.png",
+  "source_original_sha256": "ee45557b45f5354cf1658ecc746143049dd2d7ef0d855e930e9218b816b46670",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 844,
+    "width": 390
+  },
+  "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 4000,
+      "step_id": "settle-mobile"
+    },
+    {
+      "action": "click",
+      "button": "left",
+      "click_count": 1,
+      "locator": {
+        "kind": "role",
+        "name": "Lewati",
+        "role": "button"
+      },
+      "step_id": "dismiss-overlay"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1800,
+      "step_id": "mobile-root"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

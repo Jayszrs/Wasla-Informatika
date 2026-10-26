@@ -1,0 +1,56 @@
+{
+  "slug": "mahameru-baja",
+  "title": "Mahameru Baja Indonesia",
+  "variant": "mobile",
+  "caption": "Tampilan beranda Mahameru Baja Indonesia di perangkat mobile.",
+  "src": "/images/projects/gallery/mahameru-baja-mobile.webp",
+  "source_url": "https://mahamerubaja.vercel.app/",
+  "actual_url": "https://mahamerubaja.vercel.app/",
+  "asset_type": "actual-public-website-screenshot",
+  "generated": false,
+  "captured_date": "2026-10-23",
+  "capture_provider": "REA controlled browser scenario (Chromium / Playwright)",
+  "evidence_id": "ev_f627b72bf0512a8620f9842d0da9e95add7e1f757f21c80bc004ef9790e4840e",
+  "evidence_bundle": "docs/evidence/project-gallery-2026-10-23-rea.json",
+  "evidence_step": "mobile-root",
+  "source_original": "docs/evidence/project-gallery-2026-10-23/mahameru-baja-mobile.png",
+  "source_original_sha256": "b9b1944c2739bd569fd198beec252f151fc3d85350cd00dc398385b3dc4f3264",
+  "viewport": {
+    "device_scale_factor": 1,
+    "height": 844,
+    "width": 390
+  },
+  "capture_scope": "Public root at mobile viewport after ordinary visible overlay dismissal where applicable.",
+  "actions": [
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 4000,
+      "step_id": "settle-mobile"
+    },
+    {
+      "action": "click",
+      "button": "left",
+      "click_count": 1,
+      "locator": {
+        "kind": "role",
+        "name": "Tutup poster",
+        "role": "button"
+      },
+      "step_id": "dismiss-overlay"
+    },
+    {
+      "action": "wait_for_timeout",
+      "duration_ms": 1800,
+      "step_id": "mobile-root"
+    }
+  ],
+  "transformations": [
+    "PNG screenshot converted to WebP; unchanged viewport composition"
+  ],
+  "permission_basis": "User states ownership of this website and authorizes actual public screenshot use for their portfolio.",
+  "limitations": [
+    "Public page only. No authentication, private dashboards, or form submission.",
+    "Fixed settling wait is not proof every remote asset loaded.",
+    "Technology stack and third-party asset licensing were not independently verified."
+  ]
+}

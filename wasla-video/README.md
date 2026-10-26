@@ -1,63 +1,68 @@
-# Wasla Informatika — video company profile
+# Wasla Informatika ? portofolio 60 detik
 
-Video motion graphic portrait dengan lima adegan, logo Wasla asli, screenshot wasla.my.id, ilustrasi orisinal, narasi Indonesia, musik dan efek suara orisinal.
+Revisi kedua: video portrait 1080 ? 1920, 30 FPS, 1800 frame, narasi Indonesia, musik dan efek orisinal. File akhir: `output/wasla-informatika-portfolio-60s.mp4`.
 
-File siap unggah: `output/wasla-informatika-company-profile-30s.mp4`.
-Spesifikasi terverifikasi: **30,000 detik · 1080 × 1920 · 9:16 · 30 FPS · 900 frame · H.264 · AAC stereo 48 kHz**.
+## Isi video
 
-## Preview dan render ulang
+| Waktu | Adegan |
+| --- | --- |
+| 00?04 | Pembuka dengan karya asli |
+| 04?10 | Wasla Informatika |
+| 10?18 | Cimuning Digital Hub |
+| 18?26 | Fazma Stone |
+| 26?34 | Mahameru Baja Indonesia |
+| 34?42 | Ngaji Yuk! |
+| 42?46 | IPNU Kota Bekasi dan SIT Permata Hati Bekasi |
+| 46?53 | Konsultasi, desain, pengembangan, peluncuran |
+| 53?60 | Konsultasi / wasla.my.id |
 
-Jalankan dari folder `wasla-video` dengan Node.js 22.13+ (yang dipakai: 22.23.4).
+Screenshot portofolio adalah tangkapan website asli, bukan UI fiktif. Empat proyek utama mendapat delapan detik masing-masing, dengan desktop, mobile, dan halaman detail. Tidak ada klaim hasil bisnis atau jumlah klien baru.
+
+## Preview
+
+Jalankan dari folder `wasla-video`, Node.js 22.13+ (dipakai: 22.23.4).
 
 ```powershell
 npm ci
 npm run dev -- --port=3040
 ```
 
-Buka `http://localhost:3040/WaslaCompanyProfile`. Setiap adegan dan audio memiliki nama sendiri di timeline Studio.
+Buka http://localhost:3040/WaslaCompanyProfile dan gunakan zoom **Fit** agar seluruh portrait terlihat. Timeline memiliki sembilan adegan bernama dan sembilan narasi terpisah.
+
+## Render dan verifikasi
 
 ```powershell
 npm run lint
 npm run render
 npm run verify
-```
-
-Render menghasilkan master Remotion lalu MP4 akhir Rec.709/yuv420p, fast-start, dan timeline audio tepat 30 detik. Tahap final menghilangkan padding AAC 16 ms dari master. Chrome di lokasi standar Windows dipakai otomatis; lokasi lain dapat diberikan melalui `CHROME_PATH`. Remotion dapat mengunduh browser render resminya bila Chrome tidak tersedia.
-
-FFmpeg/ffprobe memakai binary yang disertakan Remotion. `FFMPEG_PATH` dan `FFPROBE_PATH` dapat digunakan untuk instalasi lain. Remotion dikunci ke versi 4.0.539 dalam package-lock.
-
-## Mengubah video
-
-- `src/scenes/`: lima adegan, frame 0–149 / 150–329 / 330–539 / 540–719 / 720–899.
-- `src/components/`: logo, mockup, tipografi, transisi, dan audio.
-- `src/video/theme.ts`: warna dan font.
-- `public/audio/narration.json`: naskah aktual, durasi, tempo, serta awal narasi.
-- `NARASI.md`: naskah final.
-- `ASSETS.md`: asal aset dan lisensi.
-- `QA.md`: hasil pemeriksaan.
-
-Voice-over dan semua aset sudah tersedia lokal. Render ulang tidak memerlukan TTS.
-
-## Membuat ulang suara
-
-Hanya langkah ini memerlukan internet untuk Microsoft Edge TTS. Naskah publik dikirim ke layanan TTS; tidak ada API key di proyek. Suara: `id-ID-ArdiNeural`, pitch -2 Hz. Tempo dibatasi +14%; narasi adegan kedua dipersingkat agar nyaman dalam enam detik.
-
-```powershell
-python -m venv .venv
-.venv/Scripts/python.exe -m pip install -r requirements-audio.txt
-.venv/Scripts/python.exe scripts/prepare_audio.py
-npm run render
-```
-
-Script audio Python memakai jalur binary Remotion Windows x64. Untuk OS lain sesuaikan `BIN` pada script Python. Script render/verifikasi Node mendeteksi binary terpasang.
-
-## Pemeriksaan frame
-
-```powershell
 npm run review
 node scripts/review-encoded.mjs
 ```
 
-Snapshot disimpan pada `output/review/`. Render still digunakan untuk frame yang tidak berurutan, karena render sparse sequence pada versi ini memicu kesalahan inline-audio. Export penuh 0–899 berhasil.
+`npm run render` menghasilkan master Remotion, kemudian MP4 akhir H.264/yuv420p Rec.709 dengan AAC stereo 48 kHz, fast-start, dan durasi container/audio/video tepat 60 detik. Konfigurasi output berada di `video-spec.json`.
 
-Skill resmi sudah dipasang melalui `npx remotion skills add`. Paket sumber dan aset: `output/wasla-video-project.zip`; dependensi dan virtual environment tidak disertakan. Instal kembali dengan `npm ci`.
+Chrome di lokasi standar Windows dipakai otomatis; lokasi lain dapat diberikan melalui `CHROME_PATH`. Remotion dapat menyediakan browser resmi jika Chrome tidak tersedia. FFmpeg dan ffprobe memakai paket binary Remotion, atau jalur `FFMPEG_PATH` / `FFPROBE_PATH`.
+
+## Sumber untuk revisi
+
+- `src/film/`: semua adegan aktif, mockup perangkat, data proyek dan tipografi revisi.
+- `src/WaslaCompanyProfile.tsx`: urutan dan durasi adegan.
+- `src/components/AudioManager.tsx`: timeline audio.
+- `public/projects/`: tangkapan situs asli beserta `.source.json`.
+- `public/audio/v2/`: VO, musik, efek, dan manifest durasi aktual.
+- `NARASI.md`: naskah final; `ASSETS.md`: sumber aset; `QA.md`: verifikasi.
+
+Semua aset sudah lokal; render ulang tidak membutuhkan TTS atau akses website publik. `src/scenes/` adalah sumber versi 30 detik terdahulu dan tidak dipakai komposisi aktif. Export lama dipertahankan di `output/previous-30s/`.
+
+## Membuat ulang audio
+
+```powershell
+python -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements-audio.txt
+.venv/Scripts/python.exe scripts/prepare_audio_v2.py --refresh
+npm run render
+```
+
+Generasi narasi memerlukan internet ke Edge TTS. Suara Indonesia Ardi, pitch -2 Hz, tempo 0 sampai +8%. Tanpa `--refresh`, script menggunakan ulang klip yang durasinya sudah terukur. Script Python memakai jalur binary Windows x64; sesuaikan `BIN` untuk OS lain.
+
+Remotion dikunci ke 4.0.539. Skill resmi tersedia di `.agents/skills/`, dipasang menggunakan `npx remotion skills add`. Paket sumber/aset: `output/wasla-video-portfolio-60s-project.zip`, tanpa node_modules dan virtual environment.
