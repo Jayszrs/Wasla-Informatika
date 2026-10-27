@@ -12,7 +12,7 @@ export function DeviceScene({ spec, className, children }: { spec: DeviceSceneSp
   const host = useRef<HTMLDivElement>(null)
   const locale = useLocale()
   const hintId = useId()
-  const hint = locale === 'en' ? 'Drag to rotate ? arrow keys ? Home to reset' : 'Geser untuk memutar ? tombol panah ? Home untuk reset'
+  const hint = locale === 'en' ? 'Swipe sideways to rotate · scroll vertically to continue' : 'Geser ke samping untuk memutar · gulir vertikal untuk lanjut'
   const serialized = JSON.stringify(spec)
   useEffect(() => {
     const spec = JSON.parse(serialized) as DeviceSceneSpec

@@ -1,3 +1,4 @@
+import { ServerTranslation } from '@/frontend/components/server-translation'
 import { WebsitePackages } from '@/frontend/components/website-packages'
 import Link from 'next/link'
 import { getServices, getProjects, getSettings, getTestimonials, getTeam } from '@/backend/cms'
@@ -6,13 +7,14 @@ import { SectionWave } from '@/frontend/components/artwork'
 import { ServiceScene } from '@/frontend/components/service-scene'
 import { ButtonLink, MediaImage, ProjectCard } from '@/frontend/components/ui'
 import { ContactForm } from '@/frontend/components/contact-form'
-import { homeSEO, pageMeta } from '@/frontend/lib/seo'
+import { homeSEO, localizedPageMeta } from '@/frontend/lib/seo'
 import { DivisionStructure } from '@/frontend/components/division-structure'
 import { TechnologyLogos } from '@/frontend/components/technology-logos'
 import { teamContacts } from '@/shared/contacts'
 import { BrandPhone } from '@/frontend/components/device-mockup'
+import { BrandFilmShowcase } from '@/frontend/components/brand-films'
 
-export const metadata = pageMeta(homeSEO.title, homeSEO.description, '/')
+export async function generateMetadata() { return localizedPageMeta(homeSEO.title, homeSEO.description, '/') }
 
 export default async function Home() {
   const [settings, services, projects, testimonials, team] = await Promise.all([getSettings(), getServices(), getProjects(), getTestimonials(), getTeam()])
@@ -25,7 +27,7 @@ export default async function Home() {
   const heroConceptLabel = heroConcept ? `Konsep eksplorasi — ${heroConcept.title.split(' — ')[0]}`
     : typeof heroImage === 'object' && /konsep/i.test(`${heroImage?.caption || ''} ${heroImage?.alt || ''}`) ? 'Konsep eksplorasi' : null
 
-  return <>
+  return <ServerTranslation>{<>
     <section className="hero">
       <div className="hero-backdrop" data-hero-art><MediaImage media={heroImage} className="hero-stage-image" priority sizes="100vw"/></div>
       <div className="wrap hero-main"><div className="hero-copy">
@@ -38,6 +40,7 @@ export default async function Home() {
       <a className="hero-scroll" href="#featured-works"><span className="scroll-mouse"/><span>Gulir ke bawah</span></a>
     </section>
     <SectionWave layered/>
+    <BrandFilmShowcase/>
 
     <section className="works-section wrap" id="featured-works">
       <div className="section-heading centered"><h2>Project pilihan</h2><p>Website dan aplikasi yang telah kami kerjakan untuk pendidikan, organisasi, dan bisnis.</p></div>
@@ -73,5 +76,5 @@ export default async function Home() {
     <section className="consultation-section" id="konsultasi"><div className="wrap"><DivisionStructure contacts={contacts} members={team.docs}/><div className="consultation-grid"><div className="consultation-info"><h2>Ceritakan project Anda.</h2><p>Sampaikan tujuan bisnis dan kebutuhan Anda. Pilih rekan diskusi, siapkan ringkasan, lalu lanjutkan percakapan melalui WhatsApp.</p><p>Lingkup, jadwal, dan biaya dibahas bersama sesuai kebutuhan project.</p>{settings.email && <a className="text-link" href={`mailto:${settings.email}`}>{settings.email}<Arrow diagonal/></a>}</div><ContactForm services={services.docs.map(s => s.title)} contacts={contacts}/></div></div></section>
 
     {!!testimonials.docs.length && <section className="testimonials-section wrap"><div className="section-heading centered"><h2>Cerita kolaborasi</h2><p>Pengalaman yang dibagikan oleh rekan kolaborasi Wasla.</p></div><div className="testimonials-grid">{testimonials.docs.map(t => <figure key={t.id} className="testimony-card"><blockquote>{t.quote}</blockquote><figcaption><strong>{t.clientName}</strong> · {t.company}</figcaption></figure>)}</div></section>}
-  </>
+  </>}</ServerTranslation>
 }

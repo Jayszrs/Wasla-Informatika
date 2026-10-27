@@ -1,6 +1,15 @@
 import type { Team } from '@/shared/content-types'
 
 export type ContactPerson = { id: string; name: string; role: string; href: string; phone: string; linkedin?: string }
+export type TeamPerson = Omit<ContactPerson, 'href' | 'phone'> & { href?: string; phone?: string }
+
+export function teamProfiles(team: Team[]): TeamPerson[] {
+  const contacts = new Map(teamContacts(team).map(person => [person.id, person]))
+  return team.map(member => contacts.get(String(member.id)) || {
+    id: String(member.id), name: member.name, role: member.role,
+    linkedin: member.socials?.map(social => linkedinProfile(social.url)).find(Boolean),
+  })
+}
 
 export function linkedinProfile(value?: string | null): string | undefined {
   if (!value) return undefined

@@ -1,9 +1,12 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
+import { Translation, useLocale } from './locale-provider'
+import { translate } from '@/shared/i18n'
 import { getServiceVisual, serviceVisualLabels, serviceVisualPaths, type ServiceVisual } from '@/frontend/lib/service-visual'
 
 const legacyVisuals: ServiceVisual[] = ['website', 'infrastructure', 'design', 'consultation', 'integration']
 export function ServiceScene({ service, variant = 0, dark = false }: { service?: string; variant?: number; dark?: boolean }) {
+  const locale = useLocale()
   const visual = service ? getServiceVisual(service) : legacyVisuals[Math.abs(variant) % legacyVisuals.length]
   const host = useRef<HTMLDivElement>(null)
   const [failed, setFailed] = useState(false), [interactive, setInteractive] = useState(false)
@@ -150,7 +153,7 @@ export function ServiceScene({ service, variant = 0, dark = false }: { service?:
           cylinder(pen, .12, 1.88, [0, 0, 0], navy); cylinder(pen, .125, .26, [0, .64, 0], silver)
           const tip = new T.Mesh(new T.ConeGeometry(.12, .37, 24), silver); tip.rotation.z = Math.PI; tip.position.y = -1.12; pen.add(tip)
         }
-        const canvas = surface.canvas; canvas.setAttribute('role', 'img'); canvas.setAttribute('aria-label', `${serviceVisualLabels[visual]}. Gunakan tombol panah untuk memutar saat area ini difokuskan.`); canvas.tabIndex = 0; canvas.dataset.serviceVisual = visual; element.appendChild(canvas)
+        const canvas = surface.canvas; canvas.setAttribute('role', 'img'); canvas.setAttribute('aria-label', `${translate(serviceVisualLabels[visual], locale)}. ${locale === 'en' ? 'Use the arrow keys to rotate when this area is focused.' : 'Gunakan tombol panah untuk memutar saat area ini difokuskan.'}`); canvas.tabIndex = 0; canvas.dataset.serviceVisual = visual; element.appendChild(canvas)
         const reduce = reducedMotionPreference(), fine = window.matchMedia('(hover:hover) and (pointer:fine)')
         let frame = 0, rotationX = -.1, rotationY = -.35, targetX = rotationX, targetY = rotationY, drag: { x: number; y: number } | null = null, frames = 0
         function draw() {
@@ -161,7 +164,7 @@ export function ServiceScene({ service, variant = 0, dark = false }: { service?:
         }
         function render() { frames = 0; if (!frame && visible && !document.hidden) frame = requestAnimationFrame(draw) }
         function resize() { const rect = element.getBoundingClientRect(); surface.resize(rect.width, rect.height); camera.aspect = rect.width / rect.height; camera.position.z = camera.aspect < .95 ? 9.3 : 8; camera.updateProjectionMatrix(); render() }
-        function scroll() { if (!visible || reduce.matches || !fine.matches || drag) return; const rect = element.getBoundingClientRect(); const progress = Math.max(-1, Math.min(1, (innerHeight / 2 - rect.top - rect.height / 2) / innerHeight)); targetX = -.1 + progress * .25; model.position.y = progress * .16; render() }
+        function scroll() { if (!visible || reduce.matches || drag) return; const rect = element.getBoundingClientRect(); const progress = Math.max(-1, Math.min(1, (innerHeight / 2 - rect.top - rect.height / 2) / innerHeight)); targetX = -.1 + progress * .25; model.position.y = progress * .16; render() }
         function pointerdown(event: PointerEvent) { if (!fine.matches && !active.current) return; drag = { x: event.clientX, y: event.clientY }; canvas.setPointerCapture(event.pointerId); canvas.focus({ preventScroll: true }) }
         function pointermove(event: PointerEvent) {
           if (drag) { targetY = Math.max(-.9, Math.min(.65, targetY + (event.clientX - drag.x) * .008)); targetX = Math.max(-.7, Math.min(.7, targetX + (event.clientY - drag.y) * .008)); drag = { x: event.clientX, y: event.clientY }; render() }
@@ -187,6 +190,6 @@ export function ServiceScene({ service, variant = 0, dark = false }: { service?:
     }, { rootMargin: '120px' })
     visibility.observe(element)
     return () => { cancelled = true; generation++; visibility.disconnect(); teardown?.() }
-  }, [visual])
-  return <div className={`service-scene ${dark ? 'scene-dark' : ''} ${interactive ? 'scene-interactive' : ''}`}><div className="service-scene-viewport" ref={host}><svg className="service-scene-fallback" viewBox="0 0 32 32" role="img" aria-label={serviceVisualLabels[visual]} style={{ color: dark ? '#c5d0dd' : '#173b63', padding: '18%' }}><path d={serviceVisualPaths[visual]} transform="translate(4 4)" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/></svg></div>{!failed && <div className="service-scene-tools"><span>Objek 3D · geser untuk memutar</span><button type="button" className="scene-touch-control" onClick={() => setInteractive(v => !v)} aria-pressed={interactive}>{interactive ? 'Selesai memutar' : 'Putar objek'}</button></div>}</div>
+  }, [visual, locale])
+  return <Translation><div className={`service-scene ${dark ? 'scene-dark' : ''} ${interactive ? 'scene-interactive' : ''}`}><div className="service-scene-viewport" ref={host}><svg className="service-scene-fallback" viewBox="0 0 32 32" role="img" aria-label={serviceVisualLabels[visual]} style={{ color: dark ? '#c5d0dd' : '#173b63', padding: '18%' }}><path d={serviceVisualPaths[visual]} transform="translate(4 4)" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/></svg></div>{!failed && <div className="service-scene-tools"><span>Objek 3D · geser untuk memutar</span><button type="button" className="scene-touch-control" onClick={() => setInteractive(v => !v)} aria-pressed={interactive}>{interactive ? 'Selesai memutar' : 'Putar objek'}</button></div>}</div></Translation>
 }

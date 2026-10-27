@@ -1,3 +1,6 @@
+import { englishCopy } from './english-copy'
+import { englishReading } from './english-reading'
+Object.assign(englishCopy, englishReading)
 export type Locale = 'id' | 'en'
 
 export function withoutLocale(path: string) {
@@ -105,8 +108,12 @@ const english: Record<string, string> = {
 export function translate(text: string, locale: Locale): string {
   if (locale === 'id') return text
   if (english[text]) return english[text]
+  if (englishCopy[text]) return englishCopy[text]
   const trimmed = text.trim()
   if (english[trimmed]) return text.replace(trimmed, english[trimmed])
+  if (englishCopy[trimmed]) return text.replace(trimmed, englishCopy[trimmed])
+  const normalized = trimmed.replace(/\s+/g, ' ')
+  if (english[normalized] || englishCopy[normalized]) return text.replace(trimmed, english[normalized] || englishCopy[normalized])
   const patterns: [RegExp, (match: RegExpMatchArray) => string][] = [
     [/^Konsultasi paket (.+)$/, m => `Discuss the ${translate(m[1], locale)} package`],
     [/^Bahas paket (.+)$/, m => `Discuss ${translate(m[1], locale)}`],
@@ -119,6 +126,8 @@ export function translate(text: string, locale: Locale): string {
     [/^Perbesar gambar (\d+): (.+)$/, m => `Enlarge image ${m[1]}: ${translate(m[2], locale)}`],
     [/^Tampilan desktop website (.+)$/, m => `Desktop view of the ${m[1]} website`],
     [/^Tampilan mobile website (.+)$/, m => `Mobile view of the ${m[1]} website`],
+    [/^Bagian beranda (.+), tampilan desktop (pertama|kedua)\.$/, m => `${m[1]} homepage, ${m[2] === 'pertama' ? 'first' : 'second'} desktop view.`],
+    [/^Tampilan beranda (.+) di perangkat mobile\.$/, m => `${m[1]} homepage on mobile.`],
     [/^Ringkasan tersimpan\. Lanjutkan ke WhatsApp (.+) untuk mengirim pesan Anda\.$/, m => `Your brief is saved. Continue to ${m[1]}'s WhatsApp to send your message.`],
     [/^Lanjut ke WhatsApp (.+)$/, m => `Continue to ${m[1]}'s WhatsApp`],
   ]

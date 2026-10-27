@@ -1,10 +1,9 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 
 export function HeroEnhancement() {
   const pathname = usePathname()
-  const [intro, setIntro] = useState(false)
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
     const wide = window.matchMedia('(min-width: 901px)')
@@ -14,11 +13,8 @@ export function HeroEnhancement() {
     const reveals = [...document.querySelectorAll<HTMLElement>('[data-reveal]')]
     const scenes = [...document.querySelectorAll<HTMLElement>('[data-art-scene]')]
     let pointer: { scene: HTMLElement; x: number; y: number } | null = null
-    let timeout: ReturnType<typeof setTimeout>
-    let introFrame = 0
     let frame = 0
     let observer: IntersectionObserver | undefined
-    const resetIntroFrame = requestAnimationFrame(() => setIntro(false))
     const showAll = () => reveals.forEach(el => { el.dataset.revealState = 'shown' })
     const setupReveals = () => {
       observer?.disconnect()
@@ -72,14 +68,6 @@ export function HeroEnhancement() {
       scroll()
     }
     const leave = () => { pointer = null; scroll() }
-    try {
-      if (pathname === '/' && !sessionStorage.getItem('wasla-agency-visited') && !reduce.matches && wide.matches) {
-        sessionStorage.setItem('wasla-agency-visited', '1')
-        introFrame = requestAnimationFrame(() => setIntro(true))
-        document.documentElement.classList.add('wasla-intro')
-        timeout = setTimeout(() => { setIntro(false); document.documentElement.classList.remove('wasla-intro') }, 900)
-      }
-    } catch { /* The content remains usable without browser storage. */ }
     setupReveals()
     draw()
     window.addEventListener('scroll', scroll, { passive: true })
@@ -91,7 +79,7 @@ export function HeroEnhancement() {
     wide.addEventListener('change', preference)
     fine.addEventListener('change', preference)
     return () => {
-      clearTimeout(timeout); cancelAnimationFrame(resetIntroFrame); cancelAnimationFrame(introFrame); cancelAnimationFrame(frame)
+      cancelAnimationFrame(frame)
       observer?.disconnect(); showAll()
       window.removeEventListener('scroll', scroll); window.removeEventListener('resize', scroll)
       window.removeEventListener('pointermove', move); document.removeEventListener('pointerleave', leave); window.removeEventListener('blur', leave)
@@ -101,5 +89,5 @@ export function HeroEnhancement() {
       document.documentElement.classList.remove('wasla-intro')
     }
   }, [pathname])
-  return intro ? <button className="skip-intro" onClick={() => { setIntro(false); document.documentElement.classList.remove('wasla-intro') }}>Lewati animasi</button> : null
+  return null
 }

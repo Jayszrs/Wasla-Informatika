@@ -1,0 +1,22 @@
+{
+  "servers": {
+    "serena": {
+      "type": "stdio",
+      "command": "C:\\Users\\jaela\\.local\\bin\\serena.exe",
+      "args": [
+        "start-mcp-server",
+        "--context",
+        "vscode",
+        "--project",
+        "${workspaceFolder}",
+        "--open-web-dashboard",
+        "false",
+        "--enable-gui-log-window",
+        "false"
+      ],
+      "env": {
+        "PATH": "C:\\Users\\jaela\\AppData\\Local\\Programs\\REA\\node-v24.22.0-win-x64;C:\\Program Files\\nodejs;C:\\Users\\jaela\\.local\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\System32;C:\\WINDOWS"
+      }
+    }
+  }
+}

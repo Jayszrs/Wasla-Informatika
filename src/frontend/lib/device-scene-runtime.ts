@@ -207,10 +207,12 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
     if (pointerSurface !== host && host.getAttribute('aria-describedby')) pointerSurface.setAttribute('aria-describedby', [originalDescription, host.getAttribute('aria-describedby')].filter(Boolean).join(' '))
     function constrain() { targetX = T.MathUtils.clamp(targetX, -.65, .38); targetY = T.MathUtils.clamp(targetY, -.85, .55) }
     function pointer(event: PointerEvent) {
-      if (!visible || event.pointerType === 'touch') return
+      if (!visible) return
       if (drag && event.pointerId === drag.pointerId) {
         const dx = event.clientX - drag.x, dy = event.clientY - drag.y
         if (!drag.moved && Math.hypot(dx, dy) < 6) return
+        // Horizontal touch gestures rotate; vertical gestures remain native page scrolling.
+        if (!drag.moved && event.pointerType === 'touch' && Math.abs(dy) >= Math.abs(dx)) return
         if (!drag.moved) {
           drag.moved = true; pinned = true; suppressClick = true; host.dataset.deviceDragging = 'true'
           try { pointerSurface.setPointerCapture(event.pointerId) } catch { /* The browser may cancel a pointer during a navigation. */ }
@@ -227,7 +229,7 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
       constrain(); render()
     }
     function pointerDown(event: PointerEvent) {
-      if (!visible || event.button !== 0 || event.pointerType === 'touch' || event.altKey || event.ctrlKey || event.metaKey) return
+      if (!visible || event.button !== 0 || event.altKey || event.ctrlKey || event.metaKey) return
       suppressClick = false
       drag = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, rotationX: currentX, rotationY: currentY, moved: false }
     }
@@ -257,7 +259,7 @@ export async function mountDeviceScene(host: HTMLDivElement, spec: DeviceSceneSp
       constrain(); render()
     }
     function scroll() {
-      if (!visible || !fine.matches || reduced.matches || drag || pinned) return
+      if (!visible || reduced.matches || drag || pinned) return
       const rect = host.getBoundingClientRect()
       targetX = rest.x + Math.max(-1, Math.min(1, (innerHeight / 2 - rect.top - rect.height / 2) / innerHeight)) * .07; render()
     }

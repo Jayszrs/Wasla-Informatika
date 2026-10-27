@@ -1,26 +1,30 @@
+import { ServerTranslation } from '@/frontend/components/server-translation'
 import { notFound } from 'next/navigation'
 import { serviceBySlug } from '@/backend/cms'
 import { PageIntro, Content, CTA, ButtonLink } from '@/frontend/components/ui'
 import { ServiceScene } from '@/frontend/components/service-scene'
-import { pageMeta, serviceSEO, serviceAreas, siteURL } from '@/frontend/lib/seo'
+import { localizedPageMeta, serviceSEO, serviceAreas, siteURL } from '@/frontend/lib/seo'
 import { StructuredData } from '@/frontend/components/structured-data'
 import Link from 'next/link'
 import { seoImageSource } from '@/shared/media'
+import { getLocale } from '@/frontend/lib/locale'
+import { localizedPath, translate } from '@/shared/i18n'
 type Props = { params: Promise<{ slug: string }> }
-export async function generateMetadata({ params }: Props) { const { slug } = await params; const s = await serviceBySlug(slug); return s ? pageMeta(s.seo?.title || serviceSEO[s.slug]?.title || s.title, s.seo?.description || serviceSEO[s.slug]?.description || s.excerpt, `/layanan/${s.slug}`, seoImageSource(s.seo?.image)) : {} }
+export async function generateMetadata({ params }: Props) { const { slug } = await params; const s = await serviceBySlug(slug); return s ? localizedPageMeta(s.seo?.title || serviceSEO[s.slug]?.title || s.title, s.seo?.description || serviceSEO[s.slug]?.description || s.excerpt, `/layanan/${s.slug}`, seoImageSource(s.seo?.image)) : {} }
 export default async function Page({ params }: Props) {
+  const locale = await getLocale()
   const service = await serviceBySlug((await params).slug); if (!service) notFound()
   const focus = serviceSEO[service.slug]
   const title = focus?.title || service.title
-  const url = `${siteURL()}/layanan/${service.slug}`
-  return <>
+  const url = `${siteURL()}${localizedPath(`/layanan/${service.slug}`, locale)}`
+  return <ServerTranslation>{<>
     <StructuredData data={{ '@context': 'https://schema.org', '@graph': [
-      { '@type': 'Service', '@id': `${url}#service`, name: title, description: focus?.description || service.excerpt, url, serviceType: service.title,
+      { '@type': 'Service', '@id': `${url}#service`, name: translate(title, locale), description: translate(focus?.description || service.excerpt, locale), url, serviceType: translate(service.title, locale),
         provider: { '@id': `${siteURL()}/#organization` }, areaServed: serviceAreas.map(name => ({ '@type': 'City', name })) },
       { '@type': 'BreadcrumbList', itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Beranda', item: siteURL() },
-        { '@type': 'ListItem', position: 2, name: 'Layanan', item: `${siteURL()}/layanan` },
-        { '@type': 'ListItem', position: 3, name: title, item: url },
+        { '@type': 'ListItem', position: 1, name: translate('Beranda', locale), item: `${siteURL()}${localizedPath('/', locale)}` },
+        { '@type': 'ListItem', position: 2, name: translate('Layanan', locale), item: `${siteURL()}${localizedPath('/layanan', locale)}` },
+        { '@type': 'ListItem', position: 3, name: translate(title, locale), item: url },
       ] },
     ] }}/>
     <PageIntro title={title} copy={focus?.description || service.excerpt}><ButtonLink href={`/kontak?layanan=${encodeURIComponent(service.title)}`} arrow>Diskusikan kebutuhan</ButtonLink></PageIntro>
@@ -41,5 +45,5 @@ export default async function Page({ params }: Props) {
       </section>}
       {!!service.deliverables?.length && <section><h2>Ruang lingkup yang bisa dibahas.</h2><ul className="deliverables">{service.deliverables.map(d => <li key={d.id}>{d.item}</li>)}</ul><p>Rincian hasil kerja disepakati sesuai konteks dan kebutuhan proyek.</p></section>}
     </div></div></section><CTA title="Mari temukan bentuk solusi Anda."/>
-  </>
+  </>}</ServerTranslation>
 }

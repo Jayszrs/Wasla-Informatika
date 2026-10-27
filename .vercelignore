@@ -4,6 +4,8 @@
 !.env.example
 .local
 .agents
+.serena
+.vscode
 .impeccable
 .next
 node_modules

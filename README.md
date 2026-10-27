@@ -2,6 +2,8 @@
 
 Website agency Indonesia dengan Next.js 16, React 19, TypeScript, PostgreSQL, dan **Wasla Studio**, CMS khusus tanpa Payload. Tujuh project nyata, layanan, artikel, galeri, profil tim, dan pengaturan website dikelola melalui `/admin`.
 
+Perubahan 27 Oktober: intro video pada kunjungan/refresh, reel portrait dengan audio asli, tujuh profil tim, interaksi 3D sentuh, dan rute Inggris `/en`. [Catatan fitur dan verifikasi](docs/website-films-team-mobile-20261027.md) memuat perilaku, sumber media, konfigurasi MCP, serta status rilis. Terjemahan publik berada di `src/shared/i18n.ts`, `english-copy.ts`, dan `english-reading.ts`; teks CMS baru perlu padanan Inggrisnya.
+
 ## Menjalankan lokal
 
 Gunakan Node.js 24. Dari folder project:

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { Arrow } from './icons'
 import { GalleryDevice } from './device-mockup'
+import { Translation } from './locale-provider'
 
 export type GalleryImage = { src: string; alt: string; caption: string; width: number; height: number }
 
@@ -26,7 +27,7 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
   const step = (direction: number) => setActive(value => value === null ? null : (value + direction + images.length) % images.length)
   if (!images.length) return null
   const image = active === null ? null : images[active]
-  return <section className="project-gallery" aria-labelledby="project-gallery-title">
+  return <Translation><section className="project-gallery" aria-labelledby="project-gallery-title">
     <div className="gallery-heading">
       <h2 id="project-gallery-title">Lebih dekat dengan project ini.</h2>
       <p>Jelajahi tampilan dan detailnya. Pilih gambar untuk melihat lebih besar.</p>
@@ -56,5 +57,5 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
         </>}
       </div>
     </dialog>
-  </section>
+  </section></Translation>
 }

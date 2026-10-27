@@ -1,22 +1,26 @@
+import { ServerTranslation } from '@/frontend/components/server-translation'
 import Link from 'next/link'
 import { ButtonLink, CTA, PageIntro } from '@/frontend/components/ui'
 import { StructuredData } from '@/frontend/components/structured-data'
-import { pageMeta, siteURL } from '@/frontend/lib/seo'
+import { localizedPageMeta, siteURL } from '@/frontend/lib/seo'
+import { getLocale } from '@/frontend/lib/locale'
+import { localizedPath, translate } from '@/shared/i18n'
 
 const title = 'Cara Membuat Website untuk Bisnis: Panduan dari Nol'
 const description = 'Pelajari cara buat website: tentukan tujuan, pilih platform, siapkan domain dan hosting, susun konten, lalu uji sebelum terbit. Bandingkan buat sendiri dan jasa website.'
-export const metadata = pageMeta(title, description, '/cara-membuat-website')
+export async function generateMetadata() { return localizedPageMeta(title, description, '/cara-membuat-website') }
 
-export default function Page() {
-  const url = `${siteURL()}/cara-membuat-website`
-  return <>
+export default async function Page() {
+  const locale = await getLocale()
+  const url = `${siteURL()}${localizedPath('/cara-membuat-website', locale)}`
+  return <ServerTranslation>{<>
     <StructuredData data={{ '@context': 'https://schema.org', '@graph': [
-      { '@type': 'TechArticle', '@id': `${url}#article`, headline: title, description, url, mainEntityOfPage: url, inLanguage: 'id-ID',
+      { '@type': 'TechArticle', '@id': `${url}#article`, headline: translate(title, locale), description: translate(description, locale), url, mainEntityOfPage: url, inLanguage: locale === 'en' ? 'en-US' : 'id-ID',
         author: { '@id': `${siteURL()}/#organization` }, publisher: { '@id': `${siteURL()}/#organization` },
         image: `${siteURL()}/opengraph-image` },
       { '@type': 'BreadcrumbList', itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Beranda', item: siteURL() },
-        { '@type': 'ListItem', position: 2, name: 'Cara membuat website', item: url },
+        { '@type': 'ListItem', position: 1, name: translate('Beranda', locale), item: `${siteURL()}${localizedPath('/', locale)}` },
+        { '@type': 'ListItem', position: 2, name: translate('Cara membuat website', locale), item: url },
       ] },
     ] }}/>
     <PageIntro title={title} copy="Ingin buat website tetapi belum tahu mulai dari mana? Panduan ini membantu Anda menyiapkan situs bisnis, baik dikerjakan sendiri maupun bersama pengembang.">
@@ -68,5 +72,5 @@ export default function Page() {
       </div>
     </article>
     <CTA title="Sudah punya gambaran website Anda?"/>
-  </>
+  </>}</ServerTranslation>
 }

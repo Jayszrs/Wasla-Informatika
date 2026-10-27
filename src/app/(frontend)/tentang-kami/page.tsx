@@ -1,12 +1,13 @@
+import { ServerTranslation } from '@/frontend/components/server-translation'
 import { getTeam, getSettings } from '@/backend/cms'
 import { PageIntro, TeamSection, Process, CTA, MediaImage } from '@/frontend/components/ui'
-import { pageMeta } from '@/frontend/lib/seo'
+import { localizedPageMeta } from '@/frontend/lib/seo'
 
-export const metadata = pageMeta('Tentang Kami', 'Kenali pendekatan Wasla Informatika dalam menghubungkan kebutuhan bisnis dengan strategi, desain, dan teknologi.', '/tentang-kami')
+export async function generateMetadata() { return localizedPageMeta('Tentang Kami', 'Kenali pendekatan Wasla Informatika dalam menghubungkan kebutuhan bisnis dengan strategi, desain, dan teknologi.', '/tentang-kami') }
 
 export default async function Page() {
   const [team, settings] = await Promise.all([getTeam(), getSettings()])
-  return <>
+  return <ServerTranslation>{<>
     <PageIntro title="Tentang Wasla" copy="Menghubungkan kebutuhan bisnis dengan strategi, desain, dan teknologi."/>
     <section className="wrap about-intro">
       <div className="about-image"><MediaImage media={settings.featureImage} sizes="(max-width: 767px) 100vw, 40vw" /></div>
@@ -23,5 +24,5 @@ export default async function Page() {
     <Process/>
     {!!team.docs.length && <TeamSection members={team.docs} showAboutLink={false}/>}
     <CTA/>
-  </>
+  </>}</ServerTranslation>
 }

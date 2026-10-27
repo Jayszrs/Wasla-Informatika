@@ -1,3 +1,4 @@
+import { ServerTranslation } from '@/frontend/components/server-translation'
 import { notFound } from 'next/navigation'
 import { currentUser } from '@/backend/auth'
 import { listDocuments } from '@/backend/content'
@@ -12,5 +13,5 @@ export default async function Preview({ searchParams }: { searchParams: Promise<
   const collection = params.collection as 'services' | 'projects' | 'posts'
   const doc = (await listDocuments(collection, true)).find(d => d.id === Number(params.id)) as unknown as Project | Post | Service | undefined
   if (!doc) notFound()
-  return <><PageIntro title={doc.title} copy="Preview internal — konten draft, belum tentu dipublikasikan."/><section className="wrap page-content">{'content' in doc && <Content data={doc.content}/>} {'challenge' in doc && <><ProjectImage project={doc}/><p>{doc.challenge}</p><p>{doc.solution}</p></>}</section></>
+  return <ServerTranslation>{<><PageIntro title={doc.title} copy="Preview internal — konten draft, belum tentu dipublikasikan."/><section className="wrap page-content">{'content' in doc && <Content data={doc.content}/>} {'challenge' in doc && <><ProjectImage project={doc}/><p>{doc.challenge}</p><p>{doc.solution}</p></>}</section></>}</ServerTranslation>
 }

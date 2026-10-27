@@ -2,7 +2,13 @@
 
 Website aktif: **https://wasla.my.id**. CMS: **https://wasla.my.id/admin**. Akun administrator lama tetap dapat digunakan.
 
-## Rilis aktif 25 Oktober 2026, malam
+## Rilis aktif 27 Oktober 2026
+
+Deployment `dpl_HkiYV3cfNP2ph3bXsdKcduMM41Ye` READY dan telah dipromosikan ke **https://wasla.my.id**. Pada 16.42 WIB, pemeriksaan domain publik tanpa bypass memastikan tujuh anggota tim, tiga foto LinkedIn baru, kedua video web yang cocok hash dengan hasil lokal, Range HTTP 206, 32 halaman Inggris dengan canonical tepat, dan sitemap 64 URL. Lima tes browser produksi lulus untuk video/suara/refresh/replay, ID/EN lintas halaman, formulir, profil, touch 3D, scroll, reduced motion, dan kegagalan video.
+
+Build produksi lokal/Vercel dan typecheck lulus; delapan tes unit lulus; lint nol error dengan enam warning Studio yang sudah ada. Scope ini tidak mengulang mutasi admin atau mengirim pesan WhatsApp. Anggota baru ditambahkan tanpa mengganti anggota/nomor lama; nomor WhatsApp baru belum tersedia, sehingga LinkedIn tetap menjadi tautan kontak mereka. [Catatan dan release gate](website-films-team-mobile-20261027.md), [observasi REA mobile](rea-mobile-live-20261027.json).
+
+## Riwayat 25 Oktober 2026, malam
 
 Deployment `dpl_CJVQh6p3MVgQPzKM4TLevBvzoqYW` sudah dipromosikan dan dikonfirmasi READY pada https://wasla.my.id. Verifikasi publik selesai 25 Oktober 2026 pukul 22.20 WIB; alur Studio/kontak selesai 22.21 WIB. Tujuh project menampilkan perangkat 3D bertekstur, tiga profil LinkedIn tersedia pada kedua sisi kartu, paket tanpa lapisan folder dan seluruh harga tetap sesuai CMS.
 

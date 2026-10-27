@@ -1,0 +1,18 @@
+[
+  {
+    "source": "wasla-landscape-reference-27s6.mp4",
+    "sourceSHA256": "0e24c80a8315df4692eab1f4b4f1ac9bb373de95aa40ba74764dddcc796d0dc8",
+    "output": "public/videos/wasla-introduction.mp4",
+    "bytes": 5582079,
+    "sha256": "b548aa492460b9f5c585ea50c14b2c7a5d18d9e133724582c0a5af1e3e94e508",
+    "treatment": "Same full video and original audio, resized and compressed for web delivery; no added voiceover."
+  },
+  {
+    "source": "WaslaSalesReel-Revisi-SFX-v4.mp4",
+    "sourceSHA256": "b111986cbf15ca35637c85e135ddf942b48a43affb9f7b7da1e7d12fd5acef75",
+    "output": "public/videos/wasla-sales-reel.mp4",
+    "bytes": 1671658,
+    "sha256": "ca74000e9737c3078ae05de4c031fb370fb994c98af5c4a92075f88165b8947f",
+    "treatment": "Same full video and original audio, resized and compressed for web delivery; no added voiceover."
+  }
+]
