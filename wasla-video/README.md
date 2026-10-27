@@ -1,6 +1,22 @@
 # Wasla Informatika - proyek video
 
-Versi terbaru: **Scroll Reel 35 detik, tanpa VO**, komposisi `WaslaScrollReel`. File: `output/wasla-scroll-reel-35s.mp4`. Panduan, sumber, dan status musik: [REEL.md](REEL.md). Pemeriksaan: [REEL-QA.md](REEL-QA.md).
+**Audio aktif WaslaSalesReel v4:** SFX diringkas dari 27 ke 9 cue yang mengikuti transisi. Musik asli tetap utama. File siap pakai ada di `C:/Users/jaela/Downloads/WaslaSalesReel-Revisi-SFX-v4.mp4`. Detail: [SALES-SFX-V4.md](SALES-SFX-V4.md).
+
+**Revisi showcase WaslaLandscapePromo:** layar website utuh, kartu portofolio terpisah di bawah, gerak kamera dan cursor dirapikan pada detik 15,5–18,6. Ekspor: `output/wasla-landscape-showcase-v2-27s6.mp4`. Detail: [LANDSCAPE-SHOWCASE-V2.md](LANDSCAPE-SHOWCASE-V2.md).
+
+**Koreksi audio aktif: WaslaSalesReel v3**, sound MP3 pengguna dimajukan dan preview Studio memakai audio browser native. Visual sales v2 tetap sama. MP4: `output/wasla-sales-motion-v3-sound-asli-15s.mp4`. Detail: [SALES-AUDIO-V3.md](SALES-AUDIO-V3.md).
+
+**Revisi aktif: WaslaSalesReel v2**, portrait 15 detik, gaya WaslaLandscapePromo, satu scene scroll portofolio dan 27 cue SFX orisinal. Sound pengguna, tanpa VO. Ekspor: `output/wasla-sales-motion-v2-15s.mp4`. Panduan: [SALES-V2.md](SALES-V2.md).
+
+Landscape promo 27,6 detik, 1920 × 1080, 60 fps, bahasa Indonesia, sound pengguna, tanpa VO. Komposisi `WaslaLandscapePromo`; output `output/wasla-landscape-reference-27s6.mp4`. Panduan: [LANDSCAPE-REFERENCE.md](LANDSCAPE-REFERENCE.md).
+
+Versi sebelumnya: geometric reel 9 detik, adaptasi referensi Pinterest dalam bahasa Indonesia. Komposisi `WaslaGeometricReel`; output `output/wasla-geometric-9s.mp4`. Sound pengguna, tanpa VO. Panduan: [GEOMETRIC-9S.md](GEOMETRIC-9S.md).
+
+Versi sebelumnya: iklan jasa pembuatan website 15 detik, sound pengguna, tanpa VO. Fokus teks sales dan konsultasi; portofolio hanya kilasan 1,4 detik tanpa pengenalan. Komposisi `WaslaSalesReel`; output `output/wasla-website-sales-15s.mp4`. Panduan: [SALES-15S.md](SALES-15S.md).
+
+Versi sebelumnya: Motion Reel 30 detik dengan sound kiriman pengguna, tanpa VO. Komposisi `WaslaMotionReel`; output `output/wasla-motion-reference-30s.mp4`. Referensi Pinterest sudah diperiksa melalui REA. Panduan: [MOTION-REFERENCE.md](MOTION-REFERENCE.md), hasil verifikasi: [MOTION-QA.md](MOTION-QA.md).
+
+Versi sebelumnya: **Scroll Reel 35 detik, tanpa VO**, komposisi `WaslaScrollReel`. File: `output/wasla-scroll-reel-35s.mp4`. Panduan, sumber, dan status musik: [REEL.md](REEL.md). Pemeriksaan: [REEL-QA.md](REEL-QA.md).
 
 ## Versi company profile 60 detik sebelumnya
 

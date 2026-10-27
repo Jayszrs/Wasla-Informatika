@@ -1,0 +1,11 @@
+{
+  "source": "user-sound.mp3",
+  "sourceSha256": "1a53fcd54f2759f523fb9df0febadb2448f4cf9aae78ca212975577bc6bf1f75",
+  "sourceDecodedSeconds": 14.706958333333333,
+  "outputSeconds": 30,
+  "loopPeriodSeconds": 14,
+  "overlapSeconds": 0.7069583333333334,
+  "method": "Equal-power crossfades at 14s and 28s; 12ms fade-in, 450ms end fade; source peak limited before loudness normalization",
+  "normalization": "FFmpeg loudnorm target I=-16 LUFS, TP=-1.5 dBTP, LRA=7",
+  "voiceOver": false
+}

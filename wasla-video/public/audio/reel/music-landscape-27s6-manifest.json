@@ -1,0 +1,12 @@
+{
+  "source": "public/audio/reel/music-loop-raw.wav",
+  "sourceSha256": "81229db82e0536f8e0a6a88aecd3ae5616f1d43ff35c7692d6ea3f0cdede94c9",
+  "sourceDecodedSeconds": 30,
+  "outputSeconds": 27.6,
+  "tempo": 1,
+  "pitchPreserved": true,
+  "looped": true,
+  "voiceOver": false,
+  "fadeOutSeconds": 0.35,
+  "postNormalizationGain": 0.75
+}

@@ -6,7 +6,12 @@ import {reelProjects} from './reel/data';
 
 export const WaslaScrollReel=()=>{
   const {fps}=useVideoConfig();
-  return <AbsoluteFill style={{background:'#050B18'}}>
+  return <AbsoluteFill
+    style={{
+      background: '#050B18',
+      translate: '115.4px 43.9px'
+    }}
+  >
     <Sequence name="Pembuka karya" durationInFrames={2*fps}><ReelOpening/></Sequence>
     <Sequence name="Scroll Cimuning" from={2*fps} durationInFrames={5*fps}><ProjectScroll project={reelProjects[0]} index={1}/></Sequence>
     <Sequence name="Scroll Fazma Stone" from={7*fps} durationInFrames={5*fps}><ProjectScroll project={reelProjects[1]} index={2}/></Sequence>

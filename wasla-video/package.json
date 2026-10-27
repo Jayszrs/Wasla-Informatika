@@ -34,7 +34,15 @@
     "review": "node scripts/review-frames.mjs",
     "verify": "node scripts/verify.mjs",
     "render:reel": "node scripts/render-reel.mjs",
-    "review:reel": "node scripts/review-reel.mjs"
+    "review:reel": "node scripts/review-reel.mjs",
+    "render:motion": "node scripts/render-motion.mjs",
+    "review:motion": "node scripts/review-motion.mjs",
+    "render:sales": "node scripts/render-sales.mjs",
+    "review:sales": "node scripts/review-sales.mjs",
+    "render:geometric": "node scripts/render-geometric.mjs",
+    "review:geometric": "node scripts/review-geometric.mjs",
+    "render:landscape": "node scripts/render-landscape.mjs",
+    "review:landscape": "node scripts/review-landscape.mjs"
   },
   "allowScripts": {
     "esbuild": false

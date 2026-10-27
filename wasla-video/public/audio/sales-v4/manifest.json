@@ -1,0 +1,99 @@
+{
+  "version": 4,
+  "durationSeconds": 15,
+  "voiceOver": false,
+  "originalUserMp3Sha256": "1a53fcd54f2759f523fb9df0febadb2448f4cf9aae78ca212975577bc6bf1f75",
+  "musicSource": "../sales-v2/music-main-v3.wav",
+  "musicForegrounded": true,
+  "previousCueCount": 27,
+  "cueCount": 9,
+  "cues": [
+    {
+      "frame": 0,
+      "kind": "intro-air",
+      "gain": 0.09,
+      "pan": 0,
+      "purpose": "Opening title reveal",
+      "seconds": 0.0
+    },
+    {
+      "frame": 48,
+      "targetFrame": 56,
+      "kind": "transition-air",
+      "gain": 0.18,
+      "pan": -0.15,
+      "purpose": "Cut to Website typography",
+      "seconds": 1.6,
+      "envelopePeakFrame": 56
+    },
+    {
+      "frame": 84,
+      "targetFrame": 92,
+      "kind": "transition-air",
+      "gain": 0.14,
+      "pan": 0.15,
+      "purpose": "Change to Berkelas typography",
+      "seconds": 2.8,
+      "envelopePeakFrame": 92
+    },
+    {
+      "frame": 120,
+      "targetFrame": 128,
+      "kind": "transition-air",
+      "gain": 0.18,
+      "pan": -0.15,
+      "purpose": "Enter portfolio scroll",
+      "seconds": 4.0,
+      "envelopePeakFrame": 128
+    },
+    {
+      "frame": 193,
+      "targetFrame": 201,
+      "kind": "transition-air",
+      "gain": 0.16,
+      "pan": 0.15,
+      "purpose": "Enter feature scene",
+      "seconds": 6.4333,
+      "envelopePeakFrame": 201
+    },
+    {
+      "frame": 223,
+      "kind": "pill-landings",
+      "gain": 0.06,
+      "pan": 0,
+      "purpose": "Three capsule landings, frames 223 / 232 / 241",
+      "seconds": 7.4333
+    },
+    {
+      "frame": 274,
+      "targetFrame": 282,
+      "kind": "transition-air",
+      "gain": 0.16,
+      "pan": -0.12,
+      "purpose": "Enter launch sphere",
+      "seconds": 9.1333,
+      "envelopePeakFrame": 282
+    },
+    {
+      "frame": 337,
+      "targetFrame": 345,
+      "kind": "transition-air",
+      "gain": 0.18,
+      "pan": 0.12,
+      "purpose": "Enter consultation closing",
+      "seconds": 11.2333,
+      "envelopePeakFrame": 345
+    },
+    {
+      "frame": 369,
+      "kind": "cta-click",
+      "gain": 0.065,
+      "pan": 0.12,
+      "purpose": "Consultation chip settles",
+      "seconds": 12.3
+    }
+  ],
+  "design": "Air transitions peak on cuts; one three-tap group follows capsule landings; one CTA click. No booms, typing clicks or decorative glints.",
+  "globalHeadroomGain": 0.9836823037404339,
+  "samplePeakDbFS": -1.938200260161128
+}

@@ -1,0 +1,22 @@
+import {spawnSync,execFileSync} from 'node:child_process';
+import {existsSync,mkdirSync,writeFileSync,readFileSync} from 'node:fs';
+import {homedir} from 'node:os';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {binary} from './binaries.mjs';
+import assert from 'node:assert/strict';
+mkdirSync('output',{recursive:true});
+const file='output/wasla-sales-reel-v4-sfx-rapi-15s.mp4';
+function run(command,args){const result=spawnSync(command,args,{stdio:'inherit',windowsHide:true});if(result.error)throw result.error;if(result.status!==0)process.exit(result.status||1);}
+const audioOnly=process.argv.includes('--audio-only');
+if(!audioOnly&&!process.argv.includes('--finalize-only'))run(process.execPath,['node_modules/@remotion/cli/remotion-cli.js','render','src/index.ts','WaslaSalesReel','output/sales-v2-master-15s.mp4','--codec=h264','--audio-codec=aac','--audio-bitrate=192k','--crf=18','--concurrency=2']);
+const previousVideo=['output/wasla-sales-motion-v3-sound-asli-15s.mp4',path.join(homedir(),'Downloads','wasla-sales-motion-v3-sound-asli-15s.mp4'),'output/wasla-sales-motion-v2-15s.mp4'].find(p=>existsSync(p));
+if(audioOnly&&!previousVideo)throw new Error('Previous encoded video missing; run without --audio-only to render the composition.');
+const videoInput=audioOnly?previousVideo:'output/sales-v2-master-15s.mp4';
+const videoOptions=audioOnly?['-c:v','copy']:['-vf','scale=in_range=pc:out_range=tv:in_color_matrix=bt601:out_color_matrix=bt709,format=yuv420p','-c:v','libx264','-preset','medium','-crf','18','-color_primaries','bt709','-color_trc','bt709','-colorspace','bt709','-color_range','tv'];
+run(binary('ffmpeg'),['-hide_banner','-y','-i',videoInput,'-i','public/audio/sales-v4/final-mix.wav','-map','0:v:0','-map','1:a:0',...videoOptions,'-af','atrim=end=15,asetpts=PTS-STARTPTS','-c:a','aac','-b:a','320k','-t','15','-use_editlist','1','-movflags','+faststart',file]);
+const probe=JSON.parse(execFileSync(binary('ffprobe'),['-v','error','-show_streams','-show_format','-of','json',file],{encoding:'utf8',windowsHide:true}));
+const video=probe.streams.find(x=>x.codec_type==='video');const audio=probe.streams.find(x=>x.codec_type==='audio');
+assert.equal(video.codec_name,'h264');assert.equal(video.width,1080);assert.equal(video.height,1920);assert.equal(video.r_frame_rate,'30/1');assert.equal(Number(video.nb_frames),450);assert.equal(Number(probe.format.duration),15);assert.equal(video.pix_fmt,'yuv420p');assert.equal(audio.codec_name,'aac');assert.equal(Number(audio.duration),15);assert.equal(Number(audio.sample_rate),48000);
+const report={passed:true,file,width:1080,height:1920,fps:30,frames:450,durationSeconds:15,voiceOver:false,embeddedMusic:true,sfxCueCount:9,videoStreamCopied:audioOnly,musicSource:'Original user MP3 foregrounded; nine purposefully timed motion SFX cues',reference:'https://pin.it/6GcErUN2D',referenceEvidence:'ev_f1b9d32906575a3a9edf3bf46862bcff7eab79e8e32884080ddb461d3c1bdb30',sha256:createHash('sha256').update(readFileSync(file)).digest('hex')};
+writeFileSync('output/sales-v4-verification.json',JSON.stringify(report,null,2));writeFileSync('output/sales-v4-ffprobe.json',JSON.stringify(probe,null,2));console.log(JSON.stringify(report,null,2));
