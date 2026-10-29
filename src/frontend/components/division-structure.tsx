@@ -1,5 +1,5 @@
 'use client'
-import { useId, useState } from 'react'
+import { useId, useState, type CSSProperties } from 'react'
 import Image from 'next/image'
 import { teamProfiles, type ContactPerson, type TeamPerson } from '@/shared/contacts'
 import type { Team } from '@/shared/content-types'
@@ -7,6 +7,7 @@ import { mediaSource } from '@/shared/media'
 import { WhatsAppIcon } from './contact-cards'
 import { LinkedInIcon } from './icons'
 import { Translation } from './locale-provider'
+import styles from './division-structure.module.css'
 
 const retouchedPortraits: Record<string, string> = {
   'bayu-saputra-linkedin.webp': '/images/team/bayu-saputra-hd.png',
@@ -37,9 +38,25 @@ function DivisionCard({ person, member }: { person: TeamPerson; member?: Team })
   </article></Translation>
 }
 
+type DivisionNode = { person: TeamPerson; children?: DivisionNode[] }
+
+function DivisionBranch({ node, members }: { node: DivisionNode; members: Team[] }) {
+  const children = node.children || []
+  return <li className={styles.node}>
+    <div className={styles.card}><DivisionCard person={node.person} member={members.find(member => String(member.id) === node.person.id)}/></div>
+    {!!children.length && <div className={`${styles.branch} ${children.length > 1 ? styles.teamBranch : ''}`}>
+      <ul className={styles.children} style={{ '--branch-count': children.length } as CSSProperties}>{children.map(child => <DivisionBranch key={child.person.id} node={child} members={members}/>)}</ul>
+    </div>}
+  </li>
+}
+
 export function DivisionStructure({ contacts, members = [] }: { contacts: ContactPerson[]; members?: Team[] }) {
   const people = members.length ? teamProfiles(members) : contacts
   if (!people.length) return null
-  const sorted = [...people].sort((a, b) => Number(/project manager/i.test(b.role)) - Number(/project manager/i.test(a.role)))
-  return <Translation><section className="division-structure" aria-labelledby="division-title"><div className="contact-heading"><h2 id="division-title">Satu tim.<br/>Beragam keahlian.</h2><p>Kenali orang dan divisi di balik project Anda. Ketuk kartu untuk melihat bio, lalu ketuk lagi untuk kembali.</p></div><div className="division-card-grid">{sorted.map(person => <DivisionCard key={person.id} person={person} member={members.find(m => String(m.id) === person.id)}/>)}</div></section></Translation>
+  const leader = people.find(person => person.name.trim().toLowerCase() === 'ahmad suroso')
+  const deputy = people.find(person => person.name.trim().toLowerCase() === 'bayu saputra')
+  const staff = people.filter(person => person !== leader && person !== deputy).map(person => ({ person }))
+  const reporting = deputy ? [{ person: deputy, children: staff }] : staff
+  const roots = leader ? [{ person: leader, children: reporting }] : reporting
+  return <Translation><section className="division-structure" aria-labelledby="division-title"><div className="contact-heading"><h2 id="division-title">Satu tim.<br/>Beragam keahlian.</h2><p>Kenali orang dan divisi di balik project Anda. Ketuk kartu untuk melihat bio, lalu ketuk lagi untuk kembali.</p></div><div className={styles.chart}><ul className={styles.roots} aria-label="Struktur organisasi Wasla">{roots.map(node => <DivisionBranch key={node.person.id} node={node} members={members}/>)}</ul></div><p className={styles.scrollHint}>Geser baris tim untuk melihat seluruh anggota.</p></section></Translation>
 }

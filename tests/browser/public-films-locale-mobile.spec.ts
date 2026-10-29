@@ -95,7 +95,7 @@ test('seven real team profiles include new LinkedIn portraits independently of W
     await card.getByRole('button', { name: `Kembali ke profil ${name}`, exact: true }).press('Enter')
     await expect(card.getByRole('button', { name: new RegExp(`^Kenali ${name}`) })).toHaveAttribute('aria-expanded', 'false')
   }
-  await page.locator('.division-card-grid').screenshot({ path: '.local/site-review/team-seven-20261029.png' })
+  await page.locator('.division-structure').screenshot({ path: '.local/site-review/team-seven-20261029.png' })
 })
 
 test('phone film is portrait, tablet film is landscape, and the intro dismisses from any viewing area', async ({ page }) => {

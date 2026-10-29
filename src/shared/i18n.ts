@@ -16,6 +16,8 @@ export function localizedPath(path: string, locale: Locale): string {
 }
 
 const english: Record<string, string> = {
+  'Struktur organisasi Wasla': 'Wasla organisation structure',
+  'Geser baris tim untuk melihat seluruh anggota.': 'Swipe the team row to see every member.',
   'Website, aplikasi, video, dan karya kreatif. Jelajahi project dan tonton hasil pengerjaannya.': 'Websites, applications, videos and creative work. Explore the projects and watch the results.',
   'Website, aplikasi, video, dan karya kreatif Wasla Informatika untuk bisnis, organisasi, dan pendidikan.': 'Websites, applications, videos and creative work by Wasla Informatika for businesses, organisations and education.',
   'Beranda': 'Home', 'Tentang': 'About', 'Tentang Kami': 'About Us', 'Tentang Wasla': 'About Wasla',

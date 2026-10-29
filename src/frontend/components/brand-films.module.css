@@ -1,8 +1,8 @@
 .intro { position: fixed; inset: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: #030e1d; color: #fff; }
 .intro::backdrop { background: #030e1d; }
-.introSurface { display: grid; place-items: center; width: 100%; height: 100%; padding: max(24px, env(safe-area-inset-top)) max(32px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(32px, env(safe-area-inset-left)); border: 0; background: transparent; cursor: pointer; }
+.introSurface { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .introSurface:focus-visible { outline: 2px solid #c5d0dd; outline-offset: -8px; }
-.introSurface video { display: block; width: min(100%, 1440px); height: 100%; object-fit: contain; }
+.introSurface video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .enableSound { position: absolute; top: max(20px, env(safe-area-inset-top)); right: max(20px, env(safe-area-inset-right)); display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 11px 16px; border: 1px solid #63758a; border-radius: 24px; background: #071a33; color: #fff; font: inherit; font-size: 12px; cursor: pointer; }
 .enableSound:hover { background: #173551; }
 .enableSound:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
@@ -23,6 +23,4 @@
   .filmCopy p { font-size: 14px; }
   .reel { max-width: 340px; justify-self: center; }
   .reel video { aspect-ratio: 9 / 16; }
-  .introSurface { padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); }
-  .introSurface video { width: 100%; }
 }

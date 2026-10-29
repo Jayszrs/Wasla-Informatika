@@ -38,4 +38,14 @@ The intro still attempts audible autoplay first. If playback falls back to muted
 
 Three focused browser cases passed, including deterministic blocked-autoplay recovery on desktop and a 390px English phone, zero-volume recovery and dismissal. The manual phone check observed muted=false, volume=1, playing=true, decoded audio bytes increasing, and the dialog still open after enabling sound. TypeScript and targeted lint passed. This verifies media decoding and player state, not physical speaker output or permission to bypass browser policy.
 
+## Owner follow-up: full viewport and company hierarchy
+
+The onboarding film now fills the entire browser viewport with no stage padding or maximum width. Object-fit cover removes the surrounding letterboxing; the source can crop at the edges when its aspect ratio differs from the viewport. Existing portrait/landscape selection, sound recovery and dismissal behavior remain. This fills the browser content area, without requesting native browser fullscreen.
+
+The shared home/about team component now renders a nested organisation chart: Ahmad Suroso, then Bayu Saputra, then the five other published members at one reporting level. Connector lines communicate the owner-specified hierarchy. Existing names, roles, photographs, biography flips, WhatsApp and LinkedIn destinations remain intact. If a named leader is absent from the supplied content, only existing members render; no stand-in member is created.
+
+Desktop displays the five members side by side. On phones, that same level is a native horizontal scroll row with an explanatory hint, keeping the upper two cards centred without widening the page. The English hint and list label are translated.
+
+Validation: TypeScript and targeted ESLint passed. Four focused browser cases passed: seven-member profile/link interactions, the exact hierarchy on home and about pages, phone scrolling and profile interaction, and full-viewport onboarding geometry on desktop and phone. Visual review captured the complete desktop chart and the mobile row; the measured film box was x=0, y=0, width=1440, height=900 on desktop. No deployment was performed.
+
 Validation: TypeScript and targeted ESLint passed. Six focused browser cases passed across targeted runs: pure intro autoplay/replay/dismissal, phone/tablet selection, muted autoplay fallback, reduced-motion and failed-media access, all nine destinations and player lifecycle, and 320/820/1440 layouts with both Indonesian and English. The embed lifecycle test stubs the remote frame; separate manual browser checks established the observed upstream embed behavior. Screenshots in .local/site-review include the pure intro on 1440 × 900 and 390 × 844 and the portfolio at 320, 820 and 1440 px. Initial focus rests on the native dialog without a visible full-surface button outline; Tab reveals the dismissal button's focus ring. No deployment was performed.
