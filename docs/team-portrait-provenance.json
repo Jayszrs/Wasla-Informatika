@@ -38,5 +38,32 @@
     "tool": "built-in image_gen",
     "userSource": "Owner-supplied portrait in user message, images 6–9 respectively",
     "prompt": "Edit target: FOURTH of the five most recent user-supplied images: Laksa, gray collared shirt, three-quarter pose against blue wall. Use only that person. The fifth image is an unrelated website screenshot, IGNORE it. Use case: identity-preserve and background-extraction. Create ONE individual professional team portrait for Wasla Informatika website. Preserve the exact recognizable facial identity, age, hairstyle, skin tone, expression and natural proportions of the selected person; no face substitution or beautification that changes identity. Restore low-resolution detail conservatively, improve exposure and soft studio lighting, remove screenshot UI, borders, banners, words, background and lanyard if present. Professional natural navy/dark charcoal collared shirt or understated jacket appropriate to existing clothes. Head and upper torso, centered, all hair and both shoulders fully included with comfortable margin; consistent vertical portrait composition suitable for a team card. Genuine transparent alpha background, no backdrop, no ground shadow, no graphic, no text, no frame. Photorealistic, polished but with real skin texture. Only one person, no collage. Save the generated image file as an output artifact."
+  },
+  {
+    "slug": "bayu-saputra",
+    "source": "C:\\Users\\jaela\\.codex\\generated_images\\01a18504-360f-7333-83b9-ecd86c9c85c3\\exec-a3f5b8e9-93bc-4a5c-8f7f-dc6e5100530e.png",
+    "file": "public/images/team/bayu-saputra-hd.png",
+    "tool": "built-in image_gen",
+    "prompt": "Edit target: the provided portrait of Bayu Saputra. Use case: background-extraction and identity-preserve. Create one high resolution professional website team portrait by carefully restoring this low resolution photo, removing its background completely with genuine transparent alpha. Preserve the same person's recognizable face, age, skin tone, hairstyle, expression, posture, navy suit, white shirt and tie. Improve clarity and natural lighting conservatively without changing facial identity or plastic skin. Centered head and upper torso, all hair and both shoulders included, portrait composition. No text, no logo, no backdrop, no shadow, no frame, no collage. Do not invent a different person.",
+    "date": "2026-10-29",
+    "treatment": "AI-assisted clarity restoration and transparent background extraction. Identity preservation requested; low-resolution sources limit documentary fidelity."
+  },
+  {
+    "slug": "adelya-amanda",
+    "source": "C:\\Users\\jaela\\.codex\\generated_images\\01a18504-360f-7333-83b9-ecd86c9c85c3\\exec-829a4ce1-ffd6-4586-8c8d-758078f56105.png",
+    "file": "public/images/team/adelya-amanda-hd.png",
+    "tool": "built-in image_gen",
+    "prompt": "Edit target: provided portrait of Adelya Amanda. Use case: background-extraction and identity-preserve. Produce ONE high resolution professional team portrait for the Wasla website. Remove the entire background , with genuine transparent alpha. Keep this same person's recognizable facial identity, age, skin tone, hairstyle or hijab, expression, original clothing and pose exactly. Improve clarity and soft natural studio lighting conservatively, retain real skin texture. Centered head and upper torso, all hair/hijab and shoulders comfortably included. No new accessories, no text, no logo, no background, no shadow, no frame, no collage. Do not replace or beautify the face into a different person.",
+    "date": "2026-10-29",
+    "treatment": "AI-assisted clarity restoration and transparent background extraction. Identity preservation requested; low-resolution sources limit documentary fidelity."
+  },
+  {
+    "slug": "difa-alfaruq",
+    "source": "C:\\Users\\jaela\\.codex\\generated_images\\01a18504-360f-7333-83b9-ecd86c9c85c3\\exec-c75f0633-9187-492a-8244-fc09c14b7164.png",
+    "file": "public/images/team/difa-alfaruq-hd.png",
+    "tool": "built-in image_gen",
+    "prompt": "Edit target: provided portrait of Difa Alfaruq. Use case: background-extraction and identity-preserve. Produce ONE high resolution professional team portrait for the Wasla website. Remove the entire background and the green Open to Work banner and all its text; conservatively restore the jacket where the overlay covered it, with genuine transparent alpha. Keep this same person's recognizable facial identity, age, skin tone, hairstyle or hijab, expression, original clothing and pose exactly. Improve clarity and soft natural studio lighting conservatively, retain real skin texture. Centered head and upper torso, all hair/hijab and shoulders comfortably included. No new accessories, no text, no logo, no background, no shadow, no frame, no collage. Do not replace or beautify the face into a different person.",
+    "date": "2026-10-29",
+    "treatment": "AI-assisted clarity restoration and transparent background extraction. Identity preservation requested; low-resolution sources limit documentary fidelity."
   }
 ]

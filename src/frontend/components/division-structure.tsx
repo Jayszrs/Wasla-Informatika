@@ -8,13 +8,22 @@ import { WhatsAppIcon } from './contact-cards'
 import { LinkedInIcon } from './icons'
 import { Translation } from './locale-provider'
 
+const retouchedPortraits: Record<string, string> = {
+  'bayu-saputra-linkedin.webp': '/images/team/bayu-saputra-hd.png',
+  'adelya-amanda-linkedin.webp': '/images/team/adelya-amanda-hd.png',
+  'difa-alfaruq-linkedin.webp': '/images/team/difa-alfaruq-hd.png',
+}
+
 function DivisionCard({ person, member }: { person: TeamPerson; member?: Team }) {
   const [flipped, setFlipped] = useState(false)
   const biographyID = useId()
-  const photo = member?.photo && typeof member.photo === 'object' ? member.photo : null
+  const originalPhoto = member?.photo && typeof member.photo === 'object' ? member.photo : null
+  // Only replace the three supplied originals; later CMS uploads keep their own image.
+  const retouched = originalPhoto?.filename && retouchedPortraits[originalPhoto.filename]
+  const photo = retouched ? { ...originalPhoto, url: retouched, width: 1254, height: 1254 } : originalPhoto
   const initials = person.name.split(' ').slice(0, 2).map(word => word[0]).join('')
   const linkedinLink = person.linkedin && <a className="division-linkedin" href={person.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn ${person.name}`}><LinkedInIcon/>LinkedIn</a>
-  return <Translation><article className={`division-flip-card ${flipped ? 'is-flipped' : ''} ${photo?.filename?.includes('-linkedin.') ? 'division-linkedin-photo' : ''}`}>
+  return <Translation><article className={`division-flip-card ${flipped ? 'is-flipped' : ''}`}>
     <button type="button" className="division-card-toggle" onClick={() => setFlipped(value => !value)} aria-expanded={flipped} aria-controls={biographyID} aria-label={flipped ? `Kembali ke profil ${person.name}` : `Kenali ${person.name}, ${person.role}`}/>
     <div className="division-flip-inner">
       <div className="division-face division-front" inert={flipped} aria-hidden={flipped}>
