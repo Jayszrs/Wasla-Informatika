@@ -1,11 +1,11 @@
-import type { Media, Project, Service, Post, Team, Faq, Testimonial, ContactSubmission, SiteSetting, Navigation } from '@/shared/content-types'
+import type { Media, Project, Service, Post, Team, Faq, Testimonial, ContactSubmission, SiteSetting, Navigation, VideoProject } from '@/shared/content-types'
 import { pool } from './database'
 import { editorialCollections } from '../shared/studio-schema'
 import { publicBlobSource } from '@/shared/media'
-export type ContentMap = { media: Media; projects: Project; services: Service; posts: Post; team: Team; faqs: Faq; testimonials: Testimonial; 'contact-submissions': ContactSubmission }
+export type ContentMap = { media: Media; projects: Project; services: Service; posts: Post; team: Team; faqs: Faq; testimonials: Testimonial; 'contact-submissions': ContactSubmission; 'video-projects': VideoProject }
 export type Doc = Record<string, unknown> & { id: number; revision?: number; updatedAt?: string; createdAt?: string }
 type Row = { id: string; data: Record<string, unknown>; published: Record<string, unknown> | null; revision: number; updated_at: Date; created_at: Date }
-const mediaFields = new Set(['image', 'thumbnail', 'illustration', 'photo', 'heroImage', 'featureImage', 'favicon', 'logoWhite', 'logoNavy', 'clientLogo'])
+const mediaFields = new Set(['image', 'thumbnail', 'illustration', 'photo', 'heroImage', 'featureImage', 'favicon', 'logoWhite', 'logoNavy', 'clientLogo', 'video'])
 export async function expand<T>(value: T): Promise<T> {
   const ids = new Set<number>()
   function collect(input: unknown, key = '') {

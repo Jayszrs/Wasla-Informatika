@@ -24,6 +24,18 @@ Untuk profil LinkedIn, gunakan baris **Tautan kontak** yang sudah tersedia: isi 
 
 ## Scheduler project
 
+## Galeri video dan foto
+
+Buka **Galeri video** untuk mengatur judul, kanal, format konten, sampul, urutan, dan publikasi. Pilih kanal Fulday, TikTok, Cimuning, Growthfin, atau Pilihan. Gunakan tautan video/postingan tertentu untuk YouTube, TikTok, Instagram dan Google Drive; tautan profil akun tidak diterima sebagai sumber video.
+
+Untuk video sendiri, pilih **File unggahan**, lalu unggah MP4/WebM melalui kolom video atau menu **Media**. Batas video 250 MB; progres unggahan ditampilkan. File video dan gambar dipisahkan pada pemilih media. Untuk foto, pilih format **image** dan gunakan gambar sampul sebagai gambar galeri. Foto dibuka dalam lightbox, bukan diberi tombol putar video.
+
+File video yang dipilih mengambil prioritas atas embed. Ini juga memungkinkan penggantian embed yang ditolak platform menggunakan file asli. Simpan sebagai draft, terbitkan saat siap, dan gunakan **Tarik dari website** untuk menghapusnya dari galeri publik. Media yang masih dirujuk draft atau versi terbit tidak dapat dihapus.
+
+YouTube SEPTIHAN dan Seventeen menolak embed dengan error 150 pada pemeriksaan 29 Oktober 2026. Pemilik menyatakan file asli hanya tersedia di YouTube. Website menyediakan pesan kegagalan, coba lagi, dan sumber asli; tidak ada klaim kedua video sudah dapat diputar lewat embed.
+
+## Scheduler project
+
 Tambah nama pekerjaan, penanggung jawab dari tim, tanggal mulai dan tenggat. Klien, ID project dan catatan opsional. Status: direncanakan, dikerjakan, ditinjau, selesai. Tenggat tidak dapat mendahului tanggal mulai. Kalender menampilkan rentang pekerjaan; pilih tanggal untuk agenda, gunakan filter status dan tombol bulan. Edit jadwal untuk menjadwal ulang. Administrator dapat menghapus jadwal.
 
 Tanggal kalender mengikuti WIB dan berupa tanggal tanpa jam. Scheduler adalah perencanaan internal; tidak ada notifikasi otomatis, integrasi kalender, atau pengiriman WhatsApp otomatis.
@@ -32,7 +44,7 @@ Tanggal kalender mengikuti WIB dan berupa tanggal tanpa jam. Scheduler adalah pe
 
 Admin dan editor dapat mengelola konten, galeri, jadwal, dan tindak lanjut pesan. Hanya admin mengelola pengguna dan penghapusan. Sesi kedaluwarsa setelah 8 jam. Login dibatasi percobaannya. Semua mutasi memeriksa asal permintaan dan input. Konflik penyimpanan dari tab lain ditolak agar editor memuat versi baru terlebih dahulu.
 
-Unggahan publik adalah gambar. Teks alternatif wajib; file divalidasi dengan decoder gambar dan diubah menjadi WebP. Data konsultasi dan jadwal tidak dapat dibaca dari API tanpa sesi staf. Pengunggahan ke Blob tetap memerlukan token server; token tidak diteruskan ke browser.
+Unggahan gambar divalidasi dengan decoder dan diubah menjadi WebP. Video MP4/WebM diperiksa tipe dan signature file. Gambar/video memerlukan deskripsi. Di Vercel, video memakai unggahan multipart langsung dengan token terbatas yang diterbitkan untuk sesi staf, lalu diverifikasi sebelum didaftarkan sebagai Media; token server tetap privat. Penyimpanan lokal mendukung Range untuk seeking. Data konsultasi dan jadwal tidak dapat dibaca dari API tanpa sesi staf.
 
 CMS menggunakan tabel `studio_documents`, `studio_globals`, `studio_users`, `studio_sessions`, `studio_revisions`, dan tabel pembatas login. Tidak ada dependensi runtime Payload. Arsip sumber dan backup migrasi berada di `.local/`, diabaikan Git. Migrasi legacy hanya dijalankan melalui `npm run db:import-legacy`, dengan backup privat yang sesuai; instalasi baru menggunakan `npm run db:migrate`.
 

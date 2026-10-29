@@ -2,6 +2,14 @@
 
 Target aktif: akun jaelanisuryasaputra10@gmail.com, scope `jae-f2e1`, project `waslainformatika` (`prj_y57AtYGyBMYsK9a8b7auDps05t54`). Project lama `wasla-informatika` bukan target rilis. Website aktif https://wasla.my.id, CMS https://wasla.my.id/admin. DNS dan HTTPS sudah terverifikasi; lihat [bukti domain](domain-wasla-my-id.md). Alamat vercel.app tetap tersedia sebagai alias.
 
+## Persiapan lokal 29 Oktober 2026: galeri dan CMS media
+
+Perubahan galeri, ornamen About, pemutar layar penuh, serta CMS media masih lokal. Sebelum rilis, jalankan `npm run db:video-gallery` dengan koneksi database target yang benar (atau `npm run db:migrate` pada proses penyiapan standar). Impor hanya menambah slug galeri yang belum ada, tanpa menimpa edit, draft, publikasi, akun, atau data lama. Ada 23 entri awal; 18 di antaranya adalah pilihan postingan individual dari empat akun yang diberikan pemilik. Provenance ada di `docs/video-gallery-sources-20261029.json`.
+
+Pastikan Blob `BLOB_READ_WRITE_TOKEN` tersedia saat runtime Vercel. Gambar tetap menggunakan jalur unggahan 4 MB; MP4/WebM sampai 250 MB memakai token unggahan klien terbatas, multipart langsung ke Blob, dan finalisasi server terautentikasi. Route `/api/media/video-upload` dan turunannya harus ikut artifact; `.gitignore` hanya mengecualikan direktori media lokal di root.
+
+Setelah staged deployment, periksa unggahan Blob video nyata dan finalisasi callback, playback/Range, serta alur draft/publish. Tes lokal membuktikan jalur penyimpanan lokal; tes tersebut tidak membuktikan callback Blob di deployment yang belum dirilis. SEPTIHAN/Seventeen tetap bergantung pada izin embedding YouTube karena pemilik tidak memiliki MP4 asli.
+
 ## Rilis aktif 27 Oktober 2026: video, tim, bahasa, dan mobile
 
 Deployment `dpl_HkiYV3cfNP2ph3bXsdKcduMM41Ye` (https://waslainformatika-7xilrzwzn-jae-f2e1.vercel.app) sudah READY dan dipromosikan ke https://wasla.my.id. Intro landscape pada kunjungan/refresh, reel portrait dengan musik asli, tiga profil/foto LinkedIn tambahan, rotasi sentuh serta scroll 3D mobile, dan terjemahan publik Inggris terpasang. Data anggota baru ditambahkan secara idempoten; empat nomor WhatsApp lama dan data lain dipertahankan. Tidak ada nomor baru yang dikarang.

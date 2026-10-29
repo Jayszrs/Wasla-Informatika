@@ -5,7 +5,7 @@ node_modules/
 !.env.example
 .local/
 .vercel/
-media/
+/media/
 playwright-report/
 test-results/
 *.tsbuildinfo

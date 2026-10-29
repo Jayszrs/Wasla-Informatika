@@ -2,6 +2,7 @@ import 'dotenv/config'
 import { pool, schemaSQL } from '../src/backend/database'
 import { hashPassword } from '../src/backend/auth'
 import initial from '../src/backend/data/initial-content.json'
+import { seedVideoLibrary } from './lib/seed-video-library'
 await pool.query(schemaSQL)
 const client = await pool.connect()
 try {
@@ -21,6 +22,7 @@ try {
     console.log('Administrator initialized. Credentials are not printed.')
   }
   await client.query(`SELECT setval(pg_get_serial_sequence('studio_documents','id'),GREATEST((SELECT COALESCE(max(id),0) FROM studio_documents)+1,(SELECT last_value FROM studio_documents_id_seq)+1,1000),false)`)
+  console.log(`Added ${await seedVideoLibrary(client)} missing video gallery items.`)
   await client.query('COMMIT')
   console.log('Studio database ready. Existing content and users preserved.')
 } catch (error) { await client.query('ROLLBACK'); throw error } finally { client.release(); await pool.end() }

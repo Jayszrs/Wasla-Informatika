@@ -3,6 +3,8 @@ import { cache } from 'react'
 import { listDocuments, getGlobal, saveDocument, type ContentMap } from './content'
 import { publicDocuments, publicGlobal } from './public-content'
 import { studioSchema } from '@/shared/studio-schema'
+import { pool } from './database'
+import { initialVideoItems, videoLibraryItem } from '@/shared/video-library'
 type FindOptions<K extends keyof ContentMap> = { collection: K; where?: Record<string, { equals: unknown }>; limit?: number; sort?: string; depth?: number; overrideAccess?: boolean; draft?: boolean }
 async function find<K extends keyof ContentMap>(options: FindOptions<K>) {
   let docs = [...await (studioSchema[options.collection]?.private ? listDocuments(options.collection) : publicDocuments(options.collection))] as unknown as ContentMap[K][]
@@ -19,6 +21,12 @@ export const getPosts = cache(() => find({ collection: 'posts', sort: '-publishe
 export const getTeam = cache(() => find({ collection: 'team' }))
 export const getFAQs = cache(() => find({ collection: 'faqs' }))
 export const getTestimonials = cache(() => find({ collection: 'testimonials', limit: 8 }))
+export const getVideoLibrary = cache(async () => {
+  const { docs } = await find({ collection: 'video-projects', limit: 100 })
+  if (docs.length) return docs.map(videoLibraryItem)
+  const configured = (await pool.query(`SELECT 1 FROM studio_documents WHERE collection='video-projects' LIMIT 1`)).rowCount
+  return configured ? [] : initialVideoItems
+})
 export async function serviceBySlug(slug: string) { return (await find({ collection: 'services', where: { slug: { equals: slug } } })).docs[0] }
 export async function projectBySlug(slug: string) { return (await find({ collection: 'projects', where: { slug: { equals: slug } } })).docs[0] }
 export async function postBySlug(slug: string) { return (await find({ collection: 'posts', where: { slug: { equals: slug } } })).docs[0] }

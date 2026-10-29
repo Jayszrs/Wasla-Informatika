@@ -16,7 +16,8 @@
     "db:local": "node scripts/local-postgres.mjs",
     "setup:env": "node scripts/setup-env.mjs",
     "seed": "tsx scripts/setup-studio.ts",
-    "test": "tsx --test tests/unit.test.ts",
+    "db:video-gallery": "tsx scripts/seed-video-library.ts",
+    "test": "tsx --test tests/unit.test.ts tests/video-media.test.ts",
     "test:e2e": "playwright test",
     "db:import-legacy": "tsx scripts/migrate-studio.ts"
   },

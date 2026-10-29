@@ -53,6 +53,25 @@ export interface Media {
   };
 }
 
+export interface VideoProject {
+  mediaType?: 'video' | 'image' | null
+  id: number;
+  title: string;
+  slug: string;
+  category: string;
+  channel: 'Pilihan' | 'Fulday' | 'TikTok @jayszrss' | 'Cimuning PPKHMTI' | 'Growthfin';
+  provider: 'youtube' | 'tiktok' | 'instagram' | 'drive' | 'upload';
+  sourceURL?: string | null;
+  thumbnail?: number | Media | null;
+  video?: number | Media | null;
+  description?: string | null;
+  featured?: boolean | null;
+  order?: number | null;
+  _status?: 'draft' | 'published' | null;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 export interface Service {
   id: number;
   title: string;

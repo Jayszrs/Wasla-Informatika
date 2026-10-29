@@ -1,6 +1,8 @@
 import { z } from 'zod'
 import { randomUUID } from 'node:crypto'
 import fs from 'node:fs/promises'
+import { createReadStream } from 'node:fs'
+import { Readable } from 'node:stream'
 import path from 'node:path'
 import sharp from 'sharp'
 import { put, del } from '@vercel/blob'
@@ -11,6 +13,7 @@ import { listDocuments, saveDocument, getGlobal } from './content'
 import { publicMediaFile, invalidatePublicContent } from './public-content'
 import { studioSchema, editorialCollections, contentCollections } from '../shared/studio-schema'
 import { validateDocument } from './content-validation'
+import { mediaByteRange } from './media-range'
 const json = (data: unknown, status = 200) => Response.json(data, { status, headers: { 'Cache-Control': 'no-store' } })
 async function readBody(request: Request, max: number) {
   if (Number(request.headers.get('content-length') || 0) > max) throw new Error('TOO_LARGE')
@@ -57,14 +60,20 @@ async function upload(request: Request, actor: string) {
   invalidatePublicContent('media')
   return json({ doc }, 201)
 }
-async function mediaFile(filename: string) {
+async function mediaFile(filename: string, request: Request) {
   if (!/^[a-zA-Z0-9._-]+$/.test(filename)) return json({ error: 'Gambar tidak ditemukan.' }, 404)
   const resolved = await publicMediaFile(filename)
   if (!resolved) return json({ error: 'Gambar tidak ditemukan.' }, 404)
   const { media, source } = resolved
   if (source) return new Response(null, { status: 307, headers: { Location: source, 'Cache-Control': 'public,max-age=300', 'X-Content-Type-Options': 'nosniff' } })
-  const buffer = await fs.readFile(path.join(path.resolve(process.env.MEDIA_DIR || 'media'), filename))
-  return new Response(buffer, { headers: { 'Content-Type': String(media.mimeType || 'image/webp'), 'Cache-Control': 'public,max-age=86400,immutable', 'X-Content-Type-Options': 'nosniff' } })
+  const filepath = path.join(path.resolve(process.env.MEDIA_DIR || 'media'), filename)
+  const size = (await fs.stat(filepath)).size
+  const range = mediaByteRange(request.headers.get('range'), size)
+  if (range === 'invalid') return new Response(null, { status: 416, headers: { 'Content-Range': `bytes */${size}`, 'Accept-Ranges': 'bytes' } })
+  const headers: Record<string, string> = { 'Content-Type': String(media.mimeType || 'image/webp'), 'Content-Length': String(range ? range.end - range.start + 1 : size), 'Accept-Ranges': 'bytes', 'Cache-Control': 'public,max-age=86400,immutable', 'X-Content-Type-Options': 'nosniff' }
+  if (range) headers['Content-Range'] = `bytes ${range.start}-${range.end}/${size}`
+  const stream = request.method === 'HEAD' ? null : Readable.toWeb(createReadStream(filepath, range || undefined)) as ReadableStream<Uint8Array>
+  return new Response(stream, { status: range ? 206 : 200, headers })
 }
 export async function studioAPI(request: Request, segments: string[]) {
   try {
@@ -72,7 +81,7 @@ export async function studioAPI(request: Request, segments: string[]) {
     if (!['GET', 'HEAD'].includes(method) && !sameOrigin(request)) return json({ error: 'Asal permintaan tidak diizinkan.' }, 403)
     const [collection, action, extra] = segments
     if (collection === 'users' && action === 'login' && method === 'POST') return await login(request)
-    if (collection === 'media' && action === 'file' && extra && method === 'GET') return await mediaFile(extra)
+    if (collection === 'media' && action === 'file' && extra && ['GET', 'HEAD'].includes(method)) return await mediaFile(extra, request)
     const user = await currentUser()
     if (collection === 'users' && action === 'me' && method === 'GET') return user ? json({ user }) : json({ error: 'Silakan masuk.' }, 401)
     if (collection === 'users' && action === 'logout' && method === 'POST') {
@@ -130,10 +139,10 @@ export async function studioAPI(request: Request, segments: string[]) {
       if (collection === 'media') {
         const docs = (await pool.query(`SELECT data,published FROM studio_documents WHERE collection<>'media' UNION ALL SELECT data,NULL FROM studio_globals`)).rows
         function usesMedia(value: unknown, key = ''): boolean {
-          if (['image','thumbnail','illustration','photo','heroImage','featureImage','logoWhite','logoNavy','favicon'].includes(key) && value === id) return true
+          if (['image','thumbnail','illustration','photo','heroImage','featureImage','logoWhite','logoNavy','favicon','video'].includes(key) && value === id) return true
           return Array.isArray(value) ? value.some(v => usesMedia(v)) : !!value && typeof value === 'object' && Object.entries(value).some(([k, v]) => usesMedia(v, k))
         }
-        if (docs.some(d => usesMedia(d.data) || usesMedia(d.published))) return json({ error: 'Gambar masih digunakan. Ganti gambar pada konten terkait sebelum menghapus.' }, 409)
+        if (docs.some(d => usesMedia(d.data) || usesMedia(d.published))) return json({ error: 'Media masih digunakan. Ganti media pada konten terkait sebelum menghapus.' }, 409)
         const media = (await listDocuments('media', true, false)).find(d => d.id === id)
         if (media?.blobURL && process.env.BLOB_READ_WRITE_TOKEN) await del(String(media.blobURL))
       }
@@ -148,6 +157,14 @@ export async function studioAPI(request: Request, segments: string[]) {
     const candidate = collection === 'contact-submissions' ? { ...previous, status: body.status } : { ...previous, ...body }
     const parsed = validateDocument(collection, candidate)
     if (parsed.error) return json({ error: parsed.error }, 400)
+    if (collection === 'video-projects') {
+      for (const [field, prefix] of [['video', 'video/'], ['thumbnail', 'image/']]) {
+        const mediaId = parsed.data?.[field]
+        if (!mediaId) continue
+        const media = (await pool.query(`SELECT data FROM studio_documents WHERE collection='media' AND id=$1`, [mediaId])).rows[0]?.data
+        if (!media || !String(media.mimeType || '').startsWith(prefix)) return json({ error: field === 'video' ? 'Pilih file video dari Media.' : 'Pilih gambar sampul dari Media.' }, 400)
+      }
+    }
     const doc = await saveDocument(collection, collection === 'contact-submissions' ? { status: parsed.data?.status } : parsed.data!, user.email, id, body.revision)
     invalidatePublicContent(collection)
     return json({ doc }, id ? 200 : 201)

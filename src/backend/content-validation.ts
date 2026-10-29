@@ -1,6 +1,7 @@
 import { z } from 'zod'
 import { studioSchema, type Field } from '../shared/studio-schema'
 import { validPublicLink } from '../shared/validation'
+import { parseVideoSource } from '../shared/video-source'
 const link = (v: string) => !v || validPublicLink(v)
 function fieldSchema(field: Field): z.ZodType {
   let schema: z.ZodType
@@ -32,6 +33,21 @@ export function validateDocument(collection: string, input: unknown, partial = f
   const parsed = validator.safeParse(input)
   if (!parsed.success) return { error: parsed.error.issues.map(issue => `${issue.path.join('.')}: ${issue.message}`).join('\n') }
   const data = parsed.data as Record<string, unknown>
+  if (collection === 'video-projects') {
+    if (data.sourceURL) {
+      try {
+        const source = new URL(String(data.sourceURL))
+        if (source.protocol !== 'https:' || source.username || source.password || source.port) return { error: 'Gunakan tautan sumber HTTPS yang valid.' }
+      } catch { return { error: 'Gunakan tautan sumber HTTPS yang valid.' } }
+    }
+    const image = data.mediaType === 'image'
+    if (image && !data.thumbnail) return { error: 'Pilih gambar dari Media untuk karya foto.' }
+    if (!image && data.provider === 'upload' && !data.video) return { error: 'Pilih file video MP4 atau WebM dari Media.' }
+    if (data.provider !== 'upload' && data.sourceURL) {
+      const source = parseVideoSource(String(data.sourceURL))
+      if (!source || source.provider !== data.provider) return { error: 'Tautan harus menuju video tertentu dari sumber pemutaran yang dipilih.' }
+    } else if (!image && data.provider !== 'upload' && !data.video) return { error: 'Isi tautan video asli atau pilih file video.' }
+  }
   if (collection === 'schedules' && data.startDate && data.dueDate && String(data.dueDate).slice(0, 10) < String(data.startDate).slice(0, 10)) return { error: 'Tenggat harus pada atau setelah tanggal mulai.' }
   if (data.externalLink && !String(data.externalLink).startsWith('https://')) return { error: 'Alamat website harus HTTPS.' }
   return { data }

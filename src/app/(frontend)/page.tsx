@@ -1,7 +1,7 @@
 import { ServerTranslation } from '@/frontend/components/server-translation'
 import { WebsitePackages } from '@/frontend/components/website-packages'
 import Link from 'next/link'
-import { getServices, getProjects, getSettings, getTestimonials, getTeam } from '@/backend/cms'
+import { getServices, getProjects, getSettings, getTestimonials, getTeam, getVideoLibrary } from '@/backend/cms'
 import { Arrow } from '@/frontend/components/icons'
 import { SectionWave } from '@/frontend/components/artwork'
 import { ServiceScene } from '@/frontend/components/service-scene'
@@ -18,7 +18,7 @@ import { VideoPortfolio } from '@/frontend/components/video-portfolio'
 export async function generateMetadata() { return localizedPageMeta(homeSEO.title, homeSEO.description, '/') }
 
 export default async function Home() {
-  const [settings, services, projects, testimonials, team] = await Promise.all([getSettings(), getServices(), getProjects(), getTestimonials(), getTeam()])
+  const [settings, services, projects, testimonials, team, videos] = await Promise.all([getSettings(), getServices(), getProjects(), getTestimonials(), getTeam(), getVideoLibrary()])
   const featured = projects.docs.filter(p => p.featured).slice(0, 8)
   const contacts = teamContacts(team.docs)
   const selectedServices = ['website-development', 'web-application', 'ui-ux-design', 'photography', 'video-editing', 'creative-editing'].map(slug => services.docs.find(s => s.slug === slug)).filter(s => s !== undefined)
@@ -49,7 +49,7 @@ export default async function Home() {
       {!featured.length && <p>Project sedang diperbarui. Mari diskusikan kebutuhan Anda.</p>}
       <div className="section-action"><ButtonLink href="/portofolio" variant="button-outline">Lihat semua project</ButtonLink></div>
     </section>
-    <VideoPortfolio compact/>
+    <VideoPortfolio compact items={videos}/>
     <SectionWave variant="light-dark"/>
 
     <section className="services-section" id="layanan"><div className="wrap">
