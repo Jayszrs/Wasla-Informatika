@@ -13,6 +13,7 @@ import { TechnologyLogos } from '@/frontend/components/technology-logos'
 import { teamContacts } from '@/shared/contacts'
 import { BrandPhone } from '@/frontend/components/device-mockup'
 import { BrandFilmShowcase } from '@/frontend/components/brand-films'
+import { VideoPortfolio } from '@/frontend/components/video-portfolio'
 
 export async function generateMetadata() { return localizedPageMeta(homeSEO.title, homeSEO.description, '/') }
 
@@ -48,6 +49,7 @@ export default async function Home() {
       {!featured.length && <p>Project sedang diperbarui. Mari diskusikan kebutuhan Anda.</p>}
       <div className="section-action"><ButtonLink href="/portofolio" variant="button-outline">Lihat semua project</ButtonLink></div>
     </section>
+    <VideoPortfolio compact/>
     <SectionWave variant="light-dark"/>
 
     <section className="services-section" id="layanan"><div className="wrap">

@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-29",
+  "ownership": "Owner supplied these nine links as portfolio examples. Fulday credit is editing contributions, not the complete channel.",
+  "youtube": [
+    {
+      "id": "XV0e0PkjDPc",
+      "status": 200,
+      "title": "A Day at World Stamp Championship - Sapta Eka Team SMAN 71 JAKARTA | WSC Vlog Competition",
+      "author_name": "SMAN 71 Jakarta",
+      "author_url": "https://www.youtube.com/@sman71jakarta32",
+      "type": "video",
+      "height": 113,
+      "width": 200,
+      "version": "1.0",
+      "provider_name": "YouTube",
+      "provider_url": "https://www.youtube.com/",
+      "thumbnail_height": 360,
+      "thumbnail_width": 480,
+      "thumbnail_url": "https://i.ytimg.com/vi/XV0e0PkjDPc/hqdefault.jpg"
+    },
+    {
+      "id": "K0dGYfzaAX0",
+      "status": 200,
+      "title": "SEPTIHAN - Tugas Drama Bahasa Indonesia | RAVISPA XI MIPA 2 SMAN 71 Jakarta",
+      "author_name": "uselessdonut",
+      "author_url": "https://www.youtube.com/@uselessdonut7998",
+      "type": "video",
+      "height": 113,
+      "width": 200,
+      "version": "1.0",
+      "provider_name": "YouTube",
+      "provider_url": "https://www.youtube.com/",
+      "thumbnail_height": 360,
+      "thumbnail_width": 480,
+      "thumbnail_url": "https://i.ytimg.com/vi/K0dGYfzaAX0/hqdefault.jpg"
+    },
+    {
+      "id": "mnIo2zrQwRk",
+      "status": 200,
+      "title": "Seventeen | Tugas Drama Bahasa Indonesia XI MIPA 2",
+      "author_name": "Seven Team",
+      "author_url": "https://www.youtube.com/@seventeam4133",
+      "type": "video",
+      "height": 113,
+      "width": 200,
+      "version": "1.0",
+      "provider_name": "YouTube",
+      "provider_url": "https://www.youtube.com/",
+      "thumbnail_height": 360,
+      "thumbnail_width": 480,
+      "thumbnail_url": "https://i.ytimg.com/vi/mnIo2zrQwRk/hqdefault.jpg"
+    },
+    {
+      "id": "hOLDG50DHCI",
+      "status": 200,
+      "title": "Sejarah Singkat Universitas Bani Saleh",
+      "author_name": "Universitas Bani Saleh",
+      "author_url": "https://www.youtube.com/@universitasbanisaleh",
+      "type": "video",
+      "height": 113,
+      "width": 200,
+      "version": "1.0",
+      "provider_name": "YouTube",
+      "provider_url": "https://www.youtube.com/",
+      "thumbnail_height": 360,
+      "thumbnail_width": 480,
+      "thumbnail_url": "https://i.ytimg.com/vi/hOLDG50DHCI/hqdefault.jpg"
+    }
+  ],
+  "thumbnails": [
+    {
+      "id": "XV0e0PkjDPc",
+      "title": "A Day at World Stamp Championship - Sapta Eka Team SMAN 71 JAKARTA | WSC Vlog Competition",
+      "source": "https://i.ytimg.com/vi/XV0e0PkjDPc/maxresdefault.jpg",
+      "file": "public/images/video-portfolio/XV0e0PkjDPc.jpg"
+    },
+    {
+      "id": "K0dGYfzaAX0",
+      "title": "SEPTIHAN - Tugas Drama Bahasa Indonesia | RAVISPA XI MIPA 2 SMAN 71 Jakarta",
+      "source": "https://i.ytimg.com/vi/K0dGYfzaAX0/maxresdefault.jpg",
+      "file": "public/images/video-portfolio/K0dGYfzaAX0.jpg"
+    },
+    {
+      "id": "mnIo2zrQwRk",
+      "title": "Seventeen | Tugas Drama Bahasa Indonesia XI MIPA 2",
+      "source": "https://i.ytimg.com/vi/mnIo2zrQwRk/maxresdefault.jpg",
+      "file": "public/images/video-portfolio/mnIo2zrQwRk.jpg"
+    },
+    {
+      "id": "hOLDG50DHCI",
+      "title": "Sejarah Singkat Universitas Bani Saleh",
+      "source": "https://i.ytimg.com/vi/hOLDG50DHCI/maxresdefault.jpg",
+      "file": "public/images/video-portfolio/hOLDG50DHCI.jpg"
+    }
+  ],
+  "drive": {
+    "id": "1Vtk5hSiIk9hXtsa2feURucZyPy4DLxri",
+    "name": "Company Profile FTID.mp4",
+    "mimeType": "video/mp4",
+    "publicAccess": "Not verified; preserve original view link."
+  },
+  "profiles": [
+    "https://www.youtube.com/@fuldayy",
+    "https://www.tiktok.com/@jayszrss",
+    "https://www.instagram.com/cimuningppkhmti/",
+    "https://www.instagram.com/growthfin.id/"
+  ],
+  "embeddingCheck": {
+    "date": "2026-10-29",
+    "playable": [
+      "XV0e0PkjDPc",
+      "hOLDG50DHCI"
+    ],
+    "unavailableInEmbeddedPlayer": [
+      "K0dGYfzaAX0",
+      "mnIo2zrQwRk"
+    ],
+    "treatment": "Thumbnails and titles for the two unavailable embeds link directly to their supplied YouTube watch pages. No claim is made about the upstream restriction reason."
+  }
+}

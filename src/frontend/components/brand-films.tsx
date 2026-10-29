@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useLocale } from './locale-provider'
 import { localizedPath } from '@/shared/i18n'
@@ -20,12 +20,6 @@ export function IntroductionFilm() {
   const en = useLocale() === 'en'
   const dialog = useRef<HTMLDialogElement>(null)
   const video = useRef<HTMLVideoElement>(null)
-  const [muted, setMuted] = useState(false)
-  const [waiting, setWaiting] = useState(false)
-  const [failed, setFailed] = useState(false)
-  const [paused, setPaused] = useState(true)
-  const [progress, setProgress] = useState(0)
-  const close = () => dialog.current?.close()
 
   useEffect(() => {
     const modal = dialog.current
@@ -34,15 +28,18 @@ export function IntroductionFilm() {
     const phone = window.matchMedia(phoneQuery)
     let previous: HTMLElement | null = null
     let originalOverflow = ''
-    let playbackAttempt = 0
-    function play() {
-      const attempt = ++playbackAttempt
-      setWaiting(false)
-      void film!.play().catch(() => {
-        if (attempt !== playbackAttempt || !modal!.open) return
-        if (film!.error) setFailed(true)
-        else setWaiting(true)
-      })
+    let attempt = 0
+    async function play() {
+      const current = ++attempt
+      try { await film!.play() }
+      catch (error) {
+        if (current !== attempt || !modal!.open) return
+        if (error instanceof DOMException && error.name === 'NotAllowedError') {
+          film!.muted = true
+          try { await film!.play() }
+          catch { if (current === attempt && modal!.open) modal!.close() }
+        } else modal!.close()
+      }
     }
     function open() {
       if (modal!.open) return
@@ -51,42 +48,39 @@ export function IntroductionFilm() {
       document.body.style.overflow = 'hidden'
       selectFilm(film!, phone.matches)
       film!.muted = false
-      film!.volume = 1
-      setMuted(false)
-      setFailed(false)
-      setProgress(0)
       modal!.showModal()
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) setWaiting(true)
-      else play()
+      modal!.focus({ preventScroll: true })
+      void play()
     }
     function closed() {
       if (modal!.open) return
-      playbackAttempt++
+      attempt++
       film!.pause()
       document.body.style.overflow = originalOverflow
       if (previous?.isConnected) previous.focus({ preventScroll: true })
+      window.dispatchEvent(new Event('wasla:introduction-closed'))
     }
     function resize() {
       if (!modal!.open) return
-      playbackAttempt++
+      attempt++
       film!.pause()
       selectFilm(film!, phone.matches)
-      setFailed(false)
-      setProgress(0)
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) setWaiting(true)
-      else play()
+      void play()
     }
-    const hide = () => { if (document.hidden) film!.pause() }
+    const visibility = () => {
+      if (document.hidden) { attempt++; film!.pause() }
+      else if (modal!.open) void play()
+    }
     modal.addEventListener('close', closed)
     phone.addEventListener('change', resize)
-    document.addEventListener('visibilitychange', hide)
+    document.addEventListener('visibilitychange', visibility)
     window.addEventListener('wasla:show-introduction', open)
     open()
     return () => {
-      playbackAttempt++
+      attempt++
       window.removeEventListener('wasla:show-introduction', open)
       phone.removeEventListener('change', resize)
-      document.removeEventListener('visibilitychange', hide)
+      document.removeEventListener('visibilitychange', visibility)
       modal.removeEventListener('close', closed)
       film.pause()
       if (modal.open) modal.close()
@@ -94,32 +88,10 @@ export function IntroductionFilm() {
     }
   }, [])
 
-  function resume() {
-    const film = video.current
-    if (!film) return
-    setWaiting(false)
-    void film.play().catch(() => { if (film.error) setFailed(true); else setWaiting(true) })
-  }
-
-  return <dialog ref={dialog} className={styles.intro} aria-labelledby="introduction-title" aria-describedby="introduction-hint" onClick={close}>
-    <div className={styles.introShell}>
-      <header className={styles.introHeader}>
-        <span className={styles.wordmark}>wasla<span>informatika</span></span>
-        <h2 id="introduction-title">{en ? 'A glimpse of Wasla.' : 'Sekilas tentang Wasla.'}</h2>
-        <button type="button" className={styles.close} autoFocus onClick={close}>{en ? 'Skip intro' : 'Lewati intro'}<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"/></svg></button>
-      </header>
-      <div className={styles.introScreen}>
-        <video ref={video} playsInline preload="none" disablePictureInPicture aria-label={en ? 'Wasla introduction film, Indonesian text, music without narration' : 'Video perkenalan Wasla, musik tanpa narasi'} onVolumeChange={event => setMuted(event.currentTarget.muted)} onEnded={close} onError={() => setFailed(true)} onPlay={() => { setWaiting(false); setPaused(false) }} onPause={() => setPaused(true)} onTimeUpdate={event => { const film = event.currentTarget; setProgress(Number.isFinite(film.duration) && film.duration > 0 ? film.currentTime / film.duration : 0) }}/>
-        {waiting && !failed && <button className={styles.play} type="button" onClick={event => { event.stopPropagation(); resume() }}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 4 12 8-12 8z"/></svg>{en ? 'Play introduction' : 'Putar perkenalan'}</button>}
-        {failed && <p className={styles.videoError} role="status">{en ? 'The video could not load. You can continue to the website.' : 'Video belum bisa dimuat. Anda tetap bisa melanjutkan ke website.'}</p>}
-      </div>
-      <div className={styles.playback} onClick={event => event.stopPropagation()}>
-        <button type="button" disabled={failed} onClick={() => { if (video.current?.paused) resume(); else video.current?.pause() }} aria-label={paused ? (en ? 'Play film' : 'Putar video') : (en ? 'Pause film' : 'Jeda video')}><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">{paused ? <path d="m8 4 12 8-12 8z"/> : <path d="M6 4h4v16H6zm8 0h4v16h-4z"/>}</svg></button>
-        <progress value={progress} max="1" aria-label={en ? 'Film progress' : 'Progres video'}/>
-        <button type="button" aria-pressed={!muted} onClick={() => { if (video.current) video.current.muted = !video.current.muted }}>{muted ? (en ? 'Turn sound on' : 'Nyalakan suara') : (en ? 'Mute sound' : 'Matikan suara')}</button>
-      </div>
-      <footer className={styles.introFooter}><span id="introduction-hint">{en ? 'Tap anywhere to explore the website.' : 'Ketuk di mana saja untuk masuk ke website.'}</span><button type="button" onClick={close}>{en ? 'Explore website' : 'Jelajahi website'}<Arrow diagonal/></button></footer>
-    </div>
+  return <dialog ref={dialog} className={styles.intro} aria-label={en ? 'A glimpse of Wasla.' : 'Sekilas tentang Wasla.'} onClick={() => dialog.current?.close()}>
+    <button className={styles.introSurface} type="button" autoFocus aria-label={en ? 'Skip intro' : 'Lewati intro'} onClick={() => dialog.current?.close()}>
+      <video ref={video} playsInline preload="auto" disablePictureInPicture aria-label={en ? 'Wasla introduction film; click anywhere to close' : 'Film perkenalan Wasla; ketuk di mana saja untuk menutup'} onEnded={() => dialog.current?.close()} onError={() => dialog.current?.close()}/>
+    </button>
   </dialog>
 }
 
@@ -130,19 +102,24 @@ export function BrandFilmShowcase() {
     const film = video.current
     if (!film) return
     const phone = window.matchMedia(phoneQuery)
-    const select = () => { film.pause(); selectFilm(film, phone.matches) }
+    let visible = false
+    const update = () => {
+      if (!visible || document.hidden || document.querySelector('dialog[open]')) film.pause()
+      else void film.play().catch(() => {})
+    }
+    const select = () => { film.pause(); selectFilm(film, phone.matches); update() }
     select()
     phone.addEventListener('change', select)
-    const observer = new IntersectionObserver(([entry]) => { if (!entry.isIntersecting) film.pause() }, { threshold: .1 })
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; update() }, { threshold: .1 })
     observer.observe(film)
-    const hide = () => { if (document.hidden) film.pause() }
     const showIntroduction = () => film.pause()
-    document.addEventListener('visibilitychange', hide)
+    document.addEventListener('visibilitychange', update)
     window.addEventListener('wasla:show-introduction', showIntroduction)
-    return () => { film.pause(); observer.disconnect(); phone.removeEventListener('change', select); document.removeEventListener('visibilitychange', hide); window.removeEventListener('wasla:show-introduction', showIntroduction) }
+    window.addEventListener('wasla:introduction-closed', update)
+    return () => { film.pause(); observer.disconnect(); phone.removeEventListener('change', select); document.removeEventListener('visibilitychange', update); window.removeEventListener('wasla:show-introduction', showIntroduction); window.removeEventListener('wasla:introduction-closed', update) }
   }, [])
   return <section className={`${styles.showcase} wrap`} aria-labelledby="brand-film-title">
     <div className={styles.filmCopy}><h2 id="brand-film-title">{en ? <>Your idea.<br/>Your next website.</> : <>Dari ide,<br/>jadi website.</>}</h2><p>{en ? 'Show your business with a website that feels like you. Let’s discuss its design, features, and how it should work for your customers.' : 'Tampilkan bisnis Anda lewat website yang punya karakter. Kita bahas desain, fitur, dan cara website membantu pelanggan Anda.'}</p><div className={styles.filmActions}><Link className="button" href={localizedPath('/kontak', en ? 'en' : 'id')}>{en ? 'Discuss your website' : 'Diskusikan website Anda'}</Link><button type="button" className={styles.replay} onClick={() => window.dispatchEvent(new Event('wasla:show-introduction'))}>{en ? 'Watch the Wasla film' : 'Tonton film Wasla'}<Arrow diagonal/></button></div></div>
-    <figure className={styles.reel}><video ref={video} controls playsInline preload="none" aria-label={en ? 'Wasla website film, Indonesian text, original music' : 'Film website Wasla, teks Indonesia, musik asli'}/><figcaption>{en ? 'A website with your character.' : 'Website dengan karakter bisnis Anda.'}<span>Wasla Informatika</span></figcaption></figure>
+    <figure className={styles.reel}><video ref={video} muted loop playsInline preload="none" disablePictureInPicture aria-label={en ? 'Wasla website film, Indonesian text, original music' : 'Film website Wasla, teks Indonesia, musik asli'}/><figcaption>{en ? 'A website with your character.' : 'Website dengan karakter bisnis Anda.'}<span>Wasla Informatika</span></figcaption></figure>
   </section>
 }

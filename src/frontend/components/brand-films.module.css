@@ -1,19 +1,8 @@
-.intro { position: fixed; inset: 0; width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: #030e1d; color: #fff; }
+.intro { position: fixed; inset: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: #030e1d; color: #fff; }
 .intro::backdrop { background: #030e1d; }
-.introShell { display: flex; flex-direction: column; justify-content: center; width: min(100%, 1280px); height: 100%; margin-inline: auto; padding: max(24px, env(safe-area-inset-top)) max(36px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(36px, env(safe-area-inset-left)); gap: 16px; }
-.introHeader { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.wordmark { display: grid; font-size: 32px; font-weight: 600; line-height: 1; letter-spacing: -.03em; }
-.wordmark > span { font-size: 8px; letter-spacing: .1em; margin-top: 5px; }
-.introHeader h2 { margin: 0; font-size: 14px; font-weight: 400; color: #c5d0dd; }
-.intro button { min-height: 44px; padding: 9px 17px; border: 1px solid #63758a; border-radius: 30px; color: #fff; background: transparent; font: inherit; font-size: 12px; cursor: pointer; }
-.intro button:hover { background: #173551; }
-.introHeader button { display: flex; align-items: center; gap: 14px; }
-.introScreen { position: relative; min-height: 0; min-width: 0; flex: 0 1 auto; aspect-ratio: 16 / 9; width: 100%; display: grid; place-items: center; overflow: hidden; border-radius: 16px; background: #0c0d0e; }
-.introScreen video { position: absolute; inset: 0; display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; background: #0c0d0e; }
-.introFooter { display: flex; align-items: center; gap: 16px; }
-.introFooter > span { flex: 1; color: #c5d0dd; font-size: 12px; }
-.intro .play { position: absolute; display: flex; align-items: center; gap: 12px; background: #fff; color: #071a33; border: 0; padding: 14px 24px; }
-.videoError { position: absolute; padding: 24px; max-width: 420px; background: #071a33; text-align: center; }
+.introSurface { display: grid; place-items: center; width: 100%; height: 100%; padding: max(24px, env(safe-area-inset-top)) max(32px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(32px, env(safe-area-inset-left)); border: 0; background: transparent; cursor: pointer; }
+.introSurface:focus-visible { outline: 2px solid #c5d0dd; outline-offset: -8px; }
+.introSurface video { display: block; width: min(100%, 1440px); height: 100%; object-fit: contain; }
 .showcase { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: clamp(32px, 5vw, 80px); padding-block: 45px 100px; }
 .filmCopy h2 { font-size: clamp(36px, 4.8vw, 64px); line-height: 1.18; font-weight: 600; letter-spacing: -.03em; margin-bottom: 24px; }
 .filmCopy p { max-width: 47ch; line-height: 1.9; font-size: 15px; color: #5b6879; }
@@ -24,18 +13,6 @@
 .reel video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 16px; background: #0c0d0e; }
 .reel figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 16px; color: #5b6879; font-size: 11px; }
 .reel figcaption span { white-space: nowrap; }
-.intro { cursor: pointer; }
-.intro button:focus-visible, .replay:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
-.intro button:disabled { opacity: .5; cursor: default; }
-.intro .play:hover { background: #dfebf8; }
-.playback { display: flex; align-items: center; gap: 18px; cursor: default; }
-.playback > button:first-child { display: grid; place-items: center; padding: 0; width: 44px; border: 0; }
-.playback > button:last-child { flex-shrink: 0; font-size: 11px; }
-.playback progress { flex: 1; width: 0; height: 3px; overflow: hidden; border: 0; border-radius: 3px; background: #40506a; color: #fff; appearance: none; }
-.playback progress::-webkit-progress-bar { background: #40506a; }
-.playback progress::-webkit-progress-value { background: #fff; }
-.playback progress::-moz-progress-bar { background: #fff; }
-.introFooter button { display: inline-flex; align-items: center; gap: 14px; border: 0; padding-inline: 0; }
 @media (min-width: 768px) and (max-width: 991px) { .showcase { grid-template-columns: minmax(0, 1fr); gap: 32px; } }
 @media (max-width: 767px) {
   .showcase { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 20px 65px; }
@@ -43,11 +20,6 @@
   .filmCopy p { font-size: 14px; }
   .reel { max-width: 340px; justify-self: center; }
   .reel video { aspect-ratio: 9 / 16; }
-  .introShell { width: min(100%, 430px); padding: max(16px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(14px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left)); gap: 12px; }
-  .introScreen { aspect-ratio: 9 / 16; align-self: center; width: min(100%, calc((100dvh - 208px) * 9 / 16)); flex-shrink: 0; }
-  .introHeader h2 { display: none; }
-  .introHeader .wordmark { font-size: 28px; }
-  .introFooter { flex-direction: column; gap: 2px; }
-  .introFooter > span { flex: none; text-align: center; font-size: 10px; }
-  .playback { gap: 12px; }
+  .introSurface { padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); }
+  .introSurface video { width: 100%; }
 }
