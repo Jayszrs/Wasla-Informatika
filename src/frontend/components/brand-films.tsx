@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useLocale } from './locale-provider'
 import { localizedPath } from '@/shared/i18n'
@@ -20,6 +20,7 @@ export function IntroductionFilm() {
   const en = useLocale() === 'en'
   const dialog = useRef<HTMLDialogElement>(null)
   const video = useRef<HTMLVideoElement>(null)
+  const [needsSound, setNeedsSound] = useState(false)
 
   useEffect(() => {
     const modal = dialog.current
@@ -36,6 +37,7 @@ export function IntroductionFilm() {
         if (current !== attempt || !modal!.open) return
         if (error instanceof DOMException && error.name === 'NotAllowedError') {
           film!.muted = true
+          setNeedsSound(true)
           try { await film!.play() }
           catch { if (current === attempt && modal!.open) modal!.close() }
         } else modal!.close()
@@ -48,6 +50,8 @@ export function IntroductionFilm() {
       document.body.style.overflow = 'hidden'
       selectFilm(film!, phone.matches)
       film!.muted = false
+      film!.volume = 1
+      setNeedsSound(false)
       modal!.showModal()
       modal!.focus({ preventScroll: true })
       void play()
@@ -90,8 +94,24 @@ export function IntroductionFilm() {
 
   return <dialog ref={dialog} className={styles.intro} aria-label={en ? 'A glimpse of Wasla.' : 'Sekilas tentang Wasla.'} onClick={() => dialog.current?.close()}>
     <button className={styles.introSurface} type="button" autoFocus aria-label={en ? 'Skip intro' : 'Lewati intro'} onClick={() => dialog.current?.close()}>
-      <video ref={video} playsInline preload="auto" disablePictureInPicture aria-label={en ? 'Wasla introduction film; click anywhere to close' : 'Film perkenalan Wasla; ketuk di mana saja untuk menutup'} onEnded={() => dialog.current?.close()} onError={() => dialog.current?.close()}/>
+      <video ref={video} playsInline preload="auto" disablePictureInPicture aria-label={en ? 'Wasla introduction film; click anywhere to close' : 'Film perkenalan Wasla; ketuk di mana saja untuk menutup'} onVolumeChange={event => setNeedsSound(event.currentTarget.muted || event.currentTarget.volume === 0)} onEnded={() => dialog.current?.close()} onError={() => dialog.current?.close()}/>
     </button>
+    {needsSound && <button className={styles.enableSound} type="button" onClick={event => {
+      event.stopPropagation()
+      const film = video.current
+      if (!film) return
+      film.muted = false
+      film.volume = 1
+      setNeedsSound(false)
+      void film.play().catch(() => {
+        if (!dialog.current?.open) return
+        film.muted = true
+        setNeedsSound(true)
+      })
+    }} aria-label={en ? 'Turn introduction sound on' : 'Nyalakan suara intro'}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 4 6 8H3v8h3l5 4zM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+      <span>{en ? 'Sound on' : 'Nyalakan suara'}</span>
+    </button>}
   </dialog>
 }
 

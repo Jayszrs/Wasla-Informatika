@@ -23,7 +23,7 @@ test('intro autoplays without controls, replays and stops on dismissal', async (
   await expect.poll(() => film.evaluate(v => (v as HTMLVideoElement).currentTime)).toBeGreaterThan(0)
   expect(await film.evaluate(v => (v as HTMLVideoElement).controls)).toBe(false)
   await expect(intro.locator('progress, footer, header')).toHaveCount(0)
-  await expect(intro.getByRole('button')).toHaveCount(1)
+  await expect(intro.getByRole('button', { name: 'Lewati intro', exact: true })).toHaveCount(1)
   await skipIntroduction(page)
   await expect.poll(() => film.evaluate(v => (v as HTMLVideoElement).paused)).toBe(true)
   await expect(page.locator('body')).not.toHaveCSS('overflow', 'hidden')
@@ -122,11 +122,13 @@ test('phone film is portrait, tablet film is landscape, and the intro dismisses 
   expect(await page.locator('body').evaluate(el => el.style.overflow)).not.toBe('hidden')
 })
 
-test('blocked audible autoplay retries muted without showing a play button', async ({ page }) => {
+test('blocked audible autoplay offers one tap to enable sound without closing the intro', async ({ page }) => {
   await page.addInitScript(() => {
     const play = HTMLMediaElement.prototype.play
+    let soundAllowed = false
+    document.addEventListener('click', () => { soundAllowed = true }, { once: true, capture: true })
     HTMLMediaElement.prototype.play = function () {
-      if (!this.muted) return Promise.reject(new DOMException('Autoplay blocked', 'NotAllowedError'))
+      if (!this.muted && !soundAllowed) return Promise.reject(new DOMException('Autoplay blocked', 'NotAllowedError'))
       return play.call(this)
     }
   })
@@ -137,8 +139,31 @@ test('blocked audible autoplay retries muted without showing a play button', asy
   expect(await film.evaluate(v => (v as HTMLVideoElement).muted)).toBe(true)
   await expect(intro.getByRole('button', { name: 'Putar perkenalan', exact: true })).toHaveCount(0)
   await expect(intro.locator('progress, footer')).toHaveCount(0)
+  const sound = intro.getByRole('button', { name: 'Nyalakan suara intro', exact: true })
+  await expect(sound).toBeVisible()
+  await sound.click()
+  await expect(intro).toBeVisible()
+  await expect.poll(() => film.evaluate(v => ({ muted: (v as HTMLVideoElement).muted, volume: (v as HTMLVideoElement).volume, paused: (v as HTMLVideoElement).paused }))).toEqual({ muted: false, volume: 1, paused: false })
+  await expect(sound).toHaveCount(0)
+  await film.evaluate(v => { (v as HTMLVideoElement).volume = 0 })
+  await expect(sound).toBeVisible()
+  await sound.press('Enter')
+  await expect.poll(() => film.evaluate(v => (v as HTMLVideoElement).volume)).toBe(1)
+  await expect(intro).toBeVisible()
   await page.keyboard.press('Escape')
   await expect.poll(() => film.evaluate(v => (v as HTMLVideoElement).paused)).toBe(true)
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto('/en')
+  const mobileIntro = page.getByRole('dialog', { name: 'A glimpse of Wasla.' })
+  const mobileFilm = page.locator('dialog video')
+  await expect(mobileFilm).toHaveAttribute('data-format', 'portrait')
+  const mobileSound = mobileIntro.getByRole('button', { name: 'Turn introduction sound on', exact: true })
+  await expect(mobileSound).toBeVisible()
+  await mobileSound.click()
+  await expect(mobileIntro).toBeVisible()
+  await expect.poll(() => mobileFilm.evaluate(v => (v as HTMLVideoElement).muted)).toBe(false)
+  await expect(mobileSound).toHaveCount(0)
+  await page.keyboard.press('Escape')
 })
 
 test('mobile devices rotate with horizontal touch, allow native scrolling and keep every service scene interactive', async ({ browser }) => {
