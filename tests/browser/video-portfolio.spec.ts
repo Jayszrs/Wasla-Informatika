@@ -56,3 +56,38 @@ test('portfolio stays readable on small phones, tablets and desktop in both loca
     await portfolio.screenshot({ path: `.local/site-review/video-portfolio-${width}-20261029.png` })
   }
 })
+
+test('FTID and all four accounts have artwork and open in-site previews on a phone', async ({ page }) => {
+  await page.route('https://www.tiktok.com/embed.js', route => route.fulfill({ contentType: 'application/javascript', body: `const host = document.querySelector('.tiktok-embed'); const frame = document.createElement('iframe'); frame.src = 'https://www.tiktok.com/embed/@jayszrss'; frame.title = 'TikTok creator preview'; host.append(frame);` }))
+  for (const pattern of ['https://drive.google.com/file/d/*/preview', 'https://www.youtube-nocookie.com/embed/**', 'https://www.tiktok.com/embed/**', 'https://www.instagram.com/*/embed/']) {
+    await page.route(pattern, route => route.fulfill({ contentType: 'text/html', body: '<html><body>Native portfolio preview fixture</body></html>' }))
+  }
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto('/portofolio')
+  await page.getByRole('button', { name: 'Lewati intro', exact: true }).click()
+  const portfolio = page.locator('#video-portfolio')
+  for (const [name, label, source] of [
+    ['Company Profile FTID', 'Putar Company Profile FTID', 'https://drive.google.com/file/d/1Vtk5hSiIk9hXtsa2feURucZyPy4DLxri/preview'],
+    ['Fulday', 'Jelajahi Fulday', 'https://www.youtube-nocookie.com/embed/videoseries?list=UU9mWFyZ012ttTrws7LLKuMg'],
+    ['@jayszrss', 'Jelajahi @jayszrss', 'https://www.tiktok.com/embed/@jayszrss'],
+    ['Cimuning PPKHMTI', 'Jelajahi Cimuning PPKHMTI', 'https://www.instagram.com/cimuningppkhmti/embed/'],
+    ['Growthfin', 'Jelajahi Growthfin', 'https://www.instagram.com/growthfin.id/embed/'],
+  ]) {
+    const opener = portfolio.getByRole('button', { name: label, exact: true })
+    await opener.scrollIntoViewIfNeeded()
+    const image = opener.locator('img').first()
+    await expect.poll(() => image.evaluate(img => (img as HTMLImageElement).naturalWidth)).toBeGreaterThan(0)
+    await opener.click()
+    const modal = portfolio.getByRole('dialog', { name, exact: true })
+    await expect(modal).toBeVisible()
+    expect(await modal.locator('iframe').getAttribute('src')).toContain(source)
+    await expect(modal.getByRole('link', { name: 'Buka sumber asli' })).toBeVisible()
+    const box = (await modal.boundingBox())!
+    expect(box.x).toBeGreaterThanOrEqual(0)
+    expect(box.width).toBeLessThanOrEqual(390)
+    await modal.getByRole('button', { name: 'Tutup video', exact: true }).click()
+    await expect(portfolio.locator('iframe')).toHaveCount(0)
+    await expect(opener).toBeFocused()
+    await expect(page.locator('body')).not.toHaveCSS('overflow', 'hidden')
+  }
+})
